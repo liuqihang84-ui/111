@@ -21,6 +21,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DISPLAY = os.environ.get("DISPLAY", ":93")
 OUTPUT = ROOT / "builds"
 BINARY = OUTPUT / "linux/lumenfall.x86_64"
+OUTPUT_SUFFIX = os.environ.get("NATIVE_GUI_SUFFIX", "")
+
+
+def artifact(name):
+    path = Path(name)
+    return OUTPUT / (path.stem + OUTPUT_SUFFIX + path.suffix)
 
 
 class WindowAttributes(C.Structure):
@@ -43,6 +49,7 @@ class X11:
         self.x.XFree.argtypes = [C.c_void_p]
         self.x.XRaiseWindow.argtypes = [C.c_void_p, C.c_ulong]
         self.x.XSetInputFocus.argtypes = [C.c_void_p, C.c_ulong, C.c_int, C.c_ulong]
+        self.x.XTranslateCoordinates.argtypes = [C.c_void_p, C.c_ulong, C.c_ulong, C.c_int, C.c_int, C.POINTER(C.c_int), C.POINTER(C.c_int), C.POINTER(C.c_ulong)]
         self.x.XStringToKeysym.argtypes = [C.c_char_p]
         self.x.XStringToKeysym.restype = C.c_ulong
         self.x.XKeysymToKeycode.argtypes = [C.c_void_p, C.c_ulong]
@@ -57,6 +64,7 @@ class X11:
             raise RuntimeError("Cannot open X11 display " + DISPLAY)
         self.root = self.x.XDefaultRootWindow(self.d)
         self.pid_atom = self.x.XInternAtom(self.d, b"_NET_WM_PID", 0)
+        self.window_origin = (0, 0)
 
     def children(self, window):
         root, parent, count = C.c_ulong(), C.c_ulong(), C.c_uint()
@@ -95,6 +103,9 @@ class X11:
     def focus(self, window):
         self.x.XRaiseWindow(self.d, window)
         self.x.XSetInputFocus(self.d, window, 2, 0)
+        origin_x, origin_y, child = C.c_int(), C.c_int(), C.c_ulong()
+        if self.x.XTranslateCoordinates(self.d, window, self.root, 0, 0, C.byref(origin_x), C.byref(origin_y), C.byref(child)):
+            self.window_origin = (origin_x.value, origin_y.value)
         self.x.XFlush(self.d)
 
     def key(self, name, duration=0.07, delay=0.25):
@@ -109,6 +120,10 @@ class X11:
         time.sleep(delay)
 
     def click(self, x, y, delay=0.6):
+        # Coordinates are relative to the game's 1280x720 client window, which
+        # may be centered below the top of a larger X11 desktop.
+        x += self.window_origin[0]
+        y += self.window_origin[1]
         self.xt.XTestFakeMotionEvent(self.d, -1, x, y, 0)
         self.x.XFlush(self.d)
         time.sleep(0.1)
@@ -143,7 +158,7 @@ def main():
             raise RuntimeError("Native check failed: " + name)
 
     def capture(name):
-        path = OUTPUT / name
+        path = artifact(name)
         ImageGrab.grab(xdisplay=DISPLAY).save(path)
         report["screenshots"].append(str(path))
         return str(path)
@@ -156,7 +171,7 @@ def main():
         return json.loads(slots[0].read_text())
 
     try:
-        with (OUTPUT / "native-gui.log").open("w") as log:
+        with artifact("native-gui.log").open("w") as log:
             process = subprocess.Popen([str(BINARY)], cwd=profile, env=env, stdout=log, stderr=subprocess.STDOUT)
             report["pid"] = process.pid
             x11 = X11()
@@ -173,6 +188,7 @@ def main():
             # Godot sets _NET_WM_PID before mapping the window. Focusing that
             # early causes X11 BadMatch, so allow startup to finish first.
             x11.focus(window)
+            report["window_origin"] = list(x11.window_origin)
             time.sleep(0.4)
             capture("native-title.png")
             x11.key("Return", delay=0.7)
@@ -251,7 +267,7 @@ def main():
             report["child_exit_code"] = process.returncode
         if x11 is not None:
             x11.x.XCloseDisplay(x11.d)
-        result = OUTPUT / "native-gui-result.json"
+        result = artifact("native-gui-result.json")
         result.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
         print(str(result), flush=True)
     return 0 if report.get("passed") else 1

@@ -1,0 +1,167 @@
+{
+	"assets": [
+		{
+			"filter": "linear_with_mipmaps",
+			"kind": "seamless_ground",
+			"path": "assets/environments/textures/forest_ground.png",
+			"provenance": "original_procedural_drawing",
+			"repeat_metres": [
+				4.0,
+				6.0
+			],
+			"size": [
+				512,
+				512
+			]
+		},
+		{
+			"filter": "linear_with_mipmaps",
+			"kind": "seamless_path",
+			"path": "assets/environments/textures/forest_path.png",
+			"provenance": "original_procedural_drawing",
+			"repeat_metres": [
+				3.0,
+				4.0
+			],
+			"size": [
+				512,
+				512
+			]
+		},
+		{
+			"filter": "linear_with_mipmaps",
+			"kind": "seamless_stone",
+			"path": "assets/environments/textures/forest_stone.png",
+			"provenance": "original_procedural_drawing",
+			"repeat_metres": [
+				2.0,
+				3.0
+			],
+			"size": [
+				512,
+				512
+			]
+		},
+		{
+			"anchor_px": [
+				64,
+				120
+			],
+			"anchor_uv": [
+				0.5,
+				0.9375
+			],
+			"filter": "nearest_or_linear_with_mipmaps",
+			"height_metres": [
+				0.75,
+				1.1
+			],
+			"kind": "billboard_plant",
+			"path": "assets/environments/textures/forest_fern.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				128,
+				128
+			]
+		},
+		{
+			"anchor_px": [
+				64,
+				120
+			],
+			"anchor_uv": [
+				0.5,
+				0.9375
+			],
+			"filter": "nearest_or_linear_with_mipmaps",
+			"height_metres": [
+				0.35,
+				0.65
+			],
+			"kind": "billboard_plant",
+			"path": "assets/environments/textures/forest_grass.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				128,
+				128
+			]
+		},
+		{
+			"anchor_px": [
+				64,
+				152
+			],
+			"anchor_uv": [
+				0.5,
+				0.95
+			],
+			"filter": "nearest_or_linear_with_mipmaps",
+			"height_metres": [
+				0.85,
+				1.25
+			],
+			"kind": "billboard_plant",
+			"path": "assets/environments/textures/forest_shrub.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				128,
+				160
+			]
+		},
+		{
+			"anchor_px": [
+				64,
+				48
+			],
+			"anchor_uv": [
+				0.5,
+				0.5
+			],
+			"filter": "linear_with_mipmaps",
+			"kind": "ground_decal",
+			"path": "assets/environments/textures/forest_litter.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				128,
+				96
+			],
+			"width_metres": [
+				0.5,
+				0.9
+			]
+		},
+		{
+			"kind": "review_only",
+			"order": [
+				"ground",
+				"path",
+				"stone"
+			],
+			"path": "assets/environments/textures/preview_terrain.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				1536,
+				512
+			]
+		},
+		{
+			"kind": "review_only",
+			"order": [
+				"grass",
+				"fern",
+				"shrub",
+				"litter"
+			],
+			"path": "assets/environments/textures/preview_plants.png",
+			"provenance": "original_procedural_drawing",
+			"size": [
+				1024,
+				320
+			]
+		}
+	],
+	"generator": "tools/generate_environment_art.gd",
+	"notes": "No photographs, downloaded artwork, game assets or reference-image pixels are used.",
+	"provenance": "Original deterministic Godot Image drawings",
+	"schema": 1
+}

@@ -60,6 +60,7 @@ var _boss_name: Label
 var _boss_phase: Label
 var _boss_health: ProgressBar
 var _mini_map: Control
+var _navigation_dock: Control
 var _dialogue: PanelContainer
 var _dialogue_portrait: TextureRect
 var _dialogue_name: Label
@@ -119,6 +120,7 @@ func refresh(new_model: RefCounted, delta: float) -> void:
 		last_status = status
 	var is_journey := status != "ready"
 	hud.visible = is_journey and status != "won"
+	_navigation_dock.visible = status == "playing"
 	var info: Dictionary = model.call("map_info")
 	_location.text = str(info.get("name", "暮光之森"))
 	var chapter: int = int(info.get("chapter", 1))
@@ -133,10 +135,10 @@ func refresh(new_model: RefCounted, delta: float) -> void:
 	_health_text.text = "生命  %d / %d" % [int(_health.value), int(_health.max_value)]
 	_light_text.text = "灯火  %d / %d" % [int(_light.value), int(_light.max_value)]
 	_supplies.text = "恢复药 %d    灯屑 %d" % [int(model.get("potions")), int(model.get("coins"))]
-	_objective.text = str(model.call("objective_text"))
+	_objective.text = _hud_objective(str(model.call("objective_text")))
 	var objective_value: Variant = model.call("objective_progress")
 	if objective_value is Vector2i or objective_value is Vector2:
-		_progress.text = "旅途进度  %d / %d" % [int(objective_value.x), int(objective_value.y)]
+		_progress.text = "线索  %d / %d" % [int(objective_value.x), int(objective_value.y)]
 	else:
 		_progress.text = ""
 	_update_hint()
@@ -320,84 +322,113 @@ func _build_hud() -> void:
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	hud.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(hud)
+	# The washes taper into the scenery instead of enclosing it in solid cards.
 	var left := PanelContainer.new()
-	left.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
-	left.position = Vector2(22, 20)
-	left.custom_minimum_size = Vector2(310, 158)
-	left.add_theme_stylebox_override("panel", _style(Color(0.04, 0.12, 0.14, 0.91), Color("9b7b4c"), 1, 15))
+	left.position = Vector2(24, 22)
+	left.custom_minimum_size.x = 302
+	left.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	left.add_theme_stylebox_override("panel", _style(Color.TRANSPARENT, Color.TRANSPARENT, 0, 11))
 	hud.add_child(left)
+	var left_wash := HudWash.new()
+	left.add_child(left_wash)
 	var stats := VBoxContainer.new()
-	stats.add_theme_constant_override("separation", 7)
+	stats.add_theme_constant_override("separation", 8)
 	left.add_child(stats)
-	_location = _label("灯火村", 23, GOLD)
+	_location = _hud_text(_label("灯火村", 23, Color("e5bf7d")))
 	stats.add_child(_location)
-	_health_text = _label("生命", 17)
-	stats.add_child(_health_text)
-	_health = _bar(260, 9, Color("80b192"))
-	stats.add_child(_health)
-	_light_text = _label("灯火", 17, GOLD)
-	stats.add_child(_light_text)
-	_light = _bar(260, 7, Color("d7b15f"))
-	stats.add_child(_light)
-	_supplies = _label("恢复药 3    灯屑 0", 18, MUTED)
+	var meters := HBoxContainer.new()
+	meters.add_theme_constant_override("separation", 16)
+	stats.add_child(meters)
+	var health_column := VBoxContainer.new()
+	health_column.add_theme_constant_override("separation", 4)
+	health_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	meters.add_child(health_column)
+	_health_text = _hud_text(_label("生命", 18, Color("dfe8d8")))
+	health_column.add_child(_health_text)
+	_health = _hud_bar(125, 6, Color("88b69c"))
+	health_column.add_child(_health)
+	var light_column := VBoxContainer.new()
+	light_column.add_theme_constant_override("separation", 4)
+	light_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	meters.add_child(light_column)
+	_light_text = _hud_text(_label("灯火", 18, Color("e4c084")))
+	light_column.add_child(_light_text)
+	_light = _hud_bar(125, 6, Color("d7ad62"))
+	light_column.add_child(_light)
+	_supplies = _hud_text(_label("恢复药 3    灯屑 0", 18, Color("bed0c3")))
 	stats.add_child(_supplies)
 	var quest := PanelContainer.new()
 	quest.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	quest.offset_left = -348
-	quest.offset_top = 20
-	quest.offset_right = -22
-	quest.add_theme_stylebox_override("panel", _style(Color(0.04, 0.12, 0.14, 0.91), Color("9b7b4c"), 1, 15))
+	quest.offset_left = -332
+	quest.offset_top = 22
+	quest.offset_right = -24
+	quest.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	quest.add_theme_stylebox_override("panel", _style(Color.TRANSPARENT, Color.TRANSPARENT, 0, 11))
 	hud.add_child(quest)
+	var quest_wash := HudWash.new()
+	quest_wash.right_corner = true
+	quest.add_child(quest_wash)
 	var quest_content := VBoxContainer.new()
-	quest_content.add_theme_constant_override("separation", 6)
+	quest_content.add_theme_constant_override("separation", 5)
 	quest.add_child(quest_content)
-	quest_content.add_child(_label("当前旅途", 18, GOLD))
-	_objective = _label("寻找导师留下的笔记", 20)
+	var quest_heading := _hud_text(_label("当前旅途", 18, Color("d7b77c")))
+	quest_heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	quest_content.add_child(quest_heading)
+	_objective = _hud_text(_label("寻找导师留下的笔记", 20, Color("f0ecd9")))
 	_objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_objective.custom_minimum_size.x = 290
+	_objective.custom_minimum_size.x = 278
+	_objective.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	quest_content.add_child(_objective)
-	_progress = _label("", 17, MUTED)
+	_progress = _hud_text(_label("", 18, Color("bfd0c3")))
+	_progress.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	quest_content.add_child(_progress)
+	_navigation_dock = VBoxContainer.new()
+	_navigation_dock.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+	_navigation_dock.offset_left = -220
+	_navigation_dock.offset_top = -173
+	_navigation_dock.offset_right = -24
+	_navigation_dock.offset_bottom = -32
+	_navigation_dock.add_theme_constant_override("separation", 5)
+	_navigation_dock.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hud.add_child(_navigation_dock)
 	_mini_map = MiniMap.new()
-	_mini_map.custom_minimum_size = Vector2(180, 110)
-	quest_content.add_child(_mini_map)
+	_mini_map.custom_minimum_size = Vector2(180, 95)
+	_mini_map.modulate = Color(0.91, 0.98, 0.94, 0.78)
+	_navigation_dock.add_child(_mini_map)
 	var menu_row := HBoxContainer.new()
-	quest_content.add_child(menu_row)
+	menu_row.add_theme_constant_override("separation", 4)
+	_navigation_dock.add_child(menu_row)
 	for entry: Array in [["日记", "journal"], ["地图", "map"], ["行囊", "inventory"]]:
 		var entry_action := str(entry[1])
-		var button := _button(str(entry[0]), func(): handle_action(entry_action), 0)
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		button.add_theme_font_size_override("font_size", 17)
+		var button := _hud_link(str(entry[0]), func(): handle_action(entry_action))
 		menu_row.add_child(button)
 	var boss_anchor := CenterContainer.new()
 	boss_anchor.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
-	boss_anchor.offset_top = 26
+	boss_anchor.offset_top = 25
 	boss_anchor.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hud.add_child(boss_anchor)
 	_boss_box = VBoxContainer.new()
 	_boss_box.custom_minimum_size.x = 420
+	_boss_box.add_theme_constant_override("separation", 7)
 	boss_anchor.add_child(_boss_box)
-	_boss_name = _label("归灯守卫", 22, PAPER)
+	_boss_name = _hud_text(_label("归灯守卫", 22, Color("ead7b0")))
 	_boss_name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_boss_box.add_child(_boss_name)
-	_boss_health = _bar(420, 10, Color("bd8061"))
+	_boss_health = _hud_bar(420, 7, Color("c28b69"))
 	_boss_box.add_child(_boss_health)
-	_boss_phase = _label("", 16, Color("ead7b4"))
+	_boss_phase = _hud_text(_label("", 18, Color("eadbc0")))
 	_boss_phase.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_boss_phase.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_boss_box.add_child(_boss_phase)
-	_hint = _label("", 17, Color("e1d8b9"))
+	_hint = _hud_text(_label("", 18, Color("d9dac5")))
 	_hint.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	_hint.offset_left = 24
 	_hint.offset_right = -24
 	_hint.offset_top = -41
 	_hint.offset_bottom = -13
 	_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_hint.add_theme_color_override("font_shadow_color", Color("09232a"))
-	_hint.add_theme_constant_override("shadow_offset_x", 1)
-	_hint.add_theme_constant_override("shadow_offset_y", 2)
 	hud.add_child(_hint)
-	_toast = _label("", 22, Color("ffebbe"))
+	_toast = _hud_text(_label("", 22, Color("ffebbe")))
 	_toast.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	_toast.offset_left = 150
 	_toast.offset_right = -150
@@ -405,10 +436,74 @@ func _build_hud() -> void:
 	_toast.offset_bottom = -50
 	_toast.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_toast.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_toast.add_theme_color_override("font_shadow_color", Color("09232a"))
-	_toast.add_theme_constant_override("shadow_offset_x", 2)
-	_toast.add_theme_constant_override("shadow_offset_y", 2)
 	hud.add_child(_toast)
+
+
+func _hud_text(label: Label) -> Label:
+	label.add_theme_color_override("font_shadow_color", Color(0.015, 0.035, 0.036, 0.95))
+	label.add_theme_constant_override("shadow_offset_x", 1)
+	label.add_theme_constant_override("shadow_offset_y", 2)
+	return label
+
+
+func _hud_bar(width: float, height: float, fill: Color) -> ProgressBar:
+	var bar := _bar(width, height, fill)
+	bar.add_theme_stylebox_override("background", _style(Color(0.025, 0.075, 0.078, 0.72), Color.TRANSPARENT, 0, 0))
+	var lit := _style(fill, fill.lightened(0.2), 0, 0)
+	lit.set_corner_radius_all(2)
+	lit.border_width_top = 1
+	bar.add_theme_stylebox_override("fill", lit)
+	return bar
+
+
+func _hud_link(text: String, callback: Callable) -> Button:
+	var button := _button(text, callback, 60)
+	button.custom_minimum_size.y = 32
+	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	button.add_theme_font_size_override("font_size", int(18 * _text_scale))
+	button.set_meta("base_font_size", 18)
+	button.add_theme_color_override("font_color", Color("d1d7c8"))
+	button.add_theme_color_override("font_shadow_color", Color("0a2329"))
+	button.add_theme_constant_override("shadow_offset_x", 1)
+	button.add_theme_constant_override("shadow_offset_y", 1)
+	button.add_theme_stylebox_override("normal", _style(Color(0.025, 0.075, 0.082, 0.24), Color.TRANSPARENT, 0, 5))
+	button.add_theme_stylebox_override("hover", _style(Color(0.08, 0.19, 0.18, 0.75), Color("ae925e"), 1, 5))
+	button.add_theme_stylebox_override("pressed", _style(Color(0.08, 0.19, 0.18, 0.9), GOLD, 1, 5))
+	button.add_theme_stylebox_override("focus", _style(Color.TRANSPARENT, GOLD, 1, 5))
+	return button
+
+
+func _hud_objective(text: String) -> String:
+	if text.begins_with("寻找并互动："):
+		return "调查 · " + text.trim_prefix("寻找并互动：").strip_edges()
+	if text.begins_with("先取得灯的能力，再探索："):
+		return "灯具尚需修复 · " + text.trim_prefix("先取得灯的能力，再探索：").strip_edges()
+	if text.begins_with("挑战 ") and text.contains("；"):
+		return text.get_slice("；", 0)
+	return text
+
+
+class HudWash extends Control:
+	var right_corner := false
+
+	func _init() -> void:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		resized.connect(queue_redraw)
+
+	func _draw() -> void:
+		var dark := Color(0.018, 0.066, 0.075, 0.58)
+		var quiet := Color(0.018, 0.066, 0.075, 0.08)
+		var clear := Color(0.018, 0.066, 0.075, 0.0)
+		var points := PackedVector2Array([Vector2.ZERO, Vector2(size.x, 0), size, Vector2(0, size.y)])
+		var colors := PackedColorArray([dark, clear, clear, quiet])
+		if right_corner:
+			colors = PackedColorArray([clear, dark, quiet, clear])
+		draw_polygon(points, colors)
+		var copper := Color(0.78, 0.63, 0.37, 0.7)
+		var edge := size.x - 1 if right_corner else 1.0
+		var inward := -1.0 if right_corner else 1.0
+		draw_line(Vector2(edge, 1), Vector2(edge + inward * 44, 1), copper, 1)
+		draw_line(Vector2(edge, 1), Vector2(edge, 20), copper, 1)
 
 
 func _build_dialogue() -> void:
@@ -1247,7 +1342,7 @@ func _format_time(seconds: float) -> String:
 
 
 func _scale_labels(node: Node) -> void:
-	if node is Label and node.has_meta("base_font_size"):
+	if (node is Label or node is BaseButton) and node.has_meta("base_font_size"):
 		node.add_theme_font_size_override("font_size", int(float(node.get_meta("base_font_size")) * _text_scale))
 	for child: Node in node.get_children():
 		_scale_labels(child)

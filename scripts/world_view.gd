@@ -11,6 +11,8 @@ const DANGER: Color = Color("ed6685")
 const ROUTE_STEP: float = 0.65
 const FOREST_TREE_PATH: String = "res://assets/environments/forest_ancient_tree.png"
 const FOREST_TREE_FOOT_RATIO: Vector2 = Vector2(0.546875, 0.8984375)
+const TERRAIN_TEXTURE_ROOT: String = "res://assets/environments/textures/"
+const HERO_VISUAL_PATH: String = "res://scripts/hero_visual.gd"
 
 var camera: Camera3D
 var player_sprite: Sprite3D
@@ -38,6 +40,7 @@ var _boss_node: Dictionary = {}
 var _occluders: Array[Dictionary] = []
 var _solid_occluders: Array[Dictionary] = []
 var _path_segments: Array[Dictionary] = []
+var _creek_segments: Array[Dictionary] = []
 var _decor_lights: Array[OmniLight3D] = []
 var _decor_plants: Array[Sprite3D] = []
 var _minor_stones: Array[MeshInstance3D] = []
@@ -51,6 +54,16 @@ var _quality: String = "standard"
 var _forest_tree_texture: Texture2D
 var _forest_tree_rect: Rect2i = Rect2i()
 var _forest_tree_foot: Vector2 = Vector2.ZERO
+var _terrain_textures: Dictionary = {}
+var _tree_positions: Array = []
+var _map_objects: Array = []
+var _landmark_position: Vector2 = Vector2.ZERO
+var _landmark_direction: Vector2 = Vector2.UP
+var _has_forest_bridge: bool = false
+var _hero_art: Variant
+var _hero_foot: Vector2 = Vector2(16.0, 44.0)
+var _hero_pixel_size: float = HERO_PIXEL_SIZE
+var _wood_texture: Texture2D
 
 
 func build(model: Variant) -> void:
@@ -78,12 +91,18 @@ func sync(model: Variant, delta: float) -> void:
 	var action: String = "idle"
 	if float(model.attack_for) > 0.0:
 		action = "attack"
+	elif float(model.dash_for) > 0.0:
+		action = "dash"
 	elif bool(model.moving):
 		action = "walk"
 	elif float(model.shield_for) > 0.0:
 		action = "pulse"
 	var frame: int = int(float(model.elapsed) * (10.0 if action == "walk" else 6.0))
-	player_sprite.texture = Art.hero_direction(_screen_direction(direction), frame, action)
+	if action == "attack":
+		frame = clampi(int((0.18 - float(model.attack_for)) / 0.18 * 6.0), 0, 5)
+	elif action == "dash":
+		frame = clampi(int((0.18 - float(model.dash_for)) / 0.18 * 4.0), 0, 3)
+	player_sprite.texture = _hero_texture(_screen_direction(direction), frame, action)
 	player_sprite.modulate = Color(1.0, 1.0, 1.0, 0.45 if float(model.invulnerable_for) > 0.0 and int(_visual_time * 12.0) % 2 == 0 else 1.0)
 	_sync_camera(player_position, delta)
 	_sync_enemies(model)
@@ -92,10 +111,11 @@ func sync(model: Variant, delta: float) -> void:
 	_sync_boss(model)
 	_sync_player_effects(model, player_position, direction)
 	_sync_occlusion(delta)
+	_ground_material.set_shader_parameter("flow_time", _visual_time)
 	if _camp_fire != null:
 		_camp_fire.texture = Art.campfire(int(_visual_time * 7.0))
 	for index: int in range(_decor_lights.size()):
-		_decor_lights[index].light_energy = 1.15 + sin(_visual_time * 3.0 + float(index)) * 0.045
+		_decor_lights[index].light_energy = 1.48 + sin(_visual_time * 3.0 + float(index)) * 0.05
 	var ending: bool = bool(model.flags.get("ending", false))
 	if ending != _ending_lit:
 		_ending_lit = ending
@@ -117,6 +137,8 @@ func apply_settings(settings: Dictionary) -> void:
 		_decor_plants[index].visible = _quality != "low" or index % 3 == 0
 	for pebble: MeshInstance3D in _minor_stones:
 		pebble.visible = _quality != "low"
+	if is_inside_tree():
+		get_viewport().msaa_3d = Viewport.MSAA_DISABLED if _quality == "low" else Viewport.MSAA_2X
 
 
 func _create_environment() -> void:
@@ -126,7 +148,7 @@ func _create_environment() -> void:
 	_environment.background_color = Color("102632")
 	_environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	_environment.ambient_light_color = Color("a1bbb0")
-	_environment.ambient_light_energy = 0.82
+	_environment.ambient_light_energy = 0.58
 	_environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 	# Atmospheric depth comes from palette and layers, not unsupported effects.
 	_environment.fog_enabled = false
@@ -134,8 +156,8 @@ func _create_environment() -> void:
 	add_child(world_environment)
 	_sun = DirectionalLight3D.new()
 	_sun.rotation_degrees = Vector3(-55.0, -35.0, 0.0)
-	_sun.light_color = Color("d9d4b3")
-	_sun.light_energy = 0.82
+	_sun.light_color = Color("b6d4df")
+	_sun.light_energy = 0.76
 	_sun.shadow_enabled = true
 	_sun.directional_shadow_max_distance = 45.0
 	add_child(_sun)
@@ -175,22 +197,35 @@ func _rebuild_map(model: Variant) -> void:
 	_occluders.clear()
 	_solid_occluders.clear()
 	_path_segments.clear()
+	_creek_segments.clear()
 	_decor_lights.clear()
 	_decor_plants.clear()
 	_minor_stones.clear()
 	var info: Dictionary = model.map_info()
+	_tree_positions = info.get("trees", [])
+	_map_objects = model.objects
+	_has_forest_bridge = false
 	_bounds = info["bounds"]
 	_region = String(info.get("region", "forest"))
 	if _region == "sanctum":
 		_region = "sanctuary"
 	_palette = _region_palette(_region)
-	if _region == "forest":
+	_load_terrain_textures()
+	if _region in ["forest", "village"]:
 		_load_forest_tree()
+	if _region == "forest":
+		for object: Dictionary in model.objects:
+			if str(object.get("id", "")) == "m01_bridge":
+				_landmark_position = object["position"]
+				_has_forest_bridge = true
+	_load_hero_visual()
 	_environment.background_color = _palette["backdrop"]
 	_environment.ambient_light_color = _palette["ambient"]
 	_ending_lit = false
 	_create_ground(info)
 	_create_paths(info, model.objects)
+	if _has_forest_bridge:
+		_create_forest_bridge()
 	_create_collision_scenery(info)
 	_create_surroundings(info)
 	_create_camp_and_exit(info)
@@ -215,13 +250,16 @@ func _region_palette(region: String) -> Dictionary:
 		"sanctuary":
 			return {"ground": Color("39364c"), "path": Color("524658"), "stone": Color("81768b"), "wood": Color("49384b"), "foliage": Color("87808f"), "backdrop": Color("231f37"), "ambient": Color("b9adc5")}
 		_:
-			return {"ground": Color("18383f"), "path": Color("29474d"), "stone": Color("48656b"), "wood": Color("4c514c"), "foliage": Color("7baca5"), "backdrop": Color("102732"), "ambient": Color("91b6c4")}
+			return {"ground": Color("28414a"), "path": Color("837057"), "stone": Color("526570"), "wood": Color("66513b"), "foliage": Color("779c98"), "backdrop": Color("102732"), "ambient": Color("8eabc4")}
 
 
 func _create_ground(info: Dictionary) -> void:
 	var center: Vector2 = _bounds.get_center()
 	var ground: MeshInstance3D = _box(_stage, _point(center, -0.26), Vector3(_bounds.size.x, 0.5, _bounds.size.y), _palette["ground"])
 	ground.name = "TraversableGround"
+	# Keep the moving lantern off this large floor mesh. A fragment-space falloff
+	# below gives it a soft footprint independent of the floor's triangle layout.
+	ground.layers = 2
 	var terrain_material: ShaderMaterial = ShaderMaterial.new()
 	terrain_material.shader = GROUND_SHADER
 	terrain_material.set_shader_parameter("ground_color", _palette["ground"])
@@ -229,6 +267,17 @@ func _create_ground(info: Dictionary) -> void:
 	terrain_material.set_shader_parameter("map_origin", _bounds.position)
 	terrain_material.set_shader_parameter("map_size", _bounds.size)
 	terrain_material.set_shader_parameter("variation", 0.025)
+	var textured: bool = _region in ["forest", "village"] and _terrain_textures.has("ground") and _terrain_textures.has("path")
+	terrain_material.set_shader_parameter("textured_terrain", textured)
+	if textured:
+		terrain_material.set_shader_parameter("ground_texture", _terrain_textures["ground"])
+		terrain_material.set_shader_parameter("path_texture", _terrain_textures["path"])
+		if _region == "village" and _terrain_textures.has("stone"):
+			terrain_material.set_shader_parameter("path_texture", _terrain_textures["stone"])
+			terrain_material.set_shader_parameter("path_tile_size", 2.6)
+			terrain_material.set_shader_parameter("ground_tint", Vector3(0.86, 0.94, 0.98))
+			terrain_material.set_shader_parameter("path_tint", Vector3(1.10, 1.04, 0.91))
+	terrain_material.set_shader_parameter("lantern_color", Color("ffcc7a"))
 	ground.material_override = terrain_material
 	_ground_material = terrain_material
 	# A lower perimeter gives the stage thickness and keeps the horizon quiet.
@@ -269,31 +318,68 @@ func _create_paths(info: Dictionary, objects: Array) -> void:
 						blocked = true
 						break
 			grid.set_point_solid(cell, blocked)
+	var required: Array = info.get("required", [])
 	var targets: Array[Vector2] = [info["spawn"], info["camp"]]
 	for object: Dictionary in objects:
-		if String(object.get("type", "")) != "npc" and not bool(object.get("hidden", false)):
-			var object_position: Vector2 = object["position"]
-			targets.append(object_position)
+		if object.get("id", "") in required and not bool(object.get("hidden", false)):
+			targets.append(object["position"])
 	targets.append(info["exit"])
 	for index: int in range(targets.size() - 1):
-		var from_id: Vector2i = _nearest_route_cell(grid, targets[index], grid_size)
-		var to_id: Vector2i = _nearest_route_cell(grid, targets[index + 1], grid_size)
-		var cells: Array[Vector2i] = grid.get_id_path(from_id, to_id)
-		if cells.size() < 2:
+		_trace_route(grid, grid_size, targets[index], targets[index + 1], true)
+	# Optional destinations branch from the nearest primary route. Linking all
+	# objects in list order made the clearing look like a grid of equal roads.
+	for object: Dictionary in objects:
+		if object.get("id", "") in required or bool(object.get("hidden", false)) or str(object.get("type", "")) == "camp":
 			continue
-		var route: Array[Vector2] = []
-		for cell: Vector2i in cells:
-			route.append(grid.get_point_position(cell))
-		var start: Vector2 = route[0]
-		var previous_direction: Vector2 = (route[1] - start).normalized()
-		for route_index: int in range(2, route.size()):
-			var next_direction: Vector2 = (route[route_index] - route[route_index - 1]).normalized()
-			if next_direction.distance_squared_to(previous_direction) > 0.001:
-				_add_path_segment(start, route[route_index - 1])
-				start = route[route_index - 1]
-			previous_direction = next_direction
-		_add_path_segment(start, route[-1])
+		var destination: Vector2 = object["position"]
+		_trace_route(grid, grid_size, _nearest_primary_point(destination), destination, false)
 	_create_route_mask()
+
+
+func _trace_route(grid: AStarGrid2D, grid_size: Vector2i, from: Vector2, to: Vector2, major: bool) -> void:
+	var from_id: Vector2i = _nearest_route_cell(grid, from, grid_size)
+	var to_id: Vector2i = _nearest_route_cell(grid, to, grid_size)
+	var cells: Array[Vector2i] = grid.get_id_path(from_id, to_id)
+	if cells.size() < 2:
+		return
+	var route: Array[Vector2] = []
+	for cell: Vector2i in cells:
+		route.append(grid.get_point_position(cell))
+	var start: Vector2 = route[0]
+	var previous_direction: Vector2 = (route[1] - start).normalized()
+	for index: int in range(2, route.size()):
+		var next_direction: Vector2 = (route[index] - route[index - 1]).normalized()
+		if next_direction.distance_squared_to(previous_direction) > 0.001:
+			_add_path_segment(start, route[index - 1], major)
+			start = route[index - 1]
+		previous_direction = next_direction
+	_add_path_segment(start, route[-1], major)
+
+
+func _nearest_primary_point(point: Vector2) -> Vector2:
+	var closest: Vector2 = _bounds.get_center()
+	var distance: float = INF
+	for segment: Dictionary in _path_segments:
+		if not bool(segment.get("major", true)):
+			continue
+		var candidate: Vector2 = Geometry2D.get_closest_point_to_segment(point, segment["start"], segment["end"])
+		if candidate.distance_squared_to(point) < distance:
+			closest = candidate
+			distance = candidate.distance_squared_to(point)
+	return closest
+
+
+func _route_direction(point: Vector2) -> Vector2:
+	var direction: Vector2 = Vector2.UP
+	var distance: float = INF
+	for segment: Dictionary in _path_segments:
+		if not bool(segment.get("major", true)):
+			continue
+		var candidate: Vector2 = Geometry2D.get_closest_point_to_segment(point, segment["start"], segment["end"])
+		if candidate.distance_squared_to(point) < distance:
+			direction = (Vector2(segment["end"]) - Vector2(segment["start"])).normalized()
+			distance = candidate.distance_squared_to(point)
+	return direction
 
 
 func _nearest_route_cell(grid: AStarGrid2D, point: Vector2, grid_size: Vector2i) -> Vector2i:
@@ -310,34 +396,72 @@ func _nearest_route_cell(grid: AStarGrid2D, point: Vector2, grid_size: Vector2i)
 	return cell
 
 
-func _add_path_segment(start: Vector2, end: Vector2) -> void:
+func _add_path_segment(start: Vector2, end: Vector2, major: bool = true) -> void:
 	if start.distance_squared_to(end) < 0.01:
 		return
-	_path_segments.append({"start": start, "end": end})
+	_path_segments.append({"start": start, "end": end, "major": major})
 
 
 func _create_route_mask() -> void:
 	# Paint the union of navigation ribbons into one floor material. This avoids
 	# coplanar strips, transparent sorting over sprites, and visible polygon joins.
-	const RESOLUTION: int = 256
-	var image: Image = Image.create(RESOLUTION, RESOLUTION, false, Image.FORMAT_R8)
-	image.fill(Color.BLACK)
-	var width: float = 1.2 if _region != "village" else 1.85
-	var margin: float = width * 0.5 + 0.16
-	var pixels_per_world: Vector2 = Vector2(RESOLUTION, RESOLUTION) / _bounds.size
+	const RESOLUTION: int = 512
+	var image: Image = Image.create(RESOLUTION, RESOLUTION, false, Image.FORMAT_RGBA8)
+	image.fill(Color(0.0, 0.0, 0.0, 0.0))
 	for segment: Dictionary in _path_segments:
-		var start: Vector2 = segment["start"]
-		var end: Vector2 = segment["end"]
-		var minimum: Vector2 = (start.min(end) - Vector2.ONE * margin - _bounds.position) * pixels_per_world
-		var maximum: Vector2 = (start.max(end) + Vector2.ONE * margin - _bounds.position) * pixels_per_world
-		for pixel_y: int in range(clampi(int(floorf(minimum.y)), 0, RESOLUTION - 1), clampi(int(ceilf(maximum.y)) + 1, 0, RESOLUTION)):
-			for pixel_x: int in range(clampi(int(floorf(minimum.x)), 0, RESOLUTION - 1), clampi(int(ceilf(maximum.x)) + 1, 0, RESOLUTION)):
-				var point: Vector2 = _bounds.position + (Vector2(pixel_x, pixel_y) + Vector2.ONE * 0.5) / pixels_per_world
-				var distance: float = Geometry2D.get_closest_point_to_segment(point, start, end).distance_to(point)
-				var coverage: float = 1.0 - smoothstep(width * 0.29, width * 0.5 + 0.11, distance)
-				if coverage > image.get_pixel(pixel_x, pixel_y).r:
-					image.set_pixel(pixel_x, pixel_y, Color(coverage, coverage, coverage, 1.0))
+		var major: bool = bool(segment["major"])
+		var width: float = (2.15 if _region == "village" else 1.85) if major else 0.78
+		_paint_route_channel(image, segment["start"], segment["end"], width, 0 if major else 1)
+	if _has_forest_bridge:
+		_landmark_direction = _route_direction(_landmark_position)
+		var normal: Vector2 = Vector2(-_landmark_direction.y, _landmark_direction.x)
+		var previous: Vector2 = _landmark_position - normal * 14.0
+		for index: int in range(1, 25):
+			var fraction: float = float(index) / 24.0
+			var point: Vector2 = _landmark_position + normal * lerpf(-14.0, 14.0, fraction) + _landmark_direction * sin(fraction * TAU * 1.3) * 0.7
+			_paint_route_channel(image, previous, point, 1.6, 2)
+			_creek_segments.append({"start": previous, "end": point})
+			previous = point
+	if _region in ["forest", "village"]:
+		for position: Vector2 in _tree_positions:
+			_paint_canopy_shadow(image, position + Vector2(-0.45, 0.3), 1.5 if _region == "village" else 2.2)
 	_ground_material.set_shader_parameter("route_mask", ImageTexture.create_from_image(image))
+
+
+func _paint_route_channel(image: Image, start: Vector2, end: Vector2, width: float, channel: int) -> void:
+	var resolution: int = image.get_width()
+	var margin: float = width * 0.5 + 0.20
+	var pixels_per_world: Vector2 = Vector2(resolution, resolution) / _bounds.size
+	var minimum: Vector2 = (start.min(end) - Vector2.ONE * margin - _bounds.position) * pixels_per_world
+	var maximum: Vector2 = (start.max(end) + Vector2.ONE * margin - _bounds.position) * pixels_per_world
+	for pixel_y: int in range(clampi(int(floorf(minimum.y)), 0, resolution - 1), clampi(int(ceilf(maximum.y)) + 1, 0, resolution)):
+		for pixel_x: int in range(clampi(int(floorf(minimum.x)), 0, resolution - 1), clampi(int(ceilf(maximum.x)) + 1, 0, resolution)):
+			var point: Vector2 = _bounds.position + (Vector2(pixel_x, pixel_y) + Vector2.ONE * 0.5) / pixels_per_world
+			var distance: float = Geometry2D.get_closest_point_to_segment(point, start, end).distance_to(point)
+			var coverage: float = 1.0 - smoothstep(width * 0.34, width * 0.5 + 0.14, distance)
+			var color: Color = image.get_pixel(pixel_x, pixel_y)
+			if channel == 0:
+				color.r = maxf(color.r, coverage)
+			elif channel == 1:
+				color.g = maxf(color.g, coverage)
+			else:
+				color.b = maxf(color.b, coverage)
+			image.set_pixel(pixel_x, pixel_y, color)
+
+
+func _paint_canopy_shadow(image: Image, position: Vector2, radius: float) -> void:
+	var resolution: int = image.get_width()
+	var scale: Vector2 = Vector2(resolution, resolution) / _bounds.size
+	var minimum: Vector2 = (position - Vector2.ONE * radius - _bounds.position) * scale
+	var maximum: Vector2 = (position + Vector2.ONE * radius - _bounds.position) * scale
+	for pixel_y: int in range(clampi(int(minimum.y), 0, resolution - 1), clampi(int(maximum.y) + 1, 0, resolution)):
+		for pixel_x: int in range(clampi(int(minimum.x), 0, resolution - 1), clampi(int(maximum.x) + 1, 0, resolution)):
+			var point: Vector2 = _bounds.position + (Vector2(pixel_x, pixel_y) + Vector2.ONE * 0.5) / scale
+			var offset: Vector2 = (point - position) / Vector2(radius, radius * 0.72)
+			var shade: float = (1.0 - smoothstep(0.12, 1.0, offset.length())) * 0.7
+			var color: Color = image.get_pixel(pixel_x, pixel_y)
+			color.a = maxf(color.a, shade)
+			image.set_pixel(pixel_x, pixel_y, color)
 
 
 func _create_collision_scenery(info: Dictionary) -> void:
@@ -406,6 +530,9 @@ func _create_surroundings(info: Dictionary) -> void:
 				_: rim_position = Vector2(rng.randf_range(_bounds.position.x, _bounds.end.x), _bounds.end.y + rng.randf_range(2.0, 4.0))
 			_create_tree(rim_position, index + 40, rng.randf_range(0.8, 1.25))
 		_create_bridge(Vector2(center.x, _bounds.end.y + 2.0))
+	if _region in ["forest", "village"] and _terrain_textures.has("fern"):
+		_create_composed_vegetation(info, rng)
+		return
 	# Small tufts stay out of the navigation ribbon and do not imply solid walls.
 	var plant_count: int = 340 if _region in ["forest", "marsh", "sanctuary"] else 130
 	for index: int in range(plant_count):
@@ -432,6 +559,172 @@ func _near_route(position: Vector2, distance: float) -> bool:
 		if Geometry2D.get_closest_point_to_segment(position, start, end).distance_squared_to(position) < distance * distance:
 			return true
 	return false
+
+
+func _optional_texture(path: String) -> Texture2D:
+	if not ResourceLoader.exists(path) and not FileAccess.file_exists(path):
+		return null
+	var texture: Texture2D
+	if FileAccess.file_exists(path + ".import") or not FileAccess.file_exists(path):
+		texture = ResourceLoader.load(path) as Texture2D
+	var image: Image = texture.get_image() if texture != null else Image.load_from_file(path)
+	if image == null or image.is_empty():
+		return texture
+	if image.is_compressed():
+		image.decompress()
+	if not image.has_mipmaps():
+		image.generate_mipmaps()
+	return ImageTexture.create_from_image(image)
+
+
+func _load_terrain_textures() -> void:
+	for key: String in ["ground", "path", "stone", "grass", "fern", "shrub", "litter"]:
+		if _terrain_textures.has(key):
+			continue
+		var texture: Texture2D = _optional_texture(TERRAIN_TEXTURE_ROOT + "forest_" + key + ".png")
+		if texture != null:
+			_terrain_textures[key] = texture
+
+
+func _load_hero_visual() -> void:
+	if _hero_art != null or not ResourceLoader.exists(HERO_VISUAL_PATH):
+		return
+	_hero_art = ResourceLoader.load(HERO_VISUAL_PATH)
+	if _hero_art == null:
+		return
+	var constants: Dictionary = _hero_art.get_script_constant_map()
+	_hero_foot = constants.get("FOOT_ANCHOR", Vector2(32.0, 88.0))
+	_hero_pixel_size = float(constants.get("PIXEL_SIZE", 0.017))
+
+
+func _hero_texture(direction: String, frame: int, action: String) -> Texture2D:
+	if _hero_art != null:
+		var texture: Texture2D = _hero_art.frame(direction, frame, action) as Texture2D
+		if texture != null:
+			return texture
+	return Art.hero_direction(direction, frame, action)
+
+
+func _decor_is_clear(position: Vector2, road_clearance: float = 0.95) -> bool:
+	if not _bounds.grow(-0.3).has_point(position) or _near_route(position, road_clearance):
+		return false
+	for object: Dictionary in _map_objects:
+		if position.distance_squared_to(object["position"]) < 1.25 * 1.25:
+			return false
+	for enemy: Dictionary in _model.enemies:
+		if position.distance_squared_to(enemy["position"]) < 1.7 * 1.7:
+			return false
+	if not _model.boss.is_empty() and position.distance_to(_model.boss["position"]) < 5.2:
+		return false
+	return true
+
+
+func _create_composed_vegetation(info: Dictionary, rng: RandomNumberGenerator) -> void:
+	# Banks flank the primary road in uneven bands; tree-root islands and creek
+	# banks repeat that rhythm. Combat and interaction approaches stay open.
+	for segment: Dictionary in _path_segments:
+		if not bool(segment["major"]):
+			continue
+		var start: Vector2 = segment["start"]
+		var end: Vector2 = segment["end"]
+		var axis: Vector2 = (end - start).normalized()
+		var normal: Vector2 = Vector2(-axis.y, axis.x)
+		var count: int = maxi(1, int(start.distance_to(end) / 1.15))
+		for step: int in range(count + 1):
+			var fraction: float = float(step) / float(count)
+			var center: Vector2 = start.lerp(end, fraction)
+			for side: int in [-1, 1]:
+				var offset: float = 1.2 + (0.45 if side == 1 else 0.0) + rng.randf_range(-0.10, 0.42)
+				_create_plant_cluster(center + normal * float(side) * offset + axis * rng.randf_range(-0.3, 0.3), rng, side == 1)
+	for position: Vector2 in info.get("trees", []):
+		for index: int in range(4 if _region == "village" else 5):
+			var angle: float = float(index) * TAU / 5.0 + rng.randf_range(-0.2, 0.2)
+			_create_plant_cluster(position + Vector2(cos(angle), sin(angle)) * rng.randf_range(0.9, 1.8), rng, index % 2 == 0)
+	for segment: Dictionary in _creek_segments:
+		var center: Vector2 = (Vector2(segment["start"]) + Vector2(segment["end"])) * 0.5
+		var axis: Vector2 = (Vector2(segment["end"]) - Vector2(segment["start"])).normalized()
+		for side: int in [-1, 1]:
+			var bank: Vector2 = center + Vector2(-axis.y, axis.x) * float(side) * rng.randf_range(1.0, 1.5)
+			_create_plant_cluster(bank, rng, true)
+			if _decor_is_clear(bank, 1.4) and rng.randf() > 0.55:
+				var stone: MeshInstance3D = _cylinder(_stage, _point(bank + Vector2(0.18, -0.12), 0.022), rng.randf_range(0.13, 0.24), 0.044, Color("667983"), 7)
+				stone.scale.z = 0.7
+				stone.visible = _quality != "low"
+				_minor_stones.append(stone)
+
+
+func _create_plant_cluster(center: Vector2, rng: RandomNumberGenerator, tall: bool) -> void:
+	if not _decor_is_clear(center) or _decor_plants.size() >= 620:
+		return
+	for index: int in range(3):
+		var position: Vector2 = center + Vector2(rng.randf_range(-0.35, 0.35), rng.randf_range(-0.28, 0.28))
+		if not _decor_is_clear(position, 0.85):
+			continue
+		var key: String = "shrub" if tall and index == 0 and _terrain_textures.has("shrub") else "fern" if index == 0 else "grass"
+		if not _terrain_textures.has(key):
+			continue
+		var texture: Texture2D = _terrain_textures[key]
+		var foot: Vector2 = Vector2(64.0, 152.0 if key == "shrub" else 120.0)
+		var height: float = rng.randf_range(0.75, 1.1) if key == "shrub" else rng.randf_range(0.62, 0.9) if key == "fern" else rng.randf_range(0.32, 0.52)
+		if _region == "village":
+			height *= 0.82
+		var pixel_size: float = height / foot.y
+		var plant: Sprite3D = _sprite(_stage, texture, _point(position, 0.035), pixel_size)
+		plant.name = "TrailBank_" + key
+		plant.offset = Vector2(float(texture.get_width()) * 0.5 - foot.x, foot.y - float(texture.get_height()) * 0.5)
+		plant.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		plant.flip_h = rng.randf() > 0.5
+		var tint: Color = Color(0.84, 0.94, 1.0).lerp(Color(0.67, 0.83, 0.87), rng.randf() * 0.55)
+		plant.modulate = tint
+		plant.visible = _quality != "low" or _decor_plants.size() % 3 == 0
+		_decor_plants.append(plant)
+		_occluders.append({"sprite": plant, "tint": tint, "height": height, "width": float(texture.get_width()) * pixel_size, "painted": true, "foliage": true})
+	if _terrain_textures.has("litter"):
+		var litter: Sprite3D = _sprite(_stage, _terrain_textures["litter"], _point(center, 0.018), 0.0055)
+		litter.billboard = BaseMaterial3D.BILLBOARD_DISABLED
+		litter.rotation_degrees = Vector3(-90.0, rng.randf_range(0.0, 360.0), 0.0)
+		litter.offset = Vector2.ZERO
+		litter.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		litter.modulate = Color(0.65, 0.78, 0.82, 0.6)
+
+
+func _bridge_wood_texture() -> Texture2D:
+	if _wood_texture != null:
+		return _wood_texture
+	var image: Image = Image.create(128, 64, false, Image.FORMAT_RGB8)
+	for y: int in range(64):
+		for x: int in range(128):
+			var ripple: float = sin(float(x) * 0.095 + sin(float(y) * 0.052) * 2.4)
+			var fine: float = sin(float(x) * 1.7 + float(y) * 0.08)
+			var knot: float = sin(sqrt(pow(float(x - 38) * 0.7, 2.0) + pow(float(y - 31) * 2.4, 2.0)) * 0.48)
+			var grain: float = 0.90 + ripple * 0.045 + fine * 0.025 + knot * 0.025
+			image.set_pixel(x, y, Color("6f5b43") * grain)
+	image.generate_mipmaps()
+	_wood_texture = ImageTexture.create_from_image(image)
+	return _wood_texture
+
+
+func _create_forest_bridge() -> void:
+	var bridge: Node3D = Node3D.new()
+	bridge.name = "ShallowCreekFootbridge"
+	bridge.position = _point(_landmark_position, 0.0)
+	bridge.rotation.y = atan2(_landmark_direction.x, _landmark_direction.y)
+	_stage.add_child(bridge)
+	# The shallow ford remains traversable in the model. Thin visual planks sit
+	# below the character foot and introduce no solid wall or collision shape.
+	for index: int in range(13):
+		var plank: MeshInstance3D = _box(bridge, Vector3(0.0, 0.010, float(index - 6) * 0.27), Vector3(1.65, 0.025, 0.241), Color(0.79, 0.83, 0.88).lightened(float(index % 3) * 0.025))
+		var material: StandardMaterial3D = plank.material_override as StandardMaterial3D
+		material.albedo_texture = _bridge_wood_texture()
+		material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		material.uv1_offset = Vector3(float(index) * 0.19, 0.0, 0.0)
+		_box(bridge, Vector3(0.0, 0.019, float(index - 6) * 0.27 + 0.124), Vector3(1.64, 0.007, 0.016), Color("463e32"))
+		plank.rotation.z = float(index % 3 - 1) * 0.008
+	for side: int in [-1, 1]:
+		_box(bridge, Vector3(float(side) * 0.66, -0.015, 0.0), Vector3(0.1, 0.075, 3.7), Color("413d34"))
+		for index: int in [-1, 1]:
+			_box(bridge, Vector3(float(side) * 0.92, 0.24, float(index) * 1.48), Vector3(0.08, 0.48, 0.09), Color("625039"))
+		_box(bridge, Vector3(float(side) * 0.94, 0.37, -0.93), Vector3(0.065, 0.055, 0.9), Color("665039"))
 
 
 func _load_forest_tree() -> void:
@@ -461,22 +754,28 @@ func _load_forest_tree() -> void:
 
 
 func _create_tree(position: Vector2, index: int, scale_factor: float) -> void:
-	var painted: bool = _region == "forest" and _forest_tree_texture != null and index % 3 == 0
+	var painted: bool = (_region == "forest" or (_region == "village" and index % 4 != 3)) and _forest_tree_texture != null
 	var trunk: MeshInstance3D = _cylinder(_stage, _point(position, 0.3 * scale_factor), 0.23 * scale_factor, 0.6 * scale_factor, _palette["wood"])
 	# Forest sprites already contain a complete trunk. Their collision circle
 	# remains model-owned; a second visible stump would duplicate the tree foot.
 	trunk.visible = _region != "forest"
 	var texture: Texture2D = _forest_tree_texture if painted else Art.tree(index)
 	var pixel_size: float = 0.044 * scale_factor
+	if _region == "village":
+		pixel_size = 0.031 * scale_factor
 	var foot: Vector2 = Vector2(float(texture.get_width()) * 0.5, float(texture.get_height() - 4))
 	var used_rect: Rect2 = Rect2(Vector2.ZERO, Vector2(texture.get_width(), texture.get_height() - 4))
 	var tint: Color = Color(_palette["foliage"]).lightened(0.12)
 	if painted:
 		foot = _forest_tree_foot
 		used_rect = Rect2(_forest_tree_rect)
-		var height: float = (6.5 if index >= 40 else 5.4 + float(index % 3) * 0.25) * scale_factor
+		var height: float = (6.2 if not _bounds.has_point(position) else 4.6 + float(index % 4) * 0.38) * scale_factor
+		if _region == "village":
+			height = (3.15 + float(index % 3) * 0.32) * scale_factor
 		pixel_size = height / maxf(1.0, foot.y - used_rect.position.y)
-		tint = Color(0.86, 0.97, 1.0) if index % 3 == 0 else Color(0.78, 0.9, 0.96) if index % 3 == 1 else Color(0.93, 0.98, 1.0)
+		tint = Color(0.70, 0.84, 0.92) if index % 3 == 0 else Color(0.66, 0.79, 0.87) if index % 3 == 1 else Color(0.77, 0.89, 0.94)
+		if _region == "village":
+			tint = Color(0.78, 0.90, 0.94).darkened(float(index % 3) * 0.025)
 		trunk.visible = false
 	elif _region == "city" or _region == "sanctuary":
 		tint = Color("9f929d")
@@ -489,9 +788,7 @@ func _create_tree(position: Vector2, index: int, scale_factor: float) -> void:
 		if tree.flip_h:
 			tree.offset.x = foot.x - float(texture.get_width()) * 0.5
 	tree.modulate = tint
-	_shadow(_stage, position, (1.4 if painted else 1.1) * scale_factor, 0.14 if painted else 0.18)
-	if painted:
-		_shadow(_stage, position + Vector2(0.15, 0.12), 0.7 * scale_factor, 0.16)
+	_shadow(_stage, position, (0.48 if painted else 1.1) * scale_factor, 0.09 if painted else 0.18)
 	_occluders.append({"sprite": tree, "tint": tint, "trunk": trunk, "height": (foot.y - used_rect.position.y) * pixel_size, "width": used_rect.size.x * pixel_size, "painted": painted})
 
 
@@ -518,10 +815,14 @@ func _create_pillar(position: Vector2, radius: float, height: float) -> void:
 
 func _create_house(position: Vector2, side: int, ruined: bool) -> void:
 	var wall_color: Color = Color("827d66") if not ruined else Color("665c70")
-	_box(_stage, _point(position, 1.2), Vector3(3.0, 2.4, 2.6), wall_color)
+	var wall: MeshInstance3D = _box(_stage, _point(position, 1.2), Vector3(3.0, 2.4, 2.6), wall_color)
+	_apply_masonry_texture(wall, ruined)
 	for post_x: float in [-1.4, 1.4]:
 		_box(_stage, _point(position + Vector2(post_x, 0.0), 1.2), Vector3(0.15, 2.45, 2.65), _palette["wood"])
 	_gable_roof(_stage, _point(position, 2.4), 3.4, 3.0, 0.75, Color("455a5d") if not ruined else Color("403848"))
+	_box(_stage, _point(position, 2.34), Vector3(3.3, 0.12, 2.84), Color("51483b"))
+	for beam_y: float in [0.16, 1.92]:
+		_box(_stage, _point(position + Vector2(0.0, 1.32), beam_y), Vector3(2.96, 0.08, 0.07), _palette["wood"])
 	_box(_stage, _point(position + Vector2(-float(side) * 1.51, 0.0), 0.72), Vector3(0.06, 1.4, 0.7), Color("2b3538"))
 	for window_z: float in [-0.8, 0.8]:
 		var window: MeshInstance3D = _box(_stage, _point(position + Vector2(-float(side) * 1.54, window_z), 1.5), Vector3(0.04, 0.55, 0.42), GOLD if not ruined else Color("6b6572"), not ruined)
@@ -535,12 +836,26 @@ func _create_small_house(position: Vector2, radius: float, index: int) -> void:
 	var width: float = radius * 1.2
 	var depth: float = radius * 1.15
 	var height: float = 1.65 + float(index % 3) * 0.2
-	_box(_stage, _point(position, height * 0.5), Vector3(width, height, depth), Color("8c8066") if _region == "village" else Color("665c70"))
+	var wall: MeshInstance3D = _box(_stage, _point(position, height * 0.5), Vector3(width, height, depth), Color("8c8066") if _region == "village" else Color("665c70"))
+	_apply_masonry_texture(wall, _region != "village")
 	_gable_roof(_stage, _point(position, height), radius * 1.4, radius * 1.2, 0.6, Color("425761") if _region == "village" else Color("4d405a"))
+	_box(_stage, _point(position, height - 0.04), Vector3(radius * 1.4, 0.075, radius * 1.2), Color("51483b"))
+	for beam_y: float in [0.15, height * 0.76]:
+		_box(_stage, _point(position + Vector2(0.0, depth * 0.5 + 0.02), beam_y), Vector3(width - 0.05, 0.065, 0.04), _palette["wood"])
 	for side: int in [-1, 1]:
 		_box(_stage, _point(position + Vector2(float(side) * (width * 0.5 - 0.05), 0.0), height * 0.5), Vector3(0.12, height, depth), _palette["wood"])
 	_box(_stage, _point(position + Vector2(0.0, depth * 0.5 + 0.02), 0.5), Vector3(width * 0.32, 1.0, 0.035), Color("283637"))
 	_box(_stage, _point(position + Vector2(width * 0.31, depth * 0.5 + 0.03), 1.12), Vector3(width * 0.25, 0.4, 0.035), GOLD if _region == "village" else Color("526273"), _region == "village")
+
+
+func _apply_masonry_texture(wall: MeshInstance3D, ruined: bool) -> void:
+	if not _terrain_textures.has("stone"):
+		return
+	var material: StandardMaterial3D = wall.material_override as StandardMaterial3D
+	material.albedo_texture = _terrain_textures["stone"]
+	material.albedo_color = Color(0.82, 0.84, 0.88) if ruined else Color(0.96, 0.9, 0.77)
+	material.uv1_scale = Vector3(1.2, 1.0, 1.0)
+	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 
 func _gable_roof(parent: Node3D, position: Vector3, width: float, depth: float, height: float, color: Color) -> MeshInstance3D:
@@ -552,10 +867,16 @@ func _gable_roof(parent: Node3D, position: Vector3, width: float, depth: float, 
 		var normal: Vector3 = (points[face.y] - points[face.x]).cross(points[face.z] - points[face.x]).normalized()
 		for point_index: int in [face.x, face.y, face.z]:
 			surface.set_normal(normal)
+			surface.set_uv(Vector2(points[point_index].x * 0.5, points[point_index].z * 0.5 + points[point_index].y * 0.16))
 			surface.add_vertex(points[point_index])
 	var node: MeshInstance3D = MeshInstance3D.new()
 	node.mesh = surface.commit()
 	node.material_override = _material(color)
+	if _terrain_textures.has("stone"):
+		var material: StandardMaterial3D = node.material_override as StandardMaterial3D
+		material.albedo_texture = _terrain_textures["stone"]
+		material.albedo_color = Color(0.54, 0.63, 0.7)
+		material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	node.position = position
 	parent.add_child(node)
 	return node
@@ -616,6 +937,7 @@ func _add_warm_light(position: Vector2, height: float, light_range: float) -> vo
 	light.light_color = Color("ffd990")
 	light.light_energy = 0.75
 	light.omni_range = light_range
+	light.omni_attenuation = 2.0
 	light.shadow_enabled = false
 	_stage.add_child(light)
 	_decor_lights.append(light)
@@ -630,7 +952,13 @@ func _create_map_objects(objects: Array) -> void:
 			_object_nodes.append({})
 			continue
 		if type == "lamp" and _decor_lights.size() < 4:
-			_add_warm_light(position, 0.85, 2.9)
+			_add_warm_light(position, 0.95, 2.65)
+			if _region == "forest":
+				var timber: Vector2 = position + Vector2(-0.35, 0.18)
+				_box(_stage, _point(timber, 0.88), Vector3(0.16, 1.76, 0.14), Color("70543a"))
+				_box(_stage, _point(timber + Vector2(0.22, 0.0), 1.68), Vector3(0.62, 0.13, 0.13), Color("795e42"))
+				for wrap: int in range(3):
+					_box(_stage, _point(timber, 1.36 + float(wrap) * 0.045), Vector3(0.19, 0.025, 0.17), Color("b7a07b"))
 		var texture: Texture2D
 		var pixel_size: float = 0.04
 		if object.has("npc_key"):
@@ -661,13 +989,16 @@ func _create_map_objects(objects: Array) -> void:
 
 
 func _create_characters(model: Variant) -> void:
-	player_sprite = _sprite(_actors, Art.hero_direction("south", 0, "idle"), _point(model.player_position, 0.04), HERO_PIXEL_SIZE)
+	player_sprite = _sprite(_actors, _hero_texture("south", 0, "idle"), _point(model.player_position, 0.04), _hero_pixel_size)
+	player_sprite.offset = Vector2(float(player_sprite.texture.get_width()) * 0.5 - _hero_foot.x, _hero_foot.y - float(player_sprite.texture.get_height()) * 0.5)
 	player_sprite.name = "Lynn"
 	_player_shadow = _shadow(_actors, model.player_position, 0.33, 0.27)
 	_player_light = OmniLight3D.new()
 	_player_light.light_color = Color("ffda8e")
-	_player_light.light_energy = 0.7
-	_player_light.omni_range = 3.5
+	_player_light.light_energy = 0.55
+	_player_light.omni_range = 3.6
+	_player_light.omni_attenuation = 2.0
+	_player_light.light_cull_mask = 1
 	_player_light.shadow_enabled = false
 	_actors.add_child(_player_light)
 	_player_light.visible = _quality != "low"
@@ -791,7 +1122,7 @@ func _sync_camera(player_position: Vector2, delta: float) -> void:
 	var weight: float = 1.0 - exp(-8.0 * delta) if delta > 0.0 else 1.0
 	camera.position = camera.position.lerp(camera_target + offset, weight)
 	camera.look_at(camera.position - offset, Vector3.UP)
-	var target_size: float = 12.4
+	var target_size: float = 10.8 if _region == "forest" else 12.4
 	if not _boss_node.is_empty():
 		var boss_sprite: Sprite3D = _boss_node["sprite"] as Sprite3D
 		if boss_sprite.position.distance_to(_point(player_position)) < 5.5:
@@ -1090,7 +1421,11 @@ func _sync_player_effects(model: Variant, position: Vector2, direction: Vector2)
 	_shield.rotation.y = _visual_time * 0.45
 	_lantern_ring.visible = float(model.lantern_for) > 0.0 and _quality != "low"
 	_lantern_ring.position = _point(position, 0.07)
-	_player_light.light_energy = 1.15 if float(model.lantern_for) > 0.0 else 0.7
+	var lifted: bool = float(model.lantern_for) > 0.0
+	_player_light.light_energy = 0.95 if lifted else 0.55
+	_ground_material.set_shader_parameter("lantern_position", position + Vector2(0.12, 0.0))
+	_ground_material.set_shader_parameter("lantern_radius", 2.8 if lifted else 1.85)
+	_ground_material.set_shader_parameter("lantern_energy", (0.105 if lifted else 0.062) if _quality != "low" else 0.038)
 
 
 func _sync_occlusion(delta: float) -> void:
@@ -1121,6 +1456,8 @@ func _sync_occlusion(delta: float) -> void:
 			readable_points.append(sprite.global_position + camera.global_basis.y * 0.35)
 	for item: Dictionary in _occluders:
 		var tree: Sprite3D = item["sprite"] as Sprite3D
+		if not tree.visible:
+			continue
 		var foot_screen: Vector2 = camera.unproject_position(tree.global_position)
 		var tree_height: float = float(item["height"])
 		var tree_width: float = float(item["width"])

@@ -16,7 +16,7 @@ func _check(condition: bool, label: String) -> void:
 		printerr("FAIL: ", label)
 
 func _run() -> void:
-	_check(str(ProjectSettings.get_setting("application/config/version", "")) == "0.3.0-dev", "Expected exported project version")
+	_check(str(ProjectSettings.get_setting("application/config/version", "")) == "0.3.1-dev", "Expected exported project version")
 	var scene := load("res://scenes/main.tscn") as PackedScene
 	_check(scene != null, "Release contains its main scene")
 	if scene == null:

@@ -4,11 +4,16 @@ from __future__ import annotations
 from pathlib import Path
 import hashlib
 import json
+import re
 import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
 BUILDS = ROOT / "builds"
+VERSION_MATCH = re.search(r'^config/version="([0-9][0-9a-z.\-]*)"$', (ROOT / "project.godot").read_text(), re.MULTILINE)
+if VERSION_MATCH is None:
+    raise ValueError("Project version is missing or invalid")
+VERSION = VERSION_MATCH.group(1)
 NOTICES = {
     "GODOT-LICENSE.txt": ROOT / "docs/licenses/godot-license.txt",
     "GODOT-COPYRIGHT.txt": ROOT / "docs/licenses/godot-copyright.txt",
@@ -16,6 +21,8 @@ NOTICES = {
     "ART-NOTICE.md": ROOT / "docs/licenses/art-licenses.md",
     "AUDIO-NOTICE.md": ROOT / "docs/licenses/audio-licenses.md",
     "ENVIRONMENT-ART-NOTICE.md": ROOT / "assets/environments/README.md",
+    "ENVIRONMENT-TEXTURES-NOTICE.md": ROOT / "tools/environment-art-provenance.md",
+    "HERO-ART-NOTICE.md": ROOT / "assets/art/characters/lynn_hd/README.md",
 }
 README = """Lumenfall · 暮光之森 — 全流程开发测试版
 
@@ -38,6 +45,7 @@ Tab：日记；M：地图；I：行囊；Esc：暂停 / 返回；Enter：确认�
 全可选暂估120–250分钟，均非真人实测，仍低于主线五小时以上的目标。
 内容需要继续扩充，并以首次玩家实际通关计时验收。
 Windows包在Linux环境导出，尚未在Windows设备上实际运行。
+Windows开发版未做代码签名，新下载的程序可能显示SmartScreen未识别应用提示。
 项目的源代码、运行检查与制作实况见仓库 README 和 docs/production-design.md。
 仓库：https://github.com/liuqihang84-ui/111（当前开发文件的远端上传状态见交付说明）。
 
@@ -51,14 +59,14 @@ def digest(path: Path) -> str:
 
 
 def main() -> None:
-    manifest = {"version": "0.3.0-dev", "godot": "4.6.3", "packages": []}
+    manifest = {"version": VERSION, "godot": "4.6.3", "packages": []}
     for platform, executable in [("linux", "lumenfall.x86_64"), ("windows", "lumenfall.exe")]:
         directory = BUILDS / platform
         files = [directory / executable, directory / "lumenfall.pck"]
         for path in [*files, *NOTICES.values()]:
             if not path.is_file() or path.stat().st_size == 0:
                 raise FileNotFoundError(f"Missing release input: {path}")
-        output = BUILDS / f"lumenfall-0.3.0-dev-{platform}-x86_64.zip"
+        output = BUILDS / f"lumenfall-{VERSION}-{platform}-x86_64.zip"
         prefix = f"Lumenfall-{platform}"
         with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
             for path in files:
@@ -75,7 +83,7 @@ def main() -> None:
         print(f"Packaged {output.name}: {entry['bytes']:,} bytes; zip CRC checked")
     listing = subprocess.check_output(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=ROOT)
     names = sorted({name.decode("utf-8") for name in listing.split(b"\0") if name})
-    source = BUILDS / "lumenfall-0.3.0-dev-source.zip"
+    source = BUILDS / f"lumenfall-{VERSION}-source.zip"
     source_count = 0
     with zipfile.ZipFile(source, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for name in names:

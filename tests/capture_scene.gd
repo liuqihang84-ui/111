@@ -40,6 +40,8 @@ func _capture() -> void:
 	if playing:
 		# Let the ordinary chapter banner finish so scenery remains visible.
 		game.ui.refresh(game.model, 5.0)
+		if "--no-hud" in args:
+			game.ui.hud.visible = false
 		await process_frame
 	await RenderingServer.frame_post_draw
 	var screenshot := root.get_texture().get_image()

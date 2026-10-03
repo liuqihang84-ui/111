@@ -1,0 +1,653 @@
+{
+  "schema": 1,
+  "character": "Lynn",
+  "revision": "0.3.1-dev",
+  "authoring": "original coordinate-authored native pixel art; no old image input or image-generation input",
+  "source": "tools/generate_hero_visual.py",
+  "canvas": [
+    64,
+    96
+  ],
+  "foot_anchor": [
+    32,
+    88
+  ],
+  "pixel_size_world": 0.017,
+  "palette": {
+    "ink": "#25333d",
+    "hair_ink": "#685b55",
+    "hair_deep": "#998b7e",
+    "hair_shadow": "#bcad99",
+    "hair_mid": "#ded0b5",
+    "hair": "#efe0c3",
+    "hair_light": "#fff0d3",
+    "hair_glint": "#fff7df",
+    "skin_deep": "#a36752",
+    "skin_shadow": "#cb9070",
+    "skin": "#edb991",
+    "skin_light": "#ffd7ad",
+    "skin_glint": "#ffe4bf",
+    "blush": "#d9957c",
+    "eye": "#3b3035",
+    "iris": "#a66b35",
+    "iris_light": "#d99945",
+    "shirt_deep": "#a49580",
+    "shirt_shadow": "#c7b69b",
+    "shirt": "#e8d8b8",
+    "shirt_light": "#fff0cf",
+    "shirt_glint": "#fff7df",
+    "cape_deep": "#173f49",
+    "cape_shadow": "#205a60",
+    "cape": "#2f7f7b",
+    "cape_light": "#58a79a",
+    "cape_glint": "#83c0ac",
+    "pants_deep": "#243b47",
+    "pants_shadow": "#2e4b59",
+    "pants": "#3f6069",
+    "pants_light": "#5c7b7c",
+    "pants_glint": "#78918a",
+    "leather_deep": "#463831",
+    "leather_shadow": "#684733",
+    "leather": "#92603e",
+    "leather_light": "#b47d49",
+    "leather_glint": "#cc9a65",
+    "brass_deep": "#754b2e",
+    "brass": "#be8744",
+    "brass_light": "#e8b65c",
+    "brass_glint": "#ffe0a0",
+    "glass": "#df8734",
+    "amber": "#ffbd54",
+    "flame": "#ffdf88",
+    "flame_core": "#fff5c5"
+  },
+  "directions": [
+    "south",
+    "north",
+    "east",
+    "west"
+  ],
+  "assets": [
+    {
+      "path": "lynn_idle_south_sheet.png",
+      "direction": "south",
+      "action": "idle",
+      "frames": 4,
+      "fps": 6,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 3,
+      "sha256": "4865be96c42504420ce6ba2df357ff43661ddb4a9fa845a002b21581a9ef9483"
+    },
+    {
+      "path": "lynn_walk_south_sheet.png",
+      "direction": "south",
+      "action": "walk",
+      "frames": 6,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 6,
+      "sha256": "ca8932275433a607bdf6d59cd570b9942eb2b4fd0f69681f0183dfa5dbf7299a"
+    },
+    {
+      "path": "lynn_attack_south_sheet.png",
+      "direction": "south",
+      "action": "attack",
+      "frames": 6,
+      "fps": 14,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "d4bd64d6d7ff413d7450d1f63da244725b355cfcc2a0ac70b06ab9652d2bc499"
+    },
+    {
+      "path": "lynn_dash_south_sheet.png",
+      "direction": "south",
+      "action": "dash",
+      "frames": 4,
+      "fps": 16,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "6d4e9c44b1902adcb7fc3fa74d30e07bbeba38236e48e1836ce66f0bdf474575"
+    },
+    {
+      "path": "lynn_pulse_south_sheet.png",
+      "direction": "south",
+      "action": "pulse",
+      "frames": 6,
+      "fps": 12,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 6,
+      "sha256": "19b39590788ea3d691974ca3d19d6deb1904ea1103fd2fe3f112242fa1f568ce"
+    },
+    {
+      "path": "lynn_hit_south_sheet.png",
+      "direction": "south",
+      "action": "hit",
+      "frames": 3,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "cf55756fff4ff5fe3197499bb38f58201aa582b1db17fcbfccb21b684d13f7c4"
+    },
+    {
+      "path": "lynn_death_south_sheet.png",
+      "direction": "south",
+      "action": "death",
+      "frames": 6,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "89495a152434461687cfc55acb1f9a5cc810faf65e689b0640c3379e81978e0c"
+    },
+    {
+      "path": "lynn_interact_south_sheet.png",
+      "direction": "south",
+      "action": "interact",
+      "frames": 4,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "3bff70a22ff0e88775474c3cf3f723ec0c039cb90f3f493afde6ce17f52ee39c"
+    },
+    {
+      "path": "lynn_idle_north_sheet.png",
+      "direction": "north",
+      "action": "idle",
+      "frames": 4,
+      "fps": 6,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 2,
+      "sha256": "6cce3addd4f98099c785c90a24bea383f1e9d2a0387ebb4eceda307a17c1a2af"
+    },
+    {
+      "path": "lynn_walk_north_sheet.png",
+      "direction": "north",
+      "action": "walk",
+      "frames": 6,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 6,
+      "sha256": "3da38a32f0d8241f8dc6fc76e49d094fc70f9a856134b8a1c289ed147887ba4c"
+    },
+    {
+      "path": "lynn_attack_north_sheet.png",
+      "direction": "north",
+      "action": "attack",
+      "frames": 6,
+      "fps": 14,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "acfde8c2c709ea16ad0baed6f537eadcb2c8f98e0b3daafca627ccbc450a0894"
+    },
+    {
+      "path": "lynn_dash_north_sheet.png",
+      "direction": "north",
+      "action": "dash",
+      "frames": 4,
+      "fps": 16,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "f823d541161b7758f5cff6d0a73c3f816aed98a54463be3eee04bf66f656dd5f"
+    },
+    {
+      "path": "lynn_pulse_north_sheet.png",
+      "direction": "north",
+      "action": "pulse",
+      "frames": 6,
+      "fps": 12,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 6,
+      "sha256": "65957550a1d60ff6e453f6f5c04f80785e5d7962b67c0e9f06a88111adc8e07a"
+    },
+    {
+      "path": "lynn_hit_north_sheet.png",
+      "direction": "north",
+      "action": "hit",
+      "frames": 3,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "1bc3a5b4ed4e2bc842e2c3b521441d228176c4c1bdd9a36fa78780d75d25513e"
+    },
+    {
+      "path": "lynn_death_north_sheet.png",
+      "direction": "north",
+      "action": "death",
+      "frames": 6,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "54d9ee12f43ad5a019536417352802056b8dabb98d5a8ea5097e622c66ad7200"
+    },
+    {
+      "path": "lynn_interact_north_sheet.png",
+      "direction": "north",
+      "action": "interact",
+      "frames": 4,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "f465910c8a13685e8746d374c149f5c278ca88b84128ead17bd189ce978b2d8c"
+    },
+    {
+      "path": "lynn_idle_east_sheet.png",
+      "direction": "east",
+      "action": "idle",
+      "frames": 4,
+      "fps": 6,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 3,
+      "sha256": "0f28b9c01937676602e40f82fa83ef0134840ea104773e29d7bf427db958c1dd"
+    },
+    {
+      "path": "lynn_walk_east_sheet.png",
+      "direction": "east",
+      "action": "walk",
+      "frames": 6,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 6,
+      "sha256": "7775a96ddad1a52a912754d131d5d64551c956c3a0c3297430cbb027c3cc8c5b"
+    },
+    {
+      "path": "lynn_attack_east_sheet.png",
+      "direction": "east",
+      "action": "attack",
+      "frames": 6,
+      "fps": 14,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "ec6981af7b7601b1b911fc21c74d6076583f5fb492ecad95850b582a3d729002"
+    },
+    {
+      "path": "lynn_dash_east_sheet.png",
+      "direction": "east",
+      "action": "dash",
+      "frames": 4,
+      "fps": 16,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "afe9ce79bc1f48ecdfdb0a7776c5ff7675ddc59d5ae0ee74d06228333e0c66d8"
+    },
+    {
+      "path": "lynn_pulse_east_sheet.png",
+      "direction": "east",
+      "action": "pulse",
+      "frames": 6,
+      "fps": 12,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 6,
+      "sha256": "0aafb9114d7af6f8f581c590f5d0df2c3bf58bf7e8e8d4c6cadecb8fe93c3160"
+    },
+    {
+      "path": "lynn_hit_east_sheet.png",
+      "direction": "east",
+      "action": "hit",
+      "frames": 3,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "f235378c201f22ff2ce620a3f74c0b42755a0f212b44d3ef77e49ec3f510c192"
+    },
+    {
+      "path": "lynn_death_east_sheet.png",
+      "direction": "east",
+      "action": "death",
+      "frames": 6,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "2aa17583c6f273fad6d99f97e73fb5a232635e676b8c1811b536026838204893"
+    },
+    {
+      "path": "lynn_interact_east_sheet.png",
+      "direction": "east",
+      "action": "interact",
+      "frames": 4,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "1c434bc6c27697cec059705aa07e667c5777bb443a46a4dc0e9291e99d02e6c6"
+    },
+    {
+      "path": "lynn_idle_west_sheet.png",
+      "direction": "west",
+      "action": "idle",
+      "frames": 4,
+      "fps": 6,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 3,
+      "sha256": "d39b33f772033782fd0d3ab09fb236eef44d6dd7c2abe5bc3218f95adfe38f91"
+    },
+    {
+      "path": "lynn_walk_west_sheet.png",
+      "direction": "west",
+      "action": "walk",
+      "frames": 6,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": true,
+      "unique_frames": 6,
+      "sha256": "b159dece412585024eb1ec342d908fe408b2ed848ca790e0bb641bba52a552ab"
+    },
+    {
+      "path": "lynn_attack_west_sheet.png",
+      "direction": "west",
+      "action": "attack",
+      "frames": 6,
+      "fps": 14,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "f22c1674bb73310531f64fb03c5480323e8b55c7531e8e097305f471b631f3da"
+    },
+    {
+      "path": "lynn_dash_west_sheet.png",
+      "direction": "west",
+      "action": "dash",
+      "frames": 4,
+      "fps": 16,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "0adc395213ef726f1c024b3eb84a81b1ba598762f0bc7139641fc9315ebae3e1"
+    },
+    {
+      "path": "lynn_pulse_west_sheet.png",
+      "direction": "west",
+      "action": "pulse",
+      "frames": 6,
+      "fps": 12,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 6,
+      "sha256": "545e105cc2aa02fc14a6e1a247056a827ca8d1479087da93507cb7a0b67d90ff"
+    },
+    {
+      "path": "lynn_hit_west_sheet.png",
+      "direction": "west",
+      "action": "hit",
+      "frames": 3,
+      "fps": 10,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "42a1eacf302933fc062409956f05d61d14625480ef929dac9a833d96034acd1f"
+    },
+    {
+      "path": "lynn_death_west_sheet.png",
+      "direction": "west",
+      "action": "death",
+      "frames": 6,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 5,
+      "sha256": "5c57ae47a1e9b652b5b3710d79e00e70b4389a22eb0ea3af3df5355a46e2637e"
+    },
+    {
+      "path": "lynn_interact_west_sheet.png",
+      "direction": "west",
+      "action": "interact",
+      "frames": 4,
+      "fps": 8,
+      "cell": [
+        64,
+        96
+      ],
+      "anchor": [
+        32,
+        88
+      ],
+      "loop": false,
+      "unique_frames": 3,
+      "sha256": "25172461fb8964f0aa82d39ff4a8188c6a1ed98061283695c766c24cf2101fd3"
+    }
+  ],
+  "validation": {
+    "rgba": true,
+    "transparent_below_anchor": true,
+    "all_actions_have_distinct_frames": true,
+    "east_west_not_finished_image_mirror": true
+  }
+}

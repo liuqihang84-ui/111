@@ -1,4 +1,4 @@
-**开发版下载：[Windows / Linux 游戏包、完整源码与实机截图](downloads/README.md)**
+> **0.3.1-dev 最新下载**：[Windows / Linux / 源码](downloads/README.md) · [实机画面前后对比](downloads/visual-comparison.md)。本分支保存实际源码、开发游戏包与截图。
 
 # Lumenfall · 暮光之森
 
@@ -6,9 +6,11 @@
 
 本仓库目前是**可从开场玩到结局的全流程开发版**，包含五章十五图、十种敌人、五名 Boss、三十个机关、八条支线、四种逐步获得的灯具能力、六枚护符、商店与三槽存档。当前主线暂估 90–200 分钟，全可选内容暂估 120–250 分钟，均非真人实测；内容仍低于已确认的主线五小时以上目标，需要继续扩充并以首次试玩计时验收。具体范围与检查证据见[内容制作记录](docs/production-design.md)。
 
+**0.3.1-dev 画面改进**使用独立重画的64×96林恩精灵、苔土／土路／石材贴图、成组植被、溪桥地标、接地灯光与紧凑HUD；详情和实际画面对照见[画面改进记录](docs/visual-improvements.md)。
+
 ## 游玩
 
-独立 Windows / Linux 包位于 `builds/lumenfall-0.3.0-dev-*-x86_64.zip`。解压整个目录，运行 `lumenfall.exe` 或 `./lumenfall.x86_64`；保留旁边的 `lumenfall.pck` 和授权说明。独立包无需安装 Godot。Linux 需要图形桌面与支持 OpenGL 3.3 的驱动；Windows 包已在云环境导出，Windows 设备实机运行仍需验证。
+独立 Windows / Linux 包位于 `builds/lumenfall-0.3.1-dev-*-x86_64.zip`，浏览器下载入口见仓库 `game-playtest` 分支的[下载页](https://github.com/liuqihang84-ui/111/tree/game-playtest/downloads)。解压整个目录，运行 `lumenfall.exe` 或 `./lumenfall.x86_64`；保留旁边的 `lumenfall.pck` 和授权说明。独立包无需安装 Godot。Linux 需要图形桌面与支持 OpenGL 3.3 的驱动；Windows 包已在云环境导出，Windows 设备实机运行仍需验证。开发版未做Windows代码签名，首次运行可能触发SmartScreen未识别程序提示。
 
 也可用 **Godot 4.6.3** 打开 `project.godot`，按 F5 运行。标题页支持新游戏、继续、三槽选择与覆盖确认。首次游玩建议选择标准难度；设置内可切换故事／标准／挑战，调整音量、字体大小、画面细节及按键。
 
@@ -72,6 +74,8 @@ bash tools/dev.sh editor       # 启动编辑器
 | `scripts/game_ui.gd`、`scripts/puzzle_panel.gd` | 中文菜单、对话、地图、日记与图形机关 |
 | `scripts/game_audio.gd`、`assets/audio/` | 原创配乐与音效 |
 | `scripts/pixel_art.gd`、`assets/art/` | 原创像素生成器、动作、头像与敌人素材 |
+| `scripts/hero_visual.gd`、`assets/art/characters/lynn_hd/` | 64×96林恩四方向八动作图集与加载接口 |
+| `assets/environments/textures/` | 原创无缝地表与透明植被，来源工具在 `tools/` |
 | `tests/`、`tools/` | 功能验证、环境配置、导出与打包 |
 
 正式像素与音频均为本项目原创，生成工具在 `tools/`；森林另有一张按原创简报生成的高清透明古树，[来源记录](assets/environments/README.md)随包保留。中文字体从 Noto Sans CJK 的简体中文字形派生并重命名，采用 SIL OFL 1.1；发行时保留授权。[素材说明](docs/licenses/art-licenses.md)、[音频说明](docs/licenses/audio-licenses.md)与 Godot MIT 及第三方版权说明一起放入独立包。生成辅助概念稿保留在设计目录，未纳入发行资源。

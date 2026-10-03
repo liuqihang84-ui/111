@@ -1,6 +1,6 @@
 # 森林正式环境素材
 
-`forest_ancient_tree.png` 是可独立摆放的单棵暮色古树 PNG，作为原创新手森林的环境资产。它不是概念图背景，也不包含角色、地面、阴影、文字或 UI。主角的 32×48 逐点像素规范独立保留。
+`forest_ancient_tree.png` 是可独立摆放的单棵暮色古树 PNG，作为原创新手森林的环境资产。它不是概念图背景，也不包含角色、地面、阴影、文字或 UI。旧32×48角色规范独立保留；当前林恩使用[独立重画的64×96像素图集](../art/characters/lynn_hd/README.md)。0.3.1-dev新增的地表与植被来自[原创绘图工具](../../tools/environment-art-provenance.md)，没有修改本页古树PNG。
 
 ## 图像与锚点
 
