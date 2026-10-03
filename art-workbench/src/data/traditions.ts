@@ -1,5 +1,6 @@
 import type { ArtTradition, ResearchConcept, SourceReference } from '../types';
 import { verifiedSourceRecords } from './verified-source-records';
+import { extendedSources, extendedTraditions } from './extended-traditions';
 
 // A reference is a concrete research lead, not a claim that its web page was
 // fetched or that the currently available image is licensed for production.
@@ -57,6 +58,7 @@ export const sources: SourceReference[] = [
   reference('david-vases', '大维德青花云龙纹象耳瓶（有至正十一年铭文）', '大英博物馆·大维德中国艺术收藏', 'https://www.britishmuseum.org/collection', '元，1351 年铭文', '青花瓷', '检索“David Vases 1351”。从具体铭文、装饰分区和器形研究元青花，不能只凭“蓝色很浓”判断时代。'),
   verified('yongle-cup'),
   reference('xuande-blue-white', '明宣德青花器：缠枝莲纹与器形', '故宫博物院', 'https://www.dpm.org.cn/', '明宣德', '青花瓷', '检索“宣德 青花 缠枝莲”，选择并记录一件具体器物再研究。宣德不是全部明代青花的代名词，晚明体系应单列。'),
+  ...extendedSources,
 ];
 
 export const traditions: ArtTradition[] = [
@@ -432,6 +434,7 @@ export const traditions: ArtTradition[] = [
     image: 'forms', imagePosition: 'center',
     promptCore: '青花研究先明确元至正型、明永乐或明宣德的一个样本组与器型：原创器物按颈肩腹足分配主纹、边饰和白地，釉下蓝线、填色与轻染有层次，轮廓先于纹样，光源一致；不跨期混用，不凭色斑断代，不复制馆藏铭文或纹样。',
   },
+  ...extendedTraditions,
 ];
 
 export const concepts: ResearchConcept[] = [

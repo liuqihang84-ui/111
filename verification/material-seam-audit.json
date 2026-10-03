@@ -1,0 +1,342 @@
+{
+  "count": 48,
+  "failures": [],
+  "samples": [
+    {
+      "id": "pattern-cloud-key",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-thunder-key",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-inlay-hooks",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-cong-eyes",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-jade-spiral",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-openwork-diamond",
+      "edgeX": 0.0546875,
+      "edgeY": 0.03125,
+      "adjacentX": 10.15625,
+      "adjacentY": 10.23046875
+    },
+    {
+      "id": "pattern-eaves-rosette",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-lotus-chain",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-pearl-roundel",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-brocade-flower",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-kesi-clouds",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 15.724609375
+    },
+    {
+      "id": "pattern-indigo-stars",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-indigo-dots",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-embroidered-leaves",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-bluewhite-vine",
+      "edgeX": 7.7734375,
+      "edgeY": 0,
+      "adjacentX": 5.888671875,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-rose-sprigs",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-cizhou-scroll",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-celadon-petals",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 1.021484375,
+      "adjacentY": 1.064453125
+    },
+    {
+      "id": "pattern-polychrome-bracket",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-cloisonne-fan",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-pearl-stars",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-filigree-loops",
+      "edgeX": 0.171875,
+      "edgeY": 0,
+      "adjacentX": 11.78125,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-paper-cut-flowers",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-newyear-wave",
+      "edgeX": 11.375,
+      "edgeY": 0.0234375,
+      "adjacentX": 7.076171875,
+      "adjacentY": 2.7890625
+    },
+    {
+      "id": "pattern-shadow-lattice",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-garden-hexagon",
+      "edgeX": 0.0859375,
+      "edgeY": 0.02734375,
+      "adjacentX": 17.02734375,
+      "adjacentY": 4.27734375
+    },
+    {
+      "id": "pattern-huizhou-roof",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-bracket-join",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-seal-maze",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-clerical-bars",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-regular-grid",
+      "edgeX": 0.47265625,
+      "edgeY": 0.46484375,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "pattern-cursive-ribbon",
+      "edgeX": 22.515625,
+      "edgeY": 0,
+      "adjacentX": 14.4375,
+      "adjacentY": 1.90234375
+    },
+    {
+      "id": "texture-paper-fibers",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0.142578125,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-paper-flecks",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0.1328125
+    },
+    {
+      "id": "texture-silk-warp",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-brocade-weave",
+      "edgeX": 3.578125,
+      "edgeY": 3.578125,
+      "adjacentX": 3.578125,
+      "adjacentY": 3.578125
+    },
+    {
+      "id": "texture-indigo-grain",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 1.2109375,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-russet-lacquer",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0.134765625,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-bronze-speckle",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0.263671875,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-inlay-dashes",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-jade-mottling",
+      "edgeX": 0.2578125,
+      "edgeY": 0,
+      "adjacentX": 0.224609375,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-cong-stone",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-bluewhite-speckles",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-timber-grain",
+      "edgeX": 0.859375,
+      "edgeY": 0,
+      "adjacentX": 0.96484375,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-stone-stipple",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0.796875
+    },
+    {
+      "id": "texture-tile-roof",
+      "edgeX": 0.4765625,
+      "edgeY": 0.484375,
+      "adjacentX": 0.8515625,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-pearl-dark",
+      "edgeX": 0,
+      "edgeY": 0,
+      "adjacentX": 0,
+      "adjacentY": 0
+    },
+    {
+      "id": "texture-metal-wire",
+      "edgeX": 4.859375,
+      "edgeY": 4.859375,
+      "adjacentX": 3.3203125,
+      "adjacentY": 3.3203125
+    }
+  ]
+}

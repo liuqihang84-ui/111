@@ -1,113 +1,47 @@
-# 观物 · 中国美学与 AI 美术工作台 v0.2
+# 观物 · 中国美学与 AI 美术工作台
 
-把中国古代美学研究与游戏、App 的实际美术制作放在同一个交互网页：研究为什么成立，整理怎样制作，再检查素材是否可用。
+丰富类型与素材版 **0.3.0**：同时供游戏和 App 创作者研究风格、挑选素材，再带入制作。
 
-## 立即使用
+**48 类美学路线 · 192 件可用 SVG · 10 张多案例参考板**
 
-**[下载交互网页 ZIP（约 7 MB）](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench.zip?v=0.2.0)**
+覆盖绘画、铜玉、漆器、瓷器、建筑、织绣、书法篆刻、版画、年画、剪纸与皮影。素材含图标、纹样、边框、材质、界面布局、器物和场景；参考图库补充人物、服饰、城市、自然、室内和工艺视觉。
 
-下载后解压，用 Chrome、Edge 或 Firefox 打开 `guanwu-art-workbench.html`。不用安装 Node、Godot 或游戏程序。页面内嵌图片与字体，核心工具不需要网络，点击博物馆资料链接时需要联网。
+## 下载与打开
 
-如果下载链接没有弹出文件，请进入 [ZIP 文件页面](downloads/guanwu-art-workbench.zip?v=0.2.0)，点击 **Download raw file**。也可以 [单独下载 HTML](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench.html?v=0.2.0)。GitHub 文件预览不会直接运行 HTML，请下载后打开。
-
-正式在线站点尚未启用；`docs/index.html` 已准备为静态托管入口，文件交付不代表 GitHub Pages 已上线。
-
-## 五个工作区
-
-| 工作区 | 可以做什么 |
+| 下载 | 内容 |
 | --- | --- |
-| 研究馆 | 12 条美学路线，37 条参考线索；按时期、媒介与问题筛选，比较构图、造型、材质、设色与现代应用 |
-| 深研室 | 12 份作品对照档案、72 条现代制作约束、36 组真实资产实验；操作结构 A/B 练习，记录审校与笔记，将采用参数带入制作 |
-| 制作台 | 将研究转为游戏/App 美术方案；编辑正向/负向提示词，导出 Markdown 交付规范和 JSON 设计变量 |
-| 检验室 | 上传本地图片，检查尺寸、透明像素与主色，计算真实 WCAG 对比度，预览素材缩小后的表现 |
-| 项目册 | 本地保存方案、恢复手动修改，导入/导出项目 JSON |
+| [交互网页 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench.zip?v=0.3.0) | 完整解压后打开 `guanwu-art-workbench.html`，进入“素材库” |
+| [完整素材库 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-material-library.zip?v=0.3.0) | 192 个 SVG、10 张整板 PNG、分类索引和来源说明 |
+| [源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench-source.zip?v=0.3.0) | React/TypeScript 项目、锁文件、图片、字体、启动脚本与测试 |
 
-路线包括汉代朱黑漆器、汉代画像石、青绿山水、南宋小景、宋代花鸟、宋瓷、敦煌壁画、文人园林、明末彩色木版、明式木作、书法与版式、元明青花。
+网页支持类型、风格、用途、透明、平铺、收藏和文字筛选；点击素材可放大、换背景、查看平铺并下载 SVG 或指定尺寸 PNG。可多选下载 ZIP，或把原素材的尺寸和来源送到制作台、保存项目。核心学习与下载无需联网；博物馆来源链接需要联网。
 
-## 这次深入了什么
+这是可下载网页，当前没有公开在线站点。网页没有连接 AI 模型 API。参考图按整板提供；板中的人物和建筑还需单独制作成透明角色、动画、场景块或运行中的组件。界面 SVG 是可编辑布局图形。
 
-- 31 个主例与对照样本、48 项结构观察，逐项说明观察部位、关系与核验方法。
-- 11 条核心来源已逐件核对官方正文；题名、归属、媒介与研究解释分开记录。
-- 山水空间、器物结构、线条与色层三类原创结构练习；A/B 仅改变一个参数，支持灰阶与辅助线。
-- 36 种 AI 常见失败与针对修正，48 项人工审校；研究参数与笔记能进入制作规范并随项目保存。
+## 实际页面
 
-## 实际页面截图
+![素材库桌面页面](preview/material-library-overview.png)
 
-这是浏览器运行截图，可以点击查看原图。
+![原创人物、场景、器物、建筑与 App 参考图库](preview/material-reference-gallery.png)
 
-### 深研室
+![手机素材库](preview/material-library-mobile.png)
 
-[![深研室实际页面](preview/deep-study-desktop.png)](preview/deep-study-desktop.png)
+![深研室](preview/deep-study-desktop.png)
 
-[查看深研室手机页面](preview/deep-study-mobile.png)
+## 内容与验证
 
-### 研究馆
+192 件独立 SVG：60 图标、32 纹样、24 边框、24 材质、16 界面、20 器物、16 场景。104 件有透明区域；48 件可平铺。路线共有 73 条资料线索，其中 11 条有具体官方记录核验、62 条待核验；现代数字颜色和原创图像不作为历史复原。详细对照实验保持 12 份，新增路线没有冒用已有深研档案。
 
-[![研究馆实际页面](preview/home-desktop.png)](preview/home-desktop.png)
+本轮 27/27 单元测试与 22/22 浏览器验收通过，手机与断网下载已检查。最终验证结果见 [交付说明](art-workbench/docs/DELIVERY.md) 与 [文件清单](downloads/delivery-manifest.json)。美术资料和素材检查见 [素材目录](art-workbench/docs/material-catalog.md)、[类型索引](art-workbench/docs/rich-taxonomy.md) 和 [内容审校](art-workbench/docs/rich-content-audit.md)。
 
-### 制作台
-
-[![制作台实际页面](preview/workbench-desktop.png)](preview/workbench-desktop.png)
-
-### 检验室
-
-[![检验室实际页面](preview/quality-desktop.png)](preview/quality-desktop.png)
-
-[查看手机页面](preview/home-mobile.png)
-
-## 下载源码与研究方法
-
-- [源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench-source.zip?v=0.2.0)
-- [浏览源码与开发说明](art-workbench/README.md)
-- [十二份深研档案与实验方法](art-workbench/docs/deep-study.md)
-- [官方来源核验记录](art-workbench/docs/evidence-audit.md)
-- [研究依据与转译方法](art-workbench/docs/research-method.md)
-- [美术与字体来源](art-workbench/docs/ART-SOURCES.md)
-- [实际验收结果与运行说明](art-workbench/docs/DELIVERY.md)
-- [下载文件校验值](downloads/delivery-manifest.json)
-
-开发启动：
+## 开发
 
 ```sh
 cd art-workbench
-npm ci
+bash tools/install.sh
 PORT=4173 bash tools/serve.sh dev
 ```
 
-## 当前完成范围
+生产预览：`PORT=4173 bash tools/serve.sh preview`；重建网页为 `npm run build:portable`，完整素材包为 `npm run build:materials`。
 
-类型检查、生产与单文件构建通过；19 项单元测试、13 项浏览器检查通过，没有跳过或浏览器异常。离线检查以相同字节的交付 HTML 经允许的 HTTP 加载、刷新后断网完成。云端 Chromium 管理策略阻止 `file://`，本地文件模式尚未在此环境实测；未修改管理策略。
-
-本版本提供研究、规范生成与素材检查，尚未接入在线 AI 出图 API。项目与图片在浏览器本地处理；请导出项目 JSON 保留备份。
-
-37 条核心来源中，11 条已逐件读取并核对官方条目，26 条仍为研究线索；12 份档案中仅 8 条正文支持的历史声明标为已核对，研究解释与现代转译分别标注。原创研究板、SVG 结构练习与现代色值是设计示意，具体核验范围保留在研究文档中。
-
-本分支保留此前的概念美术资料；游戏试玩仍位于独立的 `game-playtest` 分支。
-
-## 前期独立美术研究存档
-
-2026-10-03（Asia/Shanghai）。目前只研究美术，游戏类型以后再定。下列为原创生成辅助的研究稿，没有接入游戏，也不作为历史复原图。
-
-## 第二轮：人物、器物与造型语言
-
-**[打开图片文件页面](https://github.com/liuqihang84-ui/111/blob/concept-art/docs/concepts/chinese_aesthetics_forms_v02.png)** · **[直接打开或下载PNG原图](https://raw.githubusercontent.com/liuqihang84-ui/111/refs/heads/concept-art/docs/concepts/chinese_aesthetics_forms_v02.png)**
-
-![人物与器物造型研究](docs/concepts/chinese_aesthetics_forms_v02.png)
-
-从左至右：
-
-1. **朱黑与刻线**：以汉代漆器和画像石为研究线索，比较轮廓、面积和器物曲面。
-2. **细线与清润材料**：以宋画、生活器物和陶瓷为线索，比较观察、衣褶、局部设色与材料。
-3. **线版与有限套色**：以明末彩色木版画为线索，比较线层、色层和纸面空白。
-
-[第二轮详细研究与待修正部分](docs/aesthetics-form-study-v02.md)。人物服装、纹样和建筑均为试探性原创组合，尚未确定角色或整体方向。
-
-## 第一轮：山水与空间参考
-
-[打开第一轮研究图](docs/concepts/chinese_aesthetics_triptych_v01.png) · [第一轮研究说明](docs/chinese-aesthetics-study.md)
-
-![青绿山水、南宋小景与敦煌设色](docs/concepts/chinese_aesthetics_triptych_v01.png)
-
-[早期角色与森林参考存档](docs/concepts/preview.md)。早期开发游戏包保留在独立game-playtest分支，本轮没有更新游戏代码或安装包。
-
-如图片没有显示，请点原图链接；也可在图片文件页面选择 **Download raw file / 下载原始文件**。
+这条独立分支保留已有概念图资料；旧 Godot 游戏在原 `game-playtest` 分支。本轮集中完成美术工作台与素材库。

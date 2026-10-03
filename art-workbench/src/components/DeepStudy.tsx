@@ -158,7 +158,7 @@ function sourceIdsFor(dossier: ResearchDossier): string[] {
 
 export default function DeepStudy({ traditionId, onSelectTradition, onUseStudy }: DeepStudyProps) {
   const tradition = traditions.find(item => item.id === traditionId) ?? traditions[0];
-  const dossier = dossiers.find(item => item.traditionId === tradition.id) ?? dossiers[0];
+  const dossier = dossiers.find(item => item.traditionId === tradition.id);
   const config = useMemo(() => getStudyConfig(tradition.id), [tradition.id]);
   const [tab, setTab] = useState<StudyTab>('evidence');
   const [parameters, setParameters] = useState<Record<string, number>>(() => initialStudyParameters(config));
@@ -184,7 +184,7 @@ export default function DeepStudy({ traditionId, onSelectTradition, onUseStudy }
     setNotice('');
   }, [config]);
 
-  if (!dossier) return <section className="deep-study"><h2>研究档案尚未加载</h2><p>请返回研究馆选择一条路线。</p></section>;
+  if (!dossier) return <section className="deep-study"><h2>这条路线已有研究与素材，详细对照实验仍待补充</h2><p>当前深研室包含 12 份具体对照档案。可以在研究馆阅读当前路线的依据，或选择下方已有档案继续实验。</p><label>选择已有深研档案<select aria-label="深研路线" data-testid="study-tradition" value="" onChange={event => onSelectTradition(event.target.value)}><option value="" disabled>选择一条路线</option>{traditions.filter(item => dossiers.some(record => record.traditionId === item.id)).map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label></section>;
 
   const active = config.parameters.find(parameter => parameter.id === activeParameter) ?? config.parameters[0];
   const bValues = Object.fromEntries(config.parameters.map(parameter => [parameter.id, parameters[parameter.id] ?? parameter.initial]));
@@ -225,6 +225,7 @@ export default function DeepStudy({ traditionId, onSelectTradition, onUseStudy }
   ];
 
   function exportNote(kind: 'md' | 'json') {
+    if (!dossier) return;
     const metadata = { version: 1, kind: 'guanwu-study-note', dossierId: dossier.id, transfer, note, checked, sourceReferences: references, parameterDefinitions: config.parameters, boundary: '原创现代结构实验；来源按具体条目记录核对范围，其他线索与制作假设仍需检验；不构成实物测量或自动美术评分。' };
     const referenceMarkdown = `\n## 可追溯来源入口\n\n${references.map(source => `- ${source.title} · ${source.institution} · ${source.period} · ${source.medium}\n  ${source.url}\n  状态：${source.status === 'verified' ? `已核验${source.checkedAt ? `，核对日期：${source.checkedAt}` : ''}` : '资料线索，待核验'}；核对范围 / 研究说明：${source.note}`).join('\n')}\n`;
     downloadText(`guanwu-study-${tradition.id}.${kind}`, kind === 'json' ? JSON.stringify(metadata, null, 2) : studyNoteMarkdown(dossier, transfer, note, checked) + referenceMarkdown, kind === 'json' ? 'application/json;charset=utf-8' : 'text/markdown;charset=utf-8');
@@ -235,7 +236,7 @@ export default function DeepStudy({ traditionId, onSelectTradition, onUseStudy }
 
   return <section className="deep-study" data-testid="study-root">
     <div className="deep-intro"><div><p className="eyebrow">OBSERVE / COMPARE / TRANSLATE</p><h2>从一个具体问题，研究到一套制作规则</h2><p>比较作品与媒介，区分史料线索、解释和现代假设。用单变量实验观察结构，再把你的判断送到制作台。</p></div><span className="deep-research-seal">有据可问<br />有形可试</span></div>
-    <div className="deep-context"><label>研究路线<select aria-label="深研路线" data-testid="study-tradition" value={tradition.id} onChange={event => onSelectTradition(event.target.value)}>{traditions.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label><label className="deep-subject-label">制作对象<input data-testid="study-subject" aria-label="研究制作对象" value={subject} maxLength={250} onChange={event => setSubject(event.target.value)} /></label><div className="deep-target"><span>转译用途</span><div>{(['game', 'app'] as const).map(value => <button key={value} data-testid={`study-target-${value}`} aria-pressed={target === value} className={target === value ? 'selected' : ''} onClick={() => setTarget(value)}>{value === 'game' ? '游戏' : 'App'}</button>)}</div></div></div>
+    <div className="deep-context"><label>研究路线<select aria-label="深研路线" data-testid="study-tradition" value={tradition.id} onChange={event => onSelectTradition(event.target.value)}>{traditions.filter(item => dossiers.some(record => record.traditionId === item.id)).map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label><label className="deep-subject-label">制作对象<input data-testid="study-subject" aria-label="研究制作对象" value={subject} maxLength={250} onChange={event => setSubject(event.target.value)} /></label><div className="deep-target"><span>转译用途</span><div>{(['game', 'app'] as const).map(value => <button key={value} data-testid={`study-target-${value}`} aria-pressed={target === value} className={target === value ? 'selected' : ''} onClick={() => setTarget(value)}>{value === 'game' ? '游戏' : 'App'}</button>)}</div></div></div>
     <div className="deep-dossier-heading"><div><span className="eyebrow">RESEARCH DOSSIER / {String(dossiers.indexOf(dossier) + 1).padStart(2, '0')}</span><h3 data-testid="study-dossier-title">{dossier.title}</h3><p>{dossier.question}</p></div><span className="deep-citation-state">证据与解释分列 · 参数为现代假设</span></div>
     <div className="deep-tabs" role="tablist" aria-label="深研步骤">{studyTabs.map((item, index) => <button key={item.id} ref={element => { tabRefs.current[index] = element; }} role="tab" id={`${panelId}-${item.id}-tab`} aria-controls={`${panelId}-${item.id}-panel`} aria-selected={tab === item.id} tabIndex={tab === item.id ? 0 : -1} data-testid={`study-tab-${item.id}`} onClick={() => changeTab(item.id)} onKeyDown={event => {
       let next = index;

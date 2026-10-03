@@ -16,6 +16,7 @@ export interface ArtTradition {
   name: string;
   subtitle: string;
   era: string;
+  eraGroup?: string;
   medium: string;
   keywords: string[];
   shortDescription: string;

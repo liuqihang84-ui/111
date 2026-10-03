@@ -2,6 +2,7 @@ import { expect, test, type Download, type Page } from '@playwright/test';
 import { readFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { capturePortableDocument } from './portable-capture';
 
 const screenshotDirectory = path.resolve('test-results');
 const portableURL = process.env.PORTABLE_URL ?? new URL('../release/guanwu-art-workbench.html', import.meta.url).href;
@@ -78,8 +79,9 @@ test('research filters, empty state, detail tabs, Escape and two-route compariso
   expect(loadedImages).toBe(true);
   await screenshot(page, 'home-desktop.png');
   await page.getByRole('textbox', { name: '搜索美学路线' }).fill('漆器');
-  await expect(page.locator('.tradition-card')).toHaveCount(1);
-  await expect(page.locator('.card-title')).toContainText('汉代朱黑漆器');
+  expect(await page.locator('.tradition-card').count()).toBeGreaterThanOrEqual(1);
+  await expect(page.getByRole('button', { name: '研究汉代朱黑漆器', exact: true })).toBeVisible();
+  expect(await page.locator('.tradition-card').allTextContents()).toEqual(expect.arrayContaining([expect.stringContaining('汉代朱黑漆器')]));
   await page.getByRole('textbox', { name: '搜索美学路线' }).fill('不存在的研究路线xyz');
   await expect(page.locator('.tradition-card')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: '还没有匹配的研究路线' })).toBeVisible();
@@ -320,6 +322,7 @@ test('390px mobile navigation, research dialog and tools stay within the viewpor
 });
 
 test('portable HTML embeds every resource and its tools work fully offline', async ({ page, context }, testInfo) => {
+  test.setTimeout(90_000);
   const portableBytes = await readFile(fileURLToPath(portableURL));
   const blockedRequests: string[] = [];
   let allowBootstrapDocument = false;
@@ -351,10 +354,14 @@ test('portable HTML embeds every resource and its tools work fully offline', asy
     const blockedPage = page;
     page = await context.newPage();
     await blockedPage.close();
+    // Rich reference images make this document 44 MB. Raise only the
+    // debugger's response-capture buffers so exact-byte verification can
+    // inspect it; browser URL policies and network routes remain unchanged.
+    const capturedBody = await capturePortableDocument(context, page);
     allowBootstrapDocument = true;
     const response = await page.goto(portableHTTPURL);
     expect(response).not.toBeNull();
-    expect((await response!.body()).equals(portableBytes), 'HTTP fallback must serve the exact portable artifact bytes').toBe(true);
+    expect((await capturedBody(portableHTTPURL)).equals(portableBytes), 'HTTP fallback must serve the exact portable artifact bytes').toBe(true);
     // A real reload while HTTP is still available checks storage and the
     // byte-identical portable entry. No network response is fabricated.
     await navigation(page, '制作台');
@@ -365,7 +372,7 @@ test('portable HTML embeds every resource and its tools work fully offline', asy
     allowBootstrapDocument = true;
     const reloaded = await page.reload();
     expect(reloaded).not.toBeNull();
-    expect((await reloaded!.body()).equals(portableBytes)).toBe(true);
+    expect((await capturedBody(portableHTTPURL)).equals(portableBytes)).toBe(true);
     await expect(page.locator('.project-card')).toHaveCount(1);
     await page.getByRole('button', { name: '继续编辑', exact: true }).click();
     await expect(page.getByTestId('brief-positive')).toHaveValue('单文件中手动保留的漆器轮廓规范。');
@@ -378,7 +385,7 @@ test('portable HTML embeds every resource and its tools work fully offline', asy
   await expect.poll(async () => page.locator('.hero-art img, .tradition-card img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
   const sources = await page.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')));
   expect(sources.every(source => source?.startsWith('data:image/'))).toBe(true);
-  await page.getByRole('textbox', { name: '搜索美学路线' }).fill('漆器');
+  await page.getByRole('textbox', { name: '搜索美学路线' }).fill('汉代朱黑漆器');
   await expect(page.locator('.tradition-card')).toHaveCount(1);
   await page.getByRole('button', { name: '用汉代朱黑漆器制作方案', exact: true }).click();
   await page.getByTestId('target-app').click();

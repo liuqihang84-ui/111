@@ -9,3 +9,4 @@ command -v python3 >/dev/null
 npm ci --cache "${GUANWU_NPM_CACHE:-/workspace/.npm-cache}" --no-audit --no-fund
 npm test
 npm run build:portable
+npm run build:materials

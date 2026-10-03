@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, Copy, Download, FlaskConical, FolderOpen, Layers3, Menu, Plus, Search, SlidersHorizontal, Sparkles, Trash2, Upload, X } from 'lucide-react';
 import { traditions, sources, concepts } from './data/traditions';
-import type { ArtTradition, BriefInput, GeneratedBrief, ResearchConcept, SavedProject } from './types';
+import type { ArtTradition, BriefInput, GeneratedBrief, ResearchConcept, SavedProject, ProjectTarget } from './types';
 import Workbench from './components/Workbench';
 import QualityLab from './components/QualityLab';
 import DeepStudy from './components/DeepStudy';
@@ -10,10 +10,17 @@ import { transferStudy } from './lib/study-transfer';
 import { downloadText, loadProjects, parseProjects, saveProjects } from './lib/projects';
 import landscapeImage from './assets/landscape.png';
 import formsImage from './assets/forms.png';
+import MaterialLibrary from './components/MaterialLibrary';
+import { materials } from './data/materials';
+import { referenceBoards } from './data/reference-boards';
+import type { LibraryMaterial } from './data/material-types';
+import { svgDataUrl } from './lib/material-export';
+import { transferMaterial } from './lib/material-transfer';
 
-type View = 'research' | 'study' | 'workbench' | 'quality' | 'projects';
+type View = 'research' | 'assets' | 'study' | 'workbench' | 'quality' | 'projects';
 const views: { id: View; name: string; icon: typeof BookOpen }[] = [
   { id: 'research', name: '研究馆', icon: BookOpen },
+  { id: 'assets', name: '素材库', icon: Layers3 },
   { id: 'study', name: '深研室', icon: Layers3 },
   { id: 'workbench', name: '制作台', icon: Sparkles },
   { id: 'quality', name: '检验室', icon: FlaskConical },
@@ -22,12 +29,13 @@ const views: { id: View; name: string; icon: typeof BookOpen }[] = [
 const imageMap = { landscape: landscapeImage, forms: formsImage };
 const positions = { left: '0%', center: '-33.333333%', right: '-66.666667%' };
 function eraGroup(t: ArtTradition) {
-  if (t.id.startsWith('han-')) return '汉代';
-  if (['blue-green-landscape', 'southern-song', 'song-bird-flower', 'song-ceramics'].includes(t.id)) return '宋代';
+  if (t.eraGroup) return t.eraGroup;
+  if (t.id.startsWith('han-')) return '秦汉';
+  if (['blue-green-landscape', 'southern-song', 'song-bird-flower', 'song-ceramics'].includes(t.id)) return '宋元';
   if (t.id === 'dunhuang') return '北朝至唐';
-  if (t.id === 'blue-white') return '元明';
-  if (t.id === 'calligraphy') return '跨时期';
-  return '明清与传承';
+  if (t.id === 'blue-white') return '宋元至明';
+  if (t.id === 'calligraphy') return '跨时期工艺';
+  return '明清';
 }
 
 function viewFromHash(): View {
@@ -50,6 +58,11 @@ function Dialog({ title, onClose, children, wide = false }: { title: string; onC
 }
 
 function StudyImage({ tradition, className = '' }: { tradition: ArtTradition; className?: string }) {
+  if (tradition.eraGroup) {
+    const categoryOrder = /画|人物/.test(tradition.medium) ? ['scene', 'pattern', 'icon', 'prop', 'frame', 'texture', 'interface'] : ['prop', 'pattern', 'scene', 'frame', 'texture', 'icon', 'interface'];
+    const material = categoryOrder.map(category => materials.find(item => item.category === category && item.traditionIds.includes(tradition.id))).find(Boolean);
+    if (material) return <div className={`study-image material-route-image ${className}`}><img src={svgDataUrl(material)} alt={`${tradition.name}的原创现代转译素材：${material.name}，非馆藏图`} /></div>;
+  }
   return <div className={`study-image ${className}`}><img src={imageMap[tradition.image]} alt={`${tradition.name}的原创形式研究示意，非馆藏图`} style={{ transform: `translateX(${positions[tradition.imagePosition]})` }} /></div>;
 }
 
@@ -118,6 +131,12 @@ export default function App() {
     setProjectEpoch(n => n + 1); navigate('workbench');
     notify('研究实验、制作约束与审校状态已带入方案。');
   }
+  function useMaterial(material: LibraryMaterial, target?: ProjectTarget, traditionId?: string) {
+    const { input, brief } = transferMaterial(material, target, traditionId);
+    setSelectedId(input.traditionId); setInitialInput(input); setInitialBrief(brief);
+    setProjectEpoch(n => n + 1); navigate('workbench');
+    notify('已带入素材用途、尺寸与来源，可继续制作同套美术。');
+  }
   function toggleCompare(id: string) {
     if (compareIds.includes(id)) setCompareIds(compareIds.filter(x => x !== id));
     else if (compareIds.length < 3) setCompareIds([...compareIds, id]);
@@ -152,6 +171,8 @@ export default function App() {
           <div className="hero-art"><img src={formsImage} alt="朱黑漆器、细线设色与彩色木版画的原创形式研究板" /><div className="hero-art-caption"><span>FORM STUDY / 02</span><span>原创研究示意 · 非历史复原图</span></div><span className="art-corner">物有其形<br />美有其来处</span></div>
         </section>
 
+        <section className="page-width material-discovery" aria-label="丰富素材与参考入口"><div><span className="eyebrow">A LIBRARY FOR MAKING</span><h2>从研究，走到一套能用的美术。</h2><p>人物、空间、器物与界面参考，配合可下载的图标、纹样、边框和材质。</p></div><div className="material-discovery-counts"><span><b>{traditions.length}</b>美学类型</span><span><b>{materials.length}</b>矢量素材</span><span><b>{referenceBoards.length}</b>多案例参考板</span></div><button className="button button-dark" onClick={() => navigate('assets')}>浏览素材库 <ArrowRight size={16} /></button></section>
+
         <section className="page-width library-section" id="tradition-library" aria-label="美学路线库"><div className="section-heading"><div><span className="eyebrow">THE RESEARCH COLLECTION</span><h2>寻找你的美术语言<span> / {String(traditions.length).padStart(2, '0')}</span></h2></div><button className="text-button" onClick={() => setMethodOpen(true)}>如何阅读一条路线 <ArrowUpRight size={16} /></button></div>
           <div className="library-layout"><aside className="filter-panel"><div className="filter-label"><SlidersHorizontal size={15} />研究筛选</div><label className="search-field"><Search size={16} /><input aria-label="搜索美学路线" placeholder="山水、漆器、版画…" value={query} onChange={e => setQuery(e.target.value)} />{query && <button className="icon-button" onClick={() => setQuery('')} aria-label="清空搜索"><X size={14} /></button>}</label>
             <label className="select-field">时期<select aria-label="筛选时期" value={era} onChange={e => setEra(e.target.value)}><option value="all">全部时期</option>{[...new Set(traditions.map(eraGroup))].map(value => <option key={value}>{value}</option>)}</select><ChevronDown size={14} /></label>
@@ -168,6 +189,8 @@ export default function App() {
         <section className="page-width concepts-section"><div className="section-heading"><div><span className="eyebrow">WAYS OF SEEING</span><h2>把审美变成可以讨论的规则</h2></div><span className="section-note">理解概念，比堆叠符号更有用。</span></div><div className="concept-grid">{concepts.map((c, i) => <button className="concept-card" key={c.id} onClick={() => setConcept(c)}><span className="concept-number">0{i + 1}</span><h3>{c.name}</h3><p>{c.explanation}</p><span>阅读与应用 <ArrowUpRight size={14} /></span></button>)}</div></section>
         <section className="page-width closing-strip"><div><span className="eyebrow">FROM RESEARCH TO MAKING</span><h2>让下一次 AI 创作，有一份清楚的依据。</h2><p>带走构图、色板、材质、提示词和验收清单，逐项检查一套美术的连续性。</p></div><button className="button button-dark" onClick={() => navigate('workbench')}>进入制作台 <ArrowRight size={17} /></button></section>
       </>}
+
+      {view === 'assets' && <MaterialLibrary onUseMaterial={useMaterial} onResearch={id => { const route = traditions.find(t => t.id === id); if (route) openDetail(route); }} />}
 
       {view === 'study' && <section className="page-width tool-page"><div className="section-heading"><div><span className="eyebrow">CLOSE LOOKING / CONTROLLED EXPERIMENTS</span><h1>深研室</h1><p className="page-intro">比较具体对象，拆解结构，做一次只改变一个变量的实验，再把结论带入制作。</p></div><button className="text-button" onClick={() => openDetail(selected)}>查看路线与出处 <BookOpen size={16} /></button></div><DeepStudy traditionId={selectedId} onSelectTradition={setSelectedId} onUseStudy={useStudy} /></section>}
 
@@ -195,6 +218,6 @@ export default function App() {
 
     {concept && <Dialog title={concept.name} onClose={() => setConcept(null)}><span className="eyebrow">概念依据</span><p className="concept-basis">{concept.historicalBasis}</p><p>{concept.explanation}</p><div className="translation-grid"><section><h4>游戏应用</h4><p>{concept.gameUse}</p></section><section><h4>App 应用</h4><p>{concept.appUse}</p></section></div><div className="pitfalls"><h4>常见误用</h4><p>{concept.commonMistake}</p></div></Dialog>}
 
-    {methodOpen && <Dialog title="研究的方法与边界" onClose={() => setMethodOpen(false)}><div className="method-flow">{['核对历史对象', '解释形式规则', '形成现代转译', '检验实际素材'].map((x, i) => <div key={x}><span>0{i + 1}</span><h3>{x}</h3></div>)}</div><p>这里的路线是一套有明确依据的形式选择，不以某个朝代概括所有艺术。作品出处、对作品的解读和现代制作建议分别阅读。</p><ul className="method-list"><li><b>参考资料：</b>当前 {sources.length} 条来源中，{sources.filter(source => source.status === 'verified').length} 条已核对具体官方记录；其余保留待核验状态。核对馆方登记字段不等于独立鉴定，也不会自动确证研究解释或现代参数。</li><li><b>原创图像：</b>两张示意板为生成辅助的原创研究，图中服饰、器物与建筑不是历史复原。它们不替代具体作品图像。</li><li><b>数字色值：</b>色板是现代制作起点，材料、屏幕与光照均会改变观感，不能称为古代颜料的固定 HEX。</li><li><b>提示词工具：</b>制作台整理规范与提示词，当前不连接在线生图模型。导出内容可交给你的 AI 图像或开发工具。</li><li><b>本地检查：</b>图像分析与项目保存均在浏览器运行；色板与对比度检查不构成版权、史实或完整美术质量认证。</li></ul><div className="method-counts"><span><b>{traditions.length}</b> 研究路线</span><span><b>{sources.length}</b> 文献与馆藏线索</span><span><b>{concepts.length}</b> 形式概念</span></div></Dialog>}
+    {methodOpen && <Dialog title="研究的方法与边界" onClose={() => setMethodOpen(false)}><div className="method-flow">{['核对历史对象', '解释形式规则', '形成现代转译', '检验实际素材'].map((x, i) => <div key={x}><span>0{i + 1}</span><h3>{x}</h3></div>)}</div><p>这里的路线是一套有明确依据的形式选择，不以某个朝代概括所有艺术。作品出处、对作品的解读和现代制作建议分别阅读。</p><ul className="method-list"><li><b>参考资料：</b>当前 {sources.length} 条来源中，{sources.filter(source => source.status === 'verified').length} 条已核对具体官方记录；其余保留待核验状态。核对馆方登记字段不等于独立鉴定，也不会自动确证研究解释或现代参数。</li><li><b>原创图像：</b>参考图库为生成辅助的原创研究，素材库另提供可下载的现代矢量素材，图中服饰、器物与建筑不是历史复原。它们不替代具体作品图像。</li><li><b>数字色值：</b>色板是现代制作起点，材料、屏幕与光照均会改变观感，不能称为古代颜料的固定 HEX。</li><li><b>提示词工具：</b>制作台整理规范与提示词，当前不连接在线生图模型。导出内容可交给你的 AI 图像或开发工具。</li><li><b>本地检查：</b>图像分析与项目保存均在浏览器运行；色板与对比度检查不构成版权、史实或完整美术质量认证。</li></ul><div className="method-counts"><span><b>{traditions.length}</b> 研究路线</span><span><b>{sources.length}</b> 文献与馆藏线索</span><span><b>{concepts.length}</b> 形式概念</span></div></Dialog>}
   </div>;
 }

@@ -81,12 +81,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5100,
+                  "duration": 6786,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:05.368Z",
+                  "startTime": "2026-10-03T17:24:49.760Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -102,7 +102,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-ada53aa7b7c445887ba7",
           "file": "browser.spec.ts",
-          "line": 72,
+          "line": 73,
           "column": 1
         },
         {
@@ -121,12 +121,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1744,
+                  "duration": 2545,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:05.353Z",
+                  "startTime": "2026-10-03T17:24:49.746Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -142,7 +142,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-e3a5d8c66fb8a042d264",
           "file": "browser.spec.ts",
-          "line": 122,
+          "line": 124,
           "column": 1
         },
         {
@@ -161,12 +161,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2667,
+                  "duration": 2724,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:07.686Z",
+                  "startTime": "2026-10-03T17:24:53.285Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -182,7 +182,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-9a60fddb2e88c23d4214",
           "file": "browser.spec.ts",
-          "line": 151,
+          "line": 153,
           "column": 1
         },
         {
@@ -201,12 +201,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3019,
+                  "duration": 1837,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:10.373Z",
+                  "startTime": "2026-10-03T17:24:56.035Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -222,7 +222,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-c3b86a2ec0ce49f05007",
           "file": "browser.spec.ts",
-          "line": 184,
+          "line": 186,
           "column": 1
         },
         {
@@ -241,12 +241,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1615,
+                  "duration": 1889,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:11.068Z",
+                  "startTime": "2026-10-03T17:24:57.555Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -262,7 +262,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-4bf7989b59cba07092fe",
           "file": "browser.spec.ts",
-          "line": 231,
+          "line": 233,
           "column": 1
         },
         {
@@ -278,15 +278,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1349,
+                  "duration": 1438,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:12.705Z",
+                  "startTime": "2026-10-03T17:24:57.893Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -302,7 +302,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-1dcbac5fe8c9c08276f4",
           "file": "browser.spec.ts",
-          "line": 267,
+          "line": 269,
           "column": 1
         },
         {
@@ -321,12 +321,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3730,
+                  "duration": 3100,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:13.423Z",
+                  "startTime": "2026-10-03T17:24:59.355Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -342,7 +342,7 @@
           ],
           "id": "fbeac1b2decfba2c3acd-7063034a67cc3fd25aaa",
           "file": "browser.spec.ts",
-          "line": 292,
+          "line": 294,
           "column": 1
         },
         {
@@ -351,7 +351,7 @@
           "tags": [],
           "tests": [
             {
-              "timeout": 45000,
+              "timeout": 90000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -361,12 +361,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 14074,
+                  "duration": 20728,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:14.079Z",
+                  "startTime": "2026-10-03T17:24:59.464Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -392,7 +392,385 @@
           ],
           "id": "fbeac1b2decfba2c3acd-5b4b8b2f7c0a46842a9a",
           "file": "browser.spec.ts",
-          "line": 322,
+          "line": 324,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "materials.spec.ts",
+      "file": "materials.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "192 usable assets offer working categories, all 48 traditions, game/App and material-property filters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9664,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:02.527Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-31106a4c9cfa10b53484",
+          "file": "materials.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "favorites and selected materials survive reload and a native detail dialog closes with Escape",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:12.208Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-828da451de2d82a2bfb7",
+          "file": "materials.spec.ts",
+          "line": 162,
+          "column": 1
+        },
+        {
+          "title": "SVG and PNG buttons download actual editable vectors and correctly sized transparent raster pixels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:14.173Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-228a387579a89de9ff53",
+          "file": "materials.spec.ts",
+          "line": 181,
+          "column": 1
+        },
+        {
+          "title": "tileable assets render periodic pixels without a gross border jump and the repeat preview changes actual paint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1868,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:16.000Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "tileable-pixel-seams",
+                      "contentType": "application/json",
+                      "body": "ewogICJzY29wZSI6ICJQcmVtdWx0aXBsaWVkIFJHQkEgb3Bwb3NpbmcgZWRnZXMgYWdhaW5zdCBvcmRpbmFyeSBhZGphY2VudCBwaXhlbHMuIERldGVjdHMgZ3Jvc3MgYm9yZGVyIGRpc2NvbnRpbnVpdHk7IGRvZXMgbm90IGNsYWltIGlkZW50aWNhbCBwaXhlbCBzYW1wbGVzIG9uIGNvbnRpbnVvdXMgYW50aWFsaWFzZWQgbGluZXMuIiwKICAic2FtcGxlcyI6IFsKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tY2xvdWQta2V5IiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi10aHVuZGVyLWtleSIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4taW5sYXktaG9va3MiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWNvbmctZXllcyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tamFkZS1zcGlyYWwiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLW9wZW53b3JrLWRpYW1vbmQiLAogICAgICAiZWRnZVgiOiAwLjA1NDY4NzUsCiAgICAgICJlZGdlWSI6IDAuMDMxMjUsCiAgICAgICJhZGphY2VudFgiOiAxMC4xNTYyNSwKICAgICAgImFkamFjZW50WSI6IDEwLjIzMDQ2ODc1CiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1lYXZlcy1yb3NldHRlIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1sb3R1cy1jaGFpbiIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tcGVhcmwtcm91bmRlbCIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tYnJvY2FkZS1mbG93ZXIiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWtlc2ktY2xvdWRzIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAxNS43MjQ2MDkzNzUKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWluZGlnby1zdGFycyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4taW5kaWdvLWRvdHMiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWVtYnJvaWRlcmVkLWxlYXZlcyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tYmx1ZXdoaXRlLXZpbmUiLAogICAgICAiZWRnZVgiOiA3Ljc3MzQzNzUsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiA1Ljg4ODY3MTg3NSwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLXJvc2Utc3ByaWdzIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1jaXpob3Utc2Nyb2xsIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1jZWxhZG9uLXBldGFscyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAxLjAyMTQ4NDM3NSwKICAgICAgImFkamFjZW50WSI6IDEuMDY0NDUzMTI1CiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1wb2x5Y2hyb21lLWJyYWNrZXQiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWNsb2lzb25uZS1mYW4iLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLXBlYXJsLXN0YXJzIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1maWxpZ3JlZS1sb29wcyIsCiAgICAgICJlZGdlWCI6IDAuMTcxODc1LAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMTEuNzgxMjUsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1wYXBlci1jdXQtZmxvd2VycyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tbmV3eWVhci13YXZlIiwKICAgICAgImVkZ2VYIjogMTEuMzc1LAogICAgICAiZWRnZVkiOiAwLjAyMzQzNzUsCiAgICAgICJhZGphY2VudFgiOiA3LjA3NjE3MTg3NSwKICAgICAgImFkamFjZW50WSI6IDIuNzg5MDYyNQogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tc2hhZG93LWxhdHRpY2UiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWdhcmRlbi1oZXhhZ29uIiwKICAgICAgImVkZ2VYIjogMC4wODU5Mzc1LAogICAgICAiZWRnZVkiOiAwLjAyNzM0Mzc1LAogICAgICAiYWRqYWNlbnRYIjogMTcuMDI3MzQzNzUsCiAgICAgICJhZGphY2VudFkiOiA0LjI3NzM0Mzc1CiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1odWl6aG91LXJvb2YiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWJyYWNrZXQtam9pbiIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInBhdHRlcm4tc2VhbC1tYXplIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1jbGVyaWNhbC1iYXJzIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAicGF0dGVybi1yZWd1bGFyLWdyaWQiLAogICAgICAiZWRnZVgiOiAwLjQ3MjY1NjI1LAogICAgICAiZWRnZVkiOiAwLjQ2NDg0Mzc1LAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJwYXR0ZXJuLWN1cnNpdmUtcmliYm9uIiwKICAgICAgImVkZ2VYIjogMjIuNTE1NjI1LAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMTQuNDM3NSwKICAgICAgImFkamFjZW50WSI6IDEuOTAyMzQzNzUKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLXBhcGVyLWZpYmVycyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLjE0MjU3ODEyNSwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLXBhcGVyLWZsZWNrcyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMC4xMzI4MTI1CiAgICB9LAogICAgewogICAgICAiaWQiOiAidGV4dHVyZS1zaWxrLXdhcnAiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLWJyb2NhZGUtd2VhdmUiLAogICAgICAiZWRnZVgiOiAzLjU3ODEyNSwKICAgICAgImVkZ2VZIjogMy41NzgxMjUsCiAgICAgICJhZGphY2VudFgiOiAzLjU3ODEyNSwKICAgICAgImFkamFjZW50WSI6IDMuNTc4MTI1CiAgICB9LAogICAgewogICAgICAiaWQiOiAidGV4dHVyZS1pbmRpZ28tZ3JhaW4iLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMS4yMTA5Mzc1LAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInRleHR1cmUtcnVzc2V0LWxhY3F1ZXIiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMC4xMzQ3NjU2MjUsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAidGV4dHVyZS1icm9uemUtc3BlY2tsZSIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLjI2MzY3MTg3NSwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLWlubGF5LWRhc2hlcyIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInRleHR1cmUtamFkZS1tb3R0bGluZyIsCiAgICAgICJlZGdlWCI6IDAuMjU3ODEyNSwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAuMjI0NjA5Mzc1LAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInRleHR1cmUtY29uZy1zdG9uZSIsCiAgICAgICJlZGdlWCI6IDAsCiAgICAgICJlZGdlWSI6IDAsCiAgICAgICJhZGphY2VudFgiOiAwLAogICAgICAiYWRqYWNlbnRZIjogMAogICAgfSwKICAgIHsKICAgICAgImlkIjogInRleHR1cmUtYmx1ZXdoaXRlLXNwZWNrbGVzIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAidGV4dHVyZS10aW1iZXItZ3JhaW4iLAogICAgICAiZWRnZVgiOiAwLjg1OTM3NSwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAuOTY0ODQzNzUsCiAgICAgICJhZGphY2VudFkiOiAwCiAgICB9LAogICAgewogICAgICAiaWQiOiAidGV4dHVyZS1zdG9uZS1zdGlwcGxlIiwKICAgICAgImVkZ2VYIjogMCwKICAgICAgImVkZ2VZIjogMCwKICAgICAgImFkamFjZW50WCI6IDAsCiAgICAgICJhZGphY2VudFkiOiAwLjc5Njg3NQogICAgfSwKICAgIHsKICAgICAgImlkIjogInRleHR1cmUtdGlsZS1yb29mIiwKICAgICAgImVkZ2VYIjogMC40NzY1NjI1LAogICAgICAiZWRnZVkiOiAwLjQ4NDM3NSwKICAgICAgImFkamFjZW50WCI6IDAuODUxNTYyNSwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLXBlYXJsLWRhcmsiLAogICAgICAiZWRnZVgiOiAwLAogICAgICAiZWRnZVkiOiAwLAogICAgICAiYWRqYWNlbnRYIjogMCwKICAgICAgImFkamFjZW50WSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJ0ZXh0dXJlLW1ldGFsLXdpcmUiLAogICAgICAiZWRnZVgiOiA0Ljg1OTM3NSwKICAgICAgImVkZ2VZIjogNC44NTkzNzUsCiAgICAgICJhZGphY2VudFgiOiAzLjMyMDMxMjUsCiAgICAgICJhZGphY2VudFkiOiAzLjMyMDMxMjUKICAgIH0KICBdCn0="
+                    },
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-72a0a00ecbb479c709e1",
+          "file": "materials.spec.ts",
+          "line": 224,
+          "column": 1
+        },
+        {
+          "title": "selected and filtered ZIP downloads contain exactly their real SVG subset with valid CRCs and manifests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2914,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:17.887Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-666c3271e16a0602f6ec",
+          "file": "materials.spec.ts",
+          "line": 271,
+          "column": 1
+        },
+        {
+          "title": "all ten original reference boards visibly decode and download byte-identical PNG files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7051,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:20.238Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-66a1b5a4df6e79a919bf",
+          "file": "materials.spec.ts",
+          "line": 297,
+          "column": 1
+        },
+        {
+          "title": "using an App material keeps its provenance through editing, project save, export and restore",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:20.835Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-f1a4d3028b1b9b1a0d22",
+          "file": "materials.spec.ts",
+          "line": 328,
+          "column": 1
+        },
+        {
+          "title": "390px library filters, reference gallery and native asset details stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1466,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:24.504Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-a028efa6a99dbb5d9ce9",
+          "file": "materials.spec.ts",
+          "line": 367,
+          "column": 1
+        },
+        {
+          "title": "the byte-identical portable artifact filters and downloads vectors, PNGs, ZIPs and reference images fully offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 15921,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:25:25.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-material-library",
+                      "contentType": "application/json",
+                      "body": "ewogICJzY29wZSI6ICJFeGFjdCBwb3J0YWJsZSBieXRlcyBvdmVyIHBlcm1pdHRlZCBIVFRQLCB0aGVuIGNvbnRleHQuc2V0T2ZmbGluZSh0cnVlKSBhbmQgYWxsIEhUVFAoUykgYmxvY2tlZDsgZmlsZSBvcmlnaW4gc2VwYXJhdGVseSB1bnZlcmlmaWVkIGJ5IGJyb3dzZXIgcG9saWN5LiIsCiAgIm1hdGVyaWFscyI6IDE5MiwKICAicmVmZXJlbmNlQm9hcmRzIjogMTAsCiAgInN2ZyI6ICJwYXR0ZXJuLWNsb3VkLWtleSIsCiAgInBuZyI6IHRydWUsCiAgInppcENSQyI6IHRydWUsCiAgInJlbW90ZUFzc2V0UmVxdWVzdHMiOiAwCn0="
+                    },
+                    {
+                      "name": "material-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a5f2cd64db01880877b-647cd6d0184f7e2fbc3b",
+          "file": "materials.spec.ts",
+          "line": 383,
           "column": 1
         }
       ]
@@ -416,15 +794,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2768,
+                  "duration": 3058,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:17.186Z",
+                  "startTime": "2026-10-03T17:25:27.338Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -456,15 +834,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2953,
+                  "duration": 2992,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:19.981Z",
+                  "startTime": "2026-10-03T17:25:30.424Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -496,15 +874,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4191,
+                  "duration": 4269,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:22.949Z",
+                  "startTime": "2026-10-03T17:25:33.440Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -536,15 +914,15 @@
               "projectName": "",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4137,
+                  "duration": 3416,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:27.168Z",
+                  "startTime": "2026-10-03T17:25:37.741Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -579,12 +957,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3097,
+                  "duration": 3090,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T16:25:28.188Z",
+                  "startTime": "2026-10-03T17:25:41.174Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -608,9 +986,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-03T16:25:04.254Z",
-    "duration": 27174.731,
-    "expected": 13,
+    "startTime": "2026-10-03T17:24:48.271Z",
+    "duration": 56097.418999999994,
+    "expected": 22,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

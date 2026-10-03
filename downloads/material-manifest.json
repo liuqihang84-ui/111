@@ -1,0 +1,5360 @@
+{
+  "version": 1,
+  "name": "观物 · 中国美学原创素材库",
+  "builtAt": "2026-10-03T17:38:08.451Z",
+  "count": 192,
+  "targetMeaning": "targets 表示推荐制作方向，个人或商业使用许可不受此分类限制。界面 SVG 是布局图形，交互与真实文本需要开发。",
+  "license": "原创现代 SVG 素材，允许用于游戏、App、网页和修改；不代表古代原作、历史复原或馆藏图像授权。参考研究板为 AI 辅助原创视觉研究，供参考与项目使用，不保证历史细节或角色一致性。",
+  "materials": [
+    {
+      "id": "icon-brush",
+      "name": "蘸墨毛笔",
+      "category": "icon",
+      "family": "书法",
+      "traditionIds": [
+        "calligraphy",
+        "tang-regular"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "书法",
+        "图标"
+      ],
+      "description": "蘸墨毛笔：取书法的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-brush.svg",
+      "sha256": "ed36b7d934294fbdcda43ad41e89f2df1bc3d7f9bf546f9ebb5b2fc88b04a35d"
+    },
+    {
+      "id": "icon-ink-stick",
+      "name": "墨锭",
+      "category": "icon",
+      "family": "书法",
+      "traditionIds": [
+        "calligraphy",
+        "han-clerical"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "书法",
+        "图标"
+      ],
+      "description": "墨锭：取书法的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-ink-stick.svg",
+      "sha256": "c878c92b75ea77ca0f67867eb28cfe16676fbf6d4dc00cd8b136c31a1472bbfe"
+    },
+    {
+      "id": "icon-inkstone",
+      "name": "砚池",
+      "category": "icon",
+      "family": "书法",
+      "traditionIds": [
+        "calligraphy",
+        "ming-wu-school"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "书法",
+        "图标"
+      ],
+      "description": "砚池：取书法的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-inkstone.svg",
+      "sha256": "5483381d13e7a9f97b1b1bbf091fe0a7d7040edf96516d35e4c3015cdf559c41"
+    },
+    {
+      "id": "icon-scroll",
+      "name": "手卷",
+      "category": "icon",
+      "family": "长卷叙事",
+      "traditionIds": [
+        "five-dynasties-narrative",
+        "blue-green-landscape"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "长卷叙事",
+        "图标"
+      ],
+      "description": "手卷：取长卷叙事的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-scroll.svg",
+      "sha256": "91d46eebeb626a28bd7ae62d4824cc8891f1c0af16a0c2472af14ea1b3000b2f"
+    },
+    {
+      "id": "icon-book",
+      "name": "线装书",
+      "category": "icon",
+      "family": "木版画",
+      "traditionIds": [
+        "woodblock",
+        "tang-regular"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木版画",
+        "图标"
+      ],
+      "description": "线装书：取木版画的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-book.svg",
+      "sha256": "8c2bc05aa658a4315827cd520a830bed11e6a4ef7545dd24096d46127050d8fc"
+    },
+    {
+      "id": "icon-bamboo-slips",
+      "name": "竹简",
+      "category": "icon",
+      "family": "汉隶",
+      "traditionIds": [
+        "han-clerical",
+        "han-relief"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉隶",
+        "图标"
+      ],
+      "description": "竹简：取汉隶的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bamboo-slips.svg",
+      "sha256": "cd468a107b2190cb92986ebeeffa748f200f1a6bd4f1b66b0d348c30a4217b3c"
+    },
+    {
+      "id": "icon-seal",
+      "name": "闲章",
+      "category": "icon",
+      "family": "篆刻",
+      "traditionIds": [
+        "seal-carving",
+        "seal-script"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "篆刻",
+        "图标"
+      ],
+      "description": "闲章：取篆刻的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-seal.svg",
+      "sha256": "44c288f5d585dd6fde1d644ec4853b9d6f5b810f043fc60fafd8f5cccd058b0e"
+    },
+    {
+      "id": "icon-sun",
+      "name": "日轮",
+      "category": "icon",
+      "family": "汉瓦当",
+      "traditionIds": [
+        "han-eaves-tile",
+        "han-relief"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉瓦当",
+        "图标"
+      ],
+      "description": "日轮：取汉瓦当的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-sun.svg",
+      "sha256": "c3299f7262fbdfe33399dc691e325d20ef1b4f159b5504b127ce67b3e843c2b4"
+    },
+    {
+      "id": "icon-moon",
+      "name": "月钩",
+      "category": "icon",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song",
+        "song-bird-flower"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "南宋小景",
+        "图标"
+      ],
+      "description": "月钩：取南宋小景的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-moon.svg",
+      "sha256": "1734b648c2c325b9cce92d9367caf802250524b6cff520832c880a8d399fd45e"
+    },
+    {
+      "id": "icon-cloud",
+      "name": "卷云",
+      "category": "icon",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer",
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "图标"
+      ],
+      "description": "卷云：取汉漆器的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-cloud.svg",
+      "sha256": "121716c1e0e2eb6438cfdb36f166746f4fc59a7d350b968b85e012d4412ad25c"
+    },
+    {
+      "id": "icon-rain",
+      "name": "细雨",
+      "category": "icon",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song",
+        "yuan-literati"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "南宋小景",
+        "图标"
+      ],
+      "description": "细雨：取南宋小景的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-rain.svg",
+      "sha256": "153ce0e595422e1f3b81b596e2c365ab9282ad237ee824ff71f5489a2f59a5be"
+    },
+    {
+      "id": "icon-snow",
+      "name": "六出雪",
+      "category": "icon",
+      "family": "刺绣",
+      "traditionIds": [
+        "silk-embroidery",
+        "paper-cut"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "刺绣",
+        "图标"
+      ],
+      "description": "六出雪：取刺绣的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-snow.svg",
+      "sha256": "8cb7036a023d8f1221f3d9e928cde606440acdce1dac3c6ba67fd1820566aa3f"
+    },
+    {
+      "id": "icon-wind",
+      "name": "流风",
+      "category": "icon",
+      "family": "草书",
+      "traditionIds": [
+        "cursive-calligraphy",
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "草书",
+        "图标"
+      ],
+      "description": "流风：取草书的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-wind.svg",
+      "sha256": "716a411c86332bb73ccaf63964b3beceea462f86b72a45066bea6c4836f6bc84"
+    },
+    {
+      "id": "icon-bamboo",
+      "name": "竹叶",
+      "category": "icon",
+      "family": "扬州墨笔",
+      "traditionIds": [
+        "qing-eccentric-ink",
+        "yuan-literati"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "扬州墨笔",
+        "图标"
+      ],
+      "description": "竹叶：取扬州墨笔的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bamboo.svg",
+      "sha256": "30eccad08c7d5af030bf339ed0223b6ad531e744644ae7d813e9e952a55040af"
+    },
+    {
+      "id": "icon-lotus",
+      "name": "莲瓣",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "莲瓣：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-lotus.svg",
+      "sha256": "eac716a7c5077dca84d128db217bb1f773247c9f6e8e9bfa59ac3e376fd4379a"
+    },
+    {
+      "id": "icon-plum",
+      "name": "梅枝",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "qing-eccentric-ink"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "梅枝：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-plum.svg",
+      "sha256": "5e6944c79a1599da4d970149d64c70e9790ceb4ffcafd2468b1a8659b4e3a660"
+    },
+    {
+      "id": "icon-orchid",
+      "name": "兰草",
+      "category": "icon",
+      "family": "元文人山水",
+      "traditionIds": [
+        "yuan-literati",
+        "ming-wu-school"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "元文人山水",
+        "图标"
+      ],
+      "description": "兰草：取元文人山水的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-orchid.svg",
+      "sha256": "88ea786f308f8855f1b85590b3dc7cc8db2043959bfe4e4527a38578ad2ca5ab"
+    },
+    {
+      "id": "icon-pine",
+      "name": "松针",
+      "category": "icon",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song",
+        "yuan-literati"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "南宋小景",
+        "图标"
+      ],
+      "description": "松针：取南宋小景的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-pine.svg",
+      "sha256": "abda292beef0ec9c359286675c492761d1501a7dd396c552a1fbef3acd96bdea"
+    },
+    {
+      "id": "icon-peony",
+      "name": "牡丹",
+      "category": "icon",
+      "family": "清粉彩",
+      "traditionIds": [
+        "qing-famille-rose",
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "清粉彩",
+        "图标"
+      ],
+      "description": "牡丹：取清粉彩的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-peony.svg",
+      "sha256": "253344323f3db6cb8474b535df74b88f64ec93585175bbd22c7ce7b86f129b44"
+    },
+    {
+      "id": "icon-ginkgo",
+      "name": "银杏",
+      "category": "icon",
+      "family": "刺绣",
+      "traditionIds": [
+        "silk-embroidery",
+        "song-brocade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "刺绣",
+        "图标"
+      ],
+      "description": "银杏：取刺绣的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-ginkgo.svg",
+      "sha256": "76643c616e26abf36c8136bd4be29536cd1ce3c06823fe0c9054d67e1e820a35"
+    },
+    {
+      "id": "icon-chrysanthemum",
+      "name": "菊瓣",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "菊瓣：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-chrysanthemum.svg",
+      "sha256": "17878c159e9714d7a44b35e2929cfbdd66fa4a4acb6ae98e975e349ecbc03bcc"
+    },
+    {
+      "id": "icon-qin",
+      "name": "七弦琴",
+      "category": "icon",
+      "family": "明式家具",
+      "traditionIds": [
+        "ming-furniture",
+        "five-dynasties-narrative"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "明式家具",
+        "图标"
+      ],
+      "description": "七弦琴：取明式家具的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-qin.svg",
+      "sha256": "01e32a848fcfdfb3f929a0193b46fcae5e24d2098eea29a4ffa7c253089e5369"
+    },
+    {
+      "id": "icon-flute",
+      "name": "竹笛",
+      "category": "icon",
+      "family": "吴门册页",
+      "traditionIds": [
+        "ming-wu-school",
+        "five-dynasties-narrative"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "吴门册页",
+        "图标"
+      ],
+      "description": "竹笛：取吴门册页的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-flute.svg",
+      "sha256": "ff3d1cae0dd052e106f5a5d1253888133e704c55345185f874f87030274ea30e"
+    },
+    {
+      "id": "icon-bell",
+      "name": "编钟",
+      "category": "icon",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay",
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "图标"
+      ],
+      "description": "编钟：取错金银的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bell.svg",
+      "sha256": "cbfe435aa04ca086d633768d6968fb8377372e46e1f30de5f7adef4ccbc180f6"
+    },
+    {
+      "id": "icon-sheng",
+      "name": "笙管",
+      "category": "icon",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang",
+        "five-dynasties-narrative"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "图标"
+      ],
+      "description": "笙管：取敦煌壁画的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-sheng.svg",
+      "sha256": "a067705cc8769214e4324d20dcaac7ebb8c2176cddf4a655c3f92f575560ca97"
+    },
+    {
+      "id": "icon-fan",
+      "name": "团扇",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "tang-figure"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "团扇：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-fan.svg",
+      "sha256": "31a84982e55ee47b674f742d3caac63934d1d2ca149080ed584a2fec3c424837"
+    },
+    {
+      "id": "icon-umbrella",
+      "name": "油纸伞",
+      "category": "icon",
+      "family": "吴门册页",
+      "traditionIds": [
+        "ming-wu-school",
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "吴门册页",
+        "图标"
+      ],
+      "description": "油纸伞：取吴门册页的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-umbrella.svg",
+      "sha256": "0196ab2cc7fa985aad4927567bdd4d2b97eb5d438a5b883841dcbb3e16c021de"
+    },
+    {
+      "id": "icon-lantern",
+      "name": "宫灯",
+      "category": "icon",
+      "family": "建筑彩画",
+      "traditionIds": [
+        "architectural-polychrome",
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "建筑彩画",
+        "图标"
+      ],
+      "description": "宫灯：取建筑彩画的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-lantern.svg",
+      "sha256": "008f79bc0b3ebfe745ad272e645adcb7f3f94bc7992c1d0919d64fd65847d621"
+    },
+    {
+      "id": "icon-compass",
+      "name": "司南",
+      "category": "icon",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief",
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "图标"
+      ],
+      "description": "司南：取汉画像的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-compass.svg",
+      "sha256": "f13653748edc6974a2849817b50fe74c9a77eb15d40713472fa3152c483829df"
+    },
+    {
+      "id": "icon-gate",
+      "name": "城门",
+      "category": "icon",
+      "family": "界画",
+      "traditionIds": [
+        "jiehua-architecture",
+        "han-relief"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "界画",
+        "图标"
+      ],
+      "description": "城门：取界画的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-gate.svg",
+      "sha256": "d51c7b1457414bd8c3e17c259899ec4ad70979e91ff5741d061d94f718a221b6"
+    },
+    {
+      "id": "icon-bridge",
+      "name": "拱桥",
+      "category": "icon",
+      "family": "园林",
+      "traditionIds": [
+        "garden",
+        "jiehua-architecture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "图标"
+      ],
+      "description": "拱桥：取园林的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bridge.svg",
+      "sha256": "f9b426d590281a73995cd40d494061f15535db478cd1aaab1792af052b453fa8"
+    },
+    {
+      "id": "icon-boat",
+      "name": "篷舟",
+      "category": "icon",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song",
+        "five-dynasties-narrative"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "南宋小景",
+        "图标"
+      ],
+      "description": "篷舟：取南宋小景的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-boat.svg",
+      "sha256": "3b1d97c13dd131c0b02efaa307b74b06cad60259cbac1480a42e8f826949511f"
+    },
+    {
+      "id": "icon-mountain",
+      "name": "山峦",
+      "category": "icon",
+      "family": "青绿山水",
+      "traditionIds": [
+        "blue-green-landscape",
+        "yuan-literati"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青绿山水",
+        "图标"
+      ],
+      "description": "山峦：取青绿山水的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-mountain.svg",
+      "sha256": "b082d04759e665caeb757abcf005629365145099d4ac4d4187c2053dc7ae4de9"
+    },
+    {
+      "id": "icon-pavilion",
+      "name": "六角亭",
+      "category": "icon",
+      "family": "园林",
+      "traditionIds": [
+        "garden",
+        "dougong-timber"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "图标"
+      ],
+      "description": "六角亭：取园林的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-pavilion.svg",
+      "sha256": "7bad54417e57d96a7f2978b6f3f8b95a48edf4e98c1aa6d38b57ac544c8ff167"
+    },
+    {
+      "id": "icon-path",
+      "name": "石径",
+      "category": "icon",
+      "family": "园林",
+      "traditionIds": [
+        "garden",
+        "ming-wu-school"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "图标"
+      ],
+      "description": "石径：取园林的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-path.svg",
+      "sha256": "e2e30b4799bfc85b23c8c5cc63c1f9a8cec0330444212807bd2a5ac5eab911c5"
+    },
+    {
+      "id": "icon-jade-bi",
+      "name": "玉璧",
+      "category": "icon",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade",
+        "hongshan-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "图标"
+      ],
+      "description": "玉璧：取战国透雕玉的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-jade-bi.svg",
+      "sha256": "bec872383999e516087abff60f3bbdc4a35b3e4b32a67f15bcc83ede1e2b13ce"
+    },
+    {
+      "id": "icon-jade-cong",
+      "name": "方琮",
+      "category": "icon",
+      "family": "良渚玉琮",
+      "traditionIds": [
+        "liangzhu-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "良渚玉琮",
+        "图标"
+      ],
+      "description": "方琮：取良渚玉琮的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-jade-cong.svg",
+      "sha256": "6175836be7cfa24427cee5cfc54feb7e0f962283eeb09302d7237f9041d44dd9"
+    },
+    {
+      "id": "icon-jue",
+      "name": "爵杯",
+      "category": "icon",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie",
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "图标"
+      ],
+      "description": "爵杯：取礼器兽面的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-jue.svg",
+      "sha256": "4fed908a4c5fbe6cc66716e7cbd00481503b30b0b9d8d248cb4c4b5e710b2d0b"
+    },
+    {
+      "id": "icon-ding",
+      "name": "三足鼎",
+      "category": "icon",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "图标"
+      ],
+      "description": "三足鼎：取礼器兽面的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-ding.svg",
+      "sha256": "4ba5419f83d83c80a5820065dfb4c6dffbbedcb62f04c756d3efc9177c464a1e"
+    },
+    {
+      "id": "icon-bowl",
+      "name": "敞口盏",
+      "category": "icon",
+      "family": "宋瓷",
+      "traditionIds": [
+        "song-ceramics",
+        "longquan-celadon"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋瓷",
+        "图标"
+      ],
+      "description": "敞口盏：取宋瓷的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bowl.svg",
+      "sha256": "48c2a24ab1d729d3f6d1b691c4494bf803ebaf2a4161950964e689fe3c6f0b3f"
+    },
+    {
+      "id": "icon-vase",
+      "name": "梅瓶",
+      "category": "icon",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white",
+        "song-cizhou"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青花",
+        "图标"
+      ],
+      "description": "梅瓶：取青花的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-vase.svg",
+      "sha256": "7c504733526004268d82fbda79492d637b42f9ca8285a9173f12750a62b2d273"
+    },
+    {
+      "id": "icon-teacup",
+      "name": "茶盏",
+      "category": "icon",
+      "family": "德化白瓷",
+      "traditionIds": [
+        "dehua-porcelain",
+        "song-ceramics"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "德化白瓷",
+        "图标"
+      ],
+      "description": "茶盏：取德化白瓷的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-teacup.svg",
+      "sha256": "7ddc81095e3ea5b8fdefccc5c2cb0a6c785e194c829f0b48024f0a645220fd96"
+    },
+    {
+      "id": "icon-incense",
+      "name": "香炉",
+      "category": "icon",
+      "family": "宋瓷",
+      "traditionIds": [
+        "song-ceramics",
+        "ming-furniture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋瓷",
+        "图标"
+      ],
+      "description": "香炉：取宋瓷的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-incense.svg",
+      "sha256": "a2b590674efb583d98fc5257232c6f287d558e25dc6fcad3e1cd8365ab9cc855"
+    },
+    {
+      "id": "icon-ruyi",
+      "name": "如意",
+      "category": "icon",
+      "family": "花丝",
+      "traditionIds": [
+        "filigree-metal",
+        "qing-famille-rose"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "花丝",
+        "图标"
+      ],
+      "description": "如意：取花丝的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-ruyi.svg",
+      "sha256": "4d60251e6a8f87af9f098a2325306870de64c8eddf801ce709e8db7f58e8faa7"
+    },
+    {
+      "id": "icon-crane",
+      "name": "鹤影",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "鹤影：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-crane.svg",
+      "sha256": "d0a38a5f8e3a80922500162e1aa7a04e4106513c892a54cfb7e4385f90f1724c"
+    },
+    {
+      "id": "icon-fish",
+      "name": "双弧鱼",
+      "category": "icon",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief",
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "图标"
+      ],
+      "description": "双弧鱼：取汉画像的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-fish.svg",
+      "sha256": "21d032d974ca4e90144e69635577abb2064d2f0e52f2d4c43f9d63782e55ce4a"
+    },
+    {
+      "id": "icon-butterfly",
+      "name": "蝶翼",
+      "category": "icon",
+      "family": "缂丝",
+      "traditionIds": [
+        "kesi-weaving",
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "缂丝",
+        "图标"
+      ],
+      "description": "蝶翼：取缂丝的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-butterfly.svg",
+      "sha256": "719934626eeb832f207952fe88b862175d4474b4d10fa09354672d600a3a83a5"
+    },
+    {
+      "id": "icon-swallow",
+      "name": "燕归",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "paper-cut"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "燕归：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-swallow.svg",
+      "sha256": "351dfd3109803a2b0d3d14e45a804aa8b9d7c9ae254fd2ee8d2005ffe6e52cfc"
+    },
+    {
+      "id": "icon-beast-mask",
+      "name": "兽面",
+      "category": "icon",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "图标"
+      ],
+      "description": "兽面：取礼器兽面的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-beast-mask.svg",
+      "sha256": "d6af17e0784c5cce7f60f889faffa222664909b57f4d14dcd174c16ae466bd25"
+    },
+    {
+      "id": "icon-deer",
+      "name": "鹿行",
+      "category": "icon",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief",
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "图标"
+      ],
+      "description": "鹿行：取汉画像的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-deer.svg",
+      "sha256": "2bb973543a7ed70c4cd8638ed8e5d3b20913417b45d0e2fb3f81045bb459f7da"
+    },
+    {
+      "id": "icon-star",
+      "name": "星芒",
+      "category": "icon",
+      "family": "汉瓦当",
+      "traditionIds": [
+        "han-eaves-tile",
+        "architectural-polychrome"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉瓦当",
+        "图标"
+      ],
+      "description": "星芒：取汉瓦当的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-star.svg",
+      "sha256": "2a7085a33b1ea1360a3ad4b5edf628430ef8308a9e9afd3b630366934455908b"
+    },
+    {
+      "id": "icon-drop",
+      "name": "水滴",
+      "category": "icon",
+      "family": "钧釉",
+      "traditionIds": [
+        "jun-glaze",
+        "longquan-celadon"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "钧釉",
+        "图标"
+      ],
+      "description": "水滴：取钧釉的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-drop.svg",
+      "sha256": "a075078654519ee095c154084231e66ea90f9684518a97ac8897887fc73855aa"
+    },
+    {
+      "id": "icon-flame",
+      "name": "焰纹",
+      "category": "icon",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang",
+        "cloisonne"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "图标"
+      ],
+      "description": "焰纹：取敦煌壁画的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-flame.svg",
+      "sha256": "16210d6734386fd679cde7f9656a2e5b66bba6771039358eddbd785853151adf"
+    },
+    {
+      "id": "icon-leaf",
+      "name": "一叶",
+      "category": "icon",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower",
+        "indigo-resist"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "图标"
+      ],
+      "description": "一叶：取宋花鸟的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-leaf.svg",
+      "sha256": "52882610021e671682a18063a8a07802b8a9baa9655e24bebf6bfa3e1383b1a5"
+    },
+    {
+      "id": "icon-shield",
+      "name": "护心盾",
+      "category": "icon",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay",
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "图标"
+      ],
+      "description": "护心盾：取错金银的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-shield.svg",
+      "sha256": "49757fff4a4bdf12e0231a1d4cd127df3dcb3a8f917ec244581e3ef40c2f8959"
+    },
+    {
+      "id": "icon-sword",
+      "name": "青锋",
+      "category": "icon",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade",
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "图标"
+      ],
+      "description": "青锋：取战国透雕玉的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-sword.svg",
+      "sha256": "53386c302123440499b20c5f4077d4e5c3fb98ec7b161a871637abed0026264d"
+    },
+    {
+      "id": "icon-bow",
+      "name": "弓弦",
+      "category": "icon",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief",
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "图标"
+      ],
+      "description": "弓弦：取汉画像的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-bow.svg",
+      "sha256": "c18d9cb5e26990d8a1b1fde32925017d7fcabcb0e3546b24784b4f993ddd05e3"
+    },
+    {
+      "id": "icon-coin",
+      "name": "方孔钱",
+      "category": "icon",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief",
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "图标"
+      ],
+      "description": "方孔钱：取汉画像的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-coin.svg",
+      "sha256": "4c0c51fe8f6f0b8a6ea51e27356dd82c147d7681cfda0790f2e8bc1ae854411e"
+    },
+    {
+      "id": "icon-key",
+      "name": "铜锁钥",
+      "category": "icon",
+      "family": "明式家具",
+      "traditionIds": [
+        "ming-furniture",
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "明式家具",
+        "图标"
+      ],
+      "description": "铜锁钥：取明式家具的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-key.svg",
+      "sha256": "3893ad399217b728e76d057569f66b5095209c8aad7356583f8f12bc0e79c274"
+    },
+    {
+      "id": "icon-chess",
+      "name": "弈棋",
+      "category": "icon",
+      "family": "园林",
+      "traditionIds": [
+        "garden",
+        "ming-furniture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "图标"
+      ],
+      "description": "弈棋：取园林的形态与组织方式，重新设计为现代矢量图标。这是原创转译，不是历史原件复刻。",
+      "usage": "用于工具栏、物品栏、技能、地图标记或状态图标；建议先在实际显示尺寸检查轮廓。",
+      "width": 144,
+      "height": 144,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "icon",
+      "filename": "icon/icon-chess.svg",
+      "sha256": "1045e96930447ee9e81b38f7a12d8778c00780dcf586cd626a1914261aa59f25"
+    },
+    {
+      "id": "pattern-cloud-key",
+      "name": "回云方胜",
+      "category": "pattern",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "纹样"
+      ],
+      "description": "回云方胜：取汉漆器的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-cloud-key.svg",
+      "sha256": "2a9f161c3e3bc6f578bd61ee3f521ba8e9e5893de1ba1249c336f43c77df30aa"
+    },
+    {
+      "id": "pattern-thunder-key",
+      "name": "雷纹连续格",
+      "category": "pattern",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "纹样"
+      ],
+      "description": "雷纹连续格：取礼器兽面的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-thunder-key.svg",
+      "sha256": "c1e35d25584e893beb66165ebc253a5e001f411c80d495a7a9e0496b08073de4"
+    },
+    {
+      "id": "pattern-inlay-hooks",
+      "name": "错金钩连",
+      "category": "pattern",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "纹样"
+      ],
+      "description": "错金钩连：取错金银的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-inlay-hooks.svg",
+      "sha256": "9b633fa78c010877304d14fbb62a9dfae6a0a1888aa41ae2b3aa0f9a304ee8a3"
+    },
+    {
+      "id": "pattern-cong-eyes",
+      "name": "琮面双目格",
+      "category": "pattern",
+      "family": "良渚玉琮",
+      "traditionIds": [
+        "liangzhu-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "良渚玉琮",
+        "纹样"
+      ],
+      "description": "琮面双目格：取良渚玉琮的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-cong-eyes.svg",
+      "sha256": "dfd2d5468f74d6b6acfe9fa23026ee3f477de18eea474ffd8236185f05fab898"
+    },
+    {
+      "id": "pattern-jade-spiral",
+      "name": "玉弧勾连",
+      "category": "pattern",
+      "family": "红山玉器",
+      "traditionIds": [
+        "hongshan-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "红山玉器",
+        "纹样"
+      ],
+      "description": "玉弧勾连：取红山玉器的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-jade-spiral.svg",
+      "sha256": "e43977a8d0dc36c7f706e201dac5455690d27abc29bd4e5e0e444ac20ee74b3f"
+    },
+    {
+      "id": "pattern-openwork-diamond",
+      "name": "透雕交菱",
+      "category": "pattern",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "纹样"
+      ],
+      "description": "透雕交菱：取战国透雕玉的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-openwork-diamond.svg",
+      "sha256": "c36ae34d1a69ee6a6012822c36c83eb9e59add834c8e6ae3c0eb003b8d92fbf7"
+    },
+    {
+      "id": "pattern-eaves-rosette",
+      "name": "瓦当四瓣",
+      "category": "pattern",
+      "family": "汉瓦当",
+      "traditionIds": [
+        "han-eaves-tile"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉瓦当",
+        "纹样"
+      ],
+      "description": "瓦当四瓣：取汉瓦当的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-eaves-rosette.svg",
+      "sha256": "2fc327da3b3ed7f231d3260f533f8e256cf25ae83095ab92280dbfda683bba02"
+    },
+    {
+      "id": "pattern-lotus-chain",
+      "name": "莲瓣串带",
+      "category": "pattern",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "纹样"
+      ],
+      "description": "莲瓣串带：取敦煌壁画的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-lotus-chain.svg",
+      "sha256": "5d18d34dd15ac23c557a5d8378b4ecbb641df854555d9b27472bdd7df73800c2"
+    },
+    {
+      "id": "pattern-pearl-roundel",
+      "name": "联珠团窠",
+      "category": "pattern",
+      "family": "织锦",
+      "traditionIds": [
+        "song-brocade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "织锦",
+        "纹样"
+      ],
+      "description": "联珠团窠：取织锦的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-pearl-roundel.svg",
+      "sha256": "4f523b15bfc771e0a86bc26f8f1794422422fb33d7259d7c61dff5109dee09a9"
+    },
+    {
+      "id": "pattern-brocade-flower",
+      "name": "织锦八瓣",
+      "category": "pattern",
+      "family": "织锦",
+      "traditionIds": [
+        "song-brocade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "织锦",
+        "纹样"
+      ],
+      "description": "织锦八瓣：取织锦的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-brocade-flower.svg",
+      "sha256": "f8830224e55c5bea5d02b93754d271e69c75a94c54e722f835313e86839b55e9"
+    },
+    {
+      "id": "pattern-kesi-clouds",
+      "name": "缂丝曲云",
+      "category": "pattern",
+      "family": "缂丝",
+      "traditionIds": [
+        "kesi-weaving"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "缂丝",
+        "纹样"
+      ],
+      "description": "缂丝曲云：取缂丝的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-kesi-clouds.svg",
+      "sha256": "442b9f487d023affcb2e413ef64bcb0bed574a48c5c52d0bd5addbe404481013"
+    },
+    {
+      "id": "pattern-indigo-stars",
+      "name": "蓝染八角花",
+      "category": "pattern",
+      "family": "蓝染",
+      "traditionIds": [
+        "indigo-resist"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "蓝染",
+        "纹样"
+      ],
+      "description": "蓝染八角花：取蓝染的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-indigo-stars.svg",
+      "sha256": "a1af7283503ffb9bda102be4028613752273a41aa6b63933385b362f44da6d5f"
+    },
+    {
+      "id": "pattern-indigo-dots",
+      "name": "蓝染四点格",
+      "category": "pattern",
+      "family": "蓝染",
+      "traditionIds": [
+        "indigo-resist"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "蓝染",
+        "纹样"
+      ],
+      "description": "蓝染四点格：取蓝染的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-indigo-dots.svg",
+      "sha256": "be0e1a432600d8f55870f392fda0feff3ee6507ae58743200492b13f69a10fb2"
+    },
+    {
+      "id": "pattern-embroidered-leaves",
+      "name": "绣叶交枝",
+      "category": "pattern",
+      "family": "刺绣",
+      "traditionIds": [
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "刺绣",
+        "纹样"
+      ],
+      "description": "绣叶交枝：取刺绣的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-embroidered-leaves.svg",
+      "sha256": "3fd2bf447bc73877373832ed83cbe09ccc9d1e7af36a2d7361c723ee95e1424d"
+    },
+    {
+      "id": "pattern-bluewhite-vine",
+      "name": "青花缠枝",
+      "category": "pattern",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青花",
+        "纹样"
+      ],
+      "description": "青花缠枝：取青花的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-bluewhite-vine.svg",
+      "sha256": "f056b58e89e21de8c11afbf3b18d17b9726fb4e7cc187157d8d91e7bd2ff3985"
+    },
+    {
+      "id": "pattern-rose-sprigs",
+      "name": "粉彩折枝格",
+      "category": "pattern",
+      "family": "清粉彩",
+      "traditionIds": [
+        "qing-famille-rose"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "清粉彩",
+        "纹样"
+      ],
+      "description": "粉彩折枝格：取清粉彩的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-rose-sprigs.svg",
+      "sha256": "371b057768bea8269c1f93eea6aaa2cc5c033bf7d8bfbcf13a5d1e0a7305c88e"
+    },
+    {
+      "id": "pattern-cizhou-scroll",
+      "name": "磁州黑绘弧",
+      "category": "pattern",
+      "family": "磁州窑",
+      "traditionIds": [
+        "song-cizhou"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "磁州窑",
+        "纹样"
+      ],
+      "description": "磁州黑绘弧：取磁州窑的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-cizhou-scroll.svg",
+      "sha256": "14c62523c4d933edf86ff614ef3ad7569d0ff303ffea9db96ce2357ef72f1d0c"
+    },
+    {
+      "id": "pattern-celadon-petals",
+      "name": "青瓷瓣影",
+      "category": "pattern",
+      "family": "龙泉青瓷",
+      "traditionIds": [
+        "longquan-celadon"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "龙泉青瓷",
+        "纹样"
+      ],
+      "description": "青瓷瓣影：取龙泉青瓷的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-celadon-petals.svg",
+      "sha256": "564bcf6402f7b2cc94ea27f2d3d9f016b220c1ac9033bc0d9419988735b6cc24"
+    },
+    {
+      "id": "pattern-polychrome-bracket",
+      "name": "彩画折线带",
+      "category": "pattern",
+      "family": "建筑彩画",
+      "traditionIds": [
+        "architectural-polychrome"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "建筑彩画",
+        "纹样"
+      ],
+      "description": "彩画折线带：取建筑彩画的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-polychrome-bracket.svg",
+      "sha256": "3eae86f08e69de3575e90cd4557d1964834c2b2befdc9bbfbe8ba90758c57741"
+    },
+    {
+      "id": "pattern-cloisonne-fan",
+      "name": "珐琅扇瓣",
+      "category": "pattern",
+      "family": "掐丝珐琅",
+      "traditionIds": [
+        "cloisonne"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "掐丝珐琅",
+        "纹样"
+      ],
+      "description": "珐琅扇瓣：取掐丝珐琅的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-cloisonne-fan.svg",
+      "sha256": "6d55f5f335ddfd35830b993fcc5e26576640c003dbc4ee9b159a2a2492e54f19"
+    },
+    {
+      "id": "pattern-pearl-stars",
+      "name": "螺钿星网",
+      "category": "pattern",
+      "family": "螺钿",
+      "traditionIds": [
+        "mother-of-pearl-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "螺钿",
+        "纹样"
+      ],
+      "description": "螺钿星网：取螺钿的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-pearl-stars.svg",
+      "sha256": "46dce45144fe880bde425b029d27cb234f01630aa02a874af12d83df39ef8d92"
+    },
+    {
+      "id": "pattern-filigree-loops",
+      "name": "花丝连环",
+      "category": "pattern",
+      "family": "花丝",
+      "traditionIds": [
+        "filigree-metal"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "花丝",
+        "纹样"
+      ],
+      "description": "花丝连环：取花丝的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-filigree-loops.svg",
+      "sha256": "54905bc2d30cf63d6b9daa7d9b33ab1d36c262674d390ae59415617b2bc3b5c1"
+    },
+    {
+      "id": "pattern-paper-cut-flowers",
+      "name": "剪纸四瓣窗花",
+      "category": "pattern",
+      "family": "剪纸",
+      "traditionIds": [
+        "paper-cut"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "剪纸",
+        "纹样"
+      ],
+      "description": "剪纸四瓣窗花：取剪纸的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-paper-cut-flowers.svg",
+      "sha256": "8268abfd5a505d536dd77c13a32972d45e78690dfb6ccd09c9e3040ae43db9f8"
+    },
+    {
+      "id": "pattern-newyear-wave",
+      "name": "年画鱼鳞浪",
+      "category": "pattern",
+      "family": "年画",
+      "traditionIds": [
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "年画",
+        "纹样"
+      ],
+      "description": "年画鱼鳞浪：取年画的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-newyear-wave.svg",
+      "sha256": "07e28f363059255d0a0cb8923d8cfecca46c7b13a2dc31275066496eb4a2e803"
+    },
+    {
+      "id": "pattern-shadow-lattice",
+      "name": "皮影透孔网",
+      "category": "pattern",
+      "family": "皮影",
+      "traditionIds": [
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "皮影",
+        "纹样"
+      ],
+      "description": "皮影透孔网：取皮影的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-shadow-lattice.svg",
+      "sha256": "de8e83bb57426fcaceed62d03d423fa6649d177c242b0f98a12561bea59ea852"
+    },
+    {
+      "id": "pattern-garden-hexagon",
+      "name": "园林六角窗格",
+      "category": "pattern",
+      "family": "园林",
+      "traditionIds": [
+        "garden"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "纹样"
+      ],
+      "description": "园林六角窗格：取园林的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-garden-hexagon.svg",
+      "sha256": "bbca5e2404b229e43c69efebb7addfffedce05ddcffcc26c9038643fe431314a"
+    },
+    {
+      "id": "pattern-huizhou-roof",
+      "name": "马头墙节奏",
+      "category": "pattern",
+      "family": "徽州民居",
+      "traditionIds": [
+        "huizhou-dwellings"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "徽州民居",
+        "纹样"
+      ],
+      "description": "马头墙节奏：取徽州民居的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-huizhou-roof.svg",
+      "sha256": "5253c010a5501f5dc2a3f1a72d43216d8bfbcaf7cae95c71a325a8ba903aab55"
+    },
+    {
+      "id": "pattern-bracket-join",
+      "name": "斗拱交叠",
+      "category": "pattern",
+      "family": "木构斗拱",
+      "traditionIds": [
+        "dougong-timber"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木构斗拱",
+        "纹样"
+      ],
+      "description": "斗拱交叠：取木构斗拱的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-bracket-join.svg",
+      "sha256": "c354edc743e8975111e6895b8248b0e09af9fd8edd2fbfd77fa0ed41349aee51"
+    },
+    {
+      "id": "pattern-seal-maze",
+      "name": "篆线方迷",
+      "category": "pattern",
+      "family": "篆书",
+      "traditionIds": [
+        "seal-script",
+        "seal-carving"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "篆书",
+        "纹样"
+      ],
+      "description": "篆线方迷：取篆书的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-seal-maze.svg",
+      "sha256": "26b4fd87a5d2481c0ded58d70d9ee5d4d5b097f4608e97321e4035f8311bab2f"
+    },
+    {
+      "id": "pattern-clerical-bars",
+      "name": "隶意横波",
+      "category": "pattern",
+      "family": "汉隶",
+      "traditionIds": [
+        "han-clerical"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉隶",
+        "纹样"
+      ],
+      "description": "隶意横波：取汉隶的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-clerical-bars.svg",
+      "sha256": "0d4e0f97c0f4156ec9b5b19d1d00ba9f1040f56337b4fd82cf102a0d9074c883"
+    },
+    {
+      "id": "pattern-regular-grid",
+      "name": "楷意九宫格",
+      "category": "pattern",
+      "family": "唐楷",
+      "traditionIds": [
+        "tang-regular"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "唐楷",
+        "纹样"
+      ],
+      "description": "楷意九宫格：取唐楷的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-regular-grid.svg",
+      "sha256": "b5dd2f4c050b4c0a051d84b3ccbbc2bb9ecf5b58262c1580eb17b840e53ad279"
+    },
+    {
+      "id": "pattern-cursive-ribbon",
+      "name": "草意回带",
+      "category": "pattern",
+      "family": "草书",
+      "traditionIds": [
+        "cursive-calligraphy"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "草书",
+        "纹样"
+      ],
+      "description": "草意回带：取草书的形态与组织方式，重新设计为现代矢量纹样。这是原创转译，不是历史原件复刻。",
+      "usage": "用于布料、纸张、界面底纹或装饰带；可重复平铺，低对比背景应另行降低透明度。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "icon",
+      "filename": "pattern/pattern-cursive-ribbon.svg",
+      "sha256": "d0f2342ece6af2fe35aad6953c523b8fdbf448d22c230f8d1039fdc92d4b4c7b"
+    },
+    {
+      "id": "frame-key-corners",
+      "name": "回纹角框",
+      "category": "frame",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "边框"
+      ],
+      "description": "回纹角框：取汉漆器的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-key-corners.svg",
+      "sha256": "a58ee27c818e00fc2a55e7f92d876e9ce489615f48e75990979b550210a036fa"
+    },
+    {
+      "id": "frame-bronze-tabs",
+      "name": "铜器耳边框",
+      "category": "frame",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "边框"
+      ],
+      "description": "铜器耳边框：取礼器兽面的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-bronze-tabs.svg",
+      "sha256": "f6ea057cf62b25b938e5d3efe1ca5a94d6c1a597adace0f5272023fd1b3dbbd4"
+    },
+    {
+      "id": "frame-inlay-cross",
+      "name": "错金交角框",
+      "category": "frame",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "边框"
+      ],
+      "description": "错金交角框：取错金银的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-inlay-cross.svg",
+      "sha256": "a0a86bfe22bc78de8da2fad28837ca217dfdbbf7a61155dd3b2d4214ca0da287"
+    },
+    {
+      "id": "frame-jade-square",
+      "name": "玉琮分节框",
+      "category": "frame",
+      "family": "良渚玉琮",
+      "traditionIds": [
+        "liangzhu-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "良渚玉琮",
+        "边框"
+      ],
+      "description": "玉琮分节框：取良渚玉琮的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-jade-square.svg",
+      "sha256": "15d6f6c283004b57ad466dfdca31ec3fd5b4a850eb192081593d5ae5279eea26"
+    },
+    {
+      "id": "frame-jade-oval",
+      "name": "玉环椭圆框",
+      "category": "frame",
+      "family": "红山玉器",
+      "traditionIds": [
+        "hongshan-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "红山玉器",
+        "边框"
+      ],
+      "description": "玉环椭圆框：取红山玉器的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-jade-oval.svg",
+      "sha256": "85dc4a7288d2db40b05d6b611e49edeb0d06c5796ee5d8137a65cef0336db9d3"
+    },
+    {
+      "id": "frame-jade-interlace",
+      "name": "透雕连角框",
+      "category": "frame",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "边框"
+      ],
+      "description": "透雕连角框：取战国透雕玉的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-jade-interlace.svg",
+      "sha256": "6ec59b563af16f6cb409aa30c88603f550f4897a17df409742184fb8c663d1df"
+    },
+    {
+      "id": "frame-eaves-disc",
+      "name": "瓦当圆徽框",
+      "category": "frame",
+      "family": "汉瓦当",
+      "traditionIds": [
+        "han-eaves-tile"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉瓦当",
+        "边框"
+      ],
+      "description": "瓦当圆徽框：取汉瓦当的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-eaves-disc.svg",
+      "sha256": "0b09b7af952fcba0672cb3225ded13b93dcbd5491e28bc3ca5a7995ebd7dea4a"
+    },
+    {
+      "id": "frame-cave-niche",
+      "name": "石窟龛形框",
+      "category": "frame",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "边框"
+      ],
+      "description": "石窟龛形框：取敦煌壁画的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-cave-niche.svg",
+      "sha256": "855a186d9b94ef0cbacdd68c22ffa04480b6d1e4bb4149209b03ae621d2d1c40"
+    },
+    {
+      "id": "frame-lotus-points",
+      "name": "莲瓣端头框",
+      "category": "frame",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang",
+        "cloisonne"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "边框"
+      ],
+      "description": "莲瓣端头框：取敦煌壁画的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-lotus-points.svg",
+      "sha256": "7169be86d62f08f7730b5271808eac670f8a386e0625a325b07224ed4ab89685"
+    },
+    {
+      "id": "frame-silk-thread",
+      "name": "织锦细线框",
+      "category": "frame",
+      "family": "织锦",
+      "traditionIds": [
+        "song-brocade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "织锦",
+        "边框"
+      ],
+      "description": "织锦细线框：取织锦的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-silk-thread.svg",
+      "sha256": "b171ac5da4710c90c4cbe657ba3b9261c13b14226d264008e42185960e7ec033"
+    },
+    {
+      "id": "frame-kesi-stepped",
+      "name": "缂丝阶边框",
+      "category": "frame",
+      "family": "缂丝",
+      "traditionIds": [
+        "kesi-weaving"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "缂丝",
+        "边框"
+      ],
+      "description": "缂丝阶边框：取缂丝的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-kesi-stepped.svg",
+      "sha256": "2ac96b1293e042af4912de9ff6211b5671351e7a3a167dc1a15caa817c492aee"
+    },
+    {
+      "id": "frame-embroidered-vine",
+      "name": "绣枝边框",
+      "category": "frame",
+      "family": "刺绣",
+      "traditionIds": [
+        "silk-embroidery"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "刺绣",
+        "边框"
+      ],
+      "description": "绣枝边框：取刺绣的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-embroidered-vine.svg",
+      "sha256": "b8dd3bdaec38431246143e96d2bd4e616079149a353820290f7f0810bc611e8e"
+    },
+    {
+      "id": "frame-indigo-seams",
+      "name": "蓝染针迹框",
+      "category": "frame",
+      "family": "蓝染",
+      "traditionIds": [
+        "indigo-resist"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "蓝染",
+        "边框"
+      ],
+      "description": "蓝染针迹框：取蓝染的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-indigo-seams.svg",
+      "sha256": "d4edbb9462bd99aa8941ed8e0d57896c244fcffa8d5d72e172128975e60869c6"
+    },
+    {
+      "id": "frame-blue-white-scroll",
+      "name": "青花卷枝框",
+      "category": "frame",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青花",
+        "边框"
+      ],
+      "description": "青花卷枝框：取青花的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-blue-white-scroll.svg",
+      "sha256": "8e9775c07a8871633d5281d77c5467efdbb7172a128794b55f237026acc77c64"
+    },
+    {
+      "id": "frame-cizhou-black",
+      "name": "磁州黑绘框",
+      "category": "frame",
+      "family": "磁州窑",
+      "traditionIds": [
+        "song-cizhou"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "磁州窑",
+        "边框"
+      ],
+      "description": "磁州黑绘框：取磁州窑的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-cizhou-black.svg",
+      "sha256": "c3ca9063fa1a31235ee1354e295482d246cd1ef14a6539f3f5d9be103c90bff2"
+    },
+    {
+      "id": "frame-celadon-soft",
+      "name": "青瓷柔角框",
+      "category": "frame",
+      "family": "龙泉青瓷",
+      "traditionIds": [
+        "longquan-celadon",
+        "song-ceramics"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "龙泉青瓷",
+        "边框"
+      ],
+      "description": "青瓷柔角框：取龙泉青瓷的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-celadon-soft.svg",
+      "sha256": "5febdb256ba0d4f0fded2a04ff39c0821203df0407dba25388fffc96c524457b"
+    },
+    {
+      "id": "frame-garden-moon",
+      "name": "园林月洞框",
+      "category": "frame",
+      "family": "园林",
+      "traditionIds": [
+        "garden"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "边框"
+      ],
+      "description": "园林月洞框：取园林的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-garden-moon.svg",
+      "sha256": "3c9b7809c4bebbf72d7251e3c3f1553900dbf08e349eb94c00344f6134659702"
+    },
+    {
+      "id": "frame-huizhou-wall",
+      "name": "马头墙顶框",
+      "category": "frame",
+      "family": "徽州民居",
+      "traditionIds": [
+        "huizhou-dwellings"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "徽州民居",
+        "边框"
+      ],
+      "description": "马头墙顶框：取徽州民居的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-huizhou-wall.svg",
+      "sha256": "bc3f3222354c2add2f7970b5e41b9553cecb0e302d419f5a30e3d551315f8781"
+    },
+    {
+      "id": "frame-bracket-corner",
+      "name": "斗拱托角框",
+      "category": "frame",
+      "family": "木构斗拱",
+      "traditionIds": [
+        "dougong-timber"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木构斗拱",
+        "边框"
+      ],
+      "description": "斗拱托角框：取木构斗拱的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-bracket-corner.svg",
+      "sha256": "e88d9afae5ead7272a640153ef3b5fce3599de8bed153239daff74a6e0bfaa77"
+    },
+    {
+      "id": "frame-polychrome-beam",
+      "name": "彩画梁框",
+      "category": "frame",
+      "family": "建筑彩画",
+      "traditionIds": [
+        "architectural-polychrome"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "建筑彩画",
+        "边框"
+      ],
+      "description": "彩画梁框：取建筑彩画的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-polychrome-beam.svg",
+      "sha256": "8d06ac68044a94576cf5bb6391dfa434d8ea982267c567f995c350a61be21dcb"
+    },
+    {
+      "id": "frame-pearl-flower",
+      "name": "螺钿花角框",
+      "category": "frame",
+      "family": "螺钿",
+      "traditionIds": [
+        "mother-of-pearl-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "螺钿",
+        "边框"
+      ],
+      "description": "螺钿花角框：取螺钿的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-pearl-flower.svg",
+      "sha256": "3e1ce54c0900143f431be127ba4883b95de157c2e59d9511fdfac4d452275a5f"
+    },
+    {
+      "id": "frame-filigree-loops",
+      "name": "花丝环角框",
+      "category": "frame",
+      "family": "花丝",
+      "traditionIds": [
+        "filigree-metal"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "花丝",
+        "边框"
+      ],
+      "description": "花丝环角框：取花丝的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-filigree-loops.svg",
+      "sha256": "0c3b949aa08f919a10fa391d02ccf6b92e90b485e3633fd17417c8bda27ba4b5"
+    },
+    {
+      "id": "frame-cut-paper",
+      "name": "剪纸花角框",
+      "category": "frame",
+      "family": "剪纸",
+      "traditionIds": [
+        "paper-cut",
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "剪纸",
+        "边框"
+      ],
+      "description": "剪纸花角框：取剪纸的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-cut-paper.svg",
+      "sha256": "d8b2c8b1dbe0f9e194b35679e54ae8ae4d5855b743a1c07623379a5dd09d4a31"
+    },
+    {
+      "id": "frame-seal-impression",
+      "name": "章印分栏框",
+      "category": "frame",
+      "family": "篆刻",
+      "traditionIds": [
+        "seal-carving",
+        "seal-script"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "篆刻",
+        "边框"
+      ],
+      "description": "章印分栏框：取篆刻的形态与组织方式，重新设计为现代矢量边框。这是原创转译，不是历史原件复刻。",
+      "usage": "用于对话、卡片、道具详情和弹窗；中央留空，使用 SVG 保持比例缩放，不按九宫格自动拉伸。",
+      "width": 512,
+      "height": 384,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "frame/frame-seal-impression.svg",
+      "sha256": "7e89e7277fa3ff912be0bd8669b4e7dfc6a59285d20fa09c1ab92a0238698a46"
+    },
+    {
+      "id": "texture-paper-fibers",
+      "name": "短纤维纸纹",
+      "category": "texture",
+      "family": "书法",
+      "traditionIds": [
+        "calligraphy"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "书法",
+        "材质"
+      ],
+      "description": "短纤维纸纹：取书法的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-paper-fibers.svg",
+      "sha256": "ad45707a739b72161c1475cfaca6d88a671357aa8732d9dc923514c93cd95015"
+    },
+    {
+      "id": "texture-paper-flecks",
+      "name": "散点纸纹",
+      "category": "texture",
+      "family": "木版画",
+      "traditionIds": [
+        "woodblock"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木版画",
+        "材质"
+      ],
+      "description": "散点纸纹：取木版画的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-paper-flecks.svg",
+      "sha256": "0d9bcc1f71982699e7faabc5ca0f5cc701193a7113b1956a37daacc4020c7f0f"
+    },
+    {
+      "id": "texture-silk-warp",
+      "name": "丝绢经纬",
+      "category": "texture",
+      "family": "缂丝",
+      "traditionIds": [
+        "kesi-weaving"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "缂丝",
+        "材质"
+      ],
+      "description": "丝绢经纬：取缂丝的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-silk-warp.svg",
+      "sha256": "d98377e0c3503eeef828e359313c9007b08aef9c709ead0ae1fe40a6d0555ea3"
+    },
+    {
+      "id": "texture-brocade-weave",
+      "name": "锦面斜织",
+      "category": "texture",
+      "family": "织锦",
+      "traditionIds": [
+        "song-brocade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "织锦",
+        "材质"
+      ],
+      "description": "锦面斜织：取织锦的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-brocade-weave.svg",
+      "sha256": "c4ee123d4c69827040295fea3843ef115a01bd0094978f93a3bdfc74d64a4b79"
+    },
+    {
+      "id": "texture-indigo-grain",
+      "name": "蓝染细颗粒",
+      "category": "texture",
+      "family": "蓝染",
+      "traditionIds": [
+        "indigo-resist"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "蓝染",
+        "材质"
+      ],
+      "description": "蓝染细颗粒：取蓝染的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-indigo-grain.svg",
+      "sha256": "1c0a99fc7b6c37a27f698b36b9169620107049d41584f0a9e1be73c10065134e"
+    },
+    {
+      "id": "texture-lacquer-sheen",
+      "name": "漆面纵向光带",
+      "category": "texture",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "材质"
+      ],
+      "description": "漆面纵向光带：取汉漆器的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-lacquer-sheen.svg",
+      "sha256": "41c13811ec36b4b360747a4b5d894395fd7de9e1bec3af320b90bec5fae80cb0"
+    },
+    {
+      "id": "texture-russet-lacquer",
+      "name": "朱漆斑驳",
+      "category": "texture",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "材质"
+      ],
+      "description": "朱漆斑驳：取汉漆器的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-russet-lacquer.svg",
+      "sha256": "a6a4b700d2f73b43c90f48b954ed6e3105cf15036d0e4d8a4b7c6d4c58140e8a"
+    },
+    {
+      "id": "texture-bronze-speckle",
+      "name": "铜绿颗粒",
+      "category": "texture",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "材质"
+      ],
+      "description": "铜绿颗粒：取礼器兽面的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-bronze-speckle.svg",
+      "sha256": "c9bb904d1c4227a6d9c445bd56fb7fae774341e67f68a318e1da21cfb15c5eb6"
+    },
+    {
+      "id": "texture-inlay-dashes",
+      "name": "金属细划痕",
+      "category": "texture",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "材质"
+      ],
+      "description": "金属细划痕：取错金银的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-inlay-dashes.svg",
+      "sha256": "b6b4c84ca19a8f11f8f1aeeb8b9a6dfb9d0180cd36fbf50639ea1c0d95a7f21e"
+    },
+    {
+      "id": "texture-jade-mottling",
+      "name": "青玉云斑",
+      "category": "texture",
+      "family": "红山玉器",
+      "traditionIds": [
+        "hongshan-jade",
+        "warring-states-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "红山玉器",
+        "材质"
+      ],
+      "description": "青玉云斑：取红山玉器的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-jade-mottling.svg",
+      "sha256": "d508d7f63b2b647bec0ed198ef159efb4641b412109be88744a1b930a6d6855f"
+    },
+    {
+      "id": "texture-cong-stone",
+      "name": "玉琮细雾点",
+      "category": "texture",
+      "family": "良渚玉琮",
+      "traditionIds": [
+        "liangzhu-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "良渚玉琮",
+        "材质"
+      ],
+      "description": "玉琮细雾点：取良渚玉琮的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-cong-stone.svg",
+      "sha256": "2a77555d96bb8549b8caee37e54e2d797732b265e0400d043230b14b9b15e675"
+    },
+    {
+      "id": "texture-celadon-soft",
+      "name": "青釉柔光",
+      "category": "texture",
+      "family": "龙泉青瓷",
+      "traditionIds": [
+        "longquan-celadon"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "龙泉青瓷",
+        "材质"
+      ],
+      "description": "青釉柔光：取龙泉青瓷的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-celadon-soft.svg",
+      "sha256": "381851a74e7d1bc812de2c3445720258acdd6a39734eea1b29511aa7f3f266bf"
+    },
+    {
+      "id": "texture-jun-bloom",
+      "name": "钧釉晕斑",
+      "category": "texture",
+      "family": "钧釉",
+      "traditionIds": [
+        "jun-glaze"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "钧釉",
+        "材质"
+      ],
+      "description": "钧釉晕斑：取钧釉的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-jun-bloom.svg",
+      "sha256": "b226a0cf7bf07c11d27fc3c3c8728ece6b0d4c26acfecbcd6bb6a4238e8e10e3"
+    },
+    {
+      "id": "texture-dehua-milk",
+      "name": "白瓷乳光",
+      "category": "texture",
+      "family": "德化白瓷",
+      "traditionIds": [
+        "dehua-porcelain"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "德化白瓷",
+        "材质"
+      ],
+      "description": "白瓷乳光：取德化白瓷的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-dehua-milk.svg",
+      "sha256": "992f385912ca3d8082ecf4db061488a8e22422b65d400679644c0f234f1d5257"
+    },
+    {
+      "id": "texture-sancai-drips",
+      "name": "三彩垂流",
+      "category": "texture",
+      "family": "唐三彩",
+      "traditionIds": [
+        "tang-sancai"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "唐三彩",
+        "材质"
+      ],
+      "description": "三彩垂流：取唐三彩的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-sancai-drips.svg",
+      "sha256": "075135b38d4094daa8f788820cfb84e2487aba98a8eb5988414a84f5c6697fcf"
+    },
+    {
+      "id": "texture-cizhou-brushed",
+      "name": "磁州白地刷痕",
+      "category": "texture",
+      "family": "磁州窑",
+      "traditionIds": [
+        "song-cizhou"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "磁州窑",
+        "材质"
+      ],
+      "description": "磁州白地刷痕：取磁州窑的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-cizhou-brushed.svg",
+      "sha256": "24b635e36371a8696193ca94386bc68d56e13d2c1db8b18e9520d29f118c9c52"
+    },
+    {
+      "id": "texture-bluewhite-speckles",
+      "name": "青花料点",
+      "category": "texture",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青花",
+        "材质"
+      ],
+      "description": "青花料点：取青花的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-bluewhite-speckles.svg",
+      "sha256": "f57055ab610c25adfe433cccdf194d91f7a0ba00c7ef1a8035a65100594a9dc0"
+    },
+    {
+      "id": "texture-timber-grain",
+      "name": "木材顺纹",
+      "category": "texture",
+      "family": "明式家具",
+      "traditionIds": [
+        "ming-furniture",
+        "dougong-timber"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "明式家具",
+        "材质"
+      ],
+      "description": "木材顺纹：取明式家具的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-timber-grain.svg",
+      "sha256": "0a412a3d9679bc503c46f3b8091e6a8aaae37987254a5c59d6fb35cedb16a824"
+    },
+    {
+      "id": "texture-stone-stipple",
+      "name": "石面点刻",
+      "category": "texture",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "材质"
+      ],
+      "description": "石面点刻：取汉画像的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-stone-stipple.svg",
+      "sha256": "b3e0504bb4a42d66e10f7352b5a881c91e829a2a5a02c18303ca3d45b24e8a9f"
+    },
+    {
+      "id": "texture-tile-roof",
+      "name": "灰瓦叠片",
+      "category": "texture",
+      "family": "徽州民居",
+      "traditionIds": [
+        "huizhou-dwellings",
+        "jiehua-architecture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "徽州民居",
+        "材质"
+      ],
+      "description": "灰瓦叠片：取徽州民居的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-tile-roof.svg",
+      "sha256": "38c261955f2f8807e5938934b2eb92056f26ffc2f1f806fb107830294d537283"
+    },
+    {
+      "id": "texture-wall-plaster",
+      "name": "白墙灰脚",
+      "category": "texture",
+      "family": "徽州民居",
+      "traditionIds": [
+        "huizhou-dwellings"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "徽州民居",
+        "材质"
+      ],
+      "description": "白墙灰脚：取徽州民居的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-wall-plaster.svg",
+      "sha256": "bd3bf27d820bbe7cbcc9cc0fd70287428528ef62bd09dea2b36116d27ec023fc"
+    },
+    {
+      "id": "texture-pearl-dark",
+      "name": "螺钿细闪",
+      "category": "texture",
+      "family": "螺钿",
+      "traditionIds": [
+        "mother-of-pearl-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "螺钿",
+        "材质"
+      ],
+      "description": "螺钿细闪：取螺钿的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-pearl-dark.svg",
+      "sha256": "daef5d5660afb323b0c76f3a063e4f091d45e70b793d2cbdaf911c7de905e39f"
+    },
+    {
+      "id": "texture-metal-wire",
+      "name": "花丝编线",
+      "category": "texture",
+      "family": "花丝",
+      "traditionIds": [
+        "filigree-metal"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "花丝",
+        "材质"
+      ],
+      "description": "花丝编线：取花丝的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": true,
+      "assetKind": "interface",
+      "filename": "texture/texture-metal-wire.svg",
+      "sha256": "2a6abe8dec2dea5107fde35229f4e2225e03009ac6e59e64b3ef12cb2aa8b372"
+    },
+    {
+      "id": "texture-ink-wash",
+      "name": "淡墨晕层",
+      "category": "texture",
+      "family": "元文人山水",
+      "traditionIds": [
+        "yuan-literati",
+        "qing-eccentric-ink"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "元文人山水",
+        "材质"
+      ],
+      "description": "淡墨晕层：取元文人山水的形态与组织方式，重新设计为现代矢量材质。这是原创转译，不是历史原件复刻。",
+      "usage": "用于材质基底、界面背景或插画叠层；标为可平铺的文件可 repeat，其他文件按单幅使用。",
+      "width": 256,
+      "height": 256,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "texture/texture-ink-wash.svg",
+      "sha256": "58f9896a3b1fe62da5c903f3e3b22cace71ff0631b5fb0c0823c9f4b832eb165"
+    },
+    {
+      "id": "interface-inventory",
+      "name": "漆色道具栏",
+      "category": "interface",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "汉漆器",
+        "界面"
+      ],
+      "description": "漆色道具栏：取汉漆器的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-inventory.svg",
+      "sha256": "d770aad3171cd1e0f256b0d40a8f845fc023bcc51c96c672fd990c01a599fd81"
+    },
+    {
+      "id": "interface-dialogue",
+      "name": "宋景对话窗",
+      "category": "interface",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "南宋小景",
+        "界面"
+      ],
+      "description": "宋景对话窗：取南宋小景的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-dialogue.svg",
+      "sha256": "d3d8c53e7a67757ff0767824b1a7df36921a48205cdb08b72b716421e6267ea5"
+    },
+    {
+      "id": "interface-quest-scroll",
+      "name": "长卷任务册",
+      "category": "interface",
+      "family": "长卷叙事",
+      "traditionIds": [
+        "five-dynasties-narrative"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "长卷叙事",
+        "界面"
+      ],
+      "description": "长卷任务册：取长卷叙事的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-quest-scroll.svg",
+      "sha256": "d883374ec8198c5ae557ecb4e7161ac534bb1fc97d6a9b156f264842667ab3f8"
+    },
+    {
+      "id": "interface-map",
+      "name": "青绿山水地图",
+      "category": "interface",
+      "family": "青绿山水",
+      "traditionIds": [
+        "blue-green-landscape"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "青绿山水",
+        "界面"
+      ],
+      "description": "青绿山水地图：取青绿山水的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-map.svg",
+      "sha256": "214e599914cb25943bc15484fd675a4f96b8ebeb086c268696d8a052547c16a8"
+    },
+    {
+      "id": "interface-skill-tree",
+      "name": "玉系技能树",
+      "category": "interface",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "界面"
+      ],
+      "description": "玉系技能树：取战国透雕玉的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-skill-tree.svg",
+      "sha256": "70c83a43fe2adf0362578e0de6cd7a46b5d33b514103a2d669279ed7f378ff3f"
+    },
+    {
+      "id": "interface-battle-hud",
+      "name": "皮影战斗界面",
+      "category": "interface",
+      "family": "皮影",
+      "traditionIds": [
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "皮影",
+        "界面"
+      ],
+      "description": "皮影战斗界面：取皮影的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-battle-hud.svg",
+      "sha256": "c6390962d932867081c8aadf494645418c013ab9cafbf9b30609ca0c7c36bbdf"
+    },
+    {
+      "id": "interface-codex",
+      "name": "木版图鉴页",
+      "category": "interface",
+      "family": "木版画",
+      "traditionIds": [
+        "woodblock"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "木版画",
+        "界面"
+      ],
+      "description": "木版图鉴页：取木版画的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-codex.svg",
+      "sha256": "f319aaf0b4882fc14fdeb3981d88aa4973ac477744f264a5910d3680722bc152"
+    },
+    {
+      "id": "interface-shop",
+      "name": "青花物品铺",
+      "category": "interface",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "青花",
+        "界面"
+      ],
+      "description": "青花物品铺：取青花的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-shop.svg",
+      "sha256": "9020ef9e6cdb94ed9afa401dc8a7a257590c029c7f67bdceef0726768662a478"
+    },
+    {
+      "id": "interface-onboarding",
+      "name": "园林引导页",
+      "category": "interface",
+      "family": "园林",
+      "traditionIds": [
+        "garden"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "界面"
+      ],
+      "description": "园林引导页：取园林的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-onboarding.svg",
+      "sha256": "e433f39f820c7fa195a78e7f794fd25b7c6579a353382f35f0ee591b8fbc4f29"
+    },
+    {
+      "id": "interface-dashboard",
+      "name": "宋瓷数据面板",
+      "category": "interface",
+      "family": "宋瓷",
+      "traditionIds": [
+        "song-ceramics"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "宋瓷",
+        "界面"
+      ],
+      "description": "宋瓷数据面板：取宋瓷的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-dashboard.svg",
+      "sha256": "83c6f1ad7a6e48401e2298274c113cba8fdffdc221f84d51a66e0b8c2ef0db36"
+    },
+    {
+      "id": "interface-reading",
+      "name": "隶意阅读器",
+      "category": "interface",
+      "family": "汉隶",
+      "traditionIds": [
+        "han-clerical"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "汉隶",
+        "界面"
+      ],
+      "description": "隶意阅读器：取汉隶的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-reading.svg",
+      "sha256": "4eff2f6304b8a6f0e6604c74c3bacb88faee1bdcc133e9e0406e5fc92d349129"
+    },
+    {
+      "id": "interface-music",
+      "name": "琴音播放器",
+      "category": "interface",
+      "family": "明式家具",
+      "traditionIds": [
+        "ming-furniture"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "明式家具",
+        "界面"
+      ],
+      "description": "琴音播放器：取明式家具的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-music.svg",
+      "sha256": "2b2bfca6774828c88340efe697dbb70b58d4b65ec014a4ad1eafc20d461c149f"
+    },
+    {
+      "id": "interface-portfolio",
+      "name": "吴门作品集",
+      "category": "interface",
+      "family": "吴门册页",
+      "traditionIds": [
+        "ming-wu-school"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "吴门册页",
+        "界面"
+      ],
+      "description": "吴门作品集：取吴门册页的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-portfolio.svg",
+      "sha256": "e9d0c2e409bcf764b9824fb59d0ae9238ea14a0fb903ecd6347802dcd3a532e7"
+    },
+    {
+      "id": "interface-calendar",
+      "name": "篆印日历",
+      "category": "interface",
+      "family": "篆刻",
+      "traditionIds": [
+        "seal-carving"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "篆刻",
+        "界面"
+      ],
+      "description": "篆印日历：取篆刻的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-calendar.svg",
+      "sha256": "999f5101d387f4d76dcca77185c7889eb712a0e0b5fbc3d8b5665bed9df127f3"
+    },
+    {
+      "id": "interface-settings",
+      "name": "楷序设置页",
+      "category": "interface",
+      "family": "唐楷",
+      "traditionIds": [
+        "tang-regular"
+      ],
+      "targets": [
+        "app"
+      ],
+      "tags": [
+        "唐楷",
+        "界面"
+      ],
+      "description": "楷序设置页：取唐楷的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-settings.svg",
+      "sha256": "e403bc3db9f449dd260646facc4ba1b7ea7e623193b1ec42a3266c07e12d3795"
+    },
+    {
+      "id": "interface-character-card",
+      "name": "唐绘人物卡",
+      "category": "interface",
+      "family": "唐人物",
+      "traditionIds": [
+        "tang-figure"
+      ],
+      "targets": [
+        "game"
+      ],
+      "tags": [
+        "唐人物",
+        "界面"
+      ],
+      "description": "唐绘人物卡：取唐人物的形态与组织方式，重新设计为现代矢量界面。这是原创转译，不是历史原件复刻。",
+      "usage": "用于界面视觉结构研究与静态原型；分区、控件和图形均为可编辑 SVG，不含交互或业务代码。",
+      "width": 480,
+      "height": 320,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "interface",
+      "filename": "interface/interface-character-card.svg",
+      "sha256": "5102554037397dd10bd2345fbadd25bdc06f8f949f9863b989d58af11a571776"
+    },
+    {
+      "id": "prop-lacquer-box",
+      "name": "漆木方盒",
+      "category": "prop",
+      "family": "汉漆器",
+      "traditionIds": [
+        "han-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉漆器",
+        "器物"
+      ],
+      "description": "漆木方盒：取汉漆器的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-lacquer-box.svg",
+      "sha256": "fd05ec376969044131e390ae9b436588808556a28ed8ad1cac4eb945668b32a9"
+    },
+    {
+      "id": "prop-relief-plaque",
+      "name": "刻线石牌",
+      "category": "prop",
+      "family": "汉画像",
+      "traditionIds": [
+        "han-relief"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉画像",
+        "器物"
+      ],
+      "description": "刻线石牌：取汉画像的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-relief-plaque.svg",
+      "sha256": "84e38bdd501c9b71fbee6a79a6e560f710335b70ac7b40de33cfb9eb95fddeb6"
+    },
+    {
+      "id": "prop-bronze-vessel",
+      "name": "兽面方壶",
+      "category": "prop",
+      "family": "礼器兽面",
+      "traditionIds": [
+        "bronze-taotie"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "礼器兽面",
+        "器物"
+      ],
+      "description": "兽面方壶：取礼器兽面的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-bronze-vessel.svg",
+      "sha256": "a50e590fc9e5dd3a8e527b9b42514062b833bbf605af1bc2c80a557a633fd7ef"
+    },
+    {
+      "id": "prop-inlay-bird",
+      "name": "错金鸟形饰件",
+      "category": "prop",
+      "family": "错金银",
+      "traditionIds": [
+        "bronze-inlay"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "错金银",
+        "器物"
+      ],
+      "description": "错金鸟形饰件：取错金银的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-inlay-bird.svg",
+      "sha256": "8b9ea78b682b783e7a2d0e2ba163d0f38fb8701a7e6a40b75a900237fa326acf"
+    },
+    {
+      "id": "prop-cong",
+      "name": "节面玉琮",
+      "category": "prop",
+      "family": "良渚玉琮",
+      "traditionIds": [
+        "liangzhu-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "良渚玉琮",
+        "器物"
+      ],
+      "description": "节面玉琮：取良渚玉琮的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-cong.svg",
+      "sha256": "4c1f02ceb241b2df17bcda3323e20bb89bf1fd2ac2f98382cc965070618fdea4"
+    },
+    {
+      "id": "prop-jade-dragon",
+      "name": "弧形玉龙饰",
+      "category": "prop",
+      "family": "红山玉器",
+      "traditionIds": [
+        "hongshan-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "红山玉器",
+        "器物"
+      ],
+      "description": "弧形玉龙饰：取红山玉器的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-jade-dragon.svg",
+      "sha256": "f54b3087aba15a4d3ed1b468b13c21e8d46fbc00958cf111a5b454e4df38bb82"
+    },
+    {
+      "id": "prop-openwork-pendant",
+      "name": "透雕玉佩",
+      "category": "prop",
+      "family": "战国透雕玉",
+      "traditionIds": [
+        "warring-states-jade"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "战国透雕玉",
+        "器物"
+      ],
+      "description": "透雕玉佩：取战国透雕玉的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-openwork-pendant.svg",
+      "sha256": "5cfa153e442dca180baf75a5e85a1b1fa38c75e17aacfe30527b41236b475f0f"
+    },
+    {
+      "id": "prop-eaves-tile",
+      "name": "卷云瓦当",
+      "category": "prop",
+      "family": "汉瓦当",
+      "traditionIds": [
+        "han-eaves-tile"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "汉瓦当",
+        "器物"
+      ],
+      "description": "卷云瓦当：取汉瓦当的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-eaves-tile.svg",
+      "sha256": "b92c58efe346793dd7d9a0be34259c8e29af23e28add63d31931d907540ab15f"
+    },
+    {
+      "id": "prop-sancai-horse",
+      "name": "三彩立马",
+      "category": "prop",
+      "family": "唐三彩",
+      "traditionIds": [
+        "tang-sancai"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "唐三彩",
+        "器物"
+      ],
+      "description": "三彩立马：取唐三彩的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-sancai-horse.svg",
+      "sha256": "944a016aabfdfca3268e365a7261164ef6504d9002e00fdee22918eff444e444"
+    },
+    {
+      "id": "prop-cizhou-pillow",
+      "name": "磁州枕",
+      "category": "prop",
+      "family": "磁州窑",
+      "traditionIds": [
+        "song-cizhou"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "磁州窑",
+        "器物"
+      ],
+      "description": "磁州枕：取磁州窑的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-cizhou-pillow.svg",
+      "sha256": "f0ce1e6a543c4ac708257e1d032e457f7355ef1efacc97315c232fef63ac5426"
+    },
+    {
+      "id": "prop-celadon-vase",
+      "name": "龙泉弦纹瓶",
+      "category": "prop",
+      "family": "龙泉青瓷",
+      "traditionIds": [
+        "longquan-celadon"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "龙泉青瓷",
+        "器物"
+      ],
+      "description": "龙泉弦纹瓶：取龙泉青瓷的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-celadon-vase.svg",
+      "sha256": "8053b8c511d2a8420f8505431575834d24ef110e1d29febc4215d3a91c4be2b7"
+    },
+    {
+      "id": "prop-jun-planter",
+      "name": "钧色花盆",
+      "category": "prop",
+      "family": "钧釉",
+      "traditionIds": [
+        "jun-glaze"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "钧釉",
+        "器物"
+      ],
+      "description": "钧色花盆：取钧釉的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-jun-planter.svg",
+      "sha256": "7994adffd4a6a49de280e905c417681a19d82db83c4c660bf4886381698450dd"
+    },
+    {
+      "id": "prop-white-ewer",
+      "name": "白瓷执壶",
+      "category": "prop",
+      "family": "德化白瓷",
+      "traditionIds": [
+        "dehua-porcelain"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "德化白瓷",
+        "器物"
+      ],
+      "description": "白瓷执壶：取德化白瓷的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-white-ewer.svg",
+      "sha256": "58172006ec551732b83aa1a68478ecab3b46864ab5ff212c4cd3dbe4f919baa4"
+    },
+    {
+      "id": "prop-bluewhite-jar",
+      "name": "青花盖罐",
+      "category": "prop",
+      "family": "青花",
+      "traditionIds": [
+        "blue-white"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青花",
+        "器物"
+      ],
+      "description": "青花盖罐：取青花的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-bluewhite-jar.svg",
+      "sha256": "4609cd7c8d2b2e251e4eecceb6d407ae0cf3d9a4b88e10fa0fdc1c705e418bd3"
+    },
+    {
+      "id": "prop-rose-plate",
+      "name": "粉彩花盘",
+      "category": "prop",
+      "family": "清粉彩",
+      "traditionIds": [
+        "qing-famille-rose"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "清粉彩",
+        "器物"
+      ],
+      "description": "粉彩花盘：取清粉彩的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-rose-plate.svg",
+      "sha256": "ef4aa6e4a0e4e3d653bfb514d47dded248ea7cad06383b69c333c2ecd3263ec8"
+    },
+    {
+      "id": "prop-garden-rock",
+      "name": "庭石",
+      "category": "prop",
+      "family": "园林",
+      "traditionIds": [
+        "garden"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "器物"
+      ],
+      "description": "庭石：取园林的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-garden-rock.svg",
+      "sha256": "af9dcdf86dc85c261cd01c1d47e2403b3b1c82de65a582d0060e7901d5e946c6"
+    },
+    {
+      "id": "prop-ming-chair",
+      "name": "明式靠背椅",
+      "category": "prop",
+      "family": "明式家具",
+      "traditionIds": [
+        "ming-furniture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "明式家具",
+        "器物"
+      ],
+      "description": "明式靠背椅：取明式家具的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-ming-chair.svg",
+      "sha256": "0cb50aaf088a76c5b17b6d6693c3ab42569e8548f9de97c7cde78a9cf749c1c0"
+    },
+    {
+      "id": "prop-cloisonne-censer",
+      "name": "珐琅香炉",
+      "category": "prop",
+      "family": "掐丝珐琅",
+      "traditionIds": [
+        "cloisonne"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "掐丝珐琅",
+        "器物"
+      ],
+      "description": "珐琅香炉：取掐丝珐琅的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-cloisonne-censer.svg",
+      "sha256": "758fa8fbfbbf326195b8d4910d149a0c31df4bd0eee1905050b70d26947047b5"
+    },
+    {
+      "id": "prop-pearl-cabinet",
+      "name": "螺钿小柜",
+      "category": "prop",
+      "family": "螺钿",
+      "traditionIds": [
+        "mother-of-pearl-lacquer"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "螺钿",
+        "器物"
+      ],
+      "description": "螺钿小柜：取螺钿的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-pearl-cabinet.svg",
+      "sha256": "b0ab23aa4efbdd5f696d404383398fec506fd208e8b5f98ddb7788eedbe89262"
+    },
+    {
+      "id": "prop-filigree-hairpin",
+      "name": "花丝簪",
+      "category": "prop",
+      "family": "花丝",
+      "traditionIds": [
+        "filigree-metal",
+        "tang-figure"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "花丝",
+        "器物"
+      ],
+      "description": "花丝簪：取花丝的形态与组织方式，重新设计为现代矢量器物。这是原创转译，不是历史原件复刻。",
+      "usage": "用于道具概念、物品卡或场景装饰；属于现代简化矢量图，不替代角色或道具三维模型。",
+      "width": 256,
+      "height": 256,
+      "transparent": true,
+      "tileable": false,
+      "assetKind": "prop",
+      "filename": "prop/prop-filigree-hairpin.svg",
+      "sha256": "8e6d894a9aee60d16618ee2404ee31391896e5a867db280b284dd933a10a3b07"
+    },
+    {
+      "id": "scene-bluegreen-ridges",
+      "name": "青绿叠嶂",
+      "category": "scene",
+      "family": "青绿山水",
+      "traditionIds": [
+        "blue-green-landscape"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "青绿山水",
+        "场景"
+      ],
+      "description": "青绿叠嶂：取青绿山水的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-bluegreen-ridges.svg",
+      "sha256": "b7cfe91cd29045bdaa498747e469412c2fee4bb8af16b0771bb6fc7d317392a7"
+    },
+    {
+      "id": "scene-southern-river",
+      "name": "南宋江岸",
+      "category": "scene",
+      "family": "南宋小景",
+      "traditionIds": [
+        "southern-song"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "南宋小景",
+        "场景"
+      ],
+      "description": "南宋江岸：取南宋小景的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-southern-river.svg",
+      "sha256": "5d999b5be52a1b1515241d920edb08a3060db8da4162b55fed363c6894297791"
+    },
+    {
+      "id": "scene-birdflower-courtyard",
+      "name": "花鸟庭院",
+      "category": "scene",
+      "family": "宋花鸟",
+      "traditionIds": [
+        "song-bird-flower"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "宋花鸟",
+        "场景"
+      ],
+      "description": "花鸟庭院：取宋花鸟的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-birdflower-courtyard.svg",
+      "sha256": "86b8bc892d88d60160ec17637371edfd90ddc7a08b23561476149fb3ee286510"
+    },
+    {
+      "id": "scene-dunhuang-hall",
+      "name": "壁画色石窟",
+      "category": "scene",
+      "family": "敦煌壁画",
+      "traditionIds": [
+        "dunhuang"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "敦煌壁画",
+        "场景"
+      ],
+      "description": "壁画色石窟：取敦煌壁画的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-dunhuang-hall.svg",
+      "sha256": "a7bdb2b5124f587df51e6b14638fbde3f92892f87f690a891f6bff81a05ba466"
+    },
+    {
+      "id": "scene-garden-moon",
+      "name": "月洞见庭",
+      "category": "scene",
+      "family": "园林",
+      "traditionIds": [
+        "garden"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "园林",
+        "场景"
+      ],
+      "description": "月洞见庭：取园林的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-garden-moon.svg",
+      "sha256": "49c32098c6f46d6aa8ddb85be0e5ab39fe96d0002035c6a6b8f97a616d1aba34"
+    },
+    {
+      "id": "scene-woodblock-town",
+      "name": "版画小镇",
+      "category": "scene",
+      "family": "木版画",
+      "traditionIds": [
+        "woodblock"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木版画",
+        "场景"
+      ],
+      "description": "版画小镇：取木版画的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-woodblock-town.svg",
+      "sha256": "a9b659e6ec406b9010e6bdecafea40457417f7ca9f1c70e58af6a4540fad6988"
+    },
+    {
+      "id": "scene-literati-bank",
+      "name": "文人疏岸",
+      "category": "scene",
+      "family": "元文人山水",
+      "traditionIds": [
+        "yuan-literati"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "元文人山水",
+        "场景"
+      ],
+      "description": "文人疏岸：取元文人山水的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-literati-bank.svg",
+      "sha256": "3fd9ca86c3c96e4cdd991bebdf75dcd1a9ef73d10db60c708e74c2464293217c"
+    },
+    {
+      "id": "scene-wu-school-study",
+      "name": "吴门书斋",
+      "category": "scene",
+      "family": "吴门册页",
+      "traditionIds": [
+        "ming-wu-school",
+        "ming-furniture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "吴门册页",
+        "场景"
+      ],
+      "description": "吴门书斋：取吴门册页的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-wu-school-study.svg",
+      "sha256": "bc78344b61084dc160cceb88e5254d5b947e8da1a4f2ed86490c40bf2724e0f7"
+    },
+    {
+      "id": "scene-ink-bamboo",
+      "name": "扬州竹雨",
+      "category": "scene",
+      "family": "扬州墨笔",
+      "traditionIds": [
+        "qing-eccentric-ink"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "扬州墨笔",
+        "场景"
+      ],
+      "description": "扬州竹雨：取扬州墨笔的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-ink-bamboo.svg",
+      "sha256": "41ae94cedaf2e46de4af072445fe9d68566b783b334124f3d9f93cdf94dd1440"
+    },
+    {
+      "id": "scene-jiehua-palace",
+      "name": "界画台阁",
+      "category": "scene",
+      "family": "界画",
+      "traditionIds": [
+        "jiehua-architecture"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "界画",
+        "场景"
+      ],
+      "description": "界画台阁：取界画的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-jiehua-palace.svg",
+      "sha256": "66784a2cec1535863a6ec1d20a4a3696766795a78f038e5a6a2186e62366943c"
+    },
+    {
+      "id": "scene-huizhou-lane",
+      "name": "徽州巷道",
+      "category": "scene",
+      "family": "徽州民居",
+      "traditionIds": [
+        "huizhou-dwellings"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "徽州民居",
+        "场景"
+      ],
+      "description": "徽州巷道：取徽州民居的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-huizhou-lane.svg",
+      "sha256": "97af0b48cb576241d40017f8cbe29e8f60335e8db8bc01faf8818a68d5efd837"
+    },
+    {
+      "id": "scene-dougong-workshop",
+      "name": "木构工坊",
+      "category": "scene",
+      "family": "木构斗拱",
+      "traditionIds": [
+        "dougong-timber"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "木构斗拱",
+        "场景"
+      ],
+      "description": "木构工坊：取木构斗拱的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-dougong-workshop.svg",
+      "sha256": "9fe95a1530c75a6767f793435e89bf0fec9bc5ccd15da7e1cb7ef6b4e00189af"
+    },
+    {
+      "id": "scene-newyear-market",
+      "name": "年画集市",
+      "category": "scene",
+      "family": "年画",
+      "traditionIds": [
+        "new-year-prints"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "年画",
+        "场景"
+      ],
+      "description": "年画集市：取年画的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-newyear-market.svg",
+      "sha256": "9de7eae06b0bb799662249acb65d31681569ce85ba4209e42d3cab865077b05d"
+    },
+    {
+      "id": "scene-paper-cut-forest",
+      "name": "剪纸林野",
+      "category": "scene",
+      "family": "剪纸",
+      "traditionIds": [
+        "paper-cut"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "剪纸",
+        "场景"
+      ],
+      "description": "剪纸林野：取剪纸的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-paper-cut-forest.svg",
+      "sha256": "06edf16bfbbc311bb7c99e906419136c8610a178979742e038805476e621ed56"
+    },
+    {
+      "id": "scene-shadow-stage",
+      "name": "皮影戏台",
+      "category": "scene",
+      "family": "皮影",
+      "traditionIds": [
+        "shadow-puppetry"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "皮影",
+        "场景"
+      ],
+      "description": "皮影戏台：取皮影的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-shadow-stage.svg",
+      "sha256": "bcd6585c812e1020ad62ebd14719d350ba00c2d2d9946791dd3c7f6d098cbb3b"
+    },
+    {
+      "id": "scene-tang-procession",
+      "name": "唐绘行旅",
+      "category": "scene",
+      "family": "唐人物",
+      "traditionIds": [
+        "tang-figure"
+      ],
+      "targets": [
+        "game",
+        "app"
+      ],
+      "tags": [
+        "唐人物",
+        "场景"
+      ],
+      "description": "唐绘行旅：取唐人物的形态与组织方式，重新设计为现代矢量场景。这是原创转译，不是历史原件复刻。",
+      "usage": "用于关卡气氛板、标题背景或 App 插画；为扁平矢量场景，可编辑层次与颜色，不含碰撞或动画。",
+      "width": 480,
+      "height": 300,
+      "transparent": false,
+      "tileable": false,
+      "assetKind": "scene",
+      "filename": "scene/scene-tang-procession.svg",
+      "sha256": "6d0801f8221c7f5f2357d664d070d1e086b32148344649d6a0ebef3dce67a7ca"
+    }
+  ],
+  "referenceBoards": [
+    {
+      "id": "reference-game-characters",
+      "name": "人物百业 · 8 种职业与轮廓研究",
+      "category": "character",
+      "description": "药师、陶匠、礼乐师、书生、漆工、茶坊主人、渡水信使与琵琶乐师。比较年龄、姿态、衣料层次、佩具与人物轮廓；原创设定混合多种中国工艺视觉线索，不是朝代服饰复原图。下载为整张参考 PNG，未拆成透明角色或动画。",
+      "traditionIds": [
+        "tang-figure",
+        "silk-embroidery",
+        "indigo-resist",
+        "song-brocade",
+        "han-lacquer",
+        "bronze-taotie"
+      ],
+      "tags": [
+        "角色",
+        "职业",
+        "药师",
+        "陶匠",
+        "乐师",
+        "书生",
+        "漆工",
+        "茶坊",
+        "信使",
+        "服装",
+        "轮廓",
+        "道具",
+        "原创参考"
+      ],
+      "filename": "reference-boards/reference-game-characters.png",
+      "kind": "whole-board-reference",
+      "sha256": "fc4a078b816272dffb1a9a2f3837c3bba2b50f632180091a2e8eb58158a07399"
+    },
+    {
+      "id": "reference-game-scenes",
+      "name": "人间八景 · 城市、自然与室内",
+      "category": "scene",
+      "description": "晨间水街、黄土驿道、书斋、灯会夜市、沿海盐沼、竹林石阶、陶窑工坊与雪中客栈。比较空间深度、天气、时段、材料及聚焦方式。原创环境视觉开发，整图可下载；不是可直接铺设的游戏地图或无缝地形贴图。",
+      "traditionIds": [
+        "southern-song",
+        "blue-green-landscape",
+        "yuan-literati",
+        "ming-wu-school",
+        "huizhou-dwellings",
+        "garden",
+        "jiehua-architecture"
+      ],
+      "tags": [
+        "场景",
+        "城市",
+        "水街",
+        "山路",
+        "书斋",
+        "夜市",
+        "盐沼",
+        "竹林",
+        "窑场",
+        "冬景",
+        "室内",
+        "昼夜",
+        "原创参考"
+      ],
+      "filename": "reference-boards/reference-game-scenes.png",
+      "kind": "whole-board-reference",
+      "sha256": "2056fda0ccb1e5cc6e74903e1f2a9c4c26dac8816c0bb282498df73850e50716"
+    },
+    {
+      "id": "reference-game-props",
+      "name": "九材九器 · 材质与器物形制",
+      "category": "prop",
+      "description": "青铜容器、玉璧与佩件、漆盒、木制文具匣、青花扁壶、青瓷碗、绣囊、珐琅盒及皮影。对照金属氧化、玉的透度、漆面高光、木纹、釉色、绣线与镂空结构。原创混合设计，整图供造型参考，不对应某件馆藏文物，也不是独立透明道具素材。",
+      "traditionIds": [
+        "bronze-taotie",
+        "warring-states-jade",
+        "han-lacquer",
+        "ming-furniture",
+        "blue-white",
+        "longquan-celadon",
+        "silk-embroidery",
+        "cloisonne",
+        "shadow-puppetry"
+      ],
+      "tags": [
+        "器物",
+        "道具",
+        "青铜",
+        "玉器",
+        "漆器",
+        "木器",
+        "青花",
+        "青瓷",
+        "刺绣",
+        "珐琅",
+        "皮影",
+        "材料",
+        "原创参考"
+      ],
+      "filename": "reference-boards/reference-game-props.png",
+      "kind": "whole-board-reference",
+      "sha256": "122a55d126251ceb97285eb2077c4fbcfad98fc971048b7bce4bbd539b58dba9"
+    },
+    {
+      "id": "reference-game-architecture",
+      "name": "营造九式 · 建筑与空间模块",
+      "category": "architecture",
+      "description": "民居庭院、徽式店铺、木构门楼、廊桥、月洞门小园、陶窑工坊、水榭、坡地茶屋与架空粮仓。俯视斜角对照入口、围合、台基、屋顶与通行层次。原创游戏空间研究，整图可下载，不是历史建筑测绘、施工图、3D 模型或已切分的地图块。",
+      "traditionIds": [
+        "dougong-timber",
+        "huizhou-dwellings",
+        "garden",
+        "jiehua-architecture",
+        "architectural-polychrome"
+      ],
+      "tags": [
+        "建筑",
+        "空间",
+        "庭院",
+        "店铺",
+        "门楼",
+        "廊桥",
+        "月洞门",
+        "工坊",
+        "水榭",
+        "茶屋",
+        "粮仓",
+        "轴测",
+        "地图构成",
+        "原创参考"
+      ],
+      "filename": "reference-boards/reference-game-architecture.png",
+      "kind": "whole-board-reference",
+      "sha256": "cba10bad47cf10a47818d8230d0e670a38bd33af0527d83bb93adc3cfa05332f"
+    },
+    {
+      "id": "ref-app-interfaces",
+      "name": "宋瓷与版刻 · 六种 App 界面构图",
+      "category": "interface",
+      "description": "阅读、仪表盘、日历、园林地图、器物目录、预约表单六种构图。观察细线分层、瓷色状态、克制的朱红动作和留白；整板为现代界面参考图，图中文字与印形是示意，控件不可直接编辑。",
+      "traditionIds": [
+        "song-ceramics",
+        "woodblock",
+        "garden",
+        "longquan-celadon"
+      ],
+      "tags": [
+        "App",
+        "阅读",
+        "仪表盘",
+        "日历",
+        "地图",
+        "目录",
+        "表单",
+        "界面构图",
+        "整板 PNG",
+        "现代学习图"
+      ],
+      "filename": "reference-boards/reference-app-interfaces.png",
+      "kind": "whole-board-reference",
+      "sha256": "12ff242d2539ed672cedc84df8c3c669bb7b1e319acc7762924a4bf8a5171654"
+    },
+    {
+      "id": "ref-app-patterns",
+      "name": "青铜至蓝印 · 九种纹样节奏",
+      "category": "pattern",
+      "description": "青铜兽面转译、错金几何、瓦当云鸟、锦织花卉、缂丝花鸟、蓝印草叶、剪纸花蝶、现代水纹线刻实验、青花缠枝九种现代纹样研究。比较密度、轴线、穿插与负形；浅青灰水纹是新的制作实验，不用它证明古代木版的典型样式。整板各格不承诺无缝衔接。",
+      "traditionIds": [
+        "bronze-taotie",
+        "bronze-inlay",
+        "han-eaves-tile",
+        "song-brocade",
+        "kesi-weaving",
+        "indigo-resist",
+        "paper-cut",
+        "woodblock",
+        "blue-white"
+      ],
+      "tags": [
+        "游戏",
+        "App",
+        "纹样",
+        "织物",
+        "青铜",
+        "蓝印",
+        "剪纸",
+        "青花",
+        "水纹",
+        "九宫格",
+        "整板 PNG",
+        "现代学习图"
+      ],
+      "filename": "reference-boards/reference-app-patterns.png",
+      "kind": "whole-board-reference",
+      "sha256": "9f72ba36d6047bb054864ffced211f4ff4f98bc9411ced3bf376c7b805b244fa"
+    },
+    {
+      "id": "ref-app-materials",
+      "name": "玉、漆、丝、纸 · 九种材质近景",
+      "category": "prop",
+      "description": "玉石、青铜、织锦、纸与墨、黑红漆、青瓷、硬木、园林石、青花釉面九种物性研究。看透光、纤维、凹凸、反射和纹理尺度；整板为现代渲染参考，非 PBR 贴图包，也不证明某件古物的真实釉裂或工序。",
+      "traditionIds": [
+        "warring-states-jade",
+        "bronze-inlay",
+        "song-brocade",
+        "calligraphy",
+        "han-lacquer",
+        "longquan-celadon",
+        "ming-furniture",
+        "garden",
+        "blue-white"
+      ],
+      "tags": [
+        "游戏",
+        "App",
+        "材质",
+        "玉",
+        "青铜",
+        "丝",
+        "纸",
+        "漆",
+        "瓷",
+        "木",
+        "石",
+        "物性参考",
+        "整板 PNG",
+        "现代学习图"
+      ],
+      "filename": "reference-boards/reference-app-materials.png",
+      "kind": "whole-board-reference",
+      "sha256": "5c7ea0a79b6809b1dc0cb6a1e7c9bc178bc878a4124f355e1afde5b72bd85825"
+    },
+    {
+      "id": "ref-app-folk-icons",
+      "name": "民艺与小图形 · 九组图标语言",
+      "category": "interface",
+      "description": "年画鱼虎、剪纸花蝶、皮影构件、青铜几何功能符号、玉雕小形、青花花月、抽象朱印、版刻分隔、螺钿花章九组图形语言。研究同组线重、边缘与轮廓层级；整板为原创现代参考，朱印不表示经过校勘的汉字，非透明独立图标包。",
+      "traditionIds": [
+        "new-year-prints",
+        "paper-cut",
+        "shadow-puppetry",
+        "bronze-inlay",
+        "warring-states-jade",
+        "blue-white",
+        "seal-carving",
+        "woodblock",
+        "mother-of-pearl-lacquer"
+      ],
+      "tags": [
+        "游戏",
+        "App",
+        "民艺",
+        "小图形",
+        "图标语言",
+        "年画",
+        "剪纸",
+        "皮影",
+        "印章",
+        "分隔线",
+        "螺钿",
+        "整板 PNG",
+        "现代学习图"
+      ],
+      "filename": "reference-boards/reference-app-folk-icons.png",
+      "kind": "whole-board-reference",
+      "sha256": "6ab5f563602e8ffb9a8f029aebe8c59b3be4ab59c9f9c69720f6a3a1fa9041c2"
+    },
+    {
+      "id": "landscape-foundations",
+      "name": "山水空间 · 青绿、小景与园林",
+      "category": "scene",
+      "description": "原有三组空间观察：山势展开、偏侧留白与园林框景；原创现代研究示意。",
+      "traditionIds": [
+        "blue-green-landscape",
+        "southern-song",
+        "garden"
+      ],
+      "tags": [
+        "青绿",
+        "留白",
+        "框景",
+        "空间"
+      ],
+      "filename": "reference-boards/landscape.png",
+      "kind": "whole-board-reference",
+      "sha256": "f6ad47f4978cd9bbf9dcbb6c32654b7984946663cba6f9cf539c570247c7e2bb"
+    },
+    {
+      "id": "form-foundations",
+      "name": "器物与图形 · 漆器、细线与木版",
+      "category": "prop",
+      "description": "原有朱黑器物、细线设色与木版式色层的对照，观察轮廓和用色职责。",
+      "traditionIds": [
+        "han-lacquer",
+        "song-bird-flower",
+        "woodblock"
+      ],
+      "tags": [
+        "器物",
+        "线描",
+        "木版",
+        "设色"
+      ],
+      "filename": "reference-boards/forms.png",
+      "kind": "whole-board-reference",
+      "sha256": "b571506306fc7dc770af9ef3ae0d26385f25519503af52b2349e084895520c2a"
+    }
+  ]
+}

@@ -1,58 +1,85 @@
 {
-  "name": "guanwu-art-workbench",
-  "version": "0.2.0",
-  "preparedAt": "2026-10-03T16:28:04.257385+00:00",
-  "sourceFiles": 45,
-  "research": {
-    "dossiers": 12,
-    "samples": 31,
-    "observations": 48,
-    "productionLocks": 72,
-    "assetExperiments": 36,
-    "aiFailures": 36,
-    "manualReviewChecks": 48,
-    "sources": 37,
-    "verifiedSources": 11,
-    "referenceSources": 26,
-    "verifiedHistoricalStatements": 8
+  "version": "0.3.0",
+  "createdAt": "2026-10-03T17:33:06.352028+00:00",
+  "content": {
+    "traditions": 48,
+    "sources": 73,
+    "verified": 11,
+    "materials": 192,
+    "transparent": 104,
+    "tileable": 48,
+    "referenceBoards": 10,
+    "categories": {
+      "icon": 60,
+      "pattern": 32,
+      "frame": 24,
+      "texture": 24,
+      "interface": 16,
+      "prop": 20,
+      "scene": 16
+    }
+  },
+  "sourceFiles": 74,
+  "validation": {
+    "npmCi": {
+      "packages": 109,
+      "exitCode": 0,
+      "scope": "tools/install.sh and independent frozen-lock install"
+    },
+    "unit": {
+      "passed": 27,
+      "failed": 0
+    },
+    "browser": {
+      "startTime": "2026-10-03T17:24:48.271Z",
+      "duration": 56097.418999999994,
+      "expected": 22,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typeAndProductionBuild": "passed",
+    "portableResourceValidation": "passed",
+    "archiveCRC": "passed",
+    "sourceZIPExactBytes": "passed",
+    "allSVGXMLAndPixelRender": "passed",
+    "tileablePixelAudit": {
+      "count": 48,
+      "scope": "gross border jump heuristic, not an art-quality score"
+    },
+    "offline": {
+      "scope": "actual byte-identical document over permitted HTTP, real reload; browser offline, all subsequent HTTP(S) blocked",
+      "materialDownload": true,
+      "deepStudyTransfer": true,
+      "remoteAssetRequests": 0,
+      "fileOrigin": "unverified: blocked by managed browser URL policy"
+    }
   },
   "files": [
     {
-      "name": "guanwu-art-workbench-source.zip",
-      "bytes": 6984725,
-      "sha256": "ecdb0f90ebc80263d016eceb0a0a2ac4798521f807107e7cddde49d37792c2f8"
-    },
-    {
       "name": "guanwu-art-workbench.html",
-      "bytes": 9650326,
-      "sha256": "a225421e3cb79065086b24daf998c9b4f8b5c430494eff180bb6e3ea01fcc241"
+      "bytes": 44176697,
+      "sha256": "7a5e99bd6ee80602fe23fda349fe1411e044d462ed74fe1272ea5fec792f774b"
     },
     {
       "name": "guanwu-art-workbench.zip",
-      "bytes": 7037982,
-      "sha256": "d3a3ab4277148f584b514476c8c3efa1de079e871ca6b959e76e1dc705b495fd"
+      "bytes": 32796067,
+      "sha256": "7ab3a54ef878c6525362a473a2f03d422be253c7aa3fc2849bc56f98d833b6a1"
     },
     {
-      "name": "release-manifest.json",
-      "bytes": 519,
-      "sha256": "7edb5f2f803c6a36f60671ae03fd9c52afa86741079d5a0ab7353b3a2d405ea7"
+      "name": "guanwu-material-library.zip",
+      "bytes": 31805803,
+      "sha256": "e29a16e7b9c34671475b8dcf26ab6f737e7fae70c571d7bd9cf91f0080033c5c"
+    },
+    {
+      "name": "guanwu-art-workbench-source.zip",
+      "bytes": 32330435,
+      "sha256": "8e69cc4857e35c3f17b2c7390c99e46483b2b8e50c825c3043ba27aaa7716251"
+    },
+    {
+      "name": "material-manifest.json",
+      "bytes": 178079,
+      "sha256": "aff1889312134148f4daa825e9e1a3691a4e447c7569e1b45222df468e153173"
     }
-  ],
-  "validation": {
-    "unitTests": 19,
-    "browserTests": 13,
-    "skipped": 0,
-    "unexpected": 0,
-    "flaky": 0,
-    "offlineScope": "Identical portable HTML over allowed HTTP; real reload before disconnect. All core tools plus DeepStudy SVG/A-B/JSON export and study-to-production parameter74 verified after offline. file:// blocked by managed browser policy, not verified.",
-    "browserErrors": [],
-    "zipCrc": "passed",
-    "frozenInstall": {
-      "node": "24.19.0",
-      "packages": 109,
-      "result": "passed",
-      "lockSha256": "a2c42461b0fe992fbfc2612240867e00655d712f35f8dc47655ef92089cc88c4"
-    }
-  },
-  "hosting": "Static docs prepared; GitHub Pages not enabled by this delivery."
+  ]
 }

@@ -1,0 +1,213 @@
+# 原创素材目录
+
+本轮提供 **192 份可编辑 SVG**：60 图标、32 纹样、24 边框、24 材质、16 静态界面、20 器物、16 场景。全部为原创现代视觉转译，覆盖 48 条美学研究路线；不是馆藏图片、古代图样复刻或历史复原。数量按独立几何设计计算，不把换色、尺寸、PNG 导出或同一图中的分区重复计数。
+
+## 使用与下载
+
+- 每项可预览、下载完整 SVG，以及按最大边 256 / 512 / 1024 / 2048 等尺寸导出 PNG；PNG 保持原始长宽比和背景透明度。
+- 选中素材或按当前筛选结果导出 ZIP，包含真正的 SVG 文件、manifest.json 和 README.txt；下载在浏览器本地完成，断网可用。
+- SVG 不含远程资源、脚本、外部字体；颜色、路径、形状均可直接编辑。纹样与材质不会生成三维贴图通道；静态界面不含交互或业务代码；场景不含碰撞或动画。
+- 素材许可：允许修改并用于个人或商业游戏、App、网站和展示，无需署名。不得将其说明为特定古代原件的精确复原。研究参考板另按整板下载，未计入这 192 份矢量素材。
+
+## 标记含义
+
+104 份素材的画布背景透明（60 图标、24 边框、20 器物），可在保留素材自身填色的情况下叠加；不是说所有内部区域均无填色。其余 88 份包含背景。48 份素材标为可平铺（32 纹样与 16 材质），使用 32 或 64 像素周期单元组成 256 像素画布，并经 Chromium 栅格化后检查相对边缘衔接；不是对所有图像都默认标记 repeat。8 份光照渐变、釉色晕斑、灰墙和墨晕材质为单幅，不宣称无缝。边框按整体比例缩放，未提供九宫格拉伸语义。
+
+用途过滤是推荐制作方向，不限制许可。7 份设置、阅读、日历等界面主要面向 App；9 份任务、物品栏、战斗等界面主要面向游戏；其他 176 份图标、纹样、边框、材质、器物和场景同时面向两者。场景与器物均为简化矢量设计；角色参考采用独立 AI 研究板，不把人物分区冒充可直接使用的透明角色精灵。
+
+## 完整目录
+
+| 文件 ID | 名称 | 类别 | 主路线 | 矢量画布 | 背景 | 重复方式 | 推荐方向 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| icon-brush | 蘸墨毛笔 | 图标 | 书法 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-ink-stick | 墨锭 | 图标 | 书法 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-inkstone | 砚池 | 图标 | 书法 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-scroll | 手卷 | 图标 | 长卷叙事 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-book | 线装书 | 图标 | 木版画 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bamboo-slips | 竹简 | 图标 | 汉隶 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-seal | 闲章 | 图标 | 篆刻 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-sun | 日轮 | 图标 | 汉瓦当 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-moon | 月钩 | 图标 | 南宋小景 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-cloud | 卷云 | 图标 | 汉漆器 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-rain | 细雨 | 图标 | 南宋小景 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-snow | 六出雪 | 图标 | 刺绣 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-wind | 流风 | 图标 | 草书 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bamboo | 竹叶 | 图标 | 扬州墨笔 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-lotus | 莲瓣 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-plum | 梅枝 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-orchid | 兰草 | 图标 | 元文人山水 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-pine | 松针 | 图标 | 南宋小景 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-peony | 牡丹 | 图标 | 清粉彩 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-ginkgo | 银杏 | 图标 | 刺绣 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-chrysanthemum | 菊瓣 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-qin | 七弦琴 | 图标 | 明式家具 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-flute | 竹笛 | 图标 | 吴门册页 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bell | 编钟 | 图标 | 错金银 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-sheng | 笙管 | 图标 | 敦煌壁画 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-fan | 团扇 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-umbrella | 油纸伞 | 图标 | 吴门册页 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-lantern | 宫灯 | 图标 | 建筑彩画 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-compass | 司南 | 图标 | 汉画像 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-gate | 城门 | 图标 | 界画 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bridge | 拱桥 | 图标 | 园林 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-boat | 篷舟 | 图标 | 南宋小景 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-mountain | 山峦 | 图标 | 青绿山水 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-pavilion | 六角亭 | 图标 | 园林 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-path | 石径 | 图标 | 园林 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-jade-bi | 玉璧 | 图标 | 战国透雕玉 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-jade-cong | 方琮 | 图标 | 良渚玉琮 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-jue | 爵杯 | 图标 | 礼器兽面 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-ding | 三足鼎 | 图标 | 礼器兽面 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bowl | 敞口盏 | 图标 | 宋瓷 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-vase | 梅瓶 | 图标 | 青花 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-teacup | 茶盏 | 图标 | 德化白瓷 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-incense | 香炉 | 图标 | 宋瓷 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-ruyi | 如意 | 图标 | 花丝 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-crane | 鹤影 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-fish | 双弧鱼 | 图标 | 汉画像 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-butterfly | 蝶翼 | 图标 | 缂丝 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-swallow | 燕归 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-beast-mask | 兽面 | 图标 | 礼器兽面 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-deer | 鹿行 | 图标 | 汉画像 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-star | 星芒 | 图标 | 汉瓦当 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-drop | 水滴 | 图标 | 钧釉 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-flame | 焰纹 | 图标 | 敦煌壁画 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-leaf | 一叶 | 图标 | 宋花鸟 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-shield | 护心盾 | 图标 | 错金银 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-sword | 青锋 | 图标 | 战国透雕玉 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-bow | 弓弦 | 图标 | 汉画像 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-coin | 方孔钱 | 图标 | 汉画像 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-key | 铜锁钥 | 图标 | 明式家具 | 144×144 | 透明 | 单幅 | 游戏、App |
+| icon-chess | 弈棋 | 图标 | 园林 | 144×144 | 透明 | 单幅 | 游戏、App |
+| pattern-cloud-key | 回云方胜 | 纹样 | 汉漆器 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-thunder-key | 雷纹连续格 | 纹样 | 礼器兽面 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-inlay-hooks | 错金钩连 | 纹样 | 错金银 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-cong-eyes | 琮面双目格 | 纹样 | 良渚玉琮 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-jade-spiral | 玉弧勾连 | 纹样 | 红山玉器 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-openwork-diamond | 透雕交菱 | 纹样 | 战国透雕玉 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-eaves-rosette | 瓦当四瓣 | 纹样 | 汉瓦当 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-lotus-chain | 莲瓣串带 | 纹样 | 敦煌壁画 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-pearl-roundel | 联珠团窠 | 纹样 | 织锦 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-brocade-flower | 织锦八瓣 | 纹样 | 织锦 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-kesi-clouds | 缂丝曲云 | 纹样 | 缂丝 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-indigo-stars | 蓝染八角花 | 纹样 | 蓝染 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-indigo-dots | 蓝染四点格 | 纹样 | 蓝染 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-embroidered-leaves | 绣叶交枝 | 纹样 | 刺绣 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-bluewhite-vine | 青花缠枝 | 纹样 | 青花 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-rose-sprigs | 粉彩折枝格 | 纹样 | 清粉彩 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-cizhou-scroll | 磁州黑绘弧 | 纹样 | 磁州窑 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-celadon-petals | 青瓷瓣影 | 纹样 | 龙泉青瓷 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-polychrome-bracket | 彩画折线带 | 纹样 | 建筑彩画 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-cloisonne-fan | 珐琅扇瓣 | 纹样 | 掐丝珐琅 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-pearl-stars | 螺钿星网 | 纹样 | 螺钿 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-filigree-loops | 花丝连环 | 纹样 | 花丝 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-paper-cut-flowers | 剪纸四瓣窗花 | 纹样 | 剪纸 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-newyear-wave | 年画鱼鳞浪 | 纹样 | 年画 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-shadow-lattice | 皮影透孔网 | 纹样 | 皮影 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-garden-hexagon | 园林六角窗格 | 纹样 | 园林 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-huizhou-roof | 马头墙节奏 | 纹样 | 徽州民居 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-bracket-join | 斗拱交叠 | 纹样 | 木构斗拱 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-seal-maze | 篆线方迷 | 纹样 | 篆书 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-clerical-bars | 隶意横波 | 纹样 | 汉隶 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-regular-grid | 楷意九宫格 | 纹样 | 唐楷 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| pattern-cursive-ribbon | 草意回带 | 纹样 | 草书 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| frame-key-corners | 回纹角框 | 边框 | 汉漆器 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-bronze-tabs | 铜器耳边框 | 边框 | 礼器兽面 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-inlay-cross | 错金交角框 | 边框 | 错金银 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-jade-square | 玉琮分节框 | 边框 | 良渚玉琮 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-jade-oval | 玉环椭圆框 | 边框 | 红山玉器 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-jade-interlace | 透雕连角框 | 边框 | 战国透雕玉 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-eaves-disc | 瓦当圆徽框 | 边框 | 汉瓦当 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-cave-niche | 石窟龛形框 | 边框 | 敦煌壁画 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-lotus-points | 莲瓣端头框 | 边框 | 敦煌壁画 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-silk-thread | 织锦细线框 | 边框 | 织锦 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-kesi-stepped | 缂丝阶边框 | 边框 | 缂丝 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-embroidered-vine | 绣枝边框 | 边框 | 刺绣 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-indigo-seams | 蓝染针迹框 | 边框 | 蓝染 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-blue-white-scroll | 青花卷枝框 | 边框 | 青花 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-cizhou-black | 磁州黑绘框 | 边框 | 磁州窑 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-celadon-soft | 青瓷柔角框 | 边框 | 龙泉青瓷 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-garden-moon | 园林月洞框 | 边框 | 园林 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-huizhou-wall | 马头墙顶框 | 边框 | 徽州民居 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-bracket-corner | 斗拱托角框 | 边框 | 木构斗拱 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-polychrome-beam | 彩画梁框 | 边框 | 建筑彩画 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-pearl-flower | 螺钿花角框 | 边框 | 螺钿 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-filigree-loops | 花丝环角框 | 边框 | 花丝 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-cut-paper | 剪纸花角框 | 边框 | 剪纸 | 512×384 | 透明 | 单幅 | 游戏、App |
+| frame-seal-impression | 章印分栏框 | 边框 | 篆刻 | 512×384 | 透明 | 单幅 | 游戏、App |
+| texture-paper-fibers | 短纤维纸纹 | 材质 | 书法 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-paper-flecks | 散点纸纹 | 材质 | 木版画 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-silk-warp | 丝绢经纬 | 材质 | 缂丝 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-brocade-weave | 锦面斜织 | 材质 | 织锦 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-indigo-grain | 蓝染细颗粒 | 材质 | 蓝染 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-lacquer-sheen | 漆面纵向光带 | 材质 | 汉漆器 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-russet-lacquer | 朱漆斑驳 | 材质 | 汉漆器 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-bronze-speckle | 铜绿颗粒 | 材质 | 礼器兽面 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-inlay-dashes | 金属细划痕 | 材质 | 错金银 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-jade-mottling | 青玉云斑 | 材质 | 红山玉器 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-cong-stone | 玉琮细雾点 | 材质 | 良渚玉琮 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-celadon-soft | 青釉柔光 | 材质 | 龙泉青瓷 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-jun-bloom | 钧釉晕斑 | 材质 | 钧釉 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-dehua-milk | 白瓷乳光 | 材质 | 德化白瓷 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-sancai-drips | 三彩垂流 | 材质 | 唐三彩 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-cizhou-brushed | 磁州白地刷痕 | 材质 | 磁州窑 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-bluewhite-speckles | 青花料点 | 材质 | 青花 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-timber-grain | 木材顺纹 | 材质 | 明式家具 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-stone-stipple | 石面点刻 | 材质 | 汉画像 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-tile-roof | 灰瓦叠片 | 材质 | 徽州民居 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-wall-plaster | 白墙灰脚 | 材质 | 徽州民居 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| texture-pearl-dark | 螺钿细闪 | 材质 | 螺钿 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-metal-wire | 花丝编线 | 材质 | 花丝 | 256×256 | 含背景 | 可平铺 | 游戏、App |
+| texture-ink-wash | 淡墨晕层 | 材质 | 元文人山水 | 256×256 | 含背景 | 单幅 | 游戏、App |
+| interface-inventory | 漆色道具栏 | 界面 | 汉漆器 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-dialogue | 宋景对话窗 | 界面 | 南宋小景 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-quest-scroll | 长卷任务册 | 界面 | 长卷叙事 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-map | 青绿山水地图 | 界面 | 青绿山水 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-skill-tree | 玉系技能树 | 界面 | 战国透雕玉 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-battle-hud | 皮影战斗界面 | 界面 | 皮影 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-codex | 木版图鉴页 | 界面 | 木版画 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-shop | 青花物品铺 | 界面 | 青花 | 480×320 | 含背景 | 单幅 | 游戏 |
+| interface-onboarding | 园林引导页 | 界面 | 园林 | 480×320 | 含背景 | 单幅 | App |
+| interface-dashboard | 宋瓷数据面板 | 界面 | 宋瓷 | 480×320 | 含背景 | 单幅 | App |
+| interface-reading | 隶意阅读器 | 界面 | 汉隶 | 480×320 | 含背景 | 单幅 | App |
+| interface-music | 琴音播放器 | 界面 | 明式家具 | 480×320 | 含背景 | 单幅 | App |
+| interface-portfolio | 吴门作品集 | 界面 | 吴门册页 | 480×320 | 含背景 | 单幅 | App |
+| interface-calendar | 篆印日历 | 界面 | 篆刻 | 480×320 | 含背景 | 单幅 | App |
+| interface-settings | 楷序设置页 | 界面 | 唐楷 | 480×320 | 含背景 | 单幅 | App |
+| interface-character-card | 唐绘人物卡 | 界面 | 唐人物 | 480×320 | 含背景 | 单幅 | 游戏 |
+| prop-lacquer-box | 漆木方盒 | 器物 | 汉漆器 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-relief-plaque | 刻线石牌 | 器物 | 汉画像 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-bronze-vessel | 兽面方壶 | 器物 | 礼器兽面 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-inlay-bird | 错金鸟形饰件 | 器物 | 错金银 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-cong | 节面玉琮 | 器物 | 良渚玉琮 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-jade-dragon | 弧形玉龙饰 | 器物 | 红山玉器 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-openwork-pendant | 透雕玉佩 | 器物 | 战国透雕玉 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-eaves-tile | 卷云瓦当 | 器物 | 汉瓦当 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-sancai-horse | 三彩立马 | 器物 | 唐三彩 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-cizhou-pillow | 磁州枕 | 器物 | 磁州窑 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-celadon-vase | 龙泉弦纹瓶 | 器物 | 龙泉青瓷 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-jun-planter | 钧色花盆 | 器物 | 钧釉 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-white-ewer | 白瓷执壶 | 器物 | 德化白瓷 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-bluewhite-jar | 青花盖罐 | 器物 | 青花 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-rose-plate | 粉彩花盘 | 器物 | 清粉彩 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-garden-rock | 庭石 | 器物 | 园林 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-ming-chair | 明式靠背椅 | 器物 | 明式家具 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-cloisonne-censer | 珐琅香炉 | 器物 | 掐丝珐琅 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-pearl-cabinet | 螺钿小柜 | 器物 | 螺钿 | 256×256 | 透明 | 单幅 | 游戏、App |
+| prop-filigree-hairpin | 花丝簪 | 器物 | 花丝 | 256×256 | 透明 | 单幅 | 游戏、App |
+| scene-bluegreen-ridges | 青绿叠嶂 | 场景 | 青绿山水 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-southern-river | 南宋江岸 | 场景 | 南宋小景 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-birdflower-courtyard | 花鸟庭院 | 场景 | 宋花鸟 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-dunhuang-hall | 壁画色石窟 | 场景 | 敦煌壁画 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-garden-moon | 月洞见庭 | 场景 | 园林 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-woodblock-town | 版画小镇 | 场景 | 木版画 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-literati-bank | 文人疏岸 | 场景 | 元文人山水 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-wu-school-study | 吴门书斋 | 场景 | 吴门册页 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-ink-bamboo | 扬州竹雨 | 场景 | 扬州墨笔 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-jiehua-palace | 界画台阁 | 场景 | 界画 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-huizhou-lane | 徽州巷道 | 场景 | 徽州民居 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-dougong-workshop | 木构工坊 | 场景 | 木构斗拱 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-newyear-market | 年画集市 | 场景 | 年画 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-paper-cut-forest | 剪纸林野 | 场景 | 剪纸 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-shadow-stage | 皮影戏台 | 场景 | 皮影 | 480×300 | 含背景 | 单幅 | 游戏、App |
+| scene-tang-procession | 唐绘行旅 | 场景 | 唐人物 | 480×300 | 含背景 | 单幅 | 游戏、App |

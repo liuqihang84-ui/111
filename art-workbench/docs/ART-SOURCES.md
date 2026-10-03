@@ -135,3 +135,12 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+## 第三版素材库与扩展参考图
+
+第三版新增 192 件原创现代 SVG，源码见 `src/data/materials.ts` 及其图形实现文件；允许用于游戏、App、网页和修改。它们依据传统形式创作新几何，并未打包博物馆原作，不应当作文物复制品、历史复原或古代标准比例。具体用法、透明及平铺状态见素材目录和导出索引。界面类是可编辑布局图形，真实文本和交互需另行开发。
+
+新增八张 AI 辅助原创整板 PNG，具体提示词、生成记录和文件 SHA-256 分别保存在 `reference-game-provenance.md` 与 `reference-app-provenance.md`。整板含多种研究案例，但不将这些案例计为已切分的独立透明素材。可以参考和用于项目；服装、人物、器物、建筑、工艺和文字的历史精确性并未经过系统考证。AI 辅助原创不意味着已完成某个角色的多视图或动画一致性。
+
+新增传统路线的文献入口保留 `reference` 状态；不同的形式解释与现代应用建议独立阅读。已有11条核验记录仍以具体页面、字段及日期为边界，不因为类型扩展而推广为所有来源都已核验。

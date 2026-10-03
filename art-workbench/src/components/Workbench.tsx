@@ -3,6 +3,7 @@ import { ArrowDownToLine, Check, CheckCheck, Copy, FileJson, Gamepad2, Layers3, 
 import { traditions } from '../data/traditions';
 import { assetLabels, briefMarkdown, defaultInput, formatOptions, generateBrief } from '../lib/brief';
 import { retainStudy } from '../lib/study-transfer';
+import { retainMaterial } from '../lib/material-transfer';
 import type { ArtTradition, AssetKind, BriefInput, GeneratedBrief } from '../types';
 
 interface WorkbenchProps {
@@ -77,7 +78,7 @@ export default function Workbench({ tradition, onSelectTradition, onSave, initia
   }, [manualCopy]);
 
   const effectiveInput = useMemo(() => ({ ...input, traditionId: tradition.id }), [input, tradition.id]);
-  const generated = useMemo(() => retainStudy(generateBrief(effectiveInput, tradition), effectiveInput, tradition, researchBrief), [effectiveInput, tradition, researchBrief]);
+  const generated = useMemo(() => retainMaterial(retainStudy(generateBrief(effectiveInput, tradition), effectiveInput, tradition, researchBrief), effectiveInput, tradition, researchBrief), [effectiveInput, tradition, researchBrief]);
   const generationKey = JSON.stringify(effectiveInput);
   const brief = useMemo<GeneratedBrief>(() => {
     if (!edits || edits.key !== generationKey) return generated;
