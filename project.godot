@@ -1,0 +1,27 @@
+; Lumenfall — an HD-2D adventure, made with Godot.
+config_version=5
+
+[application]
+config/name="Lumenfall · 暮光之森"
+config/version="0.3.0-dev"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://assets/icon.svg"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/size/min_width=960
+window/size/min_height=600
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.037, 0.075, 0.088, 1)
+
+[audio]
+driver/enable_input=false

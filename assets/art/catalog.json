@@ -1,0 +1,1504 @@
+{
+	"assets": [
+		{
+			"action": "idle",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 6,
+			"frames": 4,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_idle_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "walk",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 10,
+			"frames": 6,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_walk_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "attack",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 14,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_attack_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "dash",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 16,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_dash_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "pulse",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 12,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_pulse_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "hit",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 10,
+			"frames": 3,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_hit_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 96
+		},
+		{
+			"action": "death",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 8,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_death_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "interact",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "south",
+			"fps": 8,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_interact_south_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "idle",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 6,
+			"frames": 4,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_idle_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "walk",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 10,
+			"frames": 6,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_walk_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "attack",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 14,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_attack_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "dash",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 16,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_dash_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "pulse",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 12,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_pulse_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "hit",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 10,
+			"frames": 3,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_hit_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 96
+		},
+		{
+			"action": "death",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 8,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_death_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "interact",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "north",
+			"fps": 8,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_interact_north_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "idle",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 6,
+			"frames": 4,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_idle_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "walk",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 10,
+			"frames": 6,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_walk_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "attack",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 14,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_attack_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "dash",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 16,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_dash_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "pulse",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 12,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_pulse_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "hit",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 10,
+			"frames": 3,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_hit_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 96
+		},
+		{
+			"action": "death",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 8,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_death_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "interact",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "east",
+			"fps": 8,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_interact_east_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "idle",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 6,
+			"frames": 4,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_idle_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "walk",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 10,
+			"frames": 6,
+			"height": 48,
+			"loop": true,
+			"path": "assets/art/characters/lynn/lynn_walk_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "attack",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 14,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_attack_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "dash",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 16,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_dash_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"action": "pulse",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 12,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_pulse_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "hit",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 10,
+			"frames": 3,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_hit_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 96
+		},
+		{
+			"action": "death",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 8,
+			"frames": 6,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_death_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 192
+		},
+		{
+			"action": "interact",
+			"anchor": [
+				16,
+				44
+			],
+			"cell": [
+				32,
+				48
+			],
+			"direction": "west",
+			"fps": 8,
+			"frames": 4,
+			"height": 48,
+			"loop": false,
+			"path": "assets/art/characters/lynn/lynn_interact_west_sheet.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_cen/npc_cen_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_cen/npc_cen_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_afu/npc_afu_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_afu/npc_afu_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_xiaohe/npc_xiaohe_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/characters/npc_xiaohe/npc_xiaohe_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/lamp_moth/lamp_moth_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/lamp_moth/lamp_moth_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/mist_beast/mist_beast_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/mist_beast/mist_beast_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/vine_root/vine_root_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/vine_root/vine_root_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/wood_guard/wood_guard_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/wood_guard/wood_guard_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/marsh_spider/marsh_spider_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/marsh_spider/marsh_spider_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/drowned_shadow/drowned_shadow_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/drowned_shadow/drowned_shadow_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/ruin_sentinel/ruin_sentinel_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/ruin_sentinel/ruin_sentinel_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/cracked_statue/cracked_statue_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/cracked_statue/cracked_statue_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/hollow_patrol/hollow_patrol_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/hollow_patrol/hollow_patrol_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/dusk_archer/dusk_archer_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				20,
+				44
+			],
+			"fps": 4,
+			"height": 48,
+			"path": "assets/art/enemies/dusk_archer/dusk_archer_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 40
+		},
+		{
+			"anchor": [
+				32,
+				76
+			],
+			"fps": 4,
+			"height": 80,
+			"path": "assets/art/bosses/gate_guardian/gate_guardian_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"anchor": [
+				32,
+				76
+			],
+			"fps": 4,
+			"height": 80,
+			"path": "assets/art/bosses/gate_guardian/gate_guardian_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/mist_hunter/mist_hunter_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/mist_hunter/mist_hunter_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/rune_colossus/rune_colossus_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/rune_colossus/rune_colossus_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/night_warden/night_warden_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/night_warden/night_warden_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/root_heart/root_heart_idle_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				40,
+				92
+			],
+			"fps": 4,
+			"height": 96,
+			"path": "assets/art/bosses/root_heart/root_heart_idle_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 80
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/lamp/lamp_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/lamp/lamp_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/chest/chest_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/chest/chest_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/note/note_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/note/note_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/lens/lens_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/lens/lens_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				32,
+				60
+			],
+			"ground_plane": true,
+			"height": 64,
+			"path": "assets/art/props/rune/rune_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"anchor": [
+				32,
+				60
+			],
+			"ground_plane": true,
+			"height": 64,
+			"path": "assets/art/props/rune/rune_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/shield/shield_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/shield/shield_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/anchor/anchor_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/anchor/anchor_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				10,
+				24
+			],
+			"ground_plane": false,
+			"height": 28,
+			"path": "assets/art/props/crystal/crystal_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 20
+		},
+		{
+			"anchor": [
+				10,
+				24
+			],
+			"ground_plane": false,
+			"height": 28,
+			"path": "assets/art/props/crystal/crystal_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 20
+		},
+		{
+			"anchor": [
+				10,
+				24
+			],
+			"ground_plane": false,
+			"height": 28,
+			"path": "assets/art/props/potion/potion_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 20
+		},
+		{
+			"anchor": [
+				10,
+				24
+			],
+			"ground_plane": false,
+			"height": 28,
+			"path": "assets/art/props/potion/potion_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 20
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/campfire/campfire_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/campfire/campfire_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				8,
+				16
+			],
+			"ground_plane": false,
+			"height": 20,
+			"path": "assets/art/props/grass/grass_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 16
+		},
+		{
+			"anchor": [
+				8,
+				16
+			],
+			"ground_plane": false,
+			"height": 20,
+			"path": "assets/art/props/grass/grass_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 16
+		},
+		{
+			"anchor": [
+				6,
+				14
+			],
+			"ground_plane": false,
+			"height": 18,
+			"path": "assets/art/props/flower/flower_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 12
+		},
+		{
+			"anchor": [
+				6,
+				14
+			],
+			"ground_plane": false,
+			"height": 18,
+			"path": "assets/art/props/flower/flower_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 12
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/door/door_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/door/door_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/bell/bell_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				16,
+				36
+			],
+			"ground_plane": false,
+			"height": 40,
+			"path": "assets/art/props/bell/bell_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 32
+		},
+		{
+			"anchor": [
+				32,
+				92
+			],
+			"height": 96,
+			"path": "assets/art/environments/forest/forest_tree_00.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"anchor": [
+				32,
+				92
+			],
+			"height": 96,
+			"path": "assets/art/environments/forest/forest_tree_01.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"direction": "east",
+			"height": 64,
+			"origin": [
+				22,
+				32
+			],
+			"path": "assets/art/vfx/player/sword_slash.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 64
+		},
+		{
+			"character": "lynn",
+			"emotion": "neutral",
+			"height": 128,
+			"path": "assets/art/ui/portraits/lynn_neutral.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "lynn",
+			"emotion": "worried",
+			"height": 128,
+			"path": "assets/art/ui/portraits/lynn_worried.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "lynn",
+			"emotion": "determined",
+			"height": 128,
+			"path": "assets/art/ui/portraits/lynn_determined.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "lynn",
+			"emotion": "relieved",
+			"height": 128,
+			"path": "assets/art/ui/portraits/lynn_relieved.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "cen",
+			"emotion": "neutral",
+			"height": 128,
+			"path": "assets/art/ui/portraits/cen_neutral.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "cen",
+			"emotion": "worried",
+			"height": 128,
+			"path": "assets/art/ui/portraits/cen_worried.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "cen",
+			"emotion": "determined",
+			"height": 128,
+			"path": "assets/art/ui/portraits/cen_determined.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "cen",
+			"emotion": "relieved",
+			"height": 128,
+			"path": "assets/art/ui/portraits/cen_relieved.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "afu",
+			"emotion": "neutral",
+			"height": 128,
+			"path": "assets/art/ui/portraits/afu_neutral.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "afu",
+			"emotion": "worried",
+			"height": 128,
+			"path": "assets/art/ui/portraits/afu_worried.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "afu",
+			"emotion": "determined",
+			"height": 128,
+			"path": "assets/art/ui/portraits/afu_determined.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "afu",
+			"emotion": "relieved",
+			"height": 128,
+			"path": "assets/art/ui/portraits/afu_relieved.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "xiaohe",
+			"emotion": "neutral",
+			"height": 128,
+			"path": "assets/art/ui/portraits/xiaohe_neutral.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "xiaohe",
+			"emotion": "worried",
+			"height": 128,
+			"path": "assets/art/ui/portraits/xiaohe_worried.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "xiaohe",
+			"emotion": "determined",
+			"height": 128,
+			"path": "assets/art/ui/portraits/xiaohe_determined.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"character": "xiaohe",
+			"emotion": "relieved",
+			"height": 128,
+			"path": "assets/art/ui/portraits/xiaohe_relieved.png",
+			"provenance": "original_programmatic_pixel_art",
+			"width": 128
+		},
+		{
+			"height": 1120,
+			"path": "assets/art/preview/sprite_catalog.png",
+			"provenance": "original_programmatic_pixel_art",
+			"purpose": "Original art review contact sheet",
+			"scale": 2,
+			"width": 1536
+		},
+		{
+			"characters": [
+				"lynn",
+				"cen",
+				"afu",
+				"xiaohe"
+			],
+			"height": 128,
+			"path": "assets/art/preview/portrait_catalog.png",
+			"provenance": "original_programmatic_pixel_art",
+			"purpose": "Original portrait review",
+			"width": 512
+		}
+	],
+	"authoring": "Original Godot Image pixel drawings",
+	"hero_foot_anchor": [
+		16,
+		44
+	],
+	"renderer": "nearest",
+	"schema": 1,
+	"source": "scripts/pixel_art.gd"
+}

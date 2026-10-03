@@ -1,0 +1,13 @@
+{
+  "source": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+  "upstream": "https://github.com/notofonts/noto-cjk",
+  "face_index": 2,
+  "source_postscript_name": "NotoSansCJKsc-Regular",
+  "source_sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+  "output_sha256": "024b433ef6c8ffc2713ad2fe153bde8c4e2b1eba7bb2c95f2c60ecae217a0939",
+  "output": "assets/fonts/lumenfall-ui-full.otf",
+  "license": "SIL Open Font License 1.1",
+  "modification": "Extracted complete SC face; renamed font name and CFF metadata; no glyph subsetting or outline editing",
+  "unicode_codepoints": 44810,
+  "missing_han_in_current_sources": ""
+}

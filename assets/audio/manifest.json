@@ -1,0 +1,179 @@
+{
+  "generator": "tools/generate_audio.py",
+  "seed": 20261003,
+  "music": {
+    "title": {
+      "file": "assets/audio/music_title.wav",
+      "seconds": 37.895,
+      "bytes": 1671202,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.004242
+    },
+    "village": {
+      "file": "assets/audio/music_village.wav",
+      "seconds": 32.727,
+      "bytes": 1443316,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.004913
+    },
+    "forest": {
+      "file": "assets/audio/music_forest.wav",
+      "seconds": 36.923,
+      "bytes": 1628352,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.012085
+    },
+    "marsh": {
+      "file": "assets/audio/music_marsh.wav",
+      "seconds": 42.353,
+      "bytes": 1867808,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.003815
+    },
+    "ruins": {
+      "file": "assets/audio/music_ruins.wav",
+      "seconds": 38.919,
+      "bytes": 1716368,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.001679
+    },
+    "city": {
+      "file": "assets/audio/music_city.wav",
+      "seconds": 35.122,
+      "bytes": 1548922,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.005341
+    },
+    "sanctuary": {
+      "file": "assets/audio/music_sanctuary.wav",
+      "seconds": 41.143,
+      "bytes": 1814444,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.002716
+    },
+    "battle": {
+      "file": "assets/audio/music_battle.wav",
+      "seconds": 26.667,
+      "bytes": 1176044,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.008423
+    },
+    "ending": {
+      "file": "assets/audio/music_ending.wav",
+      "seconds": 37.895,
+      "bytes": 1671202,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.55,
+      "loop_seam_delta": 0.005829
+    }
+  },
+  "effects": {
+    "attack": {
+      "file": "assets/audio/sfx_attack.wav",
+      "seconds": 0.23,
+      "bytes": 10188,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "dash": {
+      "file": "assets/audio/sfx_dash.wav",
+      "seconds": 0.3,
+      "bytes": 13274,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "pulse": {
+      "file": "assets/audio/sfx_pulse.wav",
+      "seconds": 0.65,
+      "bytes": 28708,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "hurt": {
+      "file": "assets/audio/sfx_hurt.wav",
+      "seconds": 0.28,
+      "bytes": 12392,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "collect": {
+      "file": "assets/audio/sfx_collect.wav",
+      "seconds": 0.46,
+      "bytes": 20330,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "interact": {
+      "file": "assets/audio/sfx_interact.wav",
+      "seconds": 0.26,
+      "bytes": 11510,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "save": {
+      "file": "assets/audio/sfx_save.wav",
+      "seconds": 0.76,
+      "bytes": 33560,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    },
+    "win": {
+      "file": "assets/audio/sfx_win.wav",
+      "seconds": 1.6,
+      "bytes": 70604,
+      "sample_rate": 22050,
+      "channels": 1,
+      "bits": 16,
+      "peak": 0.52,
+      "loop_seam_delta": 0.0
+    }
+  },
+  "total_wav_bytes": 14738224
+}

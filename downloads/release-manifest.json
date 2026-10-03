@@ -1,0 +1,33 @@
+{
+  "version": "0.3.0-dev",
+  "godot": "4.6.3",
+  "packages": [
+    {
+      "platform": "linux",
+      "file": "lumenfall-0.3.0-dev-linux-x86_64.zip",
+      "bytes": 47064220,
+      "sha256": "c11eaab6dfbfe31034e22c45bd4a76d06b121c1305c7f42124a4d2e3f064abff",
+      "payload": {
+        "lumenfall.x86_64": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0",
+        "lumenfall.pck": "ab7c7011845537b037f43db694a64749390fddc8f1baf1d2546e267cbaa57d06"
+      }
+    },
+    {
+      "platform": "windows",
+      "file": "lumenfall-0.3.0-dev-windows-x86_64.zip",
+      "bytes": 55902604,
+      "sha256": "c6a890efaa52b536bd2e75dcaa1dacadadd03afb463c254ea3a9e4bf2b75d4ce",
+      "payload": {
+        "lumenfall.exe": "9e53fa8a3365e1af6b86bb609038fa3477f4f6eb9383d30b82094b4f4ba302f1",
+        "lumenfall.pck": "ab7c7011845537b037f43db694a64749390fddc8f1baf1d2546e267cbaa57d06"
+      }
+    },
+    {
+      "platform": "source",
+      "file": "lumenfall-0.3.0-dev-source.zip",
+      "bytes": 47898962,
+      "sha256": "5546f0e95c79e01cc8e6acbf1e783884fdc8f92c6c2a442055e387d53befa954",
+      "files": 370
+    }
+  ]
+}
