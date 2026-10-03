@@ -1,0 +1,19 @@
+{
+  "name": "guanwu-art-workbench",
+  "version": "0.1.0",
+  "builtAt": "2026-10-03T15:16:40.126Z",
+  "offlineResourceValidation": "passed",
+  "archiveCrcValidation": "passed",
+  "files": [
+    {
+      "name": "guanwu-art-workbench.html",
+      "bytes": 9463024,
+      "sha256": "c0a43526c462965235c706bcde9748d9294dbbdf46f2798ca065980eeb82c62e"
+    },
+    {
+      "name": "guanwu-art-workbench.zip",
+      "bytes": 6953825,
+      "sha256": "dbfb9fa05dc1888cc3bf813f6f5c4a4f97fcb0724cf5e6c17b5f5b1abc1b6671"
+    }
+  ]
+}

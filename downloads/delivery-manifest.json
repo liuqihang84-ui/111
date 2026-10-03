@@ -1,0 +1,38 @@
+{
+  "name": "guanwu-art-workbench",
+  "version": "0.1.0",
+  "preparedAt": "2026-10-03T15:29:16.269005+00:00",
+  "sourceFiles": 34,
+  "files": [
+    {
+      "name": "guanwu-art-workbench-source.zip",
+      "bytes": 6863040,
+      "sha256": "743131f680cfa0d33fc4f7e9e2067ec6a137e43895791274a28455bfd3ad803b"
+    },
+    {
+      "name": "guanwu-art-workbench.html",
+      "bytes": 9463024,
+      "sha256": "c0a43526c462965235c706bcde9748d9294dbbdf46f2798ca065980eeb82c62e"
+    },
+    {
+      "name": "guanwu-art-workbench.zip",
+      "bytes": 6953825,
+      "sha256": "dbfb9fa05dc1888cc3bf813f6f5c4a4f97fcb0724cf5e6c17b5f5b1abc1b6671"
+    },
+    {
+      "name": "release-manifest.json",
+      "bytes": 519,
+      "sha256": "3efa5d477054991cddef3521de4eb8a885d2e07ec9d8725fa97c4b20f7ca1d2b"
+    }
+  ],
+  "validation": {
+    "unitTests": 14,
+    "browserTests": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "offlineScope": "Identical HTML bytes served over allowed HTTP; refreshed before disconnect; all core tools checked with network offline. file:// blocked by managed browser policy, not verified.",
+    "browserErrors": [],
+    "zipCrc": "passed"
+  },
+  "hosting": "Prepared static docs; GitHub Pages not enabled by this delivery."
+}

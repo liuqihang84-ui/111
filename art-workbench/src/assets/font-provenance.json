@@ -1,0 +1,10 @@
+{
+  "family": "Guanwu Serif",
+  "source_family": "Noto Serif SC",
+  "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+  "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+  "license": "SIL OFL 1.1",
+  "modifications": "Instantiate wght=400, subset to project text and rename family.",
+  "output_sha256": "424719731fc0f913dd8016bcc40b8ee1accb6c828b69c63c626522a370bf7536",
+  "output_bytes": 240064
+}

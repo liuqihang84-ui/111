@@ -1,0 +1,405 @@
+{
+  "config": {
+    "configFile": "/workspace/111/art-workbench/playwright.config.ts",
+    "rootDir": "/workspace/111/art-workbench/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/111/art-workbench/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/111/art-workbench/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser.spec.ts",
+      "file": "browser.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "research filters, empty state, detail tabs, Escape and two-route comparison",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:16.485Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-ada53aa7b7c445887ba7",
+          "file": "browser.spec.ts",
+          "line": 72,
+          "column": 1
+        },
+        {
+          "title": "game and App briefs react to subject, format, target and keyboard tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:16.433Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-e3a5d8c66fb8a042d264",
+          "file": "browser.spec.ts",
+          "line": 122,
+          "column": 1
+        },
+        {
+          "title": "edited prompts download as real Markdown and tokens download as valid JSON",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2693,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:18.698Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-9a60fddb2e88c23d4214",
+          "file": "browser.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "projects persist through reload, restore manual prompts and safely import actual exports",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2880,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:21.408Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-c3b86a2ec0ce49f05007",
+          "file": "browser.spec.ts",
+          "line": 184,
+          "column": 1
+        },
+        {
+          "title": "Canvas upload measures known colors and transparency, and rejects corrupt or unsupported files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:21.679Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-4bf7989b59cba07092fe",
+          "file": "browser.spec.ts",
+          "line": 231,
+          "column": 1
+        },
+        {
+          "title": "contrast validates 21:1 black/white, invalid hex and exported analysis data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:23.190Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-1dcbac5fe8c9c08276f4",
+          "file": "browser.spec.ts",
+          "line": 267,
+          "column": 1
+        },
+        {
+          "title": "390px mobile navigation, research dialog and tools stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3480,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:24.309Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-7063034a67cc3fd25aaa",
+          "file": "browser.spec.ts",
+          "line": 292,
+          "column": 1
+        },
+        {
+          "title": "portable HTML embeds every resource and its tools work fully offline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:24:24.474Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "file-origin-blocked",
+                      "contentType": "text/plain",
+                      "body": "cGFnZS5nb3RvOiBuZXQ6OkVSUl9CTE9DS0VEX0JZX0FETUlOSVNUUkFUT1IgYXQgZmlsZTovLy93b3Jrc3BhY2UvMTExL2FydC13b3JrYmVuY2gvcmVsZWFzZS9ndWFud3UtYXJ0LXdvcmtiZW5jaC5odG1sCkNhbGwgbG9nOgobWzJtICAtIG5hdmlnYXRpbmcgdG8gImZpbGU6Ly8vd29ya3NwYWNlLzExMS9hcnQtd29ya2JlbmNoL3JlbGVhc2UvZ3Vhbnd1LWFydC13b3JrYmVuY2guaHRtbCIsIHdhaXRpbmcgdW50aWwgImxvYWQiG1syMm0KClRoZSBtYW5hZ2VkIENocm9taXVtIFVSTCBwb2xpY3kgZG9lcyBub3QgYWxsb3cgZmlsZTovLy4gTm8gYnJvd3NlciBwb2xpY3kgd2FzIGNoYW5nZWQuClRoZSByZW1haW5pbmcgYXNzZXJ0aW9ucyB1c2UgdGhlIGJ5dGUtaWRlbnRpY2FsIEhUTUwgc2VydmVkIG92ZXIgYWxsb3dlZCBsb2NhbGhvc3QgSFRUUCwgd2l0aCBldmVyeSBzdWJzZXF1ZW50IEhUVFAoUykgcmVxdWVzdCBibG9ja2VkLiBBY3R1YWwgZmlsZS1vcmlnaW4gb3BlcmF0aW9uIHJlbWFpbnMgdW52ZXJpZmllZCBpbiB0aGlzIGVudmlyb25tZW50Lg=="
+                    },
+                    {
+                      "name": "browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-5b4b8b2f7c0a46842a9a",
+          "file": "browser.spec.ts",
+          "line": 322,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-03T15:24:15.502Z",
+    "duration": 19888.89,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
