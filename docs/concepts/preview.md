@@ -1,3 +1,5 @@
+> 新方向讨论：[中国古代美学研究图](https://github.com/liuqihang84-ui/111/blob/concept-art/docs/concepts/chinese_aesthetics_triptych_v01.png) · [研究说明](../chinese-aesthetics-study.md)。以下保留早期角色与森林概念存档。
+
 # 《暮光之森》概念美术
 
 2026-10-03。以下是生成辅助的美术讨论稿，尚未接入 Godot。角色图用于确认人物与装备，森林图用于确认配色、路线和空间层次。
