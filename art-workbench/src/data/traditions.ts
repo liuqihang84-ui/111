@@ -1,4 +1,5 @@
 import type { ArtTradition, ResearchConcept, SourceReference } from '../types';
+import { verifiedSourceRecords } from './verified-source-records';
 
 // A reference is a concrete research lead, not a claim that its web page was
 // fetched or that the currently available image is licensed for production.
@@ -12,27 +13,33 @@ const reference = (
   note: string,
 ): SourceReference => ({ id, title, institution, url, period, medium, note, status: 'reference' });
 
+const verified = (id: string): SourceReference => {
+  const record = verifiedSourceRecords[id];
+  if (!record) throw new Error(`Missing verified source record: ${id}`);
+  return { id, ...record, status: 'verified' };
+};
+
 export const sources: SourceReference[] = [
   reference('mawangdui-lacquer', '马王堆一号汉墓出土云纹漆器', '湖南博物院', 'https://www.hnmuseum.com/', '西汉', '木胎、夹纻胎等漆器', '在馆方入口检索“马王堆 漆器 云纹”。逐件确认胎体与装饰技法，不能把全部马王堆漆器都写成木胎。'),
   reference('junxing-lacquer', '马王堆漆器“君幸食”“君幸酒”题字', '湖南博物院', 'https://www.hnmuseum.com/', '西汉', '漆盘、耳杯及器上文字', '检索“君幸食”“君幸酒”，研究题字与器物使用的关系；这些文字并非给所有汉代器物通用的纹样。'),
   reference('han-relief-shandong', '汉代画像石馆藏：车骑、宴饮与建筑图像', '山东博物馆', 'https://www.sdmuseum.com/', '汉代', '石刻画像', '检索“汉画像石 车骑 宴饮”。先记录具体出土地、年代和雕刻方法，再比较轮廓，避免把不同地区合成一个统一汉代样式。'),
   reference('wuliang-shrine', '嘉祥武氏祠画像石研究线索', '山东博物馆及武氏祠相关文博资料', 'https://www.sdmuseum.com/', '东汉', '祠堂石刻画像', '检索“武氏祠 武梁祠 画像石”，入口并非逐件馆藏页。题材包含历史、伦理、祥瑞与神话，需按具体图像核对原场景。'),
   reference('harvest-brick', '弋射收获画像砖', '中国国家博物馆', 'https://www.chnmuseum.cn/', '东汉', '模印画像砖', '检索“弋射收获画像砖”。画像砖与画像石的材料、制作和图像边缘不同，适合作为差异比较，不应统称石刻。'),
-  reference('thousand-li', '王希孟《千里江山图》卷', '故宫博物院', 'https://www.dpm.org.cn/', '北宋，1113 年', '绢本设色手卷', '检索“千里江山图 王希孟”。研究整卷的山势、路径、村落与水域组织，不只采集局部蓝绿色。'),
-  reference('river-pavilions', '传李思训《江帆楼阁图》', '台北故宫博物院', 'https://www.npm.gov.tw/', '传统归于唐代画家，归属须核馆方说明', '绢本设色', '检索“江帆楼阁 李思训”。使用“传”字，不能把传统归属直接写成已证实的作者和年代。'),
+  verified('thousand-li'),
+  verified('river-pavilions'),
   reference('linquan', '郭熙、郭思《林泉高致》之《山水训》', '中国国家图书馆', 'https://www.nlc.cn/', '北宋相关画论，后由郭思编集', '画论文献', '检索“林泉高致 山水训 三远”。高远、深远、平远是观察与组织山水的画论，不等于现代相机三个固定镜头。'),
   reference('ancient-painting-classification', '谢赫《古画品录》六法', '中国国家图书馆', 'https://www.nlc.cn/', '南朝齐梁时期相关画论', '绘画品评文献', '检索“古画品录 谢赫 六法”。本工作台对“随类赋彩”的生产约束解释属于现代转译，不把 design token 当作原文含义。'),
-  reference('spring-path', '马远《山径春行图》', '台北故宫博物院', 'https://www.npm.gov.tw/', '南宋', '绢本设色', '检索“山径春行 马远”。分析人物、树、鸟与开放空间如何相互呼应；“马一角”不能概括其全部作品。'),
+  verified('spring-path'),
   reference('clear-distant-stream', '夏圭《溪山清远图》卷', '台北故宫博物院', 'https://www.npm.gov.tw/', '南宋', '纸本水墨手卷', '检索“溪山清远 夏圭”。分析连续展开中的密林、屋宇、岸线与空白段落，而非只截一张静态边角构图。'),
-  reference('ma-yuan-water', '马远《水图》册', '故宫博物院', 'https://www.dpm.org.cn/', '南宋', '绢本水墨设色册页', '检索“马远 水图”。不同水势有不同线组与节奏；不可只抽取一个通用的水纹贴图。'),
+  verified('ma-yuan-water'),
   reference('double-happiness', '崔白《双喜图》', '台北故宫博物院', 'https://www.npm.gov.tw/', '北宋，1061 年', '绢本设色', '检索“崔白 双喜图”。研究鸟兔姿态、枯枝倾斜和风势；工细描绘也能具有动态与疏密变化。'),
   reference('auspicious-cranes', '赵佶《瑞鹤图》', '辽宁省博物馆', 'https://www.lnmuseum.com.cn/', '北宋', '绢本设色', '检索“瑞鹤图”。注意祥瑞图像和宫廷叙事语境，不要只把鹤当作无含义的装饰单位。'),
-  reference('lotus-bloom', '宋人《出水芙蓉图》', '故宫博物院', 'https://www.dpm.org.cn/', '宋代，作者不详', '绢本设色册页', '检索“出水芙蓉图”。观察花瓣叠压、叶片翻折与线色关系；不为匿名作品补造画家身份。'),
-  reference('ru-basin', '汝窑青瓷无纹水仙盆', '台北故宫博物院', 'https://www.npm.gov.tw/', '北宋', '青瓷', '检索“汝窑 无纹 水仙盆”。器物颜色受釉层、光照、照片白平衡影响，屏幕色值不能作为宋代釉色的测量值。'),
-  reference('ding-ware', '宋代定窑白瓷：孩儿枕与刻花器', '故宫博物院', 'https://www.dpm.org.cn/', '宋代', '白瓷、刻花等装饰', '检索“定窑 孩儿枕 刻花”。分别核对具体器物与装饰方式，避免将定窑全部描述为同一表面。'),
-  reference('jian-bowl', '建窑黑釉盏', '故宫博物院', 'https://www.dpm.org.cn/', '宋代', '黑釉瓷', '检索“建窑 黑釉 盏”。与汝瓷、定瓷对照，说明宋瓷并不只有浅青色和极简无纹器。'),
-  reference('mogao-254', '莫高窟第 254 窟：北魏图像与装饰', '敦煌研究院·数字敦煌', 'https://www.e-dunhuang.com/', '北魏', '洞窟壁画、彩塑与建筑空间', '按洞窟号检索；本生故事等属于佛教叙事。应核对图像名称、壁面位置与保存状态，不能把现状色直接当作初绘色。'),
-  reference('mogao-172', '莫高窟第 172 窟：盛唐净土图像', '敦煌研究院·数字敦煌', 'https://www.e-dunhuang.com/', '盛唐', '洞窟壁画', '按洞窟号检索，比较建筑、群像和空间组织。经变画具有宗教叙事结构，不能用“飞天风”覆盖全部题材。'),
+  verified('lotus-bloom'),
+  verified('ru-basin'),
+  verified('ding-ware'),
+  verified('jian-bowl'),
+  verified('mogao-254'),
+  verified('mogao-172'),
   reference('mogao-85', '莫高窟第 85 窟：晚唐叙事壁画', '敦煌研究院·数字敦煌', 'https://www.e-dunhuang.com/', '晚唐', '洞窟壁画', '按洞窟号检索，注意叙事画、供养人与边饰位置；区分晚唐样式和前代洞窟，不把各阶段的服饰、光背与装饰拼接。'),
   reference('dunhuang-institute', '敦煌研究院壁画保护与研究资料', '敦煌研究院', 'https://www.dha.ac.cn/', '跨时期研究', '保护、图像与材料研究', '检索“颜料 变色 壁画保护”。老化、损伤、清理和照明会改变今天看到的颜色，风格研究需与保存状态分开记录。'),
   reference('yuanye', '计成《园冶》', '中国国家图书馆', 'https://www.nlc.cn/', '明代，1634 年刊行', '园林营造文献', '检索“园冶 计成 借景”。“虽由人作，宛自天开”是营造目标，应连同场地、因借与尺度理解，不能简化成自然随机摆放。'),
@@ -48,7 +55,7 @@ export const sources: SourceReference[] = [
   reference('songfeng', '黄庭坚《松风阁诗帖》', '台北故宫博物院', 'https://www.npm.gov.tw/', '北宋', '纸本行书', '检索“松风阁诗帖 黄庭坚”，分析长线、结字与行间空间；正文和界面字号仍需采用可读的现代排版。'),
   reference('yanta-rubbing', '褚遂良《雁塔圣教序》拓本研究', '中国国家图书馆', 'https://www.nlc.cn/', '原碑为唐代，拓本年代另核', '碑刻与拓本', '检索“雁塔圣教序 拓本”。石刻、拓纸、墨和传本磨损共同影响笔画外观，不可把拓本黑白关系当成原书写墨迹。'),
   reference('david-vases', '大维德青花云龙纹象耳瓶（有至正十一年铭文）', '大英博物馆·大维德中国艺术收藏', 'https://www.britishmuseum.org/collection', '元，1351 年铭文', '青花瓷', '检索“David Vases 1351”。从具体铭文、装饰分区和器形研究元青花，不能只凭“蓝色很浓”判断时代。'),
-  reference('yongle-cup', '明永乐青花压手杯', '故宫博物院', 'https://www.dpm.org.cn/', '明永乐', '青花瓷', '检索“永乐 青花 压手杯”。与元代象耳瓶比较器形、用途与留白；不同器类和尺寸的差异也参与视觉效果。'),
+  verified('yongle-cup'),
   reference('xuande-blue-white', '明宣德青花器：缠枝莲纹与器形', '故宫博物院', 'https://www.dpm.org.cn/', '明宣德', '青花瓷', '检索“宣德 青花 缠枝莲”，选择并记录一件具体器物再研究。宣德不是全部明代青花的代名词，晚明体系应单列。'),
 ];
 
@@ -151,7 +158,7 @@ export const traditions: ArtTradition[] = [
     name: '南宋小景',
     subtitle: '用取舍、呼应和显露控制观看节奏',
     era: '以南宋马远、夏圭的具体作品为参照',
-    medium: '绢本设色小景、纸本水墨手卷与册页',
+    medium: '绢本设色小景、纸本水墨手卷与淡设色卷',
     keywords: ['偏侧焦点', '虚实呼应', '近景截取', '水雾空间'],
     shortDescription: '减少同时展示的事物，以树石、人物与开阔水面形成呼应，让空白承担方向和情绪。',
     overview: '“马一角、夏半边”是理解某些构图的入口，不是两位画家的全部定义。南宋作品也包含设色与多样题材。转译重点是近景的具体触感与远处的开放空间相互支撑，让观者沿枝、岸、人物视线进入画面，而不是单纯降低饱和度。',

@@ -1,38 +1,58 @@
 {
   "name": "guanwu-art-workbench",
-  "version": "0.1.0",
-  "preparedAt": "2026-10-03T15:29:16.269005+00:00",
-  "sourceFiles": 34,
+  "version": "0.2.0",
+  "preparedAt": "2026-10-03T16:28:04.257385+00:00",
+  "sourceFiles": 45,
+  "research": {
+    "dossiers": 12,
+    "samples": 31,
+    "observations": 48,
+    "productionLocks": 72,
+    "assetExperiments": 36,
+    "aiFailures": 36,
+    "manualReviewChecks": 48,
+    "sources": 37,
+    "verifiedSources": 11,
+    "referenceSources": 26,
+    "verifiedHistoricalStatements": 8
+  },
   "files": [
     {
       "name": "guanwu-art-workbench-source.zip",
-      "bytes": 6863040,
-      "sha256": "743131f680cfa0d33fc4f7e9e2067ec6a137e43895791274a28455bfd3ad803b"
+      "bytes": 6984725,
+      "sha256": "ecdb0f90ebc80263d016eceb0a0a2ac4798521f807107e7cddde49d37792c2f8"
     },
     {
       "name": "guanwu-art-workbench.html",
-      "bytes": 9463024,
-      "sha256": "c0a43526c462965235c706bcde9748d9294dbbdf46f2798ca065980eeb82c62e"
+      "bytes": 9650326,
+      "sha256": "a225421e3cb79065086b24daf998c9b4f8b5c430494eff180bb6e3ea01fcc241"
     },
     {
       "name": "guanwu-art-workbench.zip",
-      "bytes": 6953825,
-      "sha256": "dbfb9fa05dc1888cc3bf813f6f5c4a4f97fcb0724cf5e6c17b5f5b1abc1b6671"
+      "bytes": 7037982,
+      "sha256": "d3a3ab4277148f584b514476c8c3efa1de079e871ca6b959e76e1dc705b495fd"
     },
     {
       "name": "release-manifest.json",
       "bytes": 519,
-      "sha256": "3efa5d477054991cddef3521de4eb8a885d2e07ec9d8725fa97c4b20f7ca1d2b"
+      "sha256": "7edb5f2f803c6a36f60671ae03fd9c52afa86741079d5a0ab7353b3a2d405ea7"
     }
   ],
   "validation": {
-    "unitTests": 14,
-    "browserTests": 8,
+    "unitTests": 19,
+    "browserTests": 13,
     "skipped": 0,
     "unexpected": 0,
-    "offlineScope": "Identical HTML bytes served over allowed HTTP; refreshed before disconnect; all core tools checked with network offline. file:// blocked by managed browser policy, not verified.",
+    "flaky": 0,
+    "offlineScope": "Identical portable HTML over allowed HTTP; real reload before disconnect. All core tools plus DeepStudy SVG/A-B/JSON export and study-to-production parameter74 verified after offline. file:// blocked by managed browser policy, not verified.",
     "browserErrors": [],
-    "zipCrc": "passed"
+    "zipCrc": "passed",
+    "frozenInstall": {
+      "node": "24.19.0",
+      "packages": 109,
+      "result": "passed",
+      "lockSha256": "a2c42461b0fe992fbfc2612240867e00655d712f35f8dc47655ef92089cc88c4"
+    }
   },
-  "hosting": "Prepared static docs; GitHub Pages not enabled by this delivery."
+  "hosting": "Static docs prepared; GitHub Pages not enabled by this delivery."
 }

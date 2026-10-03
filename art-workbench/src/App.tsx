@@ -4,13 +4,17 @@ import { traditions, sources, concepts } from './data/traditions';
 import type { ArtTradition, BriefInput, GeneratedBrief, ResearchConcept, SavedProject } from './types';
 import Workbench from './components/Workbench';
 import QualityLab from './components/QualityLab';
+import DeepStudy from './components/DeepStudy';
+import type { StudyTransfer } from './lib/study';
+import { transferStudy } from './lib/study-transfer';
 import { downloadText, loadProjects, parseProjects, saveProjects } from './lib/projects';
 import landscapeImage from './assets/landscape.png';
 import formsImage from './assets/forms.png';
 
-type View = 'research' | 'workbench' | 'quality' | 'projects';
+type View = 'research' | 'study' | 'workbench' | 'quality' | 'projects';
 const views: { id: View; name: string; icon: typeof BookOpen }[] = [
   { id: 'research', name: '研究馆', icon: BookOpen },
+  { id: 'study', name: '深研室', icon: Layers3 },
   { id: 'workbench', name: '制作台', icon: Sparkles },
   { id: 'quality', name: '检验室', icon: FlaskConical },
   { id: 'projects', name: '项目册', icon: FolderOpen },
@@ -107,6 +111,13 @@ export default function App() {
   }
   function openDetail(t: ArtTradition) { setDetail(t); setDetailTab('principles'); }
   function useTradition(id: string) { setSelectedId(id); setInitialInput(undefined); setInitialBrief(undefined); setProjectEpoch(n => n + 1); setDetail(null); setCompareOpen(false); navigate('workbench'); }
+  function openStudy(id: string) { setSelectedId(id); setDetail(null); navigate('study'); }
+  function useStudy(payload: StudyTransfer) {
+    const { input, brief } = transferStudy(payload);
+    setSelectedId(payload.traditionId); setInitialInput(input); setInitialBrief(brief);
+    setProjectEpoch(n => n + 1); navigate('workbench');
+    notify('研究实验、制作约束与审校状态已带入方案。');
+  }
   function toggleCompare(id: string) {
     if (compareIds.includes(id)) setCompareIds(compareIds.filter(x => x !== id));
     else if (compareIds.length < 3) setCompareIds([...compareIds, id]);
@@ -158,7 +169,9 @@ export default function App() {
         <section className="page-width closing-strip"><div><span className="eyebrow">FROM RESEARCH TO MAKING</span><h2>让下一次 AI 创作，有一份清楚的依据。</h2><p>带走构图、色板、材质、提示词和验收清单，逐项检查一套美术的连续性。</p></div><button className="button button-dark" onClick={() => navigate('workbench')}>进入制作台 <ArrowRight size={17} /></button></section>
       </>}
 
-      {view === 'workbench' && <section className="page-width tool-page"><div className="section-heading"><div><span className="eyebrow">ART DIRECTION BUILDER</span><h1>制作台</h1><p className="page-intro">把研究转成可交给 AI 与开发工具的规范，先建立规则，再制作素材。</p></div><button className="text-button" onClick={() => openDetail(selected)}>查看当前路线的依据 <BookOpen size={16} /></button></div><Workbench key={projectEpoch} tradition={selected} onSelectTradition={id => { setSelectedId(id); setInitialInput(undefined); setInitialBrief(undefined); }} onSave={saveProject} initialInput={initialInput} initialBrief={initialBrief} /></section>}
+      {view === 'study' && <section className="page-width tool-page"><div className="section-heading"><div><span className="eyebrow">CLOSE LOOKING / CONTROLLED EXPERIMENTS</span><h1>深研室</h1><p className="page-intro">比较具体对象，拆解结构，做一次只改变一个变量的实验，再把结论带入制作。</p></div><button className="text-button" onClick={() => openDetail(selected)}>查看路线与出处 <BookOpen size={16} /></button></div><DeepStudy traditionId={selectedId} onSelectTradition={setSelectedId} onUseStudy={useStudy} /></section>}
+
+      {view === 'workbench' && <section className="page-width tool-page"><div className="section-heading"><div><span className="eyebrow">ART DIRECTION BUILDER</span><h1>制作台</h1><p className="page-intro">把研究转成可交给 AI 与开发工具的规范，先建立规则，再制作素材。</p></div><div className="workbench-research-actions"><button className="text-button" onClick={() => openStudy(selected.id)}>深入结构实验 <Layers3 size={16} /></button><button className="text-button" onClick={() => openDetail(selected)}>查看当前路线的依据 <BookOpen size={16} /></button></div></div><Workbench key={projectEpoch} tradition={selected} onSelectTradition={id => { setSelectedId(id); setInitialInput(undefined); setInitialBrief(undefined); }} onSave={saveProject} initialInput={initialInput} initialBrief={initialBrief} /></section>}
 
       {view === 'quality' && <section className="page-width tool-page"><div className="section-heading"><div><span className="eyebrow">VISUAL CONSISTENCY LAB</span><h1>检验室</h1><p className="page-intro">检查尺寸、透明边缘、主色与文字对比度，让素材从“好看”走向“能用”。</p></div><label className="compact-select">参考路线<select value={selected.id} onChange={e => setSelectedId(e.target.value)}>{traditions.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></label></div><QualityLab palette={selected.palette} /></section>}
 
@@ -171,10 +184,10 @@ export default function App() {
     {toast && <div className="toast" role="status"><Check size={16} />{toast}</div>}
     {compareIds.length > 0 && view === 'research' && <div className="compare-dock"><Layers3 size={18} /><span>已选 {compareIds.length} / 3 条路线</span><button className="button button-dark" disabled={compareIds.length < 2} onClick={() => setCompareOpen(true)}>并排比较 <ArrowRight size={14} /></button><button className="icon-button" onClick={() => setCompareIds([])} aria-label="清空比较"><X size={17} /></button></div>}
 
-    {detail && <Dialog title={detail.name} onClose={() => setDetail(null)} wide><div className="detail-top"><StudyImage tradition={detail} /><div><span className="eyebrow">{detail.era} / {detail.medium}</span><h3>{detail.subtitle}</h3><p>{detail.overview}</p><button className="button button-dark" onClick={() => useTradition(detail.id)}>以此建立美术方案 <ArrowRight size={16} /></button></div></div><p className="micro-note">配图为原创形式研究示意，部分路线借用相近形式作对照，并非该路线的馆藏实例。历史依据请查看“参考出处”。</p><div className="detail-tabs" role="tablist" aria-label="研究内容"><button role="tab" aria-selected={detailTab === 'principles'} onClick={() => setDetailTab('principles')}>造型与色彩</button><button role="tab" aria-selected={detailTab === 'applications'} onClick={() => setDetailTab('applications')}>游戏与 App 转译</button><button role="tab" aria-selected={detailTab === 'sources'} onClick={() => setDetailTab('sources')}>参考出处</button></div>
+    {detail && <Dialog title={detail.name} onClose={() => setDetail(null)} wide><div className="detail-top"><StudyImage tradition={detail} /><div><span className="eyebrow">{detail.era} / {detail.medium}</span><h3>{detail.subtitle}</h3><p>{detail.overview}</p><div className="detail-research-actions"><button className="button button-dark" onClick={() => useTradition(detail.id)}>以此建立美术方案 <ArrowRight size={16} /></button><button className="button button-light" onClick={() => openStudy(detail.id)}>进入深研与实验 <Layers3 size={16} /></button></div></div></div><p className="micro-note">配图为原创形式研究示意，部分路线借用相近形式作对照，并非该路线的馆藏实例。历史依据请查看“参考出处”。</p><div className="detail-tabs" role="tablist" aria-label="研究内容"><button role="tab" aria-selected={detailTab === 'principles'} onClick={() => setDetailTab('principles')}>造型与色彩</button><button role="tab" aria-selected={detailTab === 'applications'} onClick={() => setDetailTab('applications')}>游戏与 App 转译</button><button role="tab" aria-selected={detailTab === 'sources'} onClick={() => setDetailTab('sources')}>参考出处</button></div>
       {detailTab === 'principles' && <div role="tabpanel"><div className="principle-grid">{detail.principles.map(p => <div key={p.title}><h4>{p.title}</h4><p>{p.detail}</p></div>)}</div><h4 className="detail-subheading">现代参考色板 <small>非历史颜料复原 · 点击复制</small></h4><Palette tradition={detail} onCopy={text => void copy(text)} /><dl className="research-definition"><dt>构图</dt><dd>{detail.composition}</dd><dt>轮廓</dt><dd>{detail.silhouette}</dd><dt>材质</dt><dd>{detail.materials}</dd></dl></div>}
       {detailTab === 'applications' && <div role="tabpanel"><div className="translation-grid"><section><span className="eyebrow">FOR GAMES</span><h4>游戏里的形式规则</h4><ul>{detail.gameTranslation.map(x => <li key={x}>{x}</li>)}</ul></section><section><span className="eyebrow">FOR APPS</span><h4>App 里的信息与材料</h4><ul>{detail.appTranslation.map(x => <li key={x}>{x}</li>)}</ul></section></div><ApplicationPreview tradition={detail} /></div>}
-      {detailTab === 'sources' && <div role="tabpanel"><div className="source-explanation"><BookOpen size={20} /><p>以下将作品、时期和媒介分别标注。当前馆藏条目为待核验检索线索，打开官方入口后需继续核对具体题名、版本与使用条件。</p></div>{detail.sourceIds.map(id => { const source = sources.find(s => s.id === id); return source ? <article className="source-card" key={id}><div><span className={`source-status ${source.status}`}>{source.status === 'verified' ? '已核验条目' : '待核验线索'}</span><h4>{source.title}</h4><p>{source.institution} · {source.period} · {source.medium}</p><small>{source.note}</small></div><a href={source.url} target="_blank" rel="noreferrer">官方检索入口 <ArrowUpRight size={15} /></a></article> : null; })}</div>}
+      {detailTab === 'sources' && <div role="tabpanel"><div className="source-explanation"><BookOpen size={20} /><p>按具体记录区分已核对条目与待核验线索。核对范围包括馆方题名、媒介与说明；艺术解释、制作参数与图片使用许可另行判断。</p></div>{detail.sourceIds.map(id => { const source = sources.find(s => s.id === id); return source ? <article className="source-card" key={id}><div><span className={`source-status ${source.status}`}>{source.status === 'verified' ? '已核验条目' : '待核验线索'}</span><h4>{source.title}</h4><p>{source.institution} · {source.period} · {source.medium}</p><small>{source.note}{source.checkedAt && <>（核对日期：{source.checkedAt.slice(0, 10)}）</>}</small></div><a href={source.url} target="_blank" rel="noreferrer">{source.status === 'verified' ? '馆方具体条目' : '官方检索入口'} <ArrowUpRight size={15} /></a></article> : null; })}</div>}
       <div className="pitfalls"><h4>容易偏离的地方</h4><ul>{detail.pitfalls.map(x => <li key={x}>{x}</li>)}</ul></div>
     </Dialog>}
 
@@ -182,6 +195,6 @@ export default function App() {
 
     {concept && <Dialog title={concept.name} onClose={() => setConcept(null)}><span className="eyebrow">概念依据</span><p className="concept-basis">{concept.historicalBasis}</p><p>{concept.explanation}</p><div className="translation-grid"><section><h4>游戏应用</h4><p>{concept.gameUse}</p></section><section><h4>App 应用</h4><p>{concept.appUse}</p></section></div><div className="pitfalls"><h4>常见误用</h4><p>{concept.commonMistake}</p></div></Dialog>}
 
-    {methodOpen && <Dialog title="研究的方法与边界" onClose={() => setMethodOpen(false)}><div className="method-flow">{['核对历史对象', '解释形式规则', '形成现代转译', '检验实际素材'].map((x, i) => <div key={x}><span>0{i + 1}</span><h3>{x}</h3></div>)}</div><p>这里的路线是一套有明确依据的形式选择，不以某个朝代概括所有艺术。作品出处、对作品的解读和现代制作建议分别阅读。</p><ul className="method-list"><li><b>参考资料：</b>现有作品与馆藏条目以“待核验线索”标记；环境网络限制使本轮无法逐页读取博物馆网站。不能把检索入口当作已经完成的馆藏核验。</li><li><b>原创图像：</b>两张示意板为生成辅助的原创研究，图中服饰、器物与建筑不是历史复原。它们不替代具体作品图像。</li><li><b>数字色值：</b>色板是现代制作起点，材料、屏幕与光照均会改变观感，不能称为古代颜料的固定 HEX。</li><li><b>提示词工具：</b>制作台整理规范与提示词，当前不连接在线生图模型。导出内容可交给你的 AI 图像或开发工具。</li><li><b>本地检查：</b>图像分析与项目保存均在浏览器运行；色板与对比度检查不构成版权、史实或完整美术质量认证。</li></ul><div className="method-counts"><span><b>{traditions.length}</b> 研究路线</span><span><b>{sources.length}</b> 文献与馆藏线索</span><span><b>{concepts.length}</b> 形式概念</span></div></Dialog>}
+    {methodOpen && <Dialog title="研究的方法与边界" onClose={() => setMethodOpen(false)}><div className="method-flow">{['核对历史对象', '解释形式规则', '形成现代转译', '检验实际素材'].map((x, i) => <div key={x}><span>0{i + 1}</span><h3>{x}</h3></div>)}</div><p>这里的路线是一套有明确依据的形式选择，不以某个朝代概括所有艺术。作品出处、对作品的解读和现代制作建议分别阅读。</p><ul className="method-list"><li><b>参考资料：</b>当前 {sources.length} 条来源中，{sources.filter(source => source.status === 'verified').length} 条已核对具体官方记录；其余保留待核验状态。核对馆方登记字段不等于独立鉴定，也不会自动确证研究解释或现代参数。</li><li><b>原创图像：</b>两张示意板为生成辅助的原创研究，图中服饰、器物与建筑不是历史复原。它们不替代具体作品图像。</li><li><b>数字色值：</b>色板是现代制作起点，材料、屏幕与光照均会改变观感，不能称为古代颜料的固定 HEX。</li><li><b>提示词工具：</b>制作台整理规范与提示词，当前不连接在线生图模型。导出内容可交给你的 AI 图像或开发工具。</li><li><b>本地检查：</b>图像分析与项目保存均在浏览器运行；色板与对比度检查不构成版权、史实或完整美术质量认证。</li></ul><div className="method-counts"><span><b>{traditions.length}</b> 研究路线</span><span><b>{sources.length}</b> 文献与馆藏线索</span><span><b>{concepts.length}</b> 形式概念</span></div></Dialog>}
   </div>;
 }

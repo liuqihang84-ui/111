@@ -19,3 +19,7 @@
 @media(max-width:390px){.page-width,.header-inner{width:calc(100% - 28px)}.hero h1{font-size:38px}.hero-note{font-size:8px;gap:6px}.card-title h3{font-size:16px}.card-meta{font-size:7px}.study-image{height:163px}.card-content{padding-inline:9px}.mini-palette>span{width:18px}.mini-palette small{display:none}.card-footer>span{font-size:7px}.concept-card{padding:15px}.brand small{display:none}.method-link{font-size:9px}}
 @media(max-width:680px){.workbench-heading,.quality-heading{flex-direction:column;align-items:flex-start;gap:12px}.workbench-offline,.quality-heading>span{font-size:9px}.brief-header h3{font-size:22px}.quality-preview-controls{gap:12px}.quality-threshold{padding:11px 9px;font-size:9px}.quality-ratio strong{font-size:35px}.quality-color-controls{min-width:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+.detail-research-actions,.workbench-research-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.detail-research-actions .button{font-size:11px}.workbench-research-actions{justify-content:flex-end}.main-nav>button{padding-inline:15px}
+@media(max-width:900px){.main-nav>button{padding-inline:9px;font-size:11px}}
+@media(max-width:680px){.main-nav.nav-open{grid-template-columns:repeat(5,minmax(0,1fr))}.main-nav>button{padding-inline:3px;font-size:11px}.workbench-research-actions{justify-content:flex-start}.detail-research-actions{gap:10px}}

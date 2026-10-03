@@ -402,5 +402,53 @@ test('portable HTML embeds every resource and its tools work fully offline', asy
   await page.getByTestId('quality-foreground').fill('#000000');
   await page.getByTestId('quality-background').fill('#FFFFFF');
   await expect(page.getByTestId('quality-contrast-ratio')).toContainText('21.00 : 1');
+
+  // The v0.2 deep study is part of the downloadable artifact too. Exercise
+  // its new drawing, export and production handoff after going offline,
+  // rather than inferring readiness from the normal HTTP suite.
+  await navigation(page, '深研室');
+  await expect(page.getByTestId('study-root')).toBeVisible();
+  await page.getByTestId('study-tradition').selectOption('blue-green-landscape');
+  await page.getByTestId('study-tab-experiment').click();
+  await page.getByTestId('study-experiment-mass').click();
+  const previewA = page.getByTestId('study-preview-a');
+  const previewB = page.getByTestId('study-preview-b');
+  const shapeA = await previewA.locator('path').evaluateAll(paths => paths.map(element => element.getAttribute('d')));
+  const shapeB = await previewB.locator('path').evaluateAll(paths => paths.map(element => element.getAttribute('d')));
+  await page.getByTestId('study-slider-mass').fill('74');
+  const valuesA = JSON.parse((await previewA.getAttribute('data-values'))!);
+  const valuesB = JSON.parse((await previewB.getAttribute('data-values'))!);
+  expect(valuesB.mass).toBe(74);
+  expect(Object.keys(valuesA).filter(key => valuesA[key] !== valuesB[key])).toEqual(['mass']);
+  expect(await previewA.locator('path').evaluateAll(paths => paths.map(element => element.getAttribute('d')))).toEqual(shapeA);
+  expect(await previewB.locator('path').evaluateAll(paths => paths.map(element => element.getAttribute('d')))).not.toEqual(shapeB);
+  await page.getByTestId('study-adopt-b').click();
+  const studyExporting = page.waitForEvent('download');
+  await page.getByTestId('study-export-json').click();
+  const studyDownload = await studyExporting;
+  expect(studyDownload.suggestedFilename()).toMatch(/\.json$/);
+  const studyNote = JSON.parse(await downloadedText(studyDownload));
+  expect(studyNote.kind).toBe('guanwu-study-note');
+  expect(studyNote.transfer.traditionId).toBe('blue-green-landscape');
+  expect(studyNote.transfer.parameters.mass).toBe(74);
+  expect(studyNote.sourceReferences.length).toBeGreaterThan(0);
+  expect(studyNote.boundary).toContain('原创现代结构实验');
+  await page.getByTestId('study-transfer').click();
+  await expect(page.getByTestId('workbench')).toBeVisible();
+  await expect(page.getByTestId('brief-positive')).toHaveValue(/mass = 74/);
+  await page.getByTestId('brief-tab-tokens').click();
+  const studyTokens = JSON.parse(await page.getByTestId('brief-tokens').innerText());
+  expect(studyTokens['study.parameter.mass']).toBe('74');
+  expect(studyTokens['study.sourceIds']).toBeTruthy();
   expect(blockedRequests, 'Portable HTML must not attempt to load remote assets').toEqual([]);
+  await testInfo.attach('offline-deep-study', {
+    body: JSON.stringify({
+      scope: 'Same portable document, all interactions after context.setOffline(true); all HTTP(S) requests remain blocked.',
+      exportedKind: studyNote.kind,
+      chosenMass: studyNote.transfer.parameters.mass,
+      productionMass: studyTokens['study.parameter.mass'],
+      remoteAssetRequests: blockedRequests.length,
+    }, null, 2),
+    contentType: 'application/json',
+  });
 });

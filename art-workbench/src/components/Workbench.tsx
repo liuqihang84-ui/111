@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowDownToLine, Check, CheckCheck, Copy, FileJson, Gamepad2, Layers3, Palette, RotateCcw, Save, Smartphone, Sparkles } from 'lucide-react';
 import { traditions } from '../data/traditions';
 import { assetLabels, briefMarkdown, defaultInput, formatOptions, generateBrief } from '../lib/brief';
+import { retainStudy } from '../lib/study-transfer';
 import type { ArtTradition, AssetKind, BriefInput, GeneratedBrief } from '../types';
 
 interface WorkbenchProps {
@@ -13,7 +14,7 @@ interface WorkbenchProps {
 }
 
 type OutputTab = 'prompt' | 'delivery' | 'tokens';
-interface Edits { key: string; positive: string; negative: string }
+interface Edits { key: string; positive: string; negative: string; base?: GeneratedBrief }
 
 function downloadText(filename: string, content: string, type: string) {
   const blob = new Blob([content], { type });
@@ -35,7 +36,9 @@ export default function Workbench({ tradition, onSelectTradition, onSave, initia
     key: JSON.stringify({ ...initialInput, traditionId: tradition.id }),
     positive: initialBrief.positive,
     negative: initialBrief.negative,
+    base: initialBrief,
   } : null);
+  const [researchBrief, setResearchBrief] = useState<GeneratedBrief | undefined>(initialBrief);
   const [notice, setNotice] = useState('');
   const [manualCopy, setManualCopy] = useState('');
   const copyRef = useRef<HTMLTextAreaElement>(null);
@@ -49,12 +52,14 @@ export default function Workbench({ tradition, onSelectTradition, onSave, initia
       const restored = { ...initialInput, traditionId: tradition.id };
       setInput(restored);
       setEdits(initialBrief ? {
-        key: JSON.stringify(restored), positive: initialBrief.positive, negative: initialBrief.negative,
+        key: JSON.stringify(restored), positive: initialBrief.positive, negative: initialBrief.negative, base: initialBrief,
       } : null);
+      setResearchBrief(initialBrief);
       setManualCopy('');
     } else if (previous.traditionId !== tradition.id) {
       setInput((current) => ({ ...current, traditionId: tradition.id }));
       setEdits(null);
+      setResearchBrief(undefined);
       setManualCopy('');
     }
     loadedProps.current = { input: initialInput, brief: initialBrief, traditionId: tradition.id };
@@ -72,17 +77,21 @@ export default function Workbench({ tradition, onSelectTradition, onSave, initia
   }, [manualCopy]);
 
   const effectiveInput = useMemo(() => ({ ...input, traditionId: tradition.id }), [input, tradition.id]);
-  const generated = useMemo(() => generateBrief(effectiveInput, tradition), [effectiveInput, tradition]);
+  const generated = useMemo(() => retainStudy(generateBrief(effectiveInput, tradition), effectiveInput, tradition, researchBrief), [effectiveInput, tradition, researchBrief]);
   const generationKey = JSON.stringify(effectiveInput);
   const brief = useMemo<GeneratedBrief>(() => {
     if (!edits || edits.key !== generationKey) return generated;
-    const current = { ...generated, positive: edits.positive, negative: edits.negative };
+    const current = { ...(edits.base ?? generated), positive: edits.positive, negative: edits.negative };
     return { ...current, markdown: briefMarkdown(current, effectiveInput, tradition) };
   }, [edits, generationKey, generated, effectiveInput, tradition]);
   const hasEdits = edits?.key === generationKey && (edits.positive !== generated.positive || edits.negative !== generated.negative);
 
   function update<K extends keyof BriefInput>(key: K, value: BriefInput[K]) {
     setInput((current) => ({ ...current, [key]: value }));
+    if ((key === 'target' || key === 'assetKind') && value !== input[key]) {
+      if (researchBrief?.tokens['study.record']) announce('制作对象已改变，请回深研室选择适合的实验；原研究记录仍在已保存的项目中。');
+      setResearchBrief(undefined);
+    }
     setEdits(null);
     setManualCopy('');
   }
@@ -107,7 +116,7 @@ export default function Workbench({ tradition, onSelectTradition, onSave, initia
   }
 
   function editPrompt(field: 'positive' | 'negative', value: string) {
-    setEdits({ key: generationKey, positive: brief.positive, negative: brief.negative, [field]: value });
+    setEdits({ key: generationKey, positive: brief.positive, negative: brief.negative, base: brief, [field]: value });
   }
 
   function exportFile(type: 'markdown' | 'tokens') {

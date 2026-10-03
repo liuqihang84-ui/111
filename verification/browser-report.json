@@ -81,12 +81,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4644,
+                  "duration": 5100,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:16.485Z",
+                  "startTime": "2026-10-03T16:25:05.368Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -121,12 +121,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1742,
+                  "duration": 1744,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:16.433Z",
+                  "startTime": "2026-10-03T16:25:05.353Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -161,12 +161,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2693,
+                  "duration": 2667,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:18.698Z",
+                  "startTime": "2026-10-03T16:25:07.686Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -201,12 +201,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2880,
+                  "duration": 3019,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:21.408Z",
+                  "startTime": "2026-10-03T16:25:10.373Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -241,12 +241,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1491,
+                  "duration": 1615,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:21.679Z",
+                  "startTime": "2026-10-03T16:25:11.068Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -281,12 +281,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1272,
+                  "duration": 1349,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:23.190Z",
+                  "startTime": "2026-10-03T16:25:12.705Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -321,12 +321,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3480,
+                  "duration": 3730,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:24.309Z",
+                  "startTime": "2026-10-03T16:25:13.423Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -361,18 +361,23 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10814,
+                  "duration": 14074,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:24:24.474Z",
+                  "startTime": "2026-10-03T16:25:14.079Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "file-origin-blocked",
                       "contentType": "text/plain",
                       "body": "cGFnZS5nb3RvOiBuZXQ6OkVSUl9CTE9DS0VEX0JZX0FETUlOSVNUUkFUT1IgYXQgZmlsZTovLy93b3Jrc3BhY2UvMTExL2FydC13b3JrYmVuY2gvcmVsZWFzZS9ndWFud3UtYXJ0LXdvcmtiZW5jaC5odG1sCkNhbGwgbG9nOgobWzJtICAtIG5hdmlnYXRpbmcgdG8gImZpbGU6Ly8vd29ya3NwYWNlLzExMS9hcnQtd29ya2JlbmNoL3JlbGVhc2UvZ3Vhbnd1LWFydC13b3JrYmVuY2guaHRtbCIsIHdhaXRpbmcgdW50aWwgImxvYWQiG1syMm0KClRoZSBtYW5hZ2VkIENocm9taXVtIFVSTCBwb2xpY3kgZG9lcyBub3QgYWxsb3cgZmlsZTovLy4gTm8gYnJvd3NlciBwb2xpY3kgd2FzIGNoYW5nZWQuClRoZSByZW1haW5pbmcgYXNzZXJ0aW9ucyB1c2UgdGhlIGJ5dGUtaWRlbnRpY2FsIEhUTUwgc2VydmVkIG92ZXIgYWxsb3dlZCBsb2NhbGhvc3QgSFRUUCwgd2l0aCBldmVyeSBzdWJzZXF1ZW50IEhUVFAoUykgcmVxdWVzdCBibG9ja2VkLiBBY3R1YWwgZmlsZS1vcmlnaW4gb3BlcmF0aW9uIHJlbWFpbnMgdW52ZXJpZmllZCBpbiB0aGlzIGVudmlyb25tZW50Lg=="
+                    },
+                    {
+                      "name": "offline-deep-study",
+                      "contentType": "application/json",
+                      "body": "ewogICJzY29wZSI6ICJTYW1lIHBvcnRhYmxlIGRvY3VtZW50LCBhbGwgaW50ZXJhY3Rpb25zIGFmdGVyIGNvbnRleHQuc2V0T2ZmbGluZSh0cnVlKTsgYWxsIEhUVFAoUykgcmVxdWVzdHMgcmVtYWluIGJsb2NrZWQuIiwKICAiZXhwb3J0ZWRLaW5kIjogImd1YW53dS1zdHVkeS1ub3RlIiwKICAiY2hvc2VuTWFzcyI6IDc0LAogICJwcm9kdWN0aW9uTWFzcyI6ICI3NCIsCiAgInJlbW90ZUFzc2V0UmVxdWVzdHMiOiAwCn0="
                     },
                     {
                       "name": "browser-errors",
@@ -391,13 +396,221 @@
           "column": 1
         }
       ]
+    },
+    {
+      "title": "study.spec.ts",
+      "file": "study.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "twelve deep dossiers expose distinct objects, three evidence levels and honest official source links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2768,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:25:17.186Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "study-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "194a8db7bd1a20e1e7ba-29c9e7225a40f1933442",
+          "file": "study.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "single-variable A/B changes real SVG geometry and keeps controls and keyboard tab order usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2953,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:25:19.981Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "study-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "194a8db7bd1a20e1e7ba-3db4152e76694e4508ae",
+          "file": "study.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "real study Markdown and JSON downloads retain the chosen A/B parameters, notes, review and pending source status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:25:22.949Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "study-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "194a8db7bd1a20e1e7ba-d4d2bfa3a3d64bf80022",
+          "file": "study.spec.ts",
+          "line": 180,
+          "column": 1
+        },
+        {
+          "title": "the adopted experiment becomes a complete production brief and survives project save, export, reload and continued editing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4137,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:25:27.168Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "study-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "194a8db7bd1a20e1e7ba-b7299d74131c50bd71d8",
+          "file": "study.spec.ts",
+          "line": 226,
+          "column": 1
+        },
+        {
+          "title": "deep study remains readable and operable at 390px without horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3097,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:25:28.188Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "study-browser-errors",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "194a8db7bd1a20e1e7ba-d85c3aa967f26c297c24",
+          "file": "study.spec.ts",
+          "line": 278,
+          "column": 1
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-03T15:24:15.502Z",
-    "duration": 19888.89,
-    "expected": 8,
+    "startTime": "2026-10-03T16:25:04.254Z",
+    "duration": 27174.731,
+    "expected": 13,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
