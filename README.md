@@ -1,47 +1,44 @@
-# 观物 · 中国美学与 AI 美术工作台
+# 一日一笺 · 电子手账
 
-丰富类型与素材版 **0.3.0**：同时供游戏和 App 创作者研究风格、挑选素材，再带入制作。
+把日常写成册页。首个可用原型 **0.1.0**，使用米白纸面、草木贴纸、山水封面和朱印点缀。
 
-**48 类美学路线 · 192 件可用 SVG · 10 张多案例参考板**
+## 下载与试用
 
-覆盖绘画、铜玉、漆器、瓷器、建筑、织绣、书法篆刻、版画、年画、剪纸与皮影。素材含图标、纹样、边框、材质、界面布局、器物和场景；参考图库补充人物、服饰、城市、自然、室内和工艺视觉。
-
-## 下载与打开
-
-| 下载 | 内容 |
+| 下载 | 使用方式 |
 | --- | --- |
-| [交互网页 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench.zip?v=0.3.0) | 完整解压后打开 `guanwu-art-workbench.html`，进入“素材库” |
-| [完整素材库 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-material-library.zip?v=0.3.0) | 192 个 SVG、10 张整板 PNG、分类索引和来源说明 |
-| [源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/art-workbench/downloads/guanwu-art-workbench-source.zip?v=0.3.0) | React/TypeScript 项目、锁文件、图片、字体、启动脚本与测试 |
+| [电子手账网页 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal.zip?v=0.1.0) | 约 0.46 MB。完整解压后打开 `yiri-journal.html` |
+| [独立源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal-source.zip?v=0.1.0) | React/TypeScript 源码、本地美术、锁文件、测试与启动脚本 |
 
-网页支持类型、风格、用途、透明、平铺、收藏和文字筛选；点击素材可放大、换背景、查看平铺并下载 SVG 或指定尺寸 PNG。可多选下载 ZIP，或把原素材的尺寸和来源送到制作台、保存项目。核心学习与下载无需联网；博物馆来源链接需要联网。
+初次打开已有两本示例手账；可直接修改，或创建新册子。核心功能包括书架、三种封面、月历、每日随笔、待办和心情、照片上传、12 枚贴纸的拖动/缩放/旋转、自动保存、PNG 导出和 JSON 备份恢复。手机有大字号文字编辑区，并支持触摸拖动。
 
-这是可下载网页，当前没有公开在线站点。网页没有连接 AI 模型 API。参考图按整板提供；板中的人物和建筑还需单独制作成透明角色、动画、场景块或运行中的组件。界面 SVG 是可编辑布局图形。
+## 实际截图
 
-## 实际页面
+![每日编辑器](preview/journal-desktop-editor.png)
 
-![素材库桌面页面](preview/material-library-overview.png)
+![手账书架](preview/journal-desktop-books.png)
 
-![原创人物、场景、器物、建筑与 App 参考图库](preview/material-reference-gallery.png)
+![月历回顾](preview/journal-desktop-calendar.png)
 
-![手机素材库](preview/material-library-mobile.png)
+![手机编辑器](preview/journal-mobile-editor.png)
 
-![深研室](preview/deep-study-desktop.png)
+![手机大字号文字编辑区](preview/journal-mobile-text-editor.png)
 
-## 内容与验证
+## 保存与导出
 
-192 件独立 SVG：60 图标、32 纹样、24 边框、24 材质、16 界面、20 器物、16 场景。104 件有透明区域；48 件可平铺。路线共有 73 条资料线索，其中 11 条有具体官方记录核验、62 条待核验；现代数字颜色和原创图像不作为历史复原。详细对照实验保持 12 份，新增路线没有冒用已有深研档案。
+内容保存到当前浏览器；照片在设备内处理。PNG 为 1280 × 1680 的纸页图片，JSON 可恢复全部文字、照片、贴纸位置与书册。更换设备、浏览器、网页地址或文件路径前，先下载 JSON 备份。导入前会下载当前内容的备份。超出纸页空间的长随笔会缩小排版，过多换行可能在 PNG 中截短，完整文字保存在 JSON 内。
 
-本轮 27/27 单元测试与 22/22 浏览器验收通过，手机与断网下载已检查。最终验证结果见 [交付说明](art-workbench/docs/DELIVERY.md) 与 [文件清单](downloads/delivery-manifest.json)。美术资料和素材检查见 [素材目录](art-workbench/docs/material-catalog.md)、[类型索引](art-workbench/docs/rich-taxonomy.md) 和 [内容审校](art-workbench/docs/rich-content-audit.md)。
+这是可下载的网页原型，尚未公开托管；没有账号或云端同步。当前环境的浏览器禁止 `file://`，因此离线验收使用真实 HTTP 载入与下载包相同字节的 HTML 后断网，未绕过管理策略。用户本地打开方式见包内说明。
 
-## 开发
+## 验证与开发
+
+19 项单元测试、10 项浏览器验收通过。检查了真实图片导出、备份恢复、手机触摸、断网使用，浏览器无控制台错误或未捕获异常。详见 [验证记录](journal/docs/QA.md) 和 [交付说明](journal/docs/DELIVERY.md)。
 
 ```sh
-cd art-workbench
+cd journal
 bash tools/install.sh
-PORT=4173 bash tools/serve.sh dev
+PORT=4180 bash tools/serve.sh preview
 ```
 
-生产预览：`PORT=4173 bash tools/serve.sh preview`；重建网页为 `npm run build:portable`，完整素材包为 `npm run build:materials`。
+开发模式：`PORT=4180 bash tools/serve.sh dev`。启动说明见 [START.md](journal/docs/START.md)，美术来源与完整许可证随源码和网页包保留。
 
-这条独立分支保留已有概念图资料；旧 Godot 游戏在原 `game-playtest` 分支。本轮集中完成美术工作台与素材库。
+原 [中国美学工作台](https://github.com/liuqihang84-ui/111/tree/art-workbench) 和旧游戏分支保持可用。

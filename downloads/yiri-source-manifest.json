@@ -1,0 +1,258 @@
+{
+  "name": "yiri-journal",
+  "version": "0.1.0",
+  "file": "yiri-journal-source.zip",
+  "sourceFiles": 49,
+  "bytes": 453751,
+  "sha256": "e8824a3e76130a491060ad4851b96f4e9caecdafc24b32c384c306dc1f9e9365",
+  "archiveCrcValidation": "passed",
+  "exactMemberValidation": "passed",
+  "sourceByteEqualityValidation": "passed",
+  "files": [
+    {
+      "name": "journal/.gitignore",
+      "bytes": 86,
+      "sha256": "8e7013a0e1d5f2707e77ac224d98d6151d21be83e3850958757a9b1433d33692"
+    },
+    {
+      "name": "journal/README.md",
+      "bytes": 4026,
+      "sha256": "011e8545dfbb6c7a39ba7c29c6abd75f97bd872786bb3c643aacbea6d33ac54c"
+    },
+    {
+      "name": "journal/docs/ART-SOURCES.md",
+      "bytes": 1532,
+      "sha256": "bf876f87f22e0ade16419cd1436c2594582cf5af366b7e8f4032a205af688910"
+    },
+    {
+      "name": "journal/docs/DELIVERY.md",
+      "bytes": 3524,
+      "sha256": "b9bde6e2dea6149f3eb1c526a8a458282d864d5bdd2819e86fd2322a2b1853e8"
+    },
+    {
+      "name": "journal/docs/NOTICES.txt",
+      "bytes": 10202,
+      "sha256": "06bf0337f58d9369bf8dd70ff2bb0795af6bbe75ce95be8e7a44cc0aeea78df2"
+    },
+    {
+      "name": "journal/docs/QA.md",
+      "bytes": 3896,
+      "sha256": "ce8f7c0b396348d5ec97986cc8194ee0170e7176e01348331229ec3e674b407c"
+    },
+    {
+      "name": "journal/docs/START.md",
+      "bytes": 3999,
+      "sha256": "8fc1c7e8b28daaf7c7d4159908837aecf5ac9be1eb4108b95b6830bdd3b9d14d"
+    },
+    {
+      "name": "journal/index.html",
+      "bytes": 949,
+      "sha256": "7d78c5c90f9ae76a91e8ce0721cae338e7f8717696b75f9a6dc639f5a85e6e94"
+    },
+    {
+      "name": "journal/package-lock.json",
+      "bytes": 80090,
+      "sha256": "7e1c4941ff1bdd16b7e3f635cd2e2334559a4f41b921e78e3f8af9bf491f6c65"
+    },
+    {
+      "name": "journal/package.json",
+      "bytes": 796,
+      "sha256": "62cbb519ba38faa807689326113c40313b3399554c9dac44e39d7cc47954f82a"
+    },
+    {
+      "name": "journal/playwright.config.ts",
+      "bytes": 655,
+      "sha256": "d34b246b650103a65abd64fa0d9bd52ff8a5b11fcbeffb46b9e96fd1c2bc7dc6"
+    },
+    {
+      "name": "journal/src/App.tsx",
+      "bytes": 32722,
+      "sha256": "c9ac878caa90faa58038db1e076b29ec546673dcb9cf79ec4bcde74c2cdbd553"
+    },
+    {
+      "name": "journal/src/assets/FONT-LICENSE.txt",
+      "bytes": 4350,
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+    },
+    {
+      "name": "journal/src/assets/cover-indigo.svg",
+      "bytes": 48680,
+      "sha256": "35355a779568fb48bdf4b35cffa54138d4e6bfad93c99fe2e887e481c130f468"
+    },
+    {
+      "name": "journal/src/assets/cover-mountain.svg",
+      "bytes": 83313,
+      "sha256": "1bc4fb859b97f1e7b86a7d9e90b07ab2a7a693dcc9ed0c7bfc8e7a6a346e4df0"
+    },
+    {
+      "name": "journal/src/assets/cover-orchid.svg",
+      "bytes": 48273,
+      "sha256": "0eada769e4511959a210cc1688d24933c4e02a0e58c8ce0aaa69c7017d62f93d"
+    },
+    {
+      "name": "journal/src/assets/demo-landscape.svg",
+      "bytes": 82702,
+      "sha256": "b6bda3ad149b832c2590a840aeb399f57087444c222c39cd02d67b448748ee72"
+    },
+    {
+      "name": "journal/src/assets/frame-key-corners.svg",
+      "bytes": 501,
+      "sha256": "a503ed4aac85d71e9fa5aeb46588955b466dfe3bbeb2f4814885cd3750e57066"
+    },
+    {
+      "name": "journal/src/assets/guanwu-serif.woff2",
+      "bytes": 327756,
+      "sha256": "94a5b23b82d572a98fd2d1f722e226683d650cd9626331ea9d36104da8dea6d4"
+    },
+    {
+      "name": "journal/src/assets/icon-bamboo.svg",
+      "bytes": 680,
+      "sha256": "959b285d03d9c03541aba49246d411d7c878f04a2073d1424f12d8c91d670368"
+    },
+    {
+      "name": "journal/src/assets/icon-book.svg",
+      "bytes": 445,
+      "sha256": "a5cc895dfa378c1dc1afdbc6764562829064223f8bdaab691eeca44f6a8341d4"
+    },
+    {
+      "name": "journal/src/assets/icon-fan.svg",
+      "bytes": 441,
+      "sha256": "bb08f740b0f6550b6f57f1567df0d6f804e49f1db7fd9864052cb56cf115bff4"
+    },
+    {
+      "name": "journal/src/assets/icon-ginkgo.svg",
+      "bytes": 533,
+      "sha256": "2efcbc6e1d8bf9c9cf6d05d1d2f682e5fb8a2d31983713757d82c990ecb331d4"
+    },
+    {
+      "name": "journal/src/assets/icon-lotus.svg",
+      "bytes": 639,
+      "sha256": "98f9afeb5c5d3a42c1c38008fe443b41927e31af801c8560d365b6634f764aa0"
+    },
+    {
+      "name": "journal/src/assets/icon-moon.svg",
+      "bytes": 371,
+      "sha256": "a3522bb3a457ae56749564c3d2d70815001e6989775b09c90b2fe3cc890700f3"
+    },
+    {
+      "name": "journal/src/assets/icon-orchid.svg",
+      "bytes": 547,
+      "sha256": "3f5796178471fc66c89a78c2c59c7615b47a579878bd1e3cd893917794b63c73"
+    },
+    {
+      "name": "journal/src/assets/icon-plum.svg",
+      "bytes": 1783,
+      "sha256": "d9a960a481a620d700ac6cea44bc97f2ce1ef6d40e3989d90231b8a27d96653e"
+    },
+    {
+      "name": "journal/src/assets/icon-seal.svg",
+      "bytes": 403,
+      "sha256": "652e7458e17e81fb081bd9cce81934c61b75ff980ca2eba4f620b2c9bd6a5c8b"
+    },
+    {
+      "name": "journal/src/assets/icon-swallow.svg",
+      "bytes": 508,
+      "sha256": "6e00aea0c80e105dc440ccf7ec48758ce64abeb85ca6c201ccdf5cffa5ee0f9d"
+    },
+    {
+      "name": "journal/src/assets/icon-teacup.svg",
+      "bytes": 419,
+      "sha256": "4aeb018930fde11566eaf9460becca21dcd3f14b4b8e52d791017e95a890ee7e"
+    },
+    {
+      "name": "journal/src/assets/icon-umbrella.svg",
+      "bytes": 446,
+      "sha256": "9ddec1562f81e7537e068b545b9ffe901d836edfbdf3f8183ed38238beb6b74d"
+    },
+    {
+      "name": "journal/src/assets/pattern-bluewhite-vine.svg",
+      "bytes": 680,
+      "sha256": "6a117857c87cd5c6f3adb591e80db734b2240574f479e32a3e25e9659f36c7d1"
+    },
+    {
+      "name": "journal/src/assets/scene-bluegreen-ridges.svg",
+      "bytes": 947,
+      "sha256": "926c60b864ef26fbcd0776cdcfa4a45d743b728d8c11303d6908ee6b843ea700"
+    },
+    {
+      "name": "journal/src/assets/scene-literati-bank.svg",
+      "bytes": 890,
+      "sha256": "9f75101a221bcafb15096e25a60bf4500288ffa9daba138b4328bc915664d5db"
+    },
+    {
+      "name": "journal/src/assets/scene-southern-river.svg",
+      "bytes": 1026,
+      "sha256": "6b9d383688d99d0423aecedb71e7844618de5226d9e4c715ce16ccc0af89ff49"
+    },
+    {
+      "name": "journal/src/assets/texture-paper-fibers.svg",
+      "bytes": 674,
+      "sha256": "fc632325a7d753ef1d5a3e2133fafe409a4b7090c107f255dd26274bc6e34a13"
+    },
+    {
+      "name": "journal/src/data/art.ts",
+      "bytes": 3234,
+      "sha256": "483d3a13bf4d39238db394805c9e67f64a63b0b49b760b2678f7587183a4c97a"
+    },
+    {
+      "name": "journal/src/lib/export.ts",
+      "bytes": 11845,
+      "sha256": "3ef617f54f881333ad35a6a12032a3a38060d6909893deeec689a31e38ebc806"
+    },
+    {
+      "name": "journal/src/lib/model.test.ts",
+      "bytes": 7725,
+      "sha256": "a36e05567eb017eeb58dad53a23c7848cb1ee12f2f9f39647891066313fb606a"
+    },
+    {
+      "name": "journal/src/lib/model.ts",
+      "bytes": 10862,
+      "sha256": "f7ebfa24e8195d3f91f0692ab0b0260f160d65d3c62447ebcf1c4d463686749a"
+    },
+    {
+      "name": "journal/src/main.tsx",
+      "bytes": 224,
+      "sha256": "1bc19ec2f6e0b2f3a0a3febc84b659394812943c83b2364b5e8be91890a00049"
+    },
+    {
+      "name": "journal/src/styles.css",
+      "bytes": 42014,
+      "sha256": "dfdc279d6203fc37cfc216dddeadef3837d7936c65d1e6a35f9f253d6646e870"
+    },
+    {
+      "name": "journal/tests/journal.spec.ts",
+      "bytes": 24314,
+      "sha256": "0961c894931332341473f4e087e1f3d87d535cae9ea2fcd7626ec41fc51c5551"
+    },
+    {
+      "name": "journal/tools/build-portable.mjs",
+      "bytes": 11165,
+      "sha256": "3a8b84b7b0d0d85759e27ab98a0ded016d2fb90ca553e3b2ea963fc4ddd18c72"
+    },
+    {
+      "name": "journal/tools/install.sh",
+      "bytes": 557,
+      "sha256": "12cb7b3c21109d513f66b3b0998a95ded642108b3e9e6e4bf84b473f6757d6e5"
+    },
+    {
+      "name": "journal/tools/package-source.py",
+      "bytes": 3566,
+      "sha256": "c25c64c3205413f3daa4a75b0a44aa7ad9f8b1c2d0c42ab9d9f89df7bd2e71c3"
+    },
+    {
+      "name": "journal/tools/serve.sh",
+      "bytes": 942,
+      "sha256": "fcaade09a32a6ae33b24a0f8fdaeb671ec8d21cd3f2adfb4183c1093263e8cea"
+    },
+    {
+      "name": "journal/tsconfig.json",
+      "bytes": 478,
+      "sha256": "52134c8ecc800bbd353751ba79e34646550fa5fbe3cbb4ff15a801e363dcc781"
+    },
+    {
+      "name": "journal/vite.config.ts",
+      "bytes": 498,
+      "sha256": "78013a64e68793224cfba758d849281b6d9cd5ba6c48afe974bd65b2b46909c0"
+    }
+  ]
+}

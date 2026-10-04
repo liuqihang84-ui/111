@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "unitTests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "browser": {
+    "startTime": "2026-10-04T04:50:01.358Z",
+    "duration": 17926.832,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "files": [
+    {
+      "name": "yiri-journal.html",
+      "bytes": 982432,
+      "sha256": "306fd04c0b9c43adbb2da4c7d83e704daabc086c047b65a67b8460e9abec044f"
+    },
+    {
+      "name": "yiri-journal.zip",
+      "bytes": 458508,
+      "sha256": "a3dc2b07d56854d74a62fb000fe0aed679716f0a29222c1e21e66916208fa47c"
+    },
+    {
+      "name": "yiri-journal-source.zip",
+      "bytes": 453751,
+      "sha256": "e8824a3e76130a491060ad4851b96f4e9caecdafc24b32c384c306dc1f9e9365"
+    }
+  ]
+}
