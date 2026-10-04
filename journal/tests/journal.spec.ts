@@ -11,15 +11,24 @@ const bodyField = (page: Page) => page.getByRole('textbox', { name: '今日随�
 const nav = (page: Page, name: string) => page.getByRole('button', {
   name: name === '今日一页' ? /^今日一页/ : name, exact: true,
 });
-const deskTest = '首屏直接书写空白画布，玉片素材与历史旧藏均可使用';
+const deskTest = '旧画布仍支持原生书写，玉片素材与历史旧藏均可使用';
 const live3dTest = '实时画布响应原生空间拖动与日期流转，预览同步内容并保留降级写作';
 
 async function expectArtReady(page: Page) {
   await expect(page.locator('.app-shell')).toHaveAttribute('data-art-ready', 'true', { timeout: 90_000 });
 }
 
-async function expectSceneReady(page: Page) {
+async function enterLegacyEditor(page: Page) {
   await expectArtReady(page);
+  // A collection click opens the editor asynchronously; choose the mode only
+  // after the actual destination workspace has mounted.
+  await expect(page.locator('.memory-workspace, .editor-layout')).toBeVisible({ timeout: 30_000 });
+  const switcher = page.getByRole('button', { name: /^旧画布(?:\s|$)/ });
+  if (await switcher.isVisible()) await switcher.click();
+}
+
+async function expectSceneReady(page: Page) {
+  await enterLegacyEditor(page);
   await expect(page.locator('canvas[data-renderer="three-webgl"]')).toBeVisible({ timeout: 90_000 });
   await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-settled', 'true', { timeout: 15_000 });
 }
@@ -116,6 +125,7 @@ async function observeSceneMotion(page: Page, action: () => Promise<unknown>, ph
 }
 
 async function expectNotebookReady(page: Page) {
+  await enterLegacyEditor(page);
   if (!await titleField(page).isVisible() && await nav(page, '写一笔').isVisible()) await nav(page, '写一笔').click();
   await expect(titleField(page)).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('.live-writing-overlay')).toBeVisible();
@@ -430,8 +440,8 @@ async function screenshot(page: Page, name: string) {
   await page.evaluate(() => {
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
   });
-  await mkdir('/tmp/yiri-v06-preview', { recursive: true });
-  await page.screenshot({ path: `/tmp/yiri-v06-preview/${name}.png`, fullPage: true });
+  await mkdir('/tmp/yiri-v07-preview', { recursive: true });
+  await page.screenshot({ path: `/tmp/yiri-v07-preview/${name}.png`, fullPage: true });
 }
 
 test.beforeEach(async ({ page }, testInfo) => {

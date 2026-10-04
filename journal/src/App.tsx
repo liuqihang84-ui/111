@@ -15,6 +15,9 @@ import { downloadBackup, downloadBlob, exportPagePng, normalizePhoto, parseBacku
 import { useJournalHistory } from './lib/history';
 import { prepareTactileArt, tactileArt } from './lib/tactile-render';
 import { BookViewport } from './components/BookViewport';
+import { MemoryBoard } from './components/MemoryBoard';
+import { exportMemoryPng } from './lib/memory-export';
+import './memory.css';
 import type { BookMode, WritingRect } from './components/BookViewport';
 
 type View = 'editor' | 'books' | 'calendar';
@@ -57,7 +60,7 @@ function resizeHandleStyle(object: JournalObject, scale: number): CSSProperties 
 function initialize(): JournalState {
   const value = loadState();
   let fresh = false;
-  try { fresh = !localStorage.getItem(STORAGE_KEY); } catch { fresh = true; }
+  try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) validateState(JSON.parse(raw)); else fresh = true; } catch { fresh = true; }
   if (fresh && value.books[0]) {
     const first = value.books[0];
     first.title = '日常'; first.subtitle = '';
@@ -82,6 +85,7 @@ function moveMonth(month: string, amount: number) {
 export default function App() {
   const { state, setState, undo, redo, canUndo, canRedo, beginInteraction, endInteraction } = useJournalHistory(initialize);
   const [view, setView] = useState<View>('editor');
+  const [editorMode, setEditorMode] = useState<'cards' | 'canvas'>('cards');
   const [bookMode, setBookMode] = useState<BookMode>('write');
   const [sceneAvailable, setSceneAvailable] = useState<boolean | null>(null);
   const [writingRect, setWritingRect] = useState<WritingRect | null>(null);
@@ -178,14 +182,14 @@ export default function App() {
   }, [state, recoveryRaw]);
 
   useEffect(() => {
-    if (view !== 'editor' || sceneAvailable !== false || !viewportRef.current) return;
+    if (view !== 'editor' || editorMode !== 'canvas' || sceneAvailable !== false || !viewportRef.current) return;
     const node = viewportRef.current;
     const resize = () => { const style = getComputedStyle(node); const available = node.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight); setScale(Math.min(1, available / PAGE_WIDTH)); };
     resize();
     const observer = new ResizeObserver(resize);
     observer.observe(node);
     return () => observer.disconnect();
-  }, [view, sceneAvailable]);
+  }, [view, editorMode, sceneAvailable]);
 
   useEffect(() => {
     setSelectedId(null);
@@ -301,9 +305,9 @@ export default function App() {
     setSelectedId(null); setBusy(true);
     try {
       await Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt(), prepareJadeArt()]);
-      const blob = await exportPagePng(entry, getArt, { appearance: 'print', bookTitle: book.title });
+      const blob = editorMode === 'cards' ? await exportMemoryPng(entry, book.title) : await exportPagePng(entry, getArt, { appearance: 'print', bookTitle: book.title });
       downloadBlob(blob, `一日一笺-${entry.date}.png`);
-      setToast('已导出 1280 × 1680 的完整画布。');
+      setToast(editorMode === 'cards' ? '已导出 1440 × 1024 的记忆卡片。' : '已导出 1280 × 1680 的完整画布。');
     } catch (error) { setToast(error instanceof Error ? error.message : '导出失败，请稍后重试。'); }
     finally { setBusy(false); }
   }
@@ -366,9 +370,9 @@ export default function App() {
 
           </div></div></div></div>;
 
-  return <div className="app-shell desk-shell" data-art-ready={artReady ? 'true' : 'false'}>
+  return <div className={`app-shell desk-shell cards-theme ${editorMode === 'cards' ? 'memory-app' : 'legacy-app'}`} data-art-ready={artReady ? 'true' : 'false'}>
     <header className="sidebar">
-      <button className="brand" onClick={() => { changeBookMode('write'); setView('editor'); }} aria-label="一日一笺首页"><span className="brand-mark" aria-hidden="true" /><span className="brand-name">一日一笺</span></button>
+      <button className="brand" onClick={() => { changeBookMode('write'); setView('editor'); setEditorMode('cards'); }} aria-label="一日一笺首页"><span className="brand-mark" aria-hidden="true" /><span className="brand-name">一日一笺</span></button>
       <nav aria-label="主导航">
         <button aria-label="今日一页" className={`nav-item ${view === 'editor' ? 'is-active' : ''}`} onClick={() => { changeBookMode('write'); setView('editor'); }}>记录</button>
         <button aria-label="我的手账" className={`nav-item ${view === 'books' ? 'is-active' : ''}`} onClick={() => { changeBookMode('write'); setView('books'); }}>收藏</button>
@@ -378,10 +382,18 @@ export default function App() {
     </header>
     <main className="main-content">
       {artError && <div className="notice" role="alert">{artError}</div>}
-      {sceneAvailable === false && <div className="notice" role="status">空间预览暂不可用，可以继续记录。</div>}
+      {editorMode === 'canvas' && sceneAvailable === false && <div className="notice" role="status">空间预览暂不可用，可以继续记录。</div>}
       {saveError && <div className="notice" role="alert">{saveError}<button onClick={() => downloadBackup(state)}>导出备份</button></div>}
       {recoveryRaw !== null && <div className="notice" role="alert">原有记录暂时无法读取，已保留原文件。<button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); }}>下载原记录</button><button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); setRecoveryRaw(null); }}>备份后开始记录</button></div>}
-      {view === 'editor' && <section className={`editor-layout ${sceneAvailable !== false ? 'has-live-book' : ''}`} aria-label="每日编辑器">
+      {view === 'editor' && editorMode === 'cards' && <MemoryBoard
+        book={book} entry={entry} onPatchEntry={patchEntry} onEditEntry={editEntry}
+        onPhotoRequest={() => photoInput.current?.click()}
+        onRemovePhoto={id => editEntry(current => ({ ...current, objects: current.objects.filter(object => object.id !== id) }))}
+        onChooseDate={chooseDate} onCanvas={() => { finishGesture(); setTrayOpen(false); setSelectedId(null); setIsFlipping(false); setSceneAvailable(null); setWritingRect(null); setBookMode('write'); setEditorMode('canvas'); }}
+        onUndo={undo} onRedo={redo} canUndo={canUndo} canRedo={canRedo} busy={busy} saveStatus={saveStatus}
+      />}
+      {view === 'editor' && editorMode === 'canvas' && <button className="memory-return" onClick={() => { finishGesture(); setTrayOpen(false); setSelectedId(null); setIsFlipping(false); setEditorMode('cards'); }}><ChevronLeft size={16} />返回记忆卡片</button>}
+      {view === 'editor' && editorMode === 'canvas' && <section className={`editor-layout ${sceneAvailable !== false ? 'has-live-book' : ''}`} aria-label="每日编辑器">
         <div className="editor-column">
           <div className="journal-intro">
             <span className="journal-eyebrow">{book.title}</span>

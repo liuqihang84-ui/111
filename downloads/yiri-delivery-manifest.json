@@ -1,26 +1,26 @@
 {
   "name": "yiri-journal",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "browser": {
-    "startTime": "2026-10-04T12:52:27.915Z",
-    "duration": 104400.746,
-    "expected": 14,
+    "startTime": "2026-10-04T13:55:20.175Z",
+    "duration": 203908.22,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   },
   "browserReport": {
     "name": "verification/journal-browser-report.json",
-    "bytes": 16702,
-    "sha256": "730f30d843e53bcf6de846209a876f02b11888589754d7e17b8aff905e4cbb5d"
+    "bytes": 21499,
+    "sha256": "f812437cabfed21c1a767a8822693a077e2fb42092efc0819ddc5ffc8b08ed2b"
   },
   "recordingMetadata": {
     "name": "verification/journal-digital-recording.json",
-    "bytes": 3821,
-    "sha256": "51054f46693580bf948a1ecc43108b78d45302a3421b605dff065474442319a1"
+    "bytes": 96684,
+    "sha256": "5a03607e0d15bd96025ad697c1f9c9162d07e563ac844a6f99b7774943dcf6d5"
   },
   "sourceArchive": {
-    "sourceFiles": 89,
+    "sourceFiles": 96,
     "archiveCrcVerified": true,
     "exactCurrentInventoryVerified": true,
     "sourceByteEqualityVerified": true
@@ -28,90 +28,115 @@
   "files": [
     {
       "name": "yiri-journal.html",
-      "bytes": 9316924,
-      "sha256": "fdd7fbcd2a90e5e69f96dc6cc145de887ae96fae0cdeb7a5e66769d75792d1da"
+      "bytes": 9380345,
+      "sha256": "cf131a76d65989fe6b79dc97804d7b89f5d55c918ca228d47c873054d04991db"
     },
     {
       "name": "yiri-journal.zip",
-      "bytes": 6467543,
-      "sha256": "68d7a71b754e7b87c44f0536506b890ee611eca6c07277d5bc93574d52bfc2a5"
+      "bytes": 6483105,
+      "sha256": "0cb0c181c5a151cc24ae76a5efb8ef70b9ccd33a942bed71c3db118c923a15a6"
     },
     {
       "name": "yiri-journal-source.zip",
-      "bytes": 9328503,
-      "sha256": "d3a893dc339c01808d1cd8407f8e32c94841fbba0ce1f39c578e0f7f554fad53"
+      "bytes": 9359574,
+      "sha256": "9e79d5d62376745866276ec52b4e1934ca9e5bad683802109ef42d212069d841"
     }
   ],
   "previews": [
     {
       "name": "preview/journal-desktop-desk.png",
-      "bytes": 45608,
-      "sha256": "2335739b890e2ca1824ddaf3071458bc756a20746c7f52ebbe7e957da9e5c7fd"
+      "bytes": 51826,
+      "sha256": "84b2e55062d2ae1777d98911733f7d8aff1438fbaf042fff4466b97ef54ad434"
     },
     {
       "name": "preview/journal-desktop-editor.png",
-      "bytes": 47251,
-      "sha256": "e5a3c21798895600d48a19efb161ce4802834e6d6b73366fd3e91c2c7792cbf6"
+      "bytes": 53406,
+      "sha256": "038c16edac98b32797037d19076f3bda887ecc6955e8cf536baeebfbc751d5e2"
     },
     {
       "name": "preview/journal-desktop-books.png",
-      "bytes": 195553,
-      "sha256": "52276bb2e224d061ff1d91e261ab363ee51829617776eba1c9e752c0324b7653"
+      "bytes": 196682,
+      "sha256": "3a62433623813be8c738944e1fbf3450500e7c559fbf9392e6d1118760e06fb2"
     },
     {
       "name": "preview/journal-desktop-calendar.png",
-      "bytes": 34921,
-      "sha256": "1bdcbc0a0c870cf2b42ebcba45e17ea96da1ce83b404f21dbb962d3f3a16ed75"
+      "bytes": 38508,
+      "sha256": "fd3f385cce370c5757e33efb500706cc013b84474dda1a73bdc910b8f3aa4613"
     },
     {
       "name": "preview/journal-mobile-editor.png",
-      "bytes": 26694,
-      "sha256": "4ef4a4e500b7d1f17a1102eb838f4c1752d9a65ef3a888e7f12a58d65e5d9160"
+      "bytes": 32537,
+      "sha256": "083c339a3fa26c24ce13d689dbe5ffe2defbfb614e03ff1384a6e8be94200f51"
     },
     {
       "name": "preview/journal-mobile-text-editor.png",
-      "bytes": 35021,
-      "sha256": "4ac671dc5019d7de29933c1996c3f656e048efbdcd95435d5584180d1475ef43"
+      "bytes": 36687,
+      "sha256": "b73191290795c7f128222cea08dd7faca38be702066cb9c1f7a34500e5ef19aa"
     },
     {
       "name": "preview/journal-desktop-space-preview.png",
-      "bytes": 41438,
-      "sha256": "b2cdc7f5f75adb961f5223a0ffa66008f8c9dea9e0d1f6d57f4b09ae077e3f32"
+      "bytes": 48247,
+      "sha256": "276dea79d1acbdbd556b9fd8cd28cb8fa2759c5ae385278a9ba951a4425b0e18"
     },
     {
       "name": "preview/journal-desktop-composed-3d.png",
-      "bytes": 60487,
-      "sha256": "9a836c343fc319934172ecbd62c17168f20de65f02a0675b9580254efbf698f6"
+      "bytes": 66836,
+      "sha256": "14353a97889c6b958332b283e42c68307953477fc1298506ad611f4b650b71b3"
+    },
+    {
+      "name": "preview/journal-memory-default.png",
+      "bytes": 114362,
+      "sha256": "7394c1b0cdc8b96e9ed6eac89312df35d5f07409c8559947a4e138ded27940b2"
+    },
+    {
+      "name": "preview/journal-memory-editor.png",
+      "bytes": 151845,
+      "sha256": "d677a66bd4bd1db3c8b818490c3fabab54f4905d3e4dfcaccaf98002de33a7a2"
+    },
+    {
+      "name": "preview/journal-memory-spread.png",
+      "bytes": 107131,
+      "sha256": "cd2929f1c1a034b0850eab36cfcd4732f22895e2e43d30b5398e670855c1478d"
+    },
+    {
+      "name": "preview/journal-memory-gather.png",
+      "bytes": 80698,
+      "sha256": "62cca4bca1c2bfd9d8fa3fa1e260754dc3ee09f172148919265c4894144850bb"
+    },
+    {
+      "name": "preview/journal-memory-mobile.png",
+      "bytes": 42956,
+      "sha256": "c44f37eb6325e965e03989a08733d356cb0a85e064d9d4c4a64e82cba6a18ab7"
     },
     {
       "name": "preview/journal-digital-entry.png",
-      "bytes": 61297,
-      "sha256": "3b38910a21fc350bfaea34b72451d120283d80aec60c265f49533dbc5a32d2d4"
+      "bytes": 261788,
+      "sha256": "8a025c3a1ded174b2c22b56a8c0b6f50c3d73d56aaf2204ad974a626a5b46066"
     },
     {
       "name": "preview/journal-digital-space.png",
-      "bytes": 68187,
-      "sha256": "87776cc3c0855c162f31e3f4c15730245893eb7c05be5f89c90ed860b939174b"
+      "bytes": 127327,
+      "sha256": "c0747a6c5d49a6949304abc91a2b8713d34f1a13600e974c4ca7e80d6c28881a"
     },
     {
       "name": "preview/journal-digital-orbit.png",
-      "bytes": 66964,
-      "sha256": "748409778af83145512e6b28044da66cbfe4fdb161b23166c9757d18dc9c9a2f"
+      "bytes": 256573,
+      "sha256": "0151a4815c701b231179b2bd8389c36e45bd4dd91dfd10516d36a62b13287ba1"
     },
     {
       "name": "preview/journal-digital-composed.png",
-      "bytes": 65938,
-      "sha256": "eb1a557bfd35585b3a00a8a652f3e71cf5e73a84484bb23087544edbb47a0e31"
+      "bytes": 251964,
+      "sha256": "e988b1517ec5992c9b513913cc11932ee2f303915b94980fe446f45f9e4d8d16"
     },
     {
       "name": "preview/journal-digital-demo.gif",
-      "bytes": 1818333,
-      "sha256": "01924528407930078944c2f1521039252f13a8d74ff94e0891308b02c47053ec"
+      "bytes": 6664438,
+      "sha256": "5d182306165b7ee227a5d0a21159f2f097b0ce95b1ea758ee6e02284b4e76fb6"
     },
     {
       "name": "preview/journal-digital-demo.mp4",
-      "bytes": 339550,
-      "sha256": "efe178d21d54084bff28b4a612b730895c4b91a845fc78987db4c2b777079944"
+      "bytes": 1325082,
+      "sha256": "2ceae7f6d2ce141ff3b9aafce757729f5d4bcbc6296f53b2d4f669765310d233"
     }
   ],
   "unitTests": {
@@ -123,7 +148,7 @@
   },
   "unitReport": {
     "name": "verification/journal-unit-report.json",
-    "bytes": 9858,
-    "sha256": "4828d9c6f23c5e8fcd3818c28e61d09cc428c161d78e27ac5714b75e991d2ce9"
+    "bytes": 9859,
+    "sha256": "c574d125a70cd4645fc2665c6b8226663ecf3770930a1e3a7b914e2c28328658"
   }
 }

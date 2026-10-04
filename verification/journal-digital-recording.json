@@ -1,123 +1,3629 @@
 {
-  "source": "Actual Chromium browser recording of production build; all entries and objects created with native UI, no DOM content or image injection.",
-  "releaseHtmlSha256": "fdd7fbcd2a90e5e69f96dc6cc145de887ae96fae0cdeb7a5e66769d75792d1da",
-  "today": "2026-10-04",
-  "videoPath": "/tmp/yiri-v06-demo/6bd9ac62f98cc9c45c0f3f743281da3e.webm",
-  "seconds": 20.253,
-  "actions": [
+  "version": "0.7.0",
+  "experience": "memory-cards",
+  "source": "Actual Chromium recording of the final production app. Demonstration records, source-image upload and task states were created with real native UI; no journal storage or DOM content injection.",
+  "baseUrl": "http://127.0.0.1:4181",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "timezone": "Asia/Shanghai",
+  "releaseHtmlSha256": "cf131a76d65989fe6b79dc97804d7b89f5d55c918ca228d47c873054d04991db",
+  "productionFiles": [
     {
-      "name": "默认单页书写",
-      "seconds": 2.376
+      "name": "index.html",
+      "bytes": 1168,
+      "sha256": "fb61a9326d45fbceca47bf3427b5b8e7460d02c243a3a74ba59dc2ebc7f55fcf",
+      "actualUrl": "http://127.0.0.1:4181/"
     },
     {
-      "name": "可选空间预览",
-      "seconds": 3.629
+      "name": "assets/index-DteIHVvd.js",
+      "bytes": 8890519,
+      "sha256": "8e6b08ad92fde140af6b10fa419b603ae754995b769628b6904a2084e9029ff3",
+      "actualUrl": "http://127.0.0.1:4181/assets/index-DteIHVvd.js"
     },
     {
-      "name": "实际三维浅层与视角",
-      "seconds": 6.771
-    },
-    {
-      "name": "直接回到原生书写",
-      "seconds": 9.606
-    },
-    {
-      "name": "同一风格的八件薄玉构件",
-      "seconds": 11.948
-    },
-    {
-      "name": "加入陶朱点",
-      "seconds": 12.912
-    },
-    {
-      "name": "数字画布流转到昨日",
-      "seconds": 18.022
-    },
-    {
-      "name": "返回今天并保留书写状态",
-      "seconds": 19.003
+      "name": "assets/index-DBPeG-aV.css",
+      "bytes": 51717,
+      "sha256": "9992af8efd573fa790329e33c47c6b03a0887e1ce369e7a1d9e91b3b153314df",
+      "actualUrl": "http://127.0.0.1:4181/assets/index-DBPeG-aV.css"
     }
   ],
-  "writingLayouts": [
+  "today": "2026-10-04",
+  "previousDate": "2026-10-03",
+  "sampleEntries": [
     {
-      "phase": "prep-write",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
+      "date": "2026-10-04",
+      "title": "一天，有三个片段",
+      "body": "留下一段文字、一张图和两件小事。\n不同的片段，合成今天的记忆。 也给明天留一点空白。",
+      "tasks": [
+        {
+          "text": "整理今天的灵感",
+          "done": true
+        },
+        {
+          "text": "读几页喜欢的书",
+          "done": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "title": "昨日，留一点空白",
+      "body": "用另一张卡片，收起昨天的一个念头。"
+    }
+  ],
+  "samples": [
+    {
+      "role": "Uploaded sample for demonstrating the photo-card workflow",
+      "source": "Existing project AI-generated aesthetics research board; not a personal photograph or museum object.",
+      "originalFile": "/workspace/111/art-workbench/src/assets/landscape.png",
+      "originalName": "landscape.png",
+      "originalBytes": 3715354,
+      "originalSha256": "f6ad47f4978cd9bbf9dcbb6c32654b7984946663cba6f9cf539c570247c7e2bb",
+      "originalDimensions": {
+        "width": 2048,
+        "height": 768
       },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "provenanceDocument": "/workspace/111/art-workbench/docs/ART-SOURCES.md",
+      "upload": "Original PNG file supplied unchanged to the real photo input; no helper image editing or crop.",
+      "normalization": "The app applies its normal local photo resizing/encoding; source PNG bytes remain unchanged.",
+      "storedObjectId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+      "storedKind": "photo",
+      "storedMimeType": "image/jpeg",
+      "storedPhotoBytes": 354300,
+      "storedPhotoSha256": "ba3d4ecadbe61265d48ade29f5053b09bfcb77073fbc88cb5b68ee1e6f5e1307",
+      "storedLegacyGeometry": {
+        "x": 72,
+        "y": 560,
+        "width": 300,
+        "height": 112.5,
+        "rotation": -2
+      }
+    }
+  ],
+  "videoPath": "/tmp/yiri-v07-demo/journal-memory-raw.webm",
+  "originalVideoPath": "/tmp/yiri-v07-demo/1dab949ce289142297d06bbea170b7f3.webm",
+  "videoBytes": 3129072,
+  "videoSha256": "51e89ffd6084d25c6f1efce6586570da35f50cecfba213d4f21e7163afdbd3ad",
+  "seconds": 39.549,
+  "actions": [
+    {
+      "name": "默认直接展示文字、照片和小事的三维记忆卡组",
+      "seconds": 3.906
+    },
+    {
+      "name": "真实 raycast 点选文字卡，打开原生编辑面板",
+      "seconds": 3.988,
+      "cardId": "note:2026-10-04",
+      "hit": {
+        "x": 526.171522234977,
+        "y": 413.96137790252686
       }
     },
     {
-      "phase": "prep-write",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
-      },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "name": "通过原生输入给真实随笔加一句话",
+      "seconds": 4.91
+    },
+    {
+      "name": "收拢实际内容卡片",
+      "seconds": 15.463
+    },
+    {
+      "name": "展开同一份真实内容",
+      "seconds": 17.578
+    },
+    {
+      "name": "实际按住拖动卡组视角",
+      "seconds": 26.708,
+      "heldPointer": true
+    },
+    {
+      "name": "复位实际三维视角",
+      "seconds": 27.383
+    },
+    {
+      "name": "打开小事并实际切换完成状态",
+      "seconds": 31.816
+    },
+    {
+      "name": "切换到昨天的独立文字卡",
+      "seconds": 35.515
+    },
+    {
+      "name": "回到今天，保留三类片段与刚才的编辑",
+      "seconds": 37.186
+    },
+    {
+      "name": "录制结束",
+      "seconds": 39.267
+    }
+  ],
+  "inspections": [
+    {
+      "name": "default-spread",
+      "seconds": 3.297,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "6b5e3fa5",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.171522234977,
+              "y": 413.96137790252686
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6246470903718,
+              "y": 378.3486582719904
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2255805459267,
+              "y": 550.6707318803385
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 2,
+        "dragging": false,
+        "camera": {
+          "x": 0.5636022312430511,
+          "y": 0.6197441118091811,
+          "z": 9.028776665434648
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          -1.734723475976807e-18,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038312,
+          0.9959529169382906,
+          -0.08962180294671551,
+          0,
+          0.07492800813163619,
+          0.08987651106996997,
+          0.993130407527287,
+          0,
+          0.5636022312430511,
+          0.6197441118091811,
+          9.028776665434648,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.171522234977,
+            "y": 413.96137790252686
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6246470903718,
+            "y": 378.3486582719904
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2255805459267,
+            "y": 550.6707318803385
+          }
+        ]
       }
     },
     {
-      "phase": "default-write",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
-      },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "name": "native-note-panel",
+      "seconds": 4.874,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "6b5e3fa5",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 372.53386515133514,
+              "y": 416.84328936997537
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 644.7230794656612,
+              "y": 384.8164752661537
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 625.9734472408952,
+              "y": 541.2282592113173
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 4,
+        "dragging": false,
+        "camera": {
+          "x": 0.6271236866085602,
+          "y": 0.6959384072228381,
+          "z": 9.870719357185433
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          8.673617379884035e-19,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038311,
+          0.9959529169382906,
+          -0.08962180294671548,
+          0,
+          0.07492800813163619,
+          0.08987651106996994,
+          0.993130407527287,
+          0,
+          0.6271236866085602,
+          0.6959384072228381,
+          9.870719357185433,
+          1
+        ],
+        "cameraProjection": [
+          2.1549146662954337,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 372.53386515133514,
+            "y": 416.84328936997537
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 644.7230794656612,
+            "y": 384.8164752661537
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 625.9734472408952,
+            "y": 541.2282592113173
+          }
+        ]
       }
     },
     {
-      "phase": "preview-return",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
-      },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "name": "native-note-edited",
+      "seconds": 13.721,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 372.53386515133514,
+              "y": 416.84328936997537
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 644.7230794656612,
+              "y": 384.8164752661537
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 625.9734472408952,
+              "y": 541.2282592113173
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 15,
+        "dragging": false,
+        "camera": {
+          "x": 0.6271236866085602,
+          "y": 0.6959384072228381,
+          "z": 9.870719357185433
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          8.673617379884035e-19,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038311,
+          0.9959529169382906,
+          -0.08962180294671548,
+          0,
+          0.07492800813163619,
+          0.08987651106996994,
+          0.993130407527287,
+          0,
+          0.6271236866085602,
+          0.6959384072228381,
+          9.870719357185433,
+          1
+        ],
+        "cameraProjection": [
+          2.1549146662954337,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 372.53386515133514,
+            "y": 416.84328936997537
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 644.7230794656612,
+            "y": 384.8164752661537
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 625.9734472408952,
+            "y": 541.2282592113173
+          }
+        ]
       }
     },
     {
-      "phase": "tools-close",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
-      },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "name": "panel-closed",
+      "seconds": 15.463,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.171522234977,
+              "y": 413.96137790252686
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6246470903718,
+              "y": 378.3486582719904
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2255805459267,
+              "y": 550.6707318803385
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 16,
+        "dragging": false,
+        "camera": {
+          "x": 0.5636022312430511,
+          "y": 0.6197441118091811,
+          "z": 9.028776665434648
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          -1.734723475976807e-18,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038312,
+          0.9959529169382906,
+          -0.08962180294671551,
+          0,
+          0.07492800813163619,
+          0.08987651106996997,
+          0.993130407527287,
+          0,
+          0.5636022312430511,
+          0.6197441118091811,
+          9.028776665434648,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.171522234977,
+            "y": 413.96137790252686
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6246470903718,
+            "y": 378.3486582719904
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2255805459267,
+            "y": 550.6707318803385
+          }
+        ]
       }
     },
     {
-      "phase": "date-return",
-      "paper": {
-        "width": 539.4287719726562,
-        "height": 708.0003051757812
-      },
-      "overlay": {
-        "width": 539.421875,
-        "height": 708
+      "name": "gather",
+      "seconds": 16.865,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "gather",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -0.33000000000000007,
+              0.14,
+              -0.0882117788996356
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.105
+            ],
+            "matrix": [
+              0.9705227553645158,
+              -0.08261694903138375,
+              0.22640676017383846,
+              0,
+              0.10228104873166857,
+              0.991807635068467,
+              -0.07652582629573149,
+              0,
+              -0.21822962308086932,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -0.33000000000000007,
+              0.14,
+              -0.0882117788996356,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086932,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.03400000000000025
+            },
+            "measuredDepth": 0.09399999865889586,
+            "projectedCenter": {
+              "x": 619.4959201526905,
+              "y": 414.4907162218156
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              0,
+              0,
+              0.17507326845179333
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0
+            ],
+            "matrix": [
+              0.9758974493306055,
+              0.021786608885712697,
+              0.21713938395251858,
+              0,
+              1.734723475976807e-18,
+              0.9950041652780258,
+              -0.09983341664682815,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              0,
+              0,
+              0.17507326845179333,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110444,
+              "max": 0.20400000000000013
+            },
+            "measuredDepth": 0.09399999865889569,
+            "projectedCenter": {
+              "x": 650.72134642488,
+              "y": 430.4521197848893
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              0.33000000000000007,
+              -0.14,
+              0.4383583158032222
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.105
+            ],
+            "matrix": [
+              0.9705227553645158,
+              0.12595019004008695,
+              0.20548024466730191,
+              0,
+              -0.10228104873166857,
+              0.9872408494770797,
+              -0.12204135444235378,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              0.33000000000000007,
+              -0.14,
+              0.4383583158032222,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.28000000134110437,
+              "max": 0.3740000000000002
+            },
+            "measuredDepth": 0.09399999865889586,
+            "projectedCenter": {
+              "x": 683.929761676732,
+              "y": 447.4271616275374
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 20,
+        "dragging": false,
+        "camera": {
+          "x": 0.5636022312430511,
+          "y": 0.6197441118091811,
+          "z": 9.028776665434648
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          -1.734723475976807e-18,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038312,
+          0.9959529169382906,
+          -0.08962180294671551,
+          0,
+          0.07492800813163619,
+          0.08987651106996997,
+          0.993130407527287,
+          0,
+          0.5636022312430511,
+          0.6197441118091811,
+          9.028776665434648,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 619.4959201526905,
+            "y": 414.4907162218156
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 650.72134642488,
+            "y": 430.4521197848893
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 683.929761676732,
+            "y": 447.4271616275374
+          }
+        ]
+      }
+    },
+    {
+      "name": "spread-restored",
+      "seconds": 18.984,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.171522234977,
+              "y": 413.96137790252686
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6246470903718,
+              "y": 378.3486582719904
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2255805459267,
+              "y": 550.6707318803385
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 24,
+        "dragging": false,
+        "camera": {
+          "x": 0.5636022312430511,
+          "y": 0.6197441118091811,
+          "z": 9.028776665434648
+        },
+        "cameraMatrix": [
+          0.9971660212415658,
+          -1.734723475976807e-18,
+          -0.07523248022805756,
+          0,
+          -0.006761632842038312,
+          0.9959529169382906,
+          -0.08962180294671551,
+          0,
+          0.07492800813163619,
+          0.08987651106996997,
+          0.993130407527287,
+          0,
+          0.5636022312430511,
+          0.6197441118091811,
+          9.028776665434648,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.171522234977,
+            "y": 413.96137790252686
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6246470903718,
+            "y": 378.3486582719904
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2255805459267,
+            "y": 550.6707318803385
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual-held-orbit",
+      "seconds": 26.708,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": false,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 515.2228180207203,
+              "y": 418.09577590580125
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 821.7466936052363,
+              "y": 377.33176803900153
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 810.1101399478789,
+              "y": 543.0919431266577
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 55,
+        "dragging": true,
+        "camera": {
+          "x": -0.9076249843839459,
+          "y": -0.032741319729740564,
+          "z": 9.051357366558577
+        },
+        "cameraMatrix": [
+          0.9958322568090924,
+          -3.2526065174565133e-19,
+          0.0912037077015509,
+          0,
+          0.001477870529485429,
+          0.9998687055690785,
+          -0.01613652757917535,
+          0,
+          -0.09119173316265028,
+          0.016204061948024276,
+          0.9957015095796413,
+          0,
+          -0.9076249843839459,
+          -0.032741319729740564,
+          9.051357366558577,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 515.2228180207203,
+            "y": 418.09577590580125
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 821.7466936052363,
+            "y": 377.33176803900153
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 810.1101399478789,
+            "y": 543.0919431266577
+          }
+        ]
+      }
+    },
+    {
+      "name": "orbit-released",
+      "seconds": 27.383,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 515.2228180207203,
+              "y": 418.09577590580125
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 821.7466936052363,
+              "y": 377.33176803900153
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 810.1101399478789,
+              "y": 543.0919431266577
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 56,
+        "dragging": false,
+        "camera": {
+          "x": -0.9076249843839459,
+          "y": -0.032741319729740564,
+          "z": 9.051357366558577
+        },
+        "cameraMatrix": [
+          0.9958322568090924,
+          -3.2526065174565133e-19,
+          0.0912037077015509,
+          0,
+          0.001477870529485429,
+          0.9998687055690785,
+          -0.01613652757917535,
+          0,
+          -0.09119173316265028,
+          0.016204061948024276,
+          0.9957015095796413,
+          0,
+          -0.9076249843839459,
+          -0.032741319729740564,
+          9.051357366558577,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 515.2228180207203,
+            "y": 418.09577590580125
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 821.7466936052363,
+            "y": 377.33176803900153
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 810.1101399478789,
+            "y": 543.0919431266577
+          }
+        ]
+      }
+    },
+    {
+      "name": "reset-view",
+      "seconds": 31.315,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.1575787048355,
+              "y": 413.96747655392016
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6243731365906,
+              "y": 378.3446141810667
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2353304846047,
+              "y": 550.6601304832938
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 69,
+        "dragging": false,
+        "camera": {
+          "x": 0.5619393858409016,
+          "y": 0.6190072282468747,
+          "z": 9.02896723293411
+        },
+        "cameraMatrix": [
+          0.9971802678648056,
+          8.673617379884035e-19,
+          -0.0750434099776553,
+          0,
+          -0.006738397131078524,
+          0.995960420495031,
+          -0.08954012961496645,
+          0,
+          0.07474026615672658,
+          0.08979332273260145,
+          0.9931520788919794,
+          0,
+          0.5619393858409016,
+          0.6190072282468747,
+          9.02896723293411,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.1575787048355,
+            "y": 413.96747655392016
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6243731365906,
+            "y": 378.3446141810667
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2353304846047,
+            "y": 550.6601304832938
+          }
+        ]
+      }
+    },
+    {
+      "name": "task-checked",
+      "seconds": 33.369,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 372.5212426323179,
+              "y": 416.84894000444035
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 644.7235139028437,
+              "y": 384.8125398917658
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "d233b70b",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 625.98263177366,
+              "y": 541.2188529177315
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 71,
+        "dragging": false,
+        "camera": {
+          "x": 0.6253016700116508,
+          "y": 0.6951309875560571,
+          "z": 9.870928166222281
+        },
+        "cameraMatrix": [
+          0.9971802678648056,
+          8.673617379884035e-19,
+          -0.07504340997765531,
+          0,
+          -0.006738397131078527,
+          0.995960420495031,
+          -0.08954012961496646,
+          0,
+          0.07474026615672659,
+          0.08979332273260146,
+          0.9931520788919794,
+          0,
+          0.6253016700116508,
+          0.6951309875560571,
+          9.870928166222281,
+          1
+        ],
+        "cameraProjection": [
+          2.1549146662954337,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 372.5212426323179,
+            "y": 416.84894000444035
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 644.7235139028437,
+            "y": 384.8125398917658
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 625.98263177366,
+            "y": 541.2188529177315
+          }
+        ]
+      }
+    },
+    {
+      "name": "tasks-restored",
+      "seconds": 35.515,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.1575787048355,
+              "y": 413.96747655392016
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6243731365906,
+              "y": 378.3446141810667
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2353304846047,
+              "y": 550.6601304832938
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 73,
+        "dragging": false,
+        "camera": {
+          "x": 0.5619393858409016,
+          "y": 0.6190072282468747,
+          "z": 9.02896723293411
+        },
+        "cameraMatrix": [
+          0.9971802678648056,
+          8.673617379884035e-19,
+          -0.0750434099776553,
+          0,
+          -0.006738397131078524,
+          0.995960420495031,
+          -0.08954012961496645,
+          0,
+          0.07474026615672658,
+          0.08979332273260145,
+          0.9931520788919794,
+          0,
+          0.5619393858409016,
+          0.6190072282468747,
+          9.02896723293411,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.1575787048355,
+            "y": 413.96747655392016
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6243731365906,
+            "y": 378.3446141810667
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2353304846047,
+            "y": 550.6601304832938
+          }
+        ]
+      }
+    },
+    {
+      "name": "previous-date",
+      "seconds": 36.335,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-03",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "textureHash": "143286f2",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 639.9356117746961,
+              "y": 457.59379310132556
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 0,
+        "actualPhotoCount": 0,
+        "taskCount": 0,
+        "meshCount": 2,
+        "triangles": 894,
+        "frames": 74,
+        "dragging": false,
+        "camera": {
+          "x": 0.5603621419653462,
+          "y": 0.7432218287143156,
+          "z": 7.439094373206984
+        },
+        "cameraMatrix": [
+          0.9971802678648056,
+          4.336808689942018e-19,
+          -0.0750434099776553,
+          0,
+          -0.006738397131078523,
+          0.995960420495031,
+          -0.08954012961496645,
+          0,
+          0.07474026615672658,
+          0.08979332273260145,
+          0.9931520788919794,
+          0,
+          0.5603621419653462,
+          0.7432218287143156,
+          7.439094373206984,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-03",
+            "kind": "note",
+            "x": 639.9356117746961,
+            "y": 457.59379310132556
+          }
+        ]
+      }
+    },
+    {
+      "name": "today-restored",
+      "seconds": 38.416,
+      "actual": {
+        "renderer": "memory-webgl",
+        "ready": true,
+        "available": true,
+        "settled": true,
+        "layout": "spread",
+        "cards": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              -1.32,
+              0.13,
+              -0.30970320660179873
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.038
+            ],
+            "matrix": [
+              0.9751929361547288,
+              -0.016030178445936016,
+              0.22077538507023475,
+              0,
+              0.037075178811445904,
+              0.9951135506194011,
+              -0.0915120346716651,
+              0,
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              -1.32,
+              0.13,
+              -0.30970320660179873,
+              1
+            ],
+            "textureHash": "754369f6",
+            "textureWidth": 1100,
+            "textureHeight": 760,
+            "width": 4.4,
+            "height": 3.04,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#1f5045",
+            "transmission": 0,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": -0.059999998658895604,
+              "max": 0.0340000000000002
+            },
+            "measuredDepth": 0.0939999986588958,
+            "projectedCenter": {
+              "x": 526.1575787048355,
+              "y": 413.96747655392016
+            }
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "empty": false,
+            "sourceId": "9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "position": [
+              1.62,
+              0.51,
+              0.48798494383496965
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              0.052
+            ],
+            "matrix": [
+              0.974578333260123,
+              0.07347406218305336,
+              0.21165687923202844,
+              0,
+              -0.050723800625567715,
+              0.9925268295787679,
+              -0.11098463234347816,
+              0,
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535,
+              0,
+              1.62,
+              0.51,
+              0.48798494383496965,
+              1
+            ],
+            "textureHash": "941f8325",
+            "textureWidth": 1360,
+            "textureHeight": 1000,
+            "width": 3.4000000000000004,
+            "height": 2.5,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#d9e2cd",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086938,
+              0.09742717666359921,
+              0.9710220269681535
+            ],
+            "planeRange": {
+              "min": 0.11000000134110433,
+              "max": 0.20400000000000007
+            },
+            "measuredDepth": 0.09399999865889574,
+            "projectedCenter": {
+              "x": 824.6243731365906,
+              "y": 378.3446141810667
+            }
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "empty": false,
+            "sourceId": null,
+            "position": [
+              1.43,
+              -1.04,
+              0.7758759367057029
+            ],
+            "rotation": [
+              -0.1,
+              -0.22,
+              -0.055
+            ],
+            "matrix": [
+              0.9744217764872928,
+              -0.03294397768109409,
+              0.2222991134527889,
+              0,
+              0.05364730298281594,
+              0.9946972602666136,
+              -0.08774581073055591,
+              0,
+              -0.2182296230808693,
+              0.0974271766635992,
+              0.9710220269681535,
+              0,
+              1.43,
+              -1.04,
+              0.7758759367057029,
+              1
+            ],
+            "textureHash": "fb2f853a",
+            "textureWidth": 940,
+            "textureHeight": 640,
+            "width": 3.15,
+            "height": 2.145,
+            "vertices": 2484,
+            "geometryType": "ExtrudeGeometry",
+            "depth": 0.092,
+            "bevel": 0.014,
+            "color": "#b7cc9f",
+            "transmission": 0.16,
+            "planeNormal": [
+              -0.21822962308086935,
+              0.09742717666359922,
+              0.9710220269681538
+            ],
+            "planeRange": {
+              "min": 0.2800000013411046,
+              "max": 0.37400000000000055
+            },
+            "measuredDepth": 0.09399999865889597,
+            "projectedCenter": {
+              "x": 804.2353304846047,
+              "y": 550.6601304832938
+            }
+          }
+        ],
+        "noteCount": 1,
+        "visiblePhotoCount": 1,
+        "actualPhotoCount": 1,
+        "taskCount": 2,
+        "meshCount": 6,
+        "triangles": 3708,
+        "frames": 75,
+        "dragging": false,
+        "camera": {
+          "x": 0.5619393858409016,
+          "y": 0.6190072282468747,
+          "z": 9.02896723293411
+        },
+        "cameraMatrix": [
+          0.9971802678648056,
+          8.673617379884035e-19,
+          -0.0750434099776553,
+          0,
+          -0.006738397131078524,
+          0.995960420495031,
+          -0.08954012961496645,
+          0,
+          0.07474026615672658,
+          0.08979332273260145,
+          0.9931520788919794,
+          0,
+          0.5619393858409016,
+          0.6190072282468747,
+          9.02896723293411,
+          1
+        ],
+        "cameraProjection": [
+          1.5575488659448287,
+          0,
+          0,
+          0,
+          0,
+          3.2708526184841404,
+          0,
+          0,
+          0,
+          0,
+          -1.0025031289111388,
+          -1,
+          0,
+          0,
+          -0.2002503128911139,
+          0
+        ],
+        "groupMatrix": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "projectedCenters": [
+          {
+            "id": "note:2026-10-04",
+            "kind": "note",
+            "x": 526.1575787048355,
+            "y": 413.96747655392016
+          },
+          {
+            "id": "photo:9419139c-71cb-499b-a4f9-c5ac389a92b1",
+            "kind": "photo",
+            "x": 824.6243731365906,
+            "y": 378.3446141810667
+          },
+          {
+            "id": "tasks:2026-10-04",
+            "kind": "tasks",
+            "x": 804.2353304846047,
+            "y": 550.6601304832938
+          }
+        ]
       }
     }
   ],
   "errors": [],
   "derivedMedia": {
-    "trimmedStartupSeconds": 1.926,
+    "trimmedStartupSeconds": 3.456,
     "playbackSpeed": 1,
     "source": "Actual Playwright Chromium WebM; startup trimmed, no synthetic scene or transition",
-    "sampledFrameCount": 75,
-    "uniqueSampledFrames": 74,
+    "sampledFrameCount": 143,
+    "uniqueSampledFrames": 143,
     "files": [
       {
         "file": "journal-digital-demo.mp4",
-        "bytes": 339550,
-        "sha256": "efe178d21d54084bff28b4a612b730895c4b91a845fc78987db4c2b777079944",
+        "bytes": 1325082,
+        "sha256": "2ceae7f6d2ce141ff3b9aafce757729f5d4bcbc6296f53b2d4f669765310d233",
         "probe": {
           "programs": [],
           "stream_groups": [],
@@ -127,34 +3633,34 @@
               "width": 1280,
               "height": 1000,
               "avg_frame_rate": "25/1",
-              "nb_frames": "471"
+              "nb_frames": "893"
             }
           ],
           "format": {
-            "duration": "18.840000",
-            "size": "339550"
+            "duration": "35.720000",
+            "size": "1325082"
           }
         }
       },
       {
         "file": "journal-digital-demo.gif",
-        "bytes": 1818333,
-        "sha256": "01924528407930078944c2f1521039252f13a8d74ff94e0891308b02c47053ec",
+        "bytes": 6664438,
+        "sha256": "5d182306165b7ee227a5d0a21159f2f097b0ce95b1ea758ee6e02284b4e76fb6",
         "probe": {
           "programs": [],
           "stream_groups": [],
           "streams": [
             {
               "codec_name": "gif",
-              "width": 960,
-              "height": 750,
-              "avg_frame_rate": "25/2",
-              "nb_frames": "226"
+              "width": 800,
+              "height": 625,
+              "avg_frame_rate": "10/1",
+              "nb_frames": "357"
             }
           ],
           "format": {
-            "duration": "18.830000",
-            "size": "1818333"
+            "duration": "35.700000",
+            "size": "6664438"
           }
         }
       }

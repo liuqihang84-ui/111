@@ -3,7 +3,7 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   // Keep prior UI previews while this redesign records new evidence separately.
-  outputDir: '/tmp/yiri-v06-browser-artifacts',
+  outputDir: '/tmp/yiri-v07-browser-artifacts',
   timeout: 45_000,
   expect: { timeout: 7_000 },
   fullyParallel: true,

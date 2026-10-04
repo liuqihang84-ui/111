@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/tmp/yiri-v06-browser-artifacts",
+        "outputDir": "/tmp/yiri-v07-browser-artifacts",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -66,7 +66,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "首屏直接书写空白画布，玉片素材与历史旧藏均可使用",
+          "title": "旧画布仍支持原生书写，玉片素材与历史旧藏均可使用",
           "ok": true,
           "tags": [],
           "tests": [
@@ -81,12 +81,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5465,
+                  "duration": 7495,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:52:28.933Z",
+                  "startTime": "2026-10-04T13:55:21.108Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -94,9 +94,9 @@
               "status": "expected"
             }
           ],
-          "id": "d2a24f3341738d6e64f5-35abb2b4a9fb66619c5f",
+          "id": "d2a24f3341738d6e64f5-2efb32ffb24e4808a0a9",
           "file": "journal.spec.ts",
-          "line": 449,
+          "line": 459,
           "column": 1
         },
         {
@@ -115,12 +115,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 17607,
+                  "duration": 19728,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:52:34.907Z",
+                  "startTime": "2026-10-04T13:55:29.096Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -130,7 +130,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-a8c1287a004817fa4dcf",
           "file": "journal.spec.ts",
-          "line": 502,
+          "line": 512,
           "column": 1
         },
         {
@@ -149,12 +149,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5013,
+                  "duration": 10467,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:52:52.530Z",
+                  "startTime": "2026-10-04T13:55:48.846Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -164,7 +164,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-d0002da418333a2e11bf",
           "file": "journal.spec.ts",
-          "line": 651,
+          "line": 661,
           "column": 1
         },
         {
@@ -183,12 +183,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4750,
+                  "duration": 10777,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:52:57.560Z",
+                  "startTime": "2026-10-04T13:55:59.333Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -198,7 +198,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-04998f0666df7dd9e879",
           "file": "journal.spec.ts",
-          "line": 664,
+          "line": 674,
           "column": 1
         },
         {
@@ -217,12 +217,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9614,
+                  "duration": 13657,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:02.330Z",
+                  "startTime": "2026-10-04T13:56:10.133Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -232,7 +232,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-9302d887bbee73822afd",
           "file": "journal.spec.ts",
-          "line": 686,
+          "line": 696,
           "column": 1
         },
         {
@@ -251,12 +251,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8124,
+                  "duration": 12935,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:11.958Z",
+                  "startTime": "2026-10-04T13:56:23.808Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -266,7 +266,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-fac310c8362d70cee779",
           "file": "journal.spec.ts",
-          "line": 719,
+          "line": 729,
           "column": 1
         },
         {
@@ -285,12 +285,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7853,
+                  "duration": 16298,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:20.099Z",
+                  "startTime": "2026-10-04T13:56:36.763Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -300,7 +300,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-5fb4fc447022d37d877a",
           "file": "journal.spec.ts",
-          "line": 754,
+          "line": 764,
           "column": 1
         },
         {
@@ -319,12 +319,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8503,
+                  "duration": 14719,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:27.965Z",
+                  "startTime": "2026-10-04T13:56:53.086Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -334,7 +334,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-19493f31d6997d27b60d",
           "file": "journal.spec.ts",
-          "line": 805,
+          "line": 815,
           "column": 1
         },
         {
@@ -353,12 +353,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5563,
+                  "duration": 10499,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:36.482Z",
+                  "startTime": "2026-10-04T13:57:07.827Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -368,7 +368,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-d4839b2a1d58a1ed530d",
           "file": "journal.spec.ts",
-          "line": 848,
+          "line": 858,
           "column": 1
         },
         {
@@ -387,12 +387,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2819,
+                  "duration": 4351,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:42.061Z",
+                  "startTime": "2026-10-04T13:57:18.343Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -402,7 +402,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-1f075945d2e5070e295f",
           "file": "journal.spec.ts",
-          "line": 914,
+          "line": 924,
           "column": 1
         },
         {
@@ -421,12 +421,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5245,
+                  "duration": 11605,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:44.895Z",
+                  "startTime": "2026-10-04T13:57:22.708Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -436,7 +436,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-6d90cd8c2de1be30cd8f",
           "file": "journal.spec.ts",
-          "line": 928,
+          "line": 938,
           "column": 1
         },
         {
@@ -455,12 +455,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4925,
+                  "duration": 11373,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:53:50.155Z",
+                  "startTime": "2026-10-04T13:57:34.324Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -470,7 +470,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-eabfd410554710b13526",
           "file": "journal.spec.ts",
-          "line": 962,
+          "line": 972,
           "column": 1
         },
         {
@@ -489,12 +489,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10256,
+                  "duration": 17214,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T12:54:01.939Z",
+                  "startTime": "2026-10-04T13:57:54.235Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -504,7 +504,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-58eb506c9378a649d92a",
           "file": "journal.spec.ts",
-          "line": 1070,
+          "line": 1080,
           "column": 1
         }
       ],
@@ -512,7 +512,7 @@
         {
           "title": "手机触摸",
           "file": "journal.spec.ts",
-          "line": 1000,
+          "line": 1010,
           "column": 6,
           "specs": [
             {
@@ -531,12 +531,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6824,
+                      "duration": 8501,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-04T12:53:55.098Z",
+                      "startTime": "2026-10-04T13:57:45.712Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -546,8 +546,162 @@
               ],
               "id": "d2a24f3341738d6e64f5-ae4c3ad497e37e07c441",
               "file": "journal.spec.ts",
-              "line": 1003,
+              "line": 1013,
               "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "memory.spec.ts",
+      "file": "memory.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "默认空白记忆卡组使用真实 GPU，点选卡片原生输入并自动保存",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T13:58:11.484Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ae46fcbe7df2182c676-15e8e1927d88a40bfbbe",
+          "file": "memory.spec.ts",
+          "line": 174,
+          "column": 1
+        },
+        {
+          "title": "真实照片与小事生成独立卡片，收拢展开改变 3D 矩阵和实际画面",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T13:58:18.504Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ae46fcbe7df2182c676-0e9d40cf7d4c9cbfb138",
+          "file": "memory.spec.ts",
+          "line": 215,
+          "column": 1
+        },
+        {
+          "title": "实际单文件 HTML 断网后编辑卡组、上传照片、完成小事并导出真实备份与 PNG",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T13:58:35.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ae46fcbe7df2182c676-7842464a257d24a6ef53",
+          "file": "memory.spec.ts",
+          "line": 303,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "记忆卡片原生手机触摸",
+          "file": "memory.spec.ts",
+          "line": 255,
+          "column": 6,
+          "specs": [
+            {
+              "title": "390 与 320px 下按需编辑可触达、日期独立保存，真实 GPU 丢失后仍能写作",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7586,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-04T13:58:28.169Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7ae46fcbe7df2182c676-df941b86f992356d601e",
+              "file": "memory.spec.ts",
+              "line": 257,
+              "column": 3
             }
           ]
         }
@@ -556,9 +710,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-04T12:52:27.915Z",
-    "duration": 104400.746,
-    "expected": 14,
+    "startTime": "2026-10-04T13:55:20.175Z",
+    "duration": 203908.22,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

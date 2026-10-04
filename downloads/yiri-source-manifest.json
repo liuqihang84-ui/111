@@ -1,10 +1,10 @@
 {
   "name": "yiri-journal",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "file": "yiri-journal-source.zip",
-  "sourceFiles": 89,
-  "bytes": 9328503,
-  "sha256": "d3a893dc339c01808d1cd8407f8e32c94841fbba0ce1f39c578e0f7f554fad53",
+  "sourceFiles": 96,
+  "bytes": 9359574,
+  "sha256": "9e79d5d62376745866276ec52b4e1934ca9e5bad683802109ef42d212069d841",
   "archiveCrcValidation": "passed",
   "exactMemberValidation": "passed",
   "sourceByteEqualityValidation": "passed",
@@ -16,8 +16,8 @@
     },
     {
       "name": "journal/README.md",
-      "bytes": 6344,
-      "sha256": "4830afad9b2de2e73855d75458335843cff86f37142398f6585b9eb297705f74"
+      "bytes": 5810,
+      "sha256": "004b3624be30158ad078c8255d067b747502a994098e4cfd00f08d1b48bac3f4"
     },
     {
       "name": "journal/docs/3D-ENGINE.md",
@@ -26,13 +26,13 @@
     },
     {
       "name": "journal/docs/ART-SOURCES.md",
-      "bytes": 8572,
-      "sha256": "65dc5652d212b4266b0e906f7852c7edd943cdbd7d862fbaf68a28e32e3d5f9c"
+      "bytes": 9553,
+      "sha256": "0daf2f8d4c96bf1537f03b16eeb53a0788caaee0df4f8eac09212cd0314d937f"
     },
     {
       "name": "journal/docs/DELIVERY.md",
-      "bytes": 3108,
-      "sha256": "ff792c706d3f6ce9dfb968dac4072251e034dcb9e1fb5b4e65c76934b527a067"
+      "bytes": 3215,
+      "sha256": "5e3f6cdde6b824369f1d5fd2cd29e95b94e632441169c7901fbee975ebbf5c60"
     },
     {
       "name": "journal/docs/FLOAT-ART.md",
@@ -45,9 +45,14 @@
       "sha256": "02f12b672adadb73afd3741b45bd9dae5934a5deeeddc75cd0821bb4beed3665"
     },
     {
+      "name": "journal/docs/MEMORY-ENGINE.md",
+      "bytes": 3117,
+      "sha256": "ddd5d33c4635688fc8d649c8e62a366d3a570d8db6a45d7aae478a341d6bf388"
+    },
+    {
       "name": "journal/docs/NOTICES.txt",
-      "bytes": 13564,
-      "sha256": "0e2254c5da3aa3a33bde90bc9ede96979e9a0dff98e5f7c02faab48c21391076"
+      "bytes": 13570,
+      "sha256": "c9373a669ed86118e64867b8b95fc4dd5adf581297d41185e0ff55779fac7497"
     },
     {
       "name": "journal/docs/PNG-EXPORT.md",
@@ -61,13 +66,13 @@
     },
     {
       "name": "journal/docs/QA.md",
-      "bytes": 4179,
-      "sha256": "1a2431fe5bbd4c190079216870c040ae6a739acc517eec863df94469c8af0eef"
+      "bytes": 5522,
+      "sha256": "762fdebba96c97c34c38e1916b994a92ab9177c25655a8f7b101588914683a75"
     },
     {
       "name": "journal/docs/START.md",
-      "bytes": 6593,
-      "sha256": "358577145cd301feb0c2d859c50ea730d0dae52f8dfdde7c6bae5d47e59bf28e"
+      "bytes": 6231,
+      "sha256": "512b664dc2542345ff2c5248b7c3b76c786ac3f0585fdcc2a042d08ea274c98b"
     },
     {
       "name": "journal/docs/TACTILE-ART.md",
@@ -81,33 +86,33 @@
     },
     {
       "name": "journal/docs/VISUAL-IDENTITY.md",
-      "bytes": 7163,
-      "sha256": "70e9d8be0d817cd54e731599c05e5147e1ccaf8b49c2440566ffcb21b7bbd0e4"
+      "bytes": 4493,
+      "sha256": "8c93ee4a82a399ec351771595c614326fe4fd80aca3423d6675245d9d153a773"
     },
     {
       "name": "journal/index.html",
-      "bytes": 881,
-      "sha256": "232b494d944e33331f6adaa5080f3aeebe9c362b7186d022d502dbee41df5906"
+      "bytes": 1067,
+      "sha256": "5c79820efa02f1a62f7d2613ce144fc911dafd58d6c0f2ec0ad82391b9909dc0"
     },
     {
       "name": "journal/package-lock.json",
       "bytes": 83253,
-      "sha256": "51baf972ee86ad0b231d42c5138c65f6a2ac80cfd1c5ba2f3ada58c63fb743fd"
+      "sha256": "6a7f8415b05d0cfb50552b737dd86c71f883f46847dd7c476c57a62bbea5a23e"
     },
     {
       "name": "journal/package.json",
       "bytes": 851,
-      "sha256": "ed479a911efa90c2282a18b99533a97eb5e2f8b124d2d15657e53c9fbc2f5764"
+      "sha256": "0b190af30a0821ee2855f7ed3d450730eae52cae5f233818c2da0e6a7231d1b0"
     },
     {
       "name": "journal/playwright.config.ts",
       "bytes": 869,
-      "sha256": "4f239610913e482ba6f8fbd09c618ff64eda0d2a18b5038b476dedf822a7d0db"
+      "sha256": "e68ce4c0de4e3f8eca05f7574db75b83b92d606fa0681bddeac4b7790fb158fd"
     },
     {
       "name": "journal/src/App.tsx",
-      "bytes": 40657,
-      "sha256": "e1f62b9f6352452a60518b8fd044b6ce7e16faa6cddebe9ae22ec803b423b116"
+      "bytes": 42211,
+      "sha256": "47af3d3069065dbb59cef79cacbaa4f5b671fbc06d3054033ba87d64fb0caeda"
     },
     {
       "name": "journal/src/assets/FONT-LICENSE.txt",
@@ -320,6 +325,11 @@
       "sha256": "a1ad9072467be20350b03658f2150733a0b7b518b328a675048ccf899577d98e"
     },
     {
+      "name": "journal/src/components/MemoryBoard.tsx",
+      "bytes": 13103,
+      "sha256": "304883a94cd492d39e4d0630f5b9412dbae5a3f139b23600c2f3015a803feeb4"
+    },
+    {
       "name": "journal/src/data/art.ts",
       "bytes": 3237,
       "sha256": "b0511ab995426059058f3e298449018fdd6f6623ae9774bc8f26fd83753a0fc4"
@@ -380,6 +390,21 @@
       "sha256": "7fa8780bdc1386fdb999775d904a9417f355ec3c797d709420e512788109bc72"
     },
     {
+      "name": "journal/src/lib/memory-export.ts",
+      "bytes": 14070,
+      "sha256": "fcdc301febc40a335463fbf2ccdbffb3025433ea863a05dfe171952f92dd6ba7"
+    },
+    {
+      "name": "journal/src/lib/memory-scene.ts",
+      "bytes": 22164,
+      "sha256": "f2dbaa522759ccd7d2c1bd29fe72b54e7d5deeada669ce79788c074d1abae802"
+    },
+    {
+      "name": "journal/src/lib/memory-textures.ts",
+      "bytes": 8934,
+      "sha256": "c9540c06a5c20604d228a3e191eee0d9b93a38f5daa8d0b664d32c682637b45a"
+    },
+    {
       "name": "journal/src/lib/model.test.ts",
       "bytes": 7725,
       "sha256": "a36e05567eb017eeb58dad53a23c7848cb1ee12f2f9f39647891066313fb606a"
@@ -410,14 +435,24 @@
       "sha256": "1bc19ec2f6e0b2f3a0a3febc84b659394812943c83b2364b5e8be91890a00049"
     },
     {
+      "name": "journal/src/memory.css",
+      "bytes": 19711,
+      "sha256": "4e06dc4772a27114e7eac8f828c89d8df6b2d7fb0e3e3d2ef7957655d68c8d53"
+    },
+    {
       "name": "journal/src/styles.css",
       "bytes": 39414,
       "sha256": "6fbc7f897de7f4ee10235fa2237eef9ef4ce9db61aa3aa869060868164cc0f2b"
     },
     {
       "name": "journal/tests/journal.spec.ts",
-      "bytes": 61159,
-      "sha256": "1a545f744f06321c42229bb94dd49acef0db37e20d9fb24d19bbd9c5fc090e2a"
+      "bytes": 61645,
+      "sha256": "d83ffce34a9c3ac19fa2edf510a02678849cd3f335b54702054780a1c9ccc81c"
+    },
+    {
+      "name": "journal/tests/memory.spec.ts",
+      "bytes": 21757,
+      "sha256": "0673c7f62b5b5fa074cf84459d0aecf454efc32e1957a5d1347926fe917922c7"
     },
     {
       "name": "journal/tests/portable-capture.ts",
@@ -426,8 +461,8 @@
     },
     {
       "name": "journal/tools/build-portable.mjs",
-      "bytes": 12387,
-      "sha256": "e91e21915f8b71daaa54e215574036e2bcaac46de95716d5e119471caae8a353"
+      "bytes": 12628,
+      "sha256": "53bee54b804fceffa0c7ee8c4f1cc03cc01ae20d62b07ca6a06a19c77e5a2806"
     },
     {
       "name": "journal/tools/install.sh",

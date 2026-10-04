@@ -1,12 +1,14 @@
-# 当前工作流：一日一笺 · 浮笺
+# 当前工作流：一日一笺
 
-当前应用位于 `/workspace/111/journal`，版本 `0.6.0`，默认端口 `4180`。打开后直接编辑圆角数字画布，「记录 / 收藏 / 日历」切换编辑、合集与回看。日期锚点集中显示和切换日期；撤销、重做和「加内容」集中在短操作区，素材、文字与待办按需打开。可选「空间预览」查看同页内容的薄片错层和轻弧面，「继续书写」返回直接编辑。既有浏览器数据继续保留。
+当前应用位于 `/workspace/111/journal`，版本 `0.7.0`，默认端口 `4180`。默认进入记忆卡片：文字、真实照片和小事形成三维卡组，「收拢 / 展开」改变卡组的位置与旋转。使用「文字 / 照片 / 小事」或点击内容卡按需打开原生编辑面板；「记录 / 收藏 / 日历」切换记录、合集与回看。首次无数据仅显示空态入口，不预填记录。
+
+「旧画布」保留原来的长页编辑、素材摆放和空间预览。两种工作方式读写相同的版本 1 数据，既有浏览器记录与 JSON 备份保持兼容，不迁移或覆盖原对象坐标。
 
 保留 `/workspace/111` 中的美术工作台、旧 Godot 游戏及用户更改。使用现有检出，不额外创建 Git worktree。
 
 ## 安装、检查与构建
 
-需要 Node.js 20.19+、22.12+ 或更新的受支持版本、npm 和 Python 3。使用锁定依赖与随源码保留的美术、字体；常规启动无需生成图片、重新制作字体、下载外部模型或安装 Python 第三方库。
+需要 Node.js 20.19+、22.12+ 或更新的受支持版本、npm 和 Python 3。使用锁定依赖与本地美术、字体；常规启动无需生成图片、下载外部模型或安装 Python 第三方库。
 
 ```sh
 cd /workspace/111/journal
@@ -15,50 +17,40 @@ npm test
 npm run build:portable
 ```
 
-`bash tools/install.sh` 是同一流程的辅助脚本：检查 Node/Python，使用工作区 npm 缓存，安装锁定依赖，运行单元测试与生产、单文件构建。运行时使用 `three@0.180.0`，开发类型使用 `@types/three@0.180.0`；Three.js 的实际 MIT 许可证随离线包和源码保留。
+`bash tools/install.sh` 是同一流程的辅助脚本：检查 Node/Python，使用工作区 npm 缓存，安装锁定依赖，运行单元测试与生产、单文件构建。运行时使用 `three@0.180.0`，类型使用 `@types/three@0.180.0`；实际 MIT 许可证随离线包和源码保留。
 
-`build:portable` 输出 `dist/`、`release/yiri-journal.html`、`release/yiri-journal.zip` 与 `release/release-manifest.json`。构建验证内嵌资源、第三方与字体许可证、压缩包成员、CRC 和文件字节，并记录 SHA-256。`python3 tools/package-source.py` 另行打包可独立安装的 `release/yiri-journal-source.zip`，排除依赖和生成输出。
+`build:portable` 输出 `dist/`、`release/yiri-journal.html`、`release/yiri-journal.zip` 与 `release/release-manifest.json`，验证资源内嵌、许可证、ZIP 成员、CRC、逐字节一致性及 SHA-256。`python3 tools/package-source.py` 另行生成可独立安装的源码 ZIP，排除依赖和构建输出。
 
 ## 启动与验证
 
-开发启动：
-
 ```sh
 cd /workspace/111/journal
-npm run dev
+PORT=4180 bash tools/serve.sh preview
 ```
 
-生产预览：
-
-```sh
-cd /workspace/111/journal
-npm run preview
-```
-
-两者默认监听 `0.0.0.0:4180`。需要严格固定端口时，分别使用 `PORT=4180 bash tools/serve.sh dev` 和 `PORT=4180 bash tools/serve.sh preview`。端口占用时确认已有进程用途，不结束来源不明的进程。生产预览需要 `dist/index.html`；新任务中需重启服务，不能假定现场进程随环境快照恢复。
-
-使用内部请求验证当前页面：
+开发使用 `PORT=4180 bash tools/serve.sh dev`；`npm run dev` 和 `npm run preview` 也默认监听 `0.0.0.0:4180`。端口占用时确认已有进程用途，不结束来源不明的进程。生产预览需要 `dist/index.html`；新任务需重启服务，不能假定现场进程随环境快照恢复。
 
 ```sh
 curl --noproxy 127.0.0.1 --fail --silent http://127.0.0.1:4180/ -o /tmp/yiri-journal-start.html
 rg '一日一笺' /tmp/yiri-journal-start.html
+BASE_URL=http://127.0.0.1:4180 npm run test:browser
 ```
 
-随后运行 `BASE_URL=http://127.0.0.1:4180 npm run test:browser`。Playwright 使用环境现有 `/usr/bin/chromium`；尊重浏览器管理策略。按本轮实际报告核对通过、失败和跳过数量，旧版本的结果不自动适用于新版。检查初次打开即可原生编辑、记录/收藏/日历入口、按需工具、实际拖动缩放与撤销、空间预览、日期轻流转、本地保存恢复和离线导出。检查范围与重现说明见 [QA.md](QA.md)，几何与渲染说明见 [3D-ENGINE.md](3D-ENGINE.md)。
+Playwright 使用已有 `/usr/bin/chromium`，保留浏览器管理策略。按本轮实际 JSON 核对通过、失败和跳过数量；旧结果不代替新版本验证。分别验证默认记忆卡片和旧画布：空态无假数据、实际文字/照片/小事输入、真实卡面与展合网格变化、卡点击和日期切换、自动保存恢复、两种 PNG 输出、全部数据备份、手机操作、GPU 中断和单文件断网。旧画布继续验证原生投影、拖动、缩放、旋转、历史与新旧素材恢复。范围见 [QA.md](QA.md)，引擎说明见 [MEMORY-ENGINE.md](MEMORY-ENGINE.md) 与 [3D-ENGINE.md](3D-ENGINE.md)。
 
-空间预览需要 WebGL 2。不可用或绘制中断时应显示状态并继续数字画布编辑，保留保存与导出。软件 WebGL 的检查结果不能推定所有设备帧率，正常设备性能按实际报告记录。
+记忆卡片使用 WebGL 2，不可用或绘制中断时仍可通过普通内容列表编辑、保存、导出；旧画布保留普通书写方式。减少动态偏好保留展合结果，停用不必要过渡。软件 WebGL 的结果不能推定所有设备帧率。
 
-云环境端口是内部地址，向用户提供平台实际提供并验证的预览入口。若浏览器限制 `file://`，保留管理策略，通过允许的 HTTP 载入与发布 HTML 完全一致的字节，再断网验证，并注明本地文件打开方式未在当前环境实测。
+云环境端口是内部地址，只向用户提供平台实际提供并验证的预览入口。若浏览器限制 `file://`，保留策略，通过允许的真实 HTTP 载入与发布 HTML 完全一致的字节，再断网验证，并注明本地双击方式未在当前环境实测。
 
-## 数据与视觉
+## 数据、导出与美术
 
-内容自动保存在当前浏览器的 `localStorage`；照片只在浏览器内缩小与使用。存储失败会提示。JSON 导入导出可恢复全部手账，导入覆盖前先下载当前备份；PNG 导出规格为 `1280 × 1680` 的页面图。应用无需账号、AI API 或 API 密钥，没有云端同步。
+内容自动保存在当前浏览器的 `localStorage`；照片只在本地缩小与使用。存储失败时提示并提供备份。应用无需账号、AI API 或密钥，没有云端同步。
 
-本版采用「温玉 × 苍墨」的现代东方视觉：背景 `#E8EBE4`、暖白 `#FCFBF6`、苍墨 `#183B35`、玉青 `#536F63` 与少量陶朱 `#BC745E`。日期侧栏、单张圆角画布与短操作区形成主次；收藏延续合集面板。空间预览由同页内容的独立薄片、轻微曲面和浅层高度构成；日期切换使用轻流转，减少动态效果偏好保留直接切换。文字编辑继续使用原生输入区。
+记忆卡片 PNG 为 `1440 × 1024`，包含当天文字、小事与最多 6 张最新照片；面板和 JSON 保留全部照片。旧画布 PNG 为 `1280 × 1680`，保留全部原坐标拼贴。JSON 导入验证格式，覆盖前先下载当前备份。标题最多 24 字、正文 260 字、小事 5 条、对象 30 件、手账 20 份；显示范围不改变这些原数据。
 
-八件薄玉素材为玉题签、玉界框、清流线、薄玉弧、玉索引、轻折片、玉叠片与玉朱点，使用 `src/assets/jade-kit.png`、`src/data/jade-art.ts` 和 `src/lib/jade-render.ts`；来源、实际提示词、透明布局与读取方式见 [JADE-ART.md](JADE-ART.md)。上一版八件光片保留在「浮笺旧藏」，旧八件印刷素材保留在「印刷旧藏」，十二件材质小物保留在「旧藏」，所有旧资源 ID 和 JSON 数据格式继续兼容。来源见 [ART-SOURCES.md](ART-SOURCES.md)、[FLOAT-ART.md](FLOAT-ART.md)、[PRINT-ART.md](PRINT-ART.md) 和 [TACTILE-ART.md](TACTILE-ART.md)。
+苍墨文字卡、暖白照片卡、浅玉小事卡与横向留白形成默认视觉。卡面来自真实记录，几何、材质和光照由程序实时生成；本版不新增 AI 图片作为默认内容。旧画布的温玉 8 件、浮笺旧藏 8 件、印刷旧藏 8 件和旧藏小物 12 件继续兼容，但不显示在默认卡组。来源与提示词保留于 [ART-SOURCES.md](ART-SOURCES.md) 及各历史素材文档。
 
-软件与字体许可证全文见 [NOTICES.txt](NOTICES.txt)。更换字体或分发衍生字体时保留 OFL 声明和实际来源。源码与离线文件交付、环境配置草稿保存各自记录实际状态；草稿保存不执行命令或发布快照，也不证明未来任务恢复已验证。
+完整软件与字体许可证见 [NOTICES.txt](NOTICES.txt)。源码、离线文件、实际测试和环境配置草稿分别记录实际状态；草稿保存不执行命令、不发布快照，也不证明未来任务恢复已验证。
 
 ## 保留的美术工作台
 
