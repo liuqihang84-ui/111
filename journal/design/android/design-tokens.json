@@ -1,0 +1,125 @@
+{
+  "name": "一日一笺 · Android UI/VI",
+  "status": "design draft; not implemented",
+  "platform": "Android",
+  "units": {
+    "layout": "dp",
+    "type": "sp"
+  },
+  "colors": {
+    "background": "#F8F7F2",
+    "surface": "#FFFFFF",
+    "ink": "#163D36",
+    "secondaryText": "#58685F",
+    "jadeAccent": "#9CC6B3",
+    "divider": "#DBE4D8",
+    "clayAccent": "#BC745E"
+  },
+  "type": {
+    "body": {
+      "family": "Android CJK sans / Noto Sans SC",
+      "size": 16,
+      "lineHeight": 26
+    },
+    "support": {
+      "family": "Android CJK sans",
+      "size": 14,
+      "lineHeight": 22
+    },
+    "pageTitle": {
+      "family": "Android CJK sans",
+      "size": 28,
+      "lineHeight": 36
+    },
+    "displayOnly": "Guanwu Serif; brand and selected short display titles only",
+    "scaling": "Respect system fontScale; review up to 2.0"
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "radii": {
+    "control": 12,
+    "content": 16,
+    "sheet": 24
+  },
+  "touch": {
+    "minimum": 48,
+    "iconGlyph": 24,
+    "calendar360": {
+      "sidePadding": 8,
+      "columnWidth": 49.142857142857146
+    },
+    "calendar412": {
+      "sidePadding": 31,
+      "columnWidth": 50
+    }
+  },
+  "navigation": [
+    "今日",
+    "回顾",
+    "我的"
+  ],
+  "primaryAction": "记一笔",
+  "brand": {
+    "canonicalSource": "brand-mark.svg",
+    "viewBox": [
+      0,
+      0,
+      128,
+      128
+    ],
+    "path": "M 83.7 26.9 A 42 42 0 1 0 105.5 57.4",
+    "strokeWidth": 18,
+    "strokeLinecap": "round",
+    "opening": "upper-right",
+    "consistency": "Use this silhouette in flat, dimensional and app-icon variants."
+  },
+  "motion": {
+    "pressDurationMs": 120,
+    "transitionDurationMs": 220,
+    "reducedMotion": "static or short opacity transition; no shape orbit"
+  },
+  "depth": {
+    "uses": [
+      "brand motif",
+      "empty state",
+      "primary press feedback"
+    ],
+    "exclusions": [
+      "body text",
+      "input fields",
+      "calendar numerals",
+      "ordinary list rows"
+    ],
+    "lighting": "one soft upper-left source; subtle refractive jade edge"
+  },
+  "button": {
+    "primaryHeight": 56,
+    "secondaryHeight": 48,
+    "radius": 12
+  },
+  "layout": {
+    "normalPageMargin": 24,
+    "statusBarReference": 24,
+    "topAppBar": 56,
+    "bottomNavigation": 80,
+    "gestureInsetReference": 24,
+    "systemInsets": "Use measured Android WindowInsets; these bar heights are design references, not hard-coded OS dimensions."
+  },
+  "dark": {
+    "status": "optional visual proposal; not implemented",
+    "background": "#111F1C",
+    "surface": "#1C2D28",
+    "ink": "#EDF0E8",
+    "secondaryText": "#B5C6BB",
+    "jadeAccent": "#9CC6B3",
+    "divider": "#3B5148",
+    "clayAccent": "#D99780"
+  }
+}

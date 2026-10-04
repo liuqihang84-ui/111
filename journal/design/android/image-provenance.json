@@ -1,0 +1,21 @@
+{
+  "status": "Android design proposal only",
+  "images": [
+    {
+      "file": "ui-vi-overview-v02.png",
+      "source": "/workspace/generated_images/exec-65bbd2e7-6d47-49c5-ba5b-3ef09825a565.png",
+      "bytes": 1496239,
+      "sha256": "6c13d78ea89277c9f882c089be679b7e4dcfa135052ed4f718d8c3f93aa63346",
+      "provenance": "AI-generated Android UI/VI concept, not a running app screenshot. Landscapes and entries are illustrative example content."
+    },
+    {
+      "file": "ui-states-v01.png",
+      "source": "/workspace/generated_images/exec-40341089-ebba-4d03-8e27-ae89945a6a2b.png",
+      "bytes": 1241578,
+      "sha256": "b9a7afa79b17ce62e18bbd153dda154d27fa5578f9669440b6c1155bca93bcfc",
+      "provenance": "AI-generated Android UI/VI concept, not a running app screenshot. Landscapes and entries are illustrative example content."
+    }
+  ],
+  "firstExploration": "/workspace/generated_images/exec-f09e7140-b5b0-4237-b5b2-58a56f886f5c.png",
+  "method": "Image generation and reference-guided image generation. Original files kept; copied without pixel edits."
+}

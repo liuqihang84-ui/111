@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1512 1090" width="1512" height="1090" role="img" aria-labelledby="board-title board-desc" data-artboard-units="dp" data-type-units="sp" data-status="design draft; not implemented">
+  <title id="board-title">一日一笺 · Android 可编辑 UI 设计稿</title>
+  <desc id="board-desc">三个 412×892 dp 设计画板：今日、全屏编辑、月历回顾。所有文字可编辑，照片仅矢量占位，日期为周一起始的 2026 年 10 月。示例内容，非运行 App UI，未经 Android 设备测试。</desc>
+  <defs>
+    <clipPath id="screen-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="412" height="892" fill="#F8F7F2" rx="24" />
+    </clipPath>
+    <symbol id="brand" viewBox="0 0 128 128">
+      <path d="M 83.7 26.9 A 42 42 0 1 0 105.5 57.4" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" />
+    </symbol>
+    <symbol id="home" viewBox="0 0 24 24">
+      <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24">
+      <path d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7 3v4M17 3v4M3 10h18" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="person" viewBox="0 0 24 24">
+      <path d="M8 7a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 21v-2a8 8 0 0 1 16 0v2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="back" viewBox="0 0 24 24">
+      <path d="m15 5-7 7 7 7" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="forward" viewBox="0 0 24 24">
+      <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="pen" viewBox="0 0 24 24">
+      <path d="m4 16-1 5 5-1L20 8l-4-4Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m14 6 4 4" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="image" viewBox="0 0 24 24">
+      <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m3 17 6-6 4 4 3-3 5 5" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="8" cy="8" r="1.15" fill="currentColor" />
+    </symbol>
+    <symbol id="task" viewBox="0 0 24 24">
+      <path d="M8 5h13M8 12h13M8 19h9" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m3 4 1 1 2-2m-3 8 1 1 2-2m-3 8 1 1 2-2" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="folder" viewBox="0 0 24 24">
+      <path d="M3 7h6l2-3h6a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 7h16a2 2 0 0 1 2 2l-2 10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2L2 9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="error" viewBox="0 0 24 24">
+      <path d="M12 3 2.5 20h19Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 9v5" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="12" cy="17.3" r="0.75" fill="currentColor" />
+    </symbol>
+    <symbol id="spinner" viewBox="0 0 24 24">
+      <path d="M20.2 11a8.2 8.2 0 1 1-6.9-7.1" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="more" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="1.55" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.55" fill="currentColor" />
+      <circle cx="12" cy="19" r="1.55" fill="currentColor" />
+    </symbol>
+  </defs>
+  <rect x="0" y="0" width="1512" height="1090" fill="#FFFFFF" />
+  <use href="#brand" x="48" y="28" width="40" height="40" color="#163D36" />
+  <text x="104" y="56" font-size="24" font-family="Guanwu Serif, Noto Serif SC, serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-49">一日一笺</text>
+  <text x="300" y="55" font-size="20" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-50">Android / UI 精稿</text>
+  <text x="1464" y="54" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="end" id="text-51">示例内容 · 非运行 UI</text>
+  <line x1="48" y1="80" x2="1464" y2="80" stroke="#DBE4D8" stroke-width="1" />
+  <text x="72" y="116" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-53">01  今日 · 有记录</text>
+  <g transform="translate(72 136)" data-screen="today" data-width-dp="412" data-height-dp="892" data-content="design example" data-page-padding-dp="24" clip-path="url(#screen-clip)">
+    <rect x="0" y="0" width="412" height="892" fill="#F8F7F2" rx="24" stroke="#DBE4D8" stroke-width="1" data-role="artboard" />
+    <metadata>{"statusBar": 24, "appBar": 56, "gestureInset": 24, "contentPadding": 24, "bodyFontSp": 16, "bodyLineHeightSp": 26, "minimumTouchDp": 48, "sampleContent": true, "notRunningUi": true}</metadata>
+    <text x="24" y="17" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-57">9:41</text>
+    <path d="M333 8q7-6 14 0l-7 8Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <path d="M354 16 364 6v10Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <rect x="374" y="6" width="12" height="11" fill="#163D36" rx="2" data-role="system-status-placeholder" />
+    <rect x="386" y="9" width="2" height="5" fill="#163D36" rx="1" />
+    <rect x="0" y="868" width="412" height="24" fill="#F8F7F2" data-role="system-gesture-inset" data-height-dp="24" />
+    <rect x="150" y="878" width="112" height="4" fill="#163D36" rx="2" data-role="system-gesture-placeholder" />
+    <rect x="0" y="24" width="412" height="56" fill="#F8F7F2" data-role="top-app-bar" data-height-dp="56" />
+    <text x="24" y="59" font-size="20" font-family="Guanwu Serif, Noto Serif SC, serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-65">一日一笺</text>
+    <rect x="340" y="28" width="48" height="48" fill="none" data-touch-target="更多操作" data-minimum-dp="48" pointer-events="none" />
+    <use href="#more" x="352" y="40" width="24" height="24" color="#163D36" />
+    <text x="24" y="130" font-size="28" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" data-line-height="36sp" id="text-68">今天</text>
+    <text x="24" y="167" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-69">10月4日  周日</text>
+    <line x1="24" y1="190" x2="388" y2="190" stroke="#DBE4D8" stroke-width="1" />
+    <text x="24" y="226" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-71">14:20</text>
+    <text x="24" y="264" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-72">午后的风</text>
+    <text x="24" y="299" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" data-line-height="26sp" id="text-73">
+      <tspan x="24" dy="0">在窗边坐了一会儿，</tspan>
+      <tspan x="24" dy="26">留住今天的一点安静。</tspan>
+    </text>
+    <rect x="24" y="348" width="364" height="188" fill="#FFFFFF" rx="16" stroke="#DBE4D8" stroke-width="1" data-role="photo-placeholder" data-status="design example only; no image embedded" />
+    <use href="#image" x="194.0" y="410.0" width="24" height="24" color="#58685F" />
+    <text x="206.0" y="454.0" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-78">照片位置</text>
+    <text x="206.0" y="479.0" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-79">由用户自行添加 · 设计占位</text>
+    <rect x="24" y="560" width="364" height="48" fill="none" data-touch-target="小事：读几页喜欢的书" data-minimum-dp="48" pointer-events="none" />
+    <rect x="24" y="573" width="22" height="22" fill="none" rx="4" stroke="#163D36" stroke-width="1" />
+    <text x="60" y="589" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-82">读几页喜欢的书</text>
+    <use href="#forward" x="364" y="572" width="24" height="24" color="#58685F" />
+    <line x1="24" y1="632" x2="388" y2="632" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="24" y="708" width="364" height="56" fill="#163D36" rx="12" data-role="primary-button" data-height-dp="56" data-touch-target="记一笔" data-minimum-dp="48" />
+    <use href="#pen" x="164" y="724" width="24" height="24" color="#F8F7F2" />
+    <text x="200" y="743" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#F8F7F2" font-weight="500" text-anchor="start" id="text-87">记一笔</text>
+    <rect x="0" y="788" width="412" height="80" fill="#F8F7F2" data-role="bottom-navigation" data-height-dp="80" />
+    <line x1="24" y1="788" x2="388" y2="788" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="0.0" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="今日" data-minimum-dp="48" pointer-events="none" />
+    <rect x="44.66666666666667" y="796" width="48" height="32" fill="#9CC6B3" rx="12" data-selected="true" />
+    <use href="#home" x="56.66666666666667" y="800" width="24" height="24" color="#163D36" />
+    <text x="68.66666666666667" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-93">今日</text>
+    <rect x="137.33333333333334" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="回顾" data-minimum-dp="48" pointer-events="none" />
+    <use href="#calendar" x="194.0" y="800" width="24" height="24" color="#58685F" />
+    <text x="206.0" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-96">回顾</text>
+    <rect x="274.6666666666667" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="我的" data-minimum-dp="48" pointer-events="none" />
+    <use href="#person" x="331.33333333333337" y="800" width="24" height="24" color="#58685F" />
+    <text x="343.33333333333337" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-99">我的</text>
+  </g>
+  <text x="72" y="1058" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-100">412 × 892 dp · 16/26 sp 正文 · 48 dp 最小触达</text>
+  <text x="540" y="116" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-101">02  全屏编辑 · 键盘收起</text>
+  <g transform="translate(540 136)" data-screen="editor" data-width-dp="412" data-height-dp="892" data-content="design example" data-page-padding-dp="24" clip-path="url(#screen-clip)">
+    <rect x="0" y="0" width="412" height="892" fill="#F8F7F2" rx="24" stroke="#DBE4D8" stroke-width="1" data-role="artboard" />
+    <metadata>{"statusBar": 24, "appBar": 56, "gestureInset": 24, "contentPadding": 24, "bodyFontSp": 16, "bodyLineHeightSp": 26, "minimumTouchDp": 48, "sampleContent": true, "notRunningUi": true}</metadata>
+    <text x="24" y="17" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-105">9:41</text>
+    <path d="M333 8q7-6 14 0l-7 8Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <path d="M354 16 364 6v10Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <rect x="374" y="6" width="12" height="11" fill="#163D36" rx="2" data-role="system-status-placeholder" />
+    <rect x="386" y="9" width="2" height="5" fill="#163D36" rx="1" />
+    <rect x="0" y="868" width="412" height="24" fill="#F8F7F2" data-role="system-gesture-inset" data-height-dp="24" />
+    <rect x="150" y="878" width="112" height="4" fill="#163D36" rx="2" data-role="system-gesture-placeholder" />
+    <rect x="0" y="24" width="412" height="56" fill="#F8F7F2" data-role="top-app-bar" data-height-dp="56" />
+    <rect x="8" y="28" width="48" height="48" fill="none" data-touch-target="返回" data-minimum-dp="48" pointer-events="none" />
+    <use href="#back" x="20" y="40" width="24" height="24" color="#163D36" />
+    <text x="206" y="58" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-115">记录</text>
+    <rect x="324" y="28" width="64" height="48" fill="none" data-touch-target="完成编辑" data-minimum-dp="48" pointer-events="none" />
+    <text x="356" y="58" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-117">完成</text>
+    <text x="24" y="112" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-118">10月4日 · 周日</text>
+    <use href="#check" x="292" y="96" width="20" height="20" color="#58685F" />
+    <text x="320" y="112" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-120">已保存</text>
+    <text x="24" y="172" font-size="24" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" data-role="native-title-input" data-example-value="true" data-line-height="34sp" id="text-121">午后的风</text>
+    <text x="24" y="218" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" data-line-height="26sp" id="text-122">
+      <tspan x="24" dy="0">今天的阳光很温柔，风从窗外吹进来，</tspan>
+      <tspan x="24" dy="26">带着一点桂花的味道。</tspan>
+      <tspan x="24" dy="26"> </tspan>
+      <tspan x="24" dy="26">翻着书，听到远处树叶轻轻晃动。</tspan>
+    </text>
+    <rect x="24" y="336" width="364" height="204" fill="#FFFFFF" rx="16" stroke="#DBE4D8" stroke-width="1" data-role="photo-placeholder" data-status="design example only; no image embedded" />
+    <use href="#image" x="194.0" y="406.0" width="24" height="24" color="#58685F" />
+    <text x="206.0" y="450.0" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-129">照片位置</text>
+    <text x="206.0" y="475.0" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-130">由用户自行添加 · 设计占位</text>
+    <rect x="332" y="344" width="48" height="48" fill="none" data-touch-target="移除照片" data-minimum-dp="48" pointer-events="none" />
+    <rect x="338" y="350" width="36" height="36" fill="#F8F7F2" rx="12" stroke="#DBE4D8" stroke-width="1" />
+    <use href="#close" x="344" y="356" width="24" height="24" color="#163D36" />
+    <rect x="24" y="568" width="364" height="48" fill="none" data-touch-target="小事：读几页喜欢的书" data-minimum-dp="48" pointer-events="none" />
+    <rect x="24" y="581" width="22" height="22" fill="none" rx="4" stroke="#163D36" stroke-width="1" />
+    <text x="60" y="597" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-136">读几页喜欢的书</text>
+    <rect x="0" y="804" width="412" height="64" fill="#F8F7F2" data-role="editor-toolbar" data-ime-behavior="moves above actual IME inset" data-height-dp="64" />
+    <line x1="24" y1="804" x2="388" y2="804" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="24" y="812" width="152" height="48" fill="none" data-touch-target="添加照片" data-minimum-dp="48" pointer-events="none" />
+    <use href="#image" x="40" y="824" width="24" height="24" color="#163D36" />
+    <text x="76" y="842" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-141">照片</text>
+    <line x1="184" y1="824" x2="184" y2="848" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="196" y="812" width="152" height="48" fill="none" data-touch-target="添加小事" data-minimum-dp="48" pointer-events="none" />
+    <use href="#task" x="212" y="824" width="24" height="24" color="#163D36" />
+    <text x="248" y="842" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-145">小事</text>
+  </g>
+  <text x="540" y="1058" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-146">412 × 892 dp · 16/26 sp 正文 · 48 dp 最小触达</text>
+  <text x="1008" y="116" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-147">03  回顾 · 月历与记录</text>
+  <g transform="translate(1008 136)" data-screen="review" data-width-dp="412" data-height-dp="892" data-content="design example" data-page-padding-dp="24" clip-path="url(#screen-clip)">
+    <rect x="0" y="0" width="412" height="892" fill="#F8F7F2" rx="24" stroke="#DBE4D8" stroke-width="1" data-role="artboard" />
+    <metadata>{"statusBar": 24, "appBar": 56, "gestureInset": 24, "contentPadding": 24, "bodyFontSp": 16, "bodyLineHeightSp": 26, "minimumTouchDp": 48, "sampleContent": true, "notRunningUi": true}</metadata>
+    <text x="24" y="17" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-151">9:41</text>
+    <path d="M333 8q7-6 14 0l-7 8Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <path d="M354 16 364 6v10Z" stroke="#163D36" stroke-width="1.25" fill="#163D36" stroke-linecap="round" stroke-linejoin="round" data-role="system-status-placeholder" />
+    <rect x="374" y="6" width="12" height="11" fill="#163D36" rx="2" data-role="system-status-placeholder" />
+    <rect x="386" y="9" width="2" height="5" fill="#163D36" rx="1" />
+    <rect x="0" y="868" width="412" height="24" fill="#F8F7F2" data-role="system-gesture-inset" data-height-dp="24" />
+    <rect x="150" y="878" width="112" height="4" fill="#163D36" rx="2" data-role="system-gesture-placeholder" />
+    <rect x="0" y="24" width="412" height="56" fill="#F8F7F2" data-role="top-app-bar" data-height-dp="56" />
+    <text x="24" y="58" font-size="20" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-159">回顾</text>
+    <rect x="8" y="94" width="48" height="48" fill="none" data-touch-target="上个月" data-minimum-dp="48" pointer-events="none" />
+    <use href="#back" x="20" y="106" width="24" height="24" color="#163D36" />
+    <rect x="356" y="94" width="48" height="48" fill="none" data-touch-target="下个月" data-minimum-dp="48" pointer-events="none" />
+    <use href="#forward" x="368" y="106" width="24" height="24" color="#163D36" />
+    <text x="206" y="128" font-size="28" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" data-line-height="36sp" id="text-164">2026年10月</text>
+    <text x="56" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-165">一</text>
+    <text x="106" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-166">二</text>
+    <text x="156" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-167">三</text>
+    <text x="206" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-168">四</text>
+    <text x="256" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-169">五</text>
+    <text x="306" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-170">六</text>
+    <text x="356" y="182" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-171">日</text>
+    <g data-role="calendar" data-starts-on="Monday" data-side-padding-dp="31" data-width-dp="350" data-cell-width-dp="50" data-cell-height-dp="50" data-example-record-dates="2026-10-04">
+      <rect x="31" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-09-28" data-date="2026-09-28" data-column="0" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="56" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-174">28</text>
+      <rect x="81" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-09-29" data-date="2026-09-29" data-column="1" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="106" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-176">29</text>
+      <rect x="131" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-09-30" data-date="2026-09-30" data-column="2" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="156" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-178">30</text>
+      <rect x="181" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-01" data-date="2026-10-01" data-column="3" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="206" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-180">1</text>
+      <rect x="231" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-02" data-date="2026-10-02" data-column="4" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="256" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-182">2</text>
+      <rect x="281" y="198" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-03" data-date="2026-10-03" data-column="5" data-row="0" data-minimum-dp="48" data-selected="false" />
+      <text x="306" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-184">3</text>
+      <rect x="331" y="198" width="50" height="50" fill="#9CC6B3" rx="12" data-touch-target="日期 2026-10-04" data-date="2026-10-04" data-column="6" data-row="0" data-minimum-dp="48" data-selected="true" />
+      <text x="356" y="228" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-186">4</text>
+      <circle cx="356" cy="239" r="2" fill="#BC745E" data-role="example-record-marker" />
+      <rect x="31" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-05" data-date="2026-10-05" data-column="0" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="56" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-189">5</text>
+      <rect x="81" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-06" data-date="2026-10-06" data-column="1" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="106" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-191">6</text>
+      <rect x="131" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-07" data-date="2026-10-07" data-column="2" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="156" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-193">7</text>
+      <rect x="181" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-08" data-date="2026-10-08" data-column="3" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="206" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-195">8</text>
+      <rect x="231" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-09" data-date="2026-10-09" data-column="4" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="256" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-197">9</text>
+      <rect x="281" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-10" data-date="2026-10-10" data-column="5" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="306" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-199">10</text>
+      <rect x="331" y="248" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-11" data-date="2026-10-11" data-column="6" data-row="1" data-minimum-dp="48" data-selected="false" />
+      <text x="356" y="278" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-201">11</text>
+      <rect x="31" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-12" data-date="2026-10-12" data-column="0" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="56" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-203">12</text>
+      <rect x="81" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-13" data-date="2026-10-13" data-column="1" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="106" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-205">13</text>
+      <rect x="131" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-14" data-date="2026-10-14" data-column="2" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="156" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-207">14</text>
+      <rect x="181" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-15" data-date="2026-10-15" data-column="3" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="206" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-209">15</text>
+      <rect x="231" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-16" data-date="2026-10-16" data-column="4" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="256" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-211">16</text>
+      <rect x="281" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-17" data-date="2026-10-17" data-column="5" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="306" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-213">17</text>
+      <rect x="331" y="298" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-18" data-date="2026-10-18" data-column="6" data-row="2" data-minimum-dp="48" data-selected="false" />
+      <text x="356" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-215">18</text>
+      <rect x="31" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-19" data-date="2026-10-19" data-column="0" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="56" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-217">19</text>
+      <rect x="81" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-20" data-date="2026-10-20" data-column="1" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="106" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-219">20</text>
+      <rect x="131" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-21" data-date="2026-10-21" data-column="2" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="156" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-221">21</text>
+      <rect x="181" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-22" data-date="2026-10-22" data-column="3" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="206" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-223">22</text>
+      <rect x="231" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-23" data-date="2026-10-23" data-column="4" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="256" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-225">23</text>
+      <rect x="281" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-24" data-date="2026-10-24" data-column="5" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="306" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-227">24</text>
+      <rect x="331" y="348" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-25" data-date="2026-10-25" data-column="6" data-row="3" data-minimum-dp="48" data-selected="false" />
+      <text x="356" y="378" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-229">25</text>
+      <rect x="31" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-26" data-date="2026-10-26" data-column="0" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="56" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-231">26</text>
+      <rect x="81" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-27" data-date="2026-10-27" data-column="1" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="106" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-233">27</text>
+      <rect x="131" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-28" data-date="2026-10-28" data-column="2" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="156" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-235">28</text>
+      <rect x="181" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-29" data-date="2026-10-29" data-column="3" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="206" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-237">29</text>
+      <rect x="231" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-30" data-date="2026-10-30" data-column="4" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="256" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-239">30</text>
+      <rect x="281" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-10-31" data-date="2026-10-31" data-column="5" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="306" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-241">31</text>
+      <rect x="331" y="398" width="50" height="50" fill="none" rx="12" data-touch-target="日期 2026-11-01" data-date="2026-11-01" data-column="6" data-row="4" data-minimum-dp="48" data-selected="false" />
+      <text x="356" y="428" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-243">1</text>
+    </g>
+    <line x1="24" y1="486" x2="388" y2="486" stroke="#DBE4D8" stroke-width="1" />
+    <text x="24" y="522" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-245">10月4日 · 周日</text>
+    <text x="388" y="522" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="end" id="text-246">1 篇记录</text>
+    <rect x="24" y="554" width="88" height="88" fill="#FFFFFF" rx="16" stroke="#DBE4D8" stroke-width="1" data-role="photo-placeholder" data-status="design example only; no image embedded" />
+    <use href="#image" x="56.0" y="569" width="24" height="24" color="#58685F" />
+    <text x="68.0" y="624" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-249">照片位置</text>
+    <text x="128" y="579" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-250">午后的风</text>
+    <text x="128" y="610" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" data-line-height="26sp" id="text-251">
+      <tspan x="128" dy="0">在窗边坐了一会儿，</tspan>
+      <tspan x="128" dy="26">留住今天的一点安静。</tspan>
+    </text>
+    <rect x="340" y="550" width="48" height="48" fill="none" data-touch-target="记录更多操作" data-minimum-dp="48" pointer-events="none" />
+    <use href="#more" x="352" y="562" width="24" height="24" color="#163D36" />
+    <line x1="24" y1="672" x2="388" y2="672" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="0" y="788" width="412" height="80" fill="#F8F7F2" data-role="bottom-navigation" data-height-dp="80" />
+    <line x1="24" y1="788" x2="388" y2="788" stroke="#DBE4D8" stroke-width="1" />
+    <rect x="0.0" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="今日" data-minimum-dp="48" pointer-events="none" />
+    <use href="#home" x="56.66666666666667" y="800" width="24" height="24" color="#58685F" />
+    <text x="68.66666666666667" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-261">今日</text>
+    <rect x="137.33333333333334" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="回顾" data-minimum-dp="48" pointer-events="none" />
+    <rect x="182.0" y="796" width="48" height="32" fill="#9CC6B3" rx="12" data-selected="true" />
+    <use href="#calendar" x="194.0" y="800" width="24" height="24" color="#163D36" />
+    <text x="206.0" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-265">回顾</text>
+    <rect x="274.6666666666667" y="788" width="137.33333333333334" height="80" fill="none" data-touch-target="我的" data-minimum-dp="48" pointer-events="none" />
+    <use href="#person" x="331.33333333333337" y="800" width="24" height="24" color="#58685F" />
+    <text x="343.33333333333337" y="849" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-268">我的</text>
+  </g>
+  <text x="1008" y="1058" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-269">412 × 892 dp · 16/26 sp 正文 · 48 dp 最小触达</text>
+</svg>

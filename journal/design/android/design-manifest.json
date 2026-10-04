@@ -1,0 +1,78 @@
+{
+  "name": "一日一笺 · Android UI / VI",
+  "version": "android-design-v01",
+  "status": "design only; no APK or Android runtime implementation",
+  "builtAt": "2026-10-04T15:19:48.091400+00:00",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 2444,
+      "sha256": "365cf1d6474b3fa94f24b2b50836e31ed0f04404e56c37a0d33d146b4f188603"
+    },
+    {
+      "file": "ANDROID-UI-VI.md",
+      "bytes": 28904,
+      "sha256": "da3d74822f87afb6955d3ad6779ec83802fa9c5cd1ae409037fb976f88cf53a3"
+    },
+    {
+      "file": "SOURCES.md",
+      "bytes": 1105,
+      "sha256": "cb2828b2d0804b04aa030744ad239258eea1207219ba44bf765db11dfcdc4b13"
+    },
+    {
+      "file": "brand-mark.svg",
+      "bytes": 361,
+      "sha256": "cb241fe9614d2dec12ec59728aca3d9f2d279d498dcea38437e85b4fa8be20a7"
+    },
+    {
+      "file": "app-icon.svg",
+      "bytes": 492,
+      "sha256": "51884687dbe63ada3817ffa1f439d147ff08320ff4824d34c65f816b7d7f4e19"
+    },
+    {
+      "file": "design-tokens.json",
+      "bytes": 2771,
+      "sha256": "78f949e918c4e9d296e459efa82cb557a194ba2d182e833a7284e44769a75909"
+    },
+    {
+      "file": "image-provenance.json",
+      "bytes": 1077,
+      "sha256": "7dd9f6a98925d5278065f5aa1a3b29d61c9dbbf7287c65343b0f55ffb9f14f2c"
+    },
+    {
+      "file": "design-review.json",
+      "bytes": 689,
+      "sha256": "c2b7f8db9fa2ad4c893d77ee44fa1882670b6ebdb2d284fa127b613c1a9278a1"
+    },
+    {
+      "file": "ui-vi-overview-v02.png",
+      "bytes": 1496239,
+      "sha256": "6c13d78ea89277c9f882c089be679b7e4dcfa135052ed4f718d8c3f93aa63346"
+    },
+    {
+      "file": "ui-states-v01.png",
+      "bytes": 1241578,
+      "sha256": "b9a7afa79b17ce62e18bbd153dda154d27fa5578f9669440b6c1155bca93bcfc"
+    },
+    {
+      "file": "ui-layouts.svg",
+      "bytes": 40480,
+      "sha256": "ae3b19291b7018764f2b57068fcc6b9624c2dfaa0917a02b6e28de15d7a466c4"
+    },
+    {
+      "file": "components.svg",
+      "bytes": 24302,
+      "sha256": "7bd8805a57c24c1b29254c923f91a739c0068e596b7d7adca2e076ab86f8273f"
+    },
+    {
+      "file": "ui-layouts-preview.png",
+      "bytes": 147397,
+      "sha256": "662b52a4273855bf07a277ab17ff899c651ff6682ce49c2ecc95d00349119e9b"
+    },
+    {
+      "file": "components-preview.png",
+      "bytes": 262088,
+      "sha256": "e8ca91b88942ceebccb73bcf33a6b16ab452b267c65f3c7633fc434c255b94af"
+    }
+  ]
+}

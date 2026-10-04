@@ -1,0 +1,19 @@
+{
+  "status": "design source checks only; no Android runtime tests",
+  "colorContrastRatios": {
+    "inkOnBackground": 11.156178315172975,
+    "secondaryOnBackground": 5.498888569510304,
+    "whiteOnPrimary": 11.96662761990712,
+    "inkOnJade": 6.349237315992372,
+    "darkInkOnBackground": 14.742217727937229,
+    "darkSecondaryOnSurface": 8.080389443792416,
+    "darkBackgroundTextOnJade": 9.010335424065822
+  },
+  "minTouchDp": 48,
+  "calendarColumn412Dp": 50.0,
+  "calendarColumn360Dp": 49.142857142857146,
+  "conceptsAreNotRuntimeScreenshots": true,
+  "nativeFontsAndInsetsNeedDeviceValidation": true,
+  "canonicalMarkGap": "upper-right",
+  "sourceImagesCopiedWithoutEditing": true
+}

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1488 1280" width="1488" height="1280" role="img" aria-labelledby="board-title board-desc" data-artboard-units="dp" data-type-units="sp" data-status="design draft; not implemented">
+  <title id="board-title">一日一笺 · Android 组件与视觉基准</title>
+  <desc id="board-desc">可编辑 SVG 组件源稿：统一品牌母形、颜色和字体，56 dp 主按钮、48 dp 触达区、底部导航、输入、小事、50 dp 月历以及保存中、读取中、失败状态。设计示例，非运行 App UI。</desc>
+  <defs>
+    <clipPath id="screen-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="412" height="892" fill="#F8F7F2" rx="24" />
+    </clipPath>
+    <symbol id="brand" viewBox="0 0 128 128">
+      <path d="M 83.7 26.9 A 42 42 0 1 0 105.5 57.4" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" />
+    </symbol>
+    <symbol id="home" viewBox="0 0 24 24">
+      <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24">
+      <path d="M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7 3v4M17 3v4M3 10h18" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="person" viewBox="0 0 24 24">
+      <path d="M8 7a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 21v-2a8 8 0 0 1 16 0v2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="back" viewBox="0 0 24 24">
+      <path d="m15 5-7 7 7 7" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="forward" viewBox="0 0 24 24">
+      <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="pen" viewBox="0 0 24 24">
+      <path d="m4 16-1 5 5-1L20 8l-4-4Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m14 6 4 4" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="image" viewBox="0 0 24 24">
+      <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m3 17 6-6 4 4 3-3 5 5" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="8" cy="8" r="1.15" fill="currentColor" />
+    </symbol>
+    <symbol id="task" viewBox="0 0 24 24">
+      <path d="M8 5h13M8 12h13M8 19h9" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="m3 4 1 1 2-2m-3 8 1 1 2-2m-3 8 1 1 2-2" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="folder" viewBox="0 0 24 24">
+      <path d="M3 7h6l2-3h6a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 7h16a2 2 0 0 1 2 2l-2 10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2L2 9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="error" viewBox="0 0 24 24">
+      <path d="M12 3 2.5 20h19Z" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 9v5" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="12" cy="17.3" r="0.75" fill="currentColor" />
+    </symbol>
+    <symbol id="spinner" viewBox="0 0 24 24">
+      <path d="M20.2 11a8.2 8.2 0 1 1-6.9-7.1" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="more" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="1.55" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.55" fill="currentColor" />
+      <circle cx="12" cy="19" r="1.55" fill="currentColor" />
+    </symbol>
+  </defs>
+  <rect x="0" y="0" width="1488" height="1280" fill="#FFFFFF" />
+  <text x="48" y="65" font-size="28" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-48">组件与视觉基准</text>
+  <text x="48" y="97" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-49">一日一笺 · Android · SVG 可编辑源稿 · 所有内容均为设计示例</text>
+  <line x1="48" y1="120" x2="1440" y2="120" stroke="#DBE4D8" stroke-width="1" />
+  <text x="48" y="160" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-51">01 / 品牌母形</text>
+  <text x="520" y="160" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-52">02 / 色彩</text>
+  <text x="992" y="160" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-53">03 / 字级</text>
+  <use href="#brand" x="64" y="192" width="104" height="104" color="#163D36" data-brand-source="brand-mark.svg" data-opening="upper-right" />
+  <text x="196" y="253" font-size="24" font-family="Guanwu Serif, Noto Serif SC, serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-55">一日一笺</text>
+  <text x="64" y="328" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-56">折光弧 · 同一右上开口轮廓</text>
+  <text x="64" y="352" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-57">128 × 128 母形 / 18 线宽 / 圆端</text>
+  <rect x="536" y="184" width="48" height="40" fill="#F8F7F2" rx="12" stroke="#DBE4D8" stroke-width="1" />
+  <text x="536" y="246" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-59">暖白</text>
+  <text x="536" y="266" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-60">#F8F7F2</text>
+  <rect x="640" y="184" width="48" height="40" fill="#163D36" rx="12" />
+  <text x="640" y="246" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-62">苍墨</text>
+  <text x="640" y="266" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-63">#163D36</text>
+  <rect x="744" y="184" width="48" height="40" fill="#9CC6B3" rx="12" />
+  <text x="744" y="246" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-65">玉色</text>
+  <text x="744" y="266" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-66">#9CC6B3</text>
+  <rect x="848" y="184" width="48" height="40" fill="#DBE4D8" rx="12" />
+  <text x="848" y="246" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-68">分界</text>
+  <text x="848" y="266" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-69">#DBE4D8</text>
+  <rect x="536" y="276" width="48" height="40" fill="#BC745E" rx="12" />
+  <text x="536" y="338" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-71">暖色</text>
+  <text x="536" y="358" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-72">#BC745E</text>
+  <rect x="640" y="276" width="48" height="40" fill="#58685F" rx="12" />
+  <text x="640" y="338" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-74">次字</text>
+  <text x="640" y="358" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-75">#58685F</text>
+  <rect x="744" y="276" width="48" height="40" fill="#FFFFFF" rx="12" stroke="#DBE4D8" stroke-width="1" />
+  <text x="744" y="338" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-77">表面</text>
+  <text x="744" y="358" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-78">#FFFFFF</text>
+  <text x="1008" y="217" font-size="28" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" data-line-height="36sp" id="text-79">今天</text>
+  <text x="1112" y="213" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-80">28 / 36 sp · 页面标题</text>
+  <text x="1008" y="257" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" data-line-height="26sp" id="text-81">
+    <tspan x="1008" dy="0">正文以清楚的无衬线呈现，</tspan>
+    <tspan x="1008" dy="26">留白来自稳定的 26 sp 行高。</tspan>
+  </text>
+  <text x="1008" y="311" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-84">16 / 26 sp · 正文与编辑</text>
+  <text x="1008" y="352" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-85">14 / 22 sp · 日期辅助与保存状态</text>
+  <text x="48" y="405" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-86">04 / 按钮</text>
+  <text x="520" y="405" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-87">05 / 输入</text>
+  <text x="992" y="405" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-88">06 / 列表与导航</text>
+  <rect x="64" y="430" width="416" height="56" fill="#163D36" rx="12" data-role="primary-button" data-height-dp="56" data-touch-target="记一笔" data-minimum-dp="48" />
+  <use href="#pen" x="228" y="446" width="24" height="24" color="#F8F7F2" />
+  <text x="264" y="465" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#F8F7F2" font-weight="500" text-anchor="start" id="text-91">记一笔</text>
+  <text x="64" y="510" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-92">主要操作 · 高 56 dp / 圆角 12 dp</text>
+  <rect x="64" y="532" width="416" height="48" fill="#F8F7F2" rx="12" stroke="#163D36" stroke-width="1" data-role="secondary-button" data-touch-target="取消" data-minimum-dp="48" />
+  <text x="272" y="563" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-94">取消</text>
+  <text x="64" y="604" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-95">次操作 · 高 48 dp / 明确文字与边界</text>
+  <rect x="64" y="626" width="416" height="56" fill="#DBE4D8" rx="12" data-role="disabled-button" data-disabled="true" data-minimum-dp="48" />
+  <text x="272" y="661" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="500" text-anchor="middle" id="text-97">保存</text>
+  <text x="64" y="708" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-98">不可用示例 · 未输入内容时</text>
+  <rect x="536" y="430" width="416" height="112" fill="#F8F7F2" rx="12" stroke="#DBE4D8" stroke-width="1" data-role="title-input" data-example-value="true" />
+  <text x="552" y="460" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-100">记录标题</text>
+  <text x="552" y="506" font-size="24" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-101">午后的风</text>
+  <text x="536" y="569" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-102">24 / 34 sp · sans 输入 · 允许换行</text>
+  <rect x="536" y="592" width="416" height="112" fill="#FFFFFF" rx="12" stroke="#163D36" stroke-width="1.75" data-role="focused-body-input" data-example-value="true" />
+  <text x="552" y="621" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-104">正文</text>
+  <text x="552" y="651" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" data-line-height="26sp" id="text-105">
+    <tspan x="552" dy="0">今天的阳光很温柔，</tspan>
+    <tspan x="552" dy="26">风从窗外吹进来。</tspan>
+  </text>
+  <text x="536" y="732" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-108">正文 16 / 26 sp · 光标与选区另由原生实现</text>
+  <rect x="1008" y="430" width="416" height="48" fill="none" data-role="task-row" data-touch-target="未完成小事" data-minimum-dp="48" />
+  <rect x="1008" y="443" width="22" height="22" fill="none" rx="4" stroke="#163D36" stroke-width="1" />
+  <text x="1044" y="459" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-111">读几页喜欢的书</text>
+  <rect x="1008" y="490" width="416" height="48" fill="none" data-role="task-row" data-touch-target="已完成小事" data-minimum-dp="48" />
+  <rect x="1008" y="503" width="22" height="22" fill="#163D36" rx="4" stroke="#163D36" stroke-width="1" />
+  <use href="#check" x="1007" y="502" width="24" height="24" color="#F8F7F2" />
+  <text x="1044" y="519" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-115">已完成 · 读几页喜欢的书</text>
+  <rect x="1008" y="550" width="416" height="80" fill="#F8F7F2" data-role="bottom-navigation" data-height-dp="80" />
+  <line x1="1032" y1="550" x2="1400" y2="550" stroke="#DBE4D8" stroke-width="1" />
+  <rect x="1008.0" y="550" width="138.66666666666666" height="80" fill="none" data-touch-target="今日" data-minimum-dp="48" pointer-events="none" />
+  <use href="#home" x="1065.3333333333333" y="562" width="24" height="24" color="#58685F" />
+  <text x="1077.3333333333333" y="611" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-120">今日</text>
+  <rect x="1146.6666666666667" y="550" width="138.66666666666666" height="80" fill="none" data-touch-target="回顾" data-minimum-dp="48" pointer-events="none" />
+  <rect x="1192.0" y="558" width="48" height="32" fill="#9CC6B3" rx="12" data-selected="true" />
+  <use href="#calendar" x="1204.0" y="562" width="24" height="24" color="#163D36" />
+  <text x="1216.0" y="611" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-124">回顾</text>
+  <rect x="1285.3333333333333" y="550" width="138.66666666666666" height="80" fill="none" data-touch-target="我的" data-minimum-dp="48" pointer-events="none" />
+  <use href="#person" x="1342.6666666666665" y="562" width="24" height="24" color="#58685F" />
+  <text x="1354.6666666666665" y="611" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="middle" id="text-127">我的</text>
+  <rect x="1008" y="662" width="50" height="50" fill="#F8F7F2" rx="12" data-role="calendar-cell" data-touch-target="普通" data-minimum-dp="48" />
+  <text x="1033" y="692" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="middle" id="text-129">3</text>
+  <text x="1070" y="691" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-130">普通</text>
+  <rect x="1176" y="662" width="50" height="50" fill="#9CC6B3" rx="12" data-role="calendar-cell" data-touch-target="选中 · 有记录" data-minimum-dp="48" />
+  <text x="1201" y="692" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-132">4</text>
+  <circle cx="1201" cy="703" r="2" fill="#BC745E" />
+  <text x="1238" y="691" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-134">选中 · 有记录</text>
+  <text x="1008" y="742" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-135">日期单元 50 × 50 dp · 不重叠</text>
+  <line x1="48" y1="774" x2="1440" y2="774" stroke="#DBE4D8" stroke-width="1" />
+  <text x="48" y="812" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-137">07 / 保存与读取状态</text>
+  <rect x="64" y="836" width="416" height="144" fill="#F8F7F2" rx="16" stroke="#DBE4D8" stroke-width="1" />
+  <rect x="536" y="836" width="416" height="144" fill="#F8F7F2" rx="16" stroke="#DBE4D8" stroke-width="1" />
+  <rect x="1008" y="836" width="416" height="144" fill="#F8F7F2" rx="16" stroke="#DBE4D8" stroke-width="1" />
+  <use href="#spinner" x="84" y="859" width="24" height="24" color="#163D36" />
+  <text x="120" y="878" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-142">保存中</text>
+  <text x="84" y="922" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-143">保持正文与当前光标</text>
+  <text x="84" y="954" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-144">状态变化不移动内容，不遮挡输入。</text>
+  <use href="#spinner" x="556" y="859" width="24" height="24" color="#163D36" />
+  <text x="592" y="878" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-146">读取中</text>
+  <text x="556" y="922" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-147">文本与其他记录仍可操作</text>
+  <text x="556" y="954" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-148">只在读取区域表达进度。</text>
+  <rect x="1008" y="850" width="4" height="116" fill="#BC745E" rx="2" />
+  <use href="#error" x="1028" y="859" width="24" height="24" color="#BC745E" />
+  <text x="1064" y="878" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-151">保存失败，内容仍保留</text>
+  <text x="1028" y="922" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-152">可继续编辑或重试保存</text>
+  <rect x="1348" y="928" width="56" height="48" fill="none" data-touch-target="重试保存" data-minimum-dp="48" />
+  <text x="1376" y="957" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="middle" id="text-154">重试</text>
+  <text x="1028" y="954" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-155">文字用苍墨，暖色只提示语义。</text>
+  <line x1="48" y1="1012" x2="1440" y2="1012" stroke="#DBE4D8" stroke-width="1" />
+  <text x="48" y="1051" font-size="18" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="500" text-anchor="start" id="text-157">08 / 系统与操作语义</text>
+  <use href="#folder" x="64" y="1081" width="24" height="24" color="#163D36" />
+  <text x="100" y="1099" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-159">本地备份与恢复</text>
+  <text x="64" y="1132" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-160">使用存储文件夹，不以云图标暗示云同步。</text>
+  <rect x="1008" y="1072" width="48" height="48" fill="none" rx="8" stroke="#163D36" stroke-width="1" stroke-dasharray="3 3" data-role="touch-guide" data-touch-target="48 dp 图标按钮示例" data-minimum-dp="48" />
+  <use href="#image" x="1020" y="1084" width="24" height="24" color="#163D36" />
+  <text x="1072" y="1098" font-size="16" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#163D36" font-weight="400" text-anchor="start" id="text-163">24 dp 图形 / 48 dp 命中</text>
+  <text x="1008" y="1132" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-164">边框仅是设计标注，不是运行按钮装饰。</text>
+  <text x="48" y="1186" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-165">系统栏和键盘必须读取真实 WindowInsets；本稿尺寸是设计示意，不是设备测量结果。</text>
+  <text x="48" y="1220" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="start" id="text-166">正文与操作使用 Android 中文 sans；品牌字标可用 serif，原生字体资源另行准备。</text>
+  <text x="1440" y="1255" font-size="14" font-family="Noto Sans SC, Android CJK sans, sans-serif" fill="#58685F" font-weight="400" text-anchor="end" id="text-167">设计示例 · 非运行 App · 尚未 Android 验证</text>
+</svg>
