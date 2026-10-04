@@ -1,6 +1,6 @@
 # 浮笺 · 数字手账
 
-**0.5.0**：默认进入可以直接书写的页面。玉白、深青、青釉与陶朱构成统一视觉；留白、轻薄层次和八件釉光图形服务于记录与编排，空间预览可随时打开。
+**0.6.0**：温玉 × 苍墨。日期侧栏、一张圆角数字画布与短操作区建立清晰主次；暖白、深青和薄玉材质贯穿界面与八件素材，空间预览可随时打开。
 
 ![当前应用实际操作：直接书写、添加素材与空间预览](preview/journal-digital-demo.gif)
 
@@ -10,12 +10,12 @@
 
 | 文件 | 用法 |
 | --- | --- |
-| [电子手账 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal.zip?v=0.5.0) | 约 6.2 MB，完整解压后打开 `yiri-journal.html` |
-| [完整源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal-source.zip?v=0.5.0) | React / TypeScript / Three.js、本地美术、锁文件、文档与测试 |
+| [电子手账 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal.zip?v=0.6.0) | 约 6.5 MB，完整解压后打开 `yiri-journal.html` |
+| [完整源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal-source.zip?v=0.6.0) | React / TypeScript / Three.js、本地美术、锁文件、文档与测试 |
 
-打开即可在当前日期写标题和正文。「编辑文字」打开大字号输入、心情与小事；「加内容」提供弧光、小折、云阶、留白框、波纹、月牙、微光和书签，也可以添加自己的照片。选中素材后可移动、缩放、旋转、调整层次或删除。
+打开即可在当前日期写标题和正文。「编辑文字」打开大字号输入、心情与小事；「加内容」提供玉题签、玉界框、清流线、薄玉弧、玉索引、轻折片、玉叠片和玉朱点，也可以添加自己的照片。选中素材后可移动、缩放、旋转、调整层次或删除。
 
-「空间预览」查看画面深度并拖动调整角度；「继续书写」回到稳定编辑。默认页面不自动加入装饰。「记录 / 收藏 / 日历」分别进入编辑、合集和回看；日期切换、撤销与重做保留。「印刷旧藏」与「旧藏」折叠保存此前素材，已有记录和旧 JSON 备份继续兼容。
+「空间预览」查看画面深度并拖动调整角度；「继续书写」回到稳定编辑。默认页面不自动加入装饰。「记录 / 收藏 / 日历」分别进入编辑、合集和回看；日期切换、撤销与重做保留。「浮笺旧藏」「印刷旧藏」与「旧藏」折叠保存此前素材，已有记录和旧 JSON 备份继续兼容。
 
 空间预览使用本地 Three.js 与 WebGL 2；不可用时可继续记录。应用不调用 AI API，不在线下载字体、模型或材质。
 
@@ -23,7 +23,7 @@
 
 ![直接书写与统一素材](preview/journal-desktop-editor.png)
 
-![独立数字画布的空间层次](preview/journal-desktop-space-preview.png)
+![圆角数字画布的空间层次](preview/journal-desktop-space-preview.png)
 
 ![创作后的立体预览](preview/journal-desktop-composed-3d.png)
 
@@ -33,7 +33,7 @@
 
 [收藏](preview/journal-desktop-books.png) · [月历](preview/journal-desktop-calendar.png) · [默认页面](preview/journal-desktop-desk.png) · [实际录制元数据](verification/journal-digital-recording.json)
 
-[UI / VI 规范](journal/docs/VISUAL-IDENTITY.md)、[浮笺图形来源与实际提示词](journal/docs/FLOAT-ART.md)、[美术来源](journal/docs/ART-SOURCES.md) 和 [空间引擎](journal/docs/3D-ENGINE.md) 随源码保留。演示来自当前应用的实际操作，录制构建 SHA 与交付 HTML 一致。
+[UI / VI 规范](journal/docs/VISUAL-IDENTITY.md)、[薄玉图形来源与实际提示词](journal/docs/JADE-ART.md)、[美术来源](journal/docs/ART-SOURCES.md) 和 [空间引擎](journal/docs/3D-ENGINE.md) 随源码保留。演示来自当前应用的实际操作，录制构建 SHA 与交付 HTML 一致。
 
 ## 保存与验证
 

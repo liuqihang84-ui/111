@@ -11,8 +11,8 @@ const bodyField = (page: Page) => page.getByRole('textbox', { name: '今日随�
 const nav = (page: Page, name: string) => page.getByRole('button', {
   name: name === '今日一页' ? /^今日一页/ : name, exact: true,
 });
-const deskTest = '首屏即开即写空白浮笺，数字收藏与光片保持独立视觉';
-const live3dTest = '实时浮笺响应原生空间拖动与数字流转，预览同步内容并保留降级写作';
+const deskTest = '首屏直接书写空白画布，玉片素材与历史旧藏均可使用';
+const live3dTest = '实时画布响应原生空间拖动与日期流转，预览同步内容并保留降级写作';
 
 async function expectArtReady(page: Page) {
   await expect(page.locator('.app-shell')).toHaveAttribute('data-art-ready', 'true', { timeout: 90_000 });
@@ -267,6 +267,8 @@ async function addSticker(page: Page, label = '日印') {
   await expectArtReady(page);
   await ensureTrayExpanded(page);
   await nav(page, '装点画布').click();
+  const floatLabels = ['弧光', '小折', '云阶', '留白框', '波纹', '月牙', '微光', '书签'];
+  if (floatLabels.includes(label) && !await nav(page, `添加贴纸：${label}`).isVisible()) await page.locator('summary').filter({ hasText: /^浮笺旧藏$/ }).click();
   const printLabels = ['日印', '远山', '枝影', '纸条', '朱印', '题签', '双线框', '索引签'];
   if (printLabels.includes(label) && !await nav(page, `添加贴纸：${label}`).isVisible()) await page.locator('summary').filter({ hasText: /^印刷旧藏$/ }).click();
   if (label === '白花枝' && !await nav(page, `添加贴纸：${label}`).isVisible()) await page.locator('summary').filter({ hasText: /^旧藏$/ }).click();
@@ -428,8 +430,8 @@ async function screenshot(page: Page, name: string) {
   await page.evaluate(() => {
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
   });
-  await mkdir('/tmp/yiri-v05-preview', { recursive: true });
-  await page.screenshot({ path: `/tmp/yiri-v05-preview/${name}.png`, fullPage: true });
+  await mkdir('/tmp/yiri-v06-preview', { recursive: true });
+  await page.screenshot({ path: `/tmp/yiri-v06-preview/${name}.png`, fullPage: true });
 }
 
 test.beforeEach(async ({ page }, testInfo) => {
@@ -456,6 +458,7 @@ test(deskTest, async ({ page }) => {
   await expect(nav(page, '打开手账')).toHaveCount(0);
   await expect(nav(page, '合上手账')).toHaveCount(0);
   await expect(nav(page, '看整册')).toHaveText('空间预览');
+  await expect(nav(page, '添加贴纸：薄玉弧')).toBeHidden();
   await expect(nav(page, '添加贴纸：弧光')).toBeHidden();
   await expect(nav(page, '添加贴纸：日印')).toBeHidden();
   await expect(nav(page, '导出备份')).toBeHidden();
@@ -470,23 +473,26 @@ test(deskTest, async ({ page }) => {
   if (await collectionArt.count()) expect(await collectionArt.evaluate(element => getComputedStyle(element).transform), 'The collection card should not imitate a hardback book in perspective.').not.toMatch(/^matrix3d\(/);
   await nav(page, '打开手账：日常').click();
   await expectNotebookReady(page);
-  await titleField(page).fill('浮笺里的第一笔');
-  await expectSaved(page, '浮笺里的第一笔');
+  await titleField(page).fill('画布里的第一笔');
+  await expectSaved(page, '画布里的第一笔');
   await ensureTrayExpanded(page);
-  for (const label of ['弧光', '小折', '云阶', '留白框', '波纹', '月牙', '微光', '书签']) {
+  for (const label of ['玉题签', '玉界框', '清流线', '薄玉弧', '玉索引', '轻折片', '玉叠片', '玉朱点']) {
     await expect(nav(page, `添加贴纸：${label}`)).toBeVisible();
   }
+  await expect(nav(page, '添加贴纸：弧光')).toBeHidden();
   await expect(nav(page, '添加贴纸：日印')).toBeHidden();
   await expect(nav(page, '添加贴纸：白花枝')).toBeHidden();
-  const sticker = await addSticker(page, '弧光');
+  const sticker = await addSticker(page, '薄玉弧');
   const source = await sticker.locator('img').getAttribute('src');
   expect(source).toMatch(/^data:image\/png;base64,/);
   const artwork = await inspectPNG(page, Buffer.from(source!.split(',')[1], 'base64'));
   expect(artwork.width).toBeGreaterThan(64);
   expect(artwork.height).toBeGreaterThan(64);
-  expect(artwork.transparentPixels, 'The new digital light piece must retain its cutout alpha channel.').toBeGreaterThan(100);
+  expect(artwork.transparentPixels, 'The new jade artwork must retain its cutout alpha channel.').toBeGreaterThan(100);
   expect(artwork.visiblePixels).toBeGreaterThan(100);
-  expect(artwork.colors, 'The new digital artwork must contain varied rendered pixels.').toBeGreaterThan(32);
+  expect(artwork.colors, 'The new jade artwork must contain varied rendered pixels.').toBeGreaterThan(32);
+  const priorDigital = await addSticker(page, '弧光');
+  await expect(priorDigital.locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   const print = await addSticker(page, '日印');
   await expect(print.locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   const legacy = await addSticker(page, '白花枝');
@@ -544,7 +550,7 @@ test(live3dTest, async ({ page }) => {
   await expectNativePlaneBounds(page);
   await titleField(page).fill('会流转的电子手账');
   await bodyField(page).fill('薄笺轻轻浮起，今天的想法也有了位置。');
-  const sticker = await addSticker(page, '弧光');
+  const sticker = await addSticker(page, '薄玉弧');
   const stickerId = await sticker.getAttribute('data-object-id');
   await expectNativePlaneBounds(page);
   await closeTray(page);
@@ -633,7 +639,7 @@ test(live3dTest, async ({ page }) => {
   await nav(page, '打开手账：日常').click();
   await expect(titleField(page)).toHaveValue('会流转的电子手账');
   await expect(nav(page, '展开素材托盘')).toBeVisible();
-  await addSticker(page, '弧光');
+  await addSticker(page, '薄玉弧');
   await expect(page.getByTestId('paper-object')).toHaveCount(2);
   await closeTray(page);
   await nav(page, '撤销').click();
@@ -924,6 +930,7 @@ test('JSON 备份下载的实际字节可以完整恢复修改前的页面', asy
   await bodyField(page).fill('这段随笔与兰草一起备份。');
   await addSticker(page);
   await addSticker(page, '弧光');
+  await addSticker(page, '薄玉弧');
   await addPhoto(page);
   const objectCount = await page.getByTestId('paper-object').count();
   const bytes = await downloadBackup(page);
@@ -931,7 +938,9 @@ test('JSON 备份下载的实际字节可以完整恢复修改前的页面', asy
   expect(backup).toBeTruthy();
   expect(bytes.toString('utf8')).toContain('备份里的山与水');
   expect(bytes.toString('utf8')).toContain('data:image/png;base64,');
+  expect(bytes.toString('utf8')).toContain('jade-arc');
   expect(bytes.toString('utf8')).toContain('float-arc');
+  expect(bytes.toString('utf8')).toContain('print-sun');
   await nav(page, '删除选中素材').click();
   await titleField(page).fill('即将被恢复的修改');
   await bodyField(page).fill('临时内容');
@@ -941,6 +950,7 @@ test('JSON 备份下载的实际字节可以完整恢复修改前的页面', asy
   await expect(titleField(page)).toHaveValue('备份里的山与水');
   await expect(bodyField(page)).toHaveValue('这段随笔与兰草一起备份。');
   await expect(page.getByTestId('paper-object')).toHaveCount(objectCount);
+  await expect(page.getByRole('button', { name: '纸页素材：薄玉弧', exact: true }).locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   await expect(page.getByRole('button', { name: '纸页素材：弧光', exact: true }).locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
   await expectSaveComplete(page);
   await page.reload();
@@ -1111,7 +1121,7 @@ test('实际单文件 HTML 断网后使用贴纸并导出 PNG', async ({ browser
     await titleField(portable).fill('离线的一页');
     await bodyField(portable).fill('没有网络，也能保存和制作手账。');
     const undecorated = await downloadPNG(portable);
-    const sticker = await addSticker(portable, '弧光');
+    const sticker = await addSticker(portable, '薄玉弧');
     await expect(sticker.locator('img')).toBeVisible();
     await expect(sticker.locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
     await expect.poll(() => sticker.locator('img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);

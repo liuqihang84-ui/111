@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
 /** Coordinates are CSS pixels relative to the live canvas. */
 export interface WritingRect { left: number; top: number; width: number; height: number }
@@ -41,7 +40,9 @@ const PAGE_W = 3;
 const PAGE_H = PAGE_W * 840 / 640;
 const PAGE_X = -PAGE_W / 2;
 const PAPER_Y = 0.28;
-const COLORS = { paper: '#fffdf8', ink: '#283f3c', accent: '#608678', ground: '#f1f3ef', plate: '#dce8e0' };
+const PAGE_RADIUS_PX = 22;
+const PAGE_RADIUS = PAGE_W * PAGE_RADIUS_PX / 640;
+const COLORS = { paper: '#fcfbf6', plate: '#cbd8ca' };
 const clamp = (value: number, low = 0, high = 1) => Math.min(high, Math.max(low, value));
 const ease = (value: number) => value < 0.5 ? 4 * value ** 3 : 1 - (-2 * value + 2) ** 3 / 2;
 const lerp = THREE.MathUtils.lerp;
@@ -126,10 +127,9 @@ export class BookScene {
     this.objectSheets.name = 'individual-digital-fragments';
     this.book.add(this.objectSheets);
     this.makeLightsAndGround();
-    // Only two quiet offset layers: depth is a deliberate graphic accent.
-    this.makeLayer(0.195, 0.012, 0.012, '#e7eee7', 0.014);
-    this.backplate = this.makeLayer(0.235, -0.009, 0.007, COLORS.plate, 0.012);
-    this.backplate.name = 'soft-cyan-underlay';
+    // One continuous rounded edge, rather than a stack of offset sheets.
+    this.backplate = this.makeUnderlay();
+    this.backplate.name = 'rounded-jade-underlay';
     this.rightPage = new THREE.Mesh(this.pageGeometry(), this.digitalMaterial(this.blankTexture));
     this.rightPage.name = 'digital-writing-surface';
     this.rightPage.receiveShadow = this.rightPage.castShadow = true;
@@ -249,9 +249,9 @@ export class BookScene {
   /** Legacy cover selection now supplies only a faint collection tint. */
   async setCover(options: CoverOptions): Promise<void> {
     if (this.disposed || !options.color) return;
-    const tint = new THREE.Color(COLORS.plate).lerp(new THREE.Color(options.color), 0.08);
-    this.backplate.material.color.copy(tint).multiplyScalar(0.48);
-    this.backplate.material.emissive.copy(tint).multiplyScalar(0.62);
+    const tint = new THREE.Color(COLORS.plate).lerp(new THREE.Color(options.color), 0.06);
+    this.backplate.material.color.copy(tint).multiplyScalar(0.34);
+    this.backplate.material.emissive.copy(tint).multiplyScalar(0.68);
     this.dirty = true;
   }
 
@@ -344,12 +344,12 @@ export class BookScene {
   private standard(parameters: THREE.MeshStandardMaterialParameters): THREE.MeshStandardMaterial {
     const material = new THREE.MeshStandardMaterial(parameters); this.materials.add(material); return material;
   }
-  private digitalMaterial(texture: THREE.Texture, transparent = false): THREE.MeshStandardMaterial {
+  private digitalMaterial(texture: THREE.Texture, transparent = true): THREE.MeshStandardMaterial {
     // Most color comes from the designed artwork. A small lit component keeps
     // real relief/shadows while avoiding the grey paper of a physical mockup.
     return this.standard({ map: texture, emissiveMap: texture, emissive: 0xffffff,
       emissiveIntensity: 0.89, color: new THREE.Color().setRGB(0.14, 0.14, 0.14),
-      roughness: 0.88, metalness: 0, transparent, alphaTest: transparent ? 0.035 : 0,
+      roughness: 0.84, metalness: 0, transparent, alphaTest: transparent ? 0.01 : 0,
       side: THREE.DoubleSide });
   }
   private geometry<T extends THREE.BufferGeometry>(value: T): T { this.geometries.add(value); return value; }
@@ -361,13 +361,14 @@ export class BookScene {
     const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 840;
     const context = canvas.getContext('2d');
     if (!context) throw new Error('Writing canvas unavailable');
-    context.fillStyle = COLORS.paper; context.fillRect(0, 0, 640, 840);
+    context.fillStyle = COLORS.paper;
+    context.beginPath(); context.roundRect(0, 0, 640, 840, PAGE_RADIUS_PX); context.fill();
     return canvas;
   }
 
   private makeLightsAndGround(): void {
-    this.scene.add(new THREE.HemisphereLight(0xffffff, 0xe5eee6, 1.4));
-    const key = new THREE.DirectionalLight(0xffffff, 1.25);
+    this.scene.add(new THREE.HemisphereLight(0xffffff, 0xe4ebdf, 1.3));
+    const key = new THREE.DirectionalLight(0xffffff, 1.1);
     key.position.set(-3, 7, 4); key.castShadow = true;
     key.shadow.mapSize.set(512, 512);
     key.shadow.camera.left = -3; key.shadow.camera.right = 3;
@@ -376,18 +377,45 @@ export class BookScene {
     key.shadow.bias = -0.0004; key.shadow.normalBias = 0.012;
     key.shadow.radius = 4; this.scene.add(key);
     const groundGeometry = this.geometry(new THREE.PlaneGeometry(24, 24));
-    const material = new THREE.MeshBasicMaterial({ color: COLORS.ground }); this.materials.add(material);
-    const ground = new THREE.Mesh(groundGeometry, material);
-    ground.rotation.x = -Math.PI / 2; ground.position.y = 0.13; this.scene.add(ground);
-    const shadowMaterial = new THREE.ShadowMaterial({ color: '#7d9687', opacity: 0.07 }); this.materials.add(shadowMaterial);
+    // The scene stays transparent; the app owns its designed background.
+    const shadowMaterial = new THREE.ShadowMaterial({ color: '#65775f', opacity: 0.055 }); this.materials.add(shadowMaterial);
     const catcher = new THREE.Mesh(groundGeometry, shadowMaterial);
-    catcher.rotation.x = -Math.PI / 2; catcher.receiveShadow = true; catcher.position.y = 0.133; this.scene.add(catcher);
+    catcher.name = 'quiet-surface-shadow';
+    catcher.rotation.x = -Math.PI / 2; catcher.receiveShadow = true; catcher.position.y = 0.244; this.scene.add(catcher);
   }
 
-  private makeLayer(y: number, x: number, z: number, color: string, thickness: number): THREE.Mesh<THREE.BufferGeometry, THREE.MeshStandardMaterial> {
-    const geometry = this.geometry(new RoundedBoxGeometry(PAGE_W + 0.018, thickness, PAGE_H + 0.018, 3, thickness / 2));
-    const layer = new THREE.Mesh(geometry, this.standard({ color: new THREE.Color(color).multiplyScalar(0.48), emissive: new THREE.Color(color).multiplyScalar(0.62), roughness: 0.76, metalness: 0 }));
-    layer.position.set(x, y, z); layer.castShadow = layer.receiveShadow = true; this.book.add(layer);
+  private makeUnderlay(): THREE.Mesh<THREE.BufferGeometry, THREE.MeshStandardMaterial> {
+    const edge = PAGE_W * 2.5 / 640;
+    const halfWidth = PAGE_W / 2 + edge, halfHeight = PAGE_H / 2 + edge;
+    const radius = PAGE_RADIUS + edge, thickness = 0.012;
+    const shape = new THREE.Shape();
+    shape.moveTo(-halfWidth + radius, -halfHeight);
+    shape.lineTo(halfWidth - radius, -halfHeight);
+    shape.absarc(halfWidth - radius, -halfHeight + radius, radius, -Math.PI / 2, 0, false);
+    shape.lineTo(halfWidth, halfHeight - radius);
+    shape.absarc(halfWidth - radius, halfHeight - radius, radius, 0, Math.PI / 2, false);
+    shape.lineTo(-halfWidth + radius, halfHeight);
+    shape.absarc(-halfWidth + radius, halfHeight - radius, radius, Math.PI / 2, Math.PI, false);
+    shape.lineTo(-halfWidth, -halfHeight + radius);
+    shape.absarc(-halfWidth + radius, -halfHeight + radius, radius, Math.PI, Math.PI * 1.5, false);
+    shape.closePath();
+    const geometry = this.geometry(new THREE.ExtrudeGeometry(shape, {
+      depth: thickness, steps: 1, curveSegments: 12,
+      bevelEnabled: true, bevelThickness: 0.002, bevelSize: 0.0015, bevelSegments: 2,
+    }));
+    geometry.rotateX(-Math.PI / 2);
+    geometry.userData.cornerRadiusPixels = PAGE_RADIUS_PX;
+    const tint = new THREE.Color(COLORS.plate);
+    const material = new THREE.MeshPhysicalMaterial({
+      color: tint.clone().multiplyScalar(0.34), emissive: tint.clone().multiplyScalar(0.68),
+      roughness: 0.62, metalness: 0, clearcoat: 0.18, clearcoatRoughness: 0.7,
+      transparent: true, opacity: 0.94,
+    });
+    this.materials.add(material);
+    const layer = new THREE.Mesh(geometry, material);
+    layer.position.set(0, PAPER_Y - 0.02, 0);
+    layer.castShadow = layer.receiveShadow = true; layer.renderOrder = -1;
+    this.book.add(layer);
     return layer;
   }
 
@@ -575,7 +603,13 @@ export class BookScene {
     const bounds = this.canvas.getBoundingClientRect();
     this.pointer.set((event.clientX - bounds.left) / bounds.width * 2 - 1, -(event.clientY - bounds.top) / bounds.height * 2 + 1);
     this.raycaster.setFromCamera(this.pointer, this.camera);
-    return this.raycaster.intersectObjects([this.rightPage, ...this.objectSheets.children], false).length > 0;
+    return this.raycaster.intersectObjects([this.rightPage, ...this.objectSheets.children], false).some(hit => {
+      if (hit.object !== this.rightPage || !hit.uv) return true;
+      const x = hit.uv.x * 640, y = (1 - hit.uv.y) * 840;
+      const cx = clamp(x, PAGE_RADIUS_PX, 640 - PAGE_RADIUS_PX);
+      const cy = clamp(y, PAGE_RADIUS_PX, 840 - PAGE_RADIUS_PX);
+      return Math.hypot(x - cx, y - cy) <= PAGE_RADIUS_PX;
+    });
   }
   private onPointerDown = (event: PointerEvent): void => {
     if (event.button !== 0 || this.mode === 'write' || this.turn) return;

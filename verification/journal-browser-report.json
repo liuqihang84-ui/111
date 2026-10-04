@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/tmp/yiri-v05-browser-artifacts",
+        "outputDir": "/tmp/yiri-v06-browser-artifacts",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -66,7 +66,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "首屏即开即写空白浮笺，数字收藏与光片保持独立视觉",
+          "title": "首屏直接书写空白画布，玉片素材与历史旧藏均可使用",
           "ok": true,
           "tags": [],
           "tests": [
@@ -81,12 +81,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5133,
+                  "duration": 5465,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:15.387Z",
+                  "startTime": "2026-10-04T12:52:28.933Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -94,13 +94,13 @@
               "status": "expected"
             }
           ],
-          "id": "d2a24f3341738d6e64f5-f4d1779f45c66a390fe9",
+          "id": "d2a24f3341738d6e64f5-35abb2b4a9fb66619c5f",
           "file": "journal.spec.ts",
-          "line": 447,
+          "line": 449,
           "column": 1
         },
         {
-          "title": "实时浮笺响应原生空间拖动与数字流转，预览同步内容并保留降级写作",
+          "title": "实时画布响应原生空间拖动与日期流转，预览同步内容并保留降级写作",
           "ok": true,
           "tags": [],
           "tests": [
@@ -115,12 +115,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 15936,
+                  "duration": 17607,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:21.029Z",
+                  "startTime": "2026-10-04T12:52:34.907Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -128,9 +128,9 @@
               "status": "expected"
             }
           ],
-          "id": "d2a24f3341738d6e64f5-164efd013a74fd045ab3",
+          "id": "d2a24f3341738d6e64f5-a8c1287a004817fa4dcf",
           "file": "journal.spec.ts",
-          "line": 496,
+          "line": 502,
           "column": 1
         },
         {
@@ -149,12 +149,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4969,
+                  "duration": 5013,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:36.980Z",
+                  "startTime": "2026-10-04T12:52:52.530Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -164,7 +164,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-d0002da418333a2e11bf",
           "file": "journal.spec.ts",
-          "line": 645,
+          "line": 651,
           "column": 1
         },
         {
@@ -183,12 +183,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4562,
+                  "duration": 4750,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:41.963Z",
+                  "startTime": "2026-10-04T12:52:57.560Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -198,7 +198,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-04998f0666df7dd9e879",
           "file": "journal.spec.ts",
-          "line": 658,
+          "line": 664,
           "column": 1
         },
         {
@@ -217,12 +217,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9048,
+                  "duration": 9614,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:46.541Z",
+                  "startTime": "2026-10-04T12:53:02.330Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -232,7 +232,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-9302d887bbee73822afd",
           "file": "journal.spec.ts",
-          "line": 680,
+          "line": 686,
           "column": 1
         },
         {
@@ -251,12 +251,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7979,
+                  "duration": 8124,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:47:55.603Z",
+                  "startTime": "2026-10-04T12:53:11.958Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -266,7 +266,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-fac310c8362d70cee779",
           "file": "journal.spec.ts",
-          "line": 713,
+          "line": 719,
           "column": 1
         },
         {
@@ -285,12 +285,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7886,
+                  "duration": 7853,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:03.596Z",
+                  "startTime": "2026-10-04T12:53:20.099Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -300,7 +300,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-5fb4fc447022d37d877a",
           "file": "journal.spec.ts",
-          "line": 748,
+          "line": 754,
           "column": 1
         },
         {
@@ -319,12 +319,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5642,
+                  "duration": 8503,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:11.495Z",
+                  "startTime": "2026-10-04T12:53:27.965Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -334,7 +334,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-19493f31d6997d27b60d",
           "file": "journal.spec.ts",
-          "line": 799,
+          "line": 805,
           "column": 1
         },
         {
@@ -353,12 +353,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5222,
+                  "duration": 5563,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:17.150Z",
+                  "startTime": "2026-10-04T12:53:36.482Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -368,7 +368,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-d4839b2a1d58a1ed530d",
           "file": "journal.spec.ts",
-          "line": 842,
+          "line": 848,
           "column": 1
         },
         {
@@ -387,12 +387,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2696,
+                  "duration": 2819,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:22.386Z",
+                  "startTime": "2026-10-04T12:53:42.061Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -402,7 +402,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-1f075945d2e5070e295f",
           "file": "journal.spec.ts",
-          "line": 908,
+          "line": 914,
           "column": 1
         },
         {
@@ -421,12 +421,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5006,
+                  "duration": 5245,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:25.094Z",
+                  "startTime": "2026-10-04T12:53:44.895Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -436,7 +436,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-6d90cd8c2de1be30cd8f",
           "file": "journal.spec.ts",
-          "line": 922,
+          "line": 928,
           "column": 1
         },
         {
@@ -455,12 +455,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4684,
+                  "duration": 4925,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:30.116Z",
+                  "startTime": "2026-10-04T12:53:50.155Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -470,7 +470,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-eabfd410554710b13526",
           "file": "journal.spec.ts",
-          "line": 952,
+          "line": 962,
           "column": 1
         },
         {
@@ -489,12 +489,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9668,
+                  "duration": 10256,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T11:48:41.895Z",
+                  "startTime": "2026-10-04T12:54:01.939Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -504,7 +504,7 @@
           ],
           "id": "d2a24f3341738d6e64f5-58eb506c9378a649d92a",
           "file": "journal.spec.ts",
-          "line": 1060,
+          "line": 1070,
           "column": 1
         }
       ],
@@ -512,7 +512,7 @@
         {
           "title": "手机触摸",
           "file": "journal.spec.ts",
-          "line": 990,
+          "line": 1000,
           "column": 6,
           "specs": [
             {
@@ -531,12 +531,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7063,
+                      "duration": 6824,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-04T11:48:34.816Z",
+                      "startTime": "2026-10-04T12:53:55.098Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -546,7 +546,7 @@
               ],
               "id": "d2a24f3341738d6e64f5-ae4c3ad497e37e07c441",
               "file": "journal.spec.ts",
-              "line": 993,
+              "line": 1003,
               "column": 1
             }
           ]
@@ -556,8 +556,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-04T11:47:14.211Z",
-    "duration": 97469.65400000001,
+    "startTime": "2026-10-04T12:52:27.915Z",
+    "duration": 104400.746,
     "expected": 14,
     "skipped": 0,
     "unexpected": 0,

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="640" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFBF6"/>
+      <stop offset="1" stop-color="#E8EBE4"/>
+    </linearGradient>
+    <radialGradient id="mist" cx="414" cy="144" r="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFBF6"/>
+      <stop offset="1" stop-color="#FCFBF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="jade" x1="252" y1="91" x2="479" y2="352" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF3E8"/>
+      <stop offset=".4" stop-color="#D6E0CD"/>
+      <stop offset=".72" stop-color="#B6C8AF"/>
+      <stop offset="1" stop-color="#829E85"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="264" y1="97" x2="471" y2="353" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8D6BF"/>
+      <stop offset="1" stop-color="#536F63"/>
+    </linearGradient>
+    <linearGradient id="cut" x1="137" y1="160" x2="255" y2="314" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#536F63"/>
+      <stop offset="1" stop-color="#183B35"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="160%" height="170%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <path id="arc" d="M494.22 307.58 A137 137 0 1 1 460.58 116.78 L451.98 129.06 A122 122 0 1 0 481.94 298.98 Z"/>
+    <path id="corner" d="M143 149H157V304H241L255 318H143Z"/>
+  </defs>
+  <path fill="url(#ground)" d="M0 0H640V460H0Z"/>
+  <path fill="url(#mist)" d="M0 0H640V460H0Z"/>
+  <path d="M125 129V336H272" fill="none" stroke="#536F63" stroke-opacity=".18" stroke-width="1"/>
+  <use href="#corner" fill="#183B35" opacity=".13" transform="translate(2 10)" filter="url(#shadow)"/>
+  <use href="#corner" fill="#294638" transform="translate(0 2)"/>
+  <use href="#corner" fill="url(#cut)"/>
+  <path d="M157 149V304H241" fill="none" stroke="#D8E1D0" stroke-opacity=".3" stroke-width=".7"/>
+  <g transform="rotate(-9 382 229)">
+    <use href="#arc" fill="#536F63" opacity=".16" transform="translate(1 17)" filter="url(#shadow)"/>
+    <use href="#arc" fill="url(#edge)" transform="translate(0 3)"/>
+    <use href="#arc" fill="url(#jade)"/>
+    <path d="M460.58 116.78A137 137 0 0 0 245 229" fill="none" stroke="#FCFBF6" stroke-opacity=".56" stroke-width=".7"/>
+    <path d="M481.94 298.98A122 122 0 0 1 382 351" fill="none" stroke="#536F63" stroke-opacity=".18" stroke-width=".7"/>
+  </g>
+  <path d="M477 355H533V299" fill="none" stroke="#536F63" stroke-opacity=".4" stroke-width="1"/>
+  <path d="M500 128H525L533 136V161" fill="none" stroke="#536F63" stroke-opacity=".25" stroke-width="1"/>
+</svg>

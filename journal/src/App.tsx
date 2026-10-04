@@ -5,6 +5,8 @@ import { demoPhoto, stickers } from './data/art';
 import { covers } from './data/identity';
 import { printStickerCells } from './data/print';
 import { floatStickerCells } from './data/float-art';
+import { jadeStickerCells } from './data/jade-art';
+import { prepareJadeArt, jadeArt } from './lib/jade-render';
 import { prepareFloatArt, floatArt } from './lib/float-render';
 import { preparePrintArt, printArt } from './lib/print-render';
 import { clampObject, createEntry, loadState, localDate, PAGE_HEIGHT, PAGE_WIDTH, STORAGE_KEY, uid, validateState } from './lib/model';
@@ -18,7 +20,7 @@ import type { BookMode, WritingRect } from './components/BookViewport';
 type View = 'editor' | 'books' | 'calendar';
 type Tool = 'decorate' | 'page';
 const moods = ['平静', '晴朗', '忙碌', '低落', '期待'];
-const getArt = (id: string) => floatArt.get(id) ?? printArt.get(id) ?? tactileArt.get(id) ?? (id === 'demo-landscape' ? demoPhoto : stickers.find(item => item.id === id)?.src);
+const getArt = (id: string) => jadeArt.get(id) ?? floatArt.get(id) ?? printArt.get(id) ?? tactileArt.get(id) ?? (id === 'demo-landscape' ? demoPhoto : stickers.find(item => item.id === id)?.src);
 const formatDate = (date: string, options: Intl.DateTimeFormatOptions) => new Date(`${date}T12:00:00`).toLocaleDateString('zh-CN', options);
 
 function resizeHandleStyle(object: JournalObject, scale: number): CSSProperties {
@@ -128,7 +130,7 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt()]).then(() => { if (!cancelled) setArtReady(true); }).catch(() => { if (!cancelled) setArtError('素材暂时无法读取，请重新打开页面。'); });
+    Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt(), prepareJadeArt()]).then(() => { if (!cancelled) setArtReady(true); }).catch(() => { if (!cancelled) setArtError('素材暂时无法读取，请重新打开页面。'); });
     return () => { cancelled = true; };
   }, []);
 
@@ -243,7 +245,7 @@ export default function App() {
   function addSticker(id: string) {
     if (entry.objects.length >= 30) { setToast('这一页已有 30 件素材，可以先删去一些再添加。'); return; }
     const n = entry.objects.length % 4;
-    const piece = floatStickerCells.find(item => item.id === id) ?? printStickerCells.find(item => item.id === id);
+    const piece = jadeStickerCells.find(item => item.id === id) ?? floatStickerCells.find(item => item.id === id) ?? printStickerCells.find(item => item.id === id);
     const width = Math.max(50, piece?.width ?? 116);
     const height = piece ? width * piece.height / piece.width : 116;
     const object: JournalObject = clampObject({ id: uid(), kind: 'sticker', assetId: id, x: 380 + n * 13, y: 540 + n * 30, width, height, rotation: 0 });
@@ -298,7 +300,7 @@ export default function App() {
   async function exportPng() {
     setSelectedId(null); setBusy(true);
     try {
-      await Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt()]);
+      await Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt(), prepareJadeArt()]);
       const blob = await exportPagePng(entry, getArt, { appearance: 'print', bookTitle: book.title });
       downloadBlob(blob, `一日一笺-${entry.date}.png`);
       setToast('已导出 1280 × 1680 的完整画布。');
@@ -311,7 +313,7 @@ export default function App() {
     try {
       if (file.size > 20 * 1024 * 1024) throw new Error('备份文件过大，请选择 20 MB 以内的 JSON。');
       const restored = parseBackup(await file.text());
-      await Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt()]);
+      await Promise.all([prepareTactileArt(), preparePrintArt(), prepareFloatArt(), prepareJadeArt()]);
       for (const item of restored.books) for (const page of Object.values(item.entries)) for (const object of page.objects) { if (object.kind === 'sticker' && (!object.assetId || !getArt(object.assetId))) throw new Error('备份含有无法识别的贴纸，当前内容已保留。'); }
       downloadBackup(state);
       setState(restored); setMonth(restored.activeDate.slice(0, 7)); setView('editor'); setBookMode('write'); setRecoveryRaw(null);
@@ -343,14 +345,14 @@ export default function App() {
     setTaskText('');
   }
 
-  const objectLabel = (object: JournalObject) => object.kind === 'photo' || object.assetId === 'demo-landscape' ? '今日留影' : floatStickerCells.find(item => item.id === object.assetId)?.label ?? printStickerCells.find(item => item.id === object.assetId)?.label ?? stickers.find(item => item.id === object.assetId)?.name ?? '素材';
+  const objectLabel = (object: JournalObject) => object.kind === 'photo' || object.assetId === 'demo-landscape' ? '今日留影' : jadeStickerCells.find(item => item.id === object.assetId)?.label ?? floatStickerCells.find(item => item.id === object.assetId)?.label ?? printStickerCells.find(item => item.id === object.assetId)?.label ?? stickers.find(item => item.id === object.assetId)?.name ?? '素材';
   const openTools = (next: Tool) => { setBookMode('write'); setTool(next); setTrayOpen(true); };
   const changeBookMode = (next: BookMode) => { finishGesture(); setTrayOpen(false); setSelectedId(null); setBookMode(next); };
   const closeTools = () => { setTrayOpen(false); addButtonRef.current?.focus(); };
   const showMoreAction = (action: () => void) => { setMoreOpen(false); action(); };
 
   const nativePage = <div className={`notebook-scene ${isFlipping && sceneAvailable === false ? 'is-flipping' : ''}`}><div className="canvas-viewport" ref={viewportRef}><div className="page-scale-wrapper" style={{ width: PAGE_WIDTH * displayScale, height: PAGE_HEIGHT * displayScale, '--paper-scale': displayScale } as CSSProperties}><div className="journal-paper" ref={paperRef} data-testid="journal-paper" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `scale(${displayScale})` }} onPointerDown={() => setSelectedId(null)}>
-            <div className="paper-topline"><div className="paper-date"><span>{book.title}</span><span>一页私记</span></div>{entry.mood !== '平静' && <button className="paper-mood" onClick={() => openTools('page')}>{entry.mood}</button>}</div><div className="paper-rule" />
+            {entry.mood !== '平静' && <div className="paper-topline"><button className="paper-mood" onClick={() => openTools('page')}>{entry.mood}</button></div>}
             <div className="paper-title"><textarea aria-label="页面标题" data-testid="entry-title" style={{ fontSize: Math.max(18, Math.min(32, 544 / Math.max(1, Array.from(entry.title).length))), letterSpacing: 0 }} value={entry.title} maxLength={24} placeholder="给今天一个标题" rows={1} onChange={event => patchEntry({ title: event.target.value.replace(/\n/g, '') })} /></div>
             <div className="paper-body"><textarea aria-label="今日随笔" data-testid="entry-body" value={entry.body} maxLength={260} placeholder="今天，想记下什么？" onChange={event => patchEntry({ body: event.target.value })} /></div>
             {entry.tasks.length > 0 && <div className="paper-tasks"><div className="paper-section-label">小事 <i /></div>{entry.tasks.map(task => <div key={task.id} className={`paper-task ${task.done ? 'is-done' : ''}`}><label><input type="checkbox" checked={task.done} onChange={event => editEntry(current => ({ ...current, tasks: current.tasks.map(item => item.id === task.id ? { ...item, done: event.target.checked } : item) }))} /><span>{task.text}</span></label><button className="icon-button" aria-label={`删除待办：${task.text}`} onClick={() => editEntry(current => ({ ...current, tasks: current.tasks.filter(item => item.id !== task.id) }))}><X size={13} /></button></div>)}</div>}
@@ -361,7 +363,7 @@ export default function App() {
                 {src && <img src={src} alt={objectLabel(object)} draggable={false} />}{selectedId === object.id && <button className="corner-resize" data-testid="object-resize-handle" style={resizeHandleStyle(object, displayScale)} aria-label="拖动调整素材大小" onPointerDown={event => beginDrag(event, object, 'resize')} onPointerMove={event => { event.stopPropagation(); moveDrag(event); }} onPointerUp={event => { event.stopPropagation(); finishGesture(); }} onPointerCancel={finishGesture} onLostPointerCapture={finishGesture} onClick={event => event.stopPropagation()}><span aria-hidden="true" /></button>}
               </div>;
             })}
-            <div className="paper-colophon"><span>一日一笺</span><span>{Array.from(entry.body).length} 字</span></div>
+
           </div></div></div></div>;
 
   return <div className="app-shell desk-shell" data-art-ready={artReady ? 'true' : 'false'}>
@@ -381,8 +383,21 @@ export default function App() {
       {recoveryRaw !== null && <div className="notice" role="alert">原有记录暂时无法读取，已保留原文件。<button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); }}>下载原记录</button><button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); setRecoveryRaw(null); }}>备份后开始记录</button></div>}
       {view === 'editor' && <section className={`editor-layout ${sceneAvailable !== false ? 'has-live-book' : ''}`} aria-label="每日编辑器">
         <div className="editor-column">
-          <div className="journal-intro"><div className="journal-intro-copy"><span className="journal-eyebrow">{book.title}</span><h1>{entry.date === today ? '今天' : formatDate(entry.date, { month: 'long', day: 'numeric' })}</h1><p>{formatDate(entry.date, { weekday: 'long' })} · {Object.keys(book.entries).length} 篇记录</p></div></div>
-          <div className="editor-toolbar"><div><button className="icon-button" aria-label="前一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() - 1); chooseDate(localDate(d)); }}><ChevronLeft size={16} /></button><input aria-label="页面日期" disabled={isFlipping} type="date" value={entry.date} onChange={event => { if (event.target.value && /^\d{4}-\d{2}-\d{2}$/.test(event.target.value)) chooseDate(event.target.value); }} /><button className="icon-button" aria-label="后一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() + 1); chooseDate(localDate(d)); }}><ChevronRight size={16} /></button></div><div className="editor-actions">{bookMode === 'write' && <>{sceneAvailable === true && <button className="button ghost" aria-label="看整册" onClick={() => changeBookMode('browse')}><Layers size={15} />空间预览</button>}<button className="icon-button" aria-label="撤销" disabled={!canUndo} onClick={undo}><Undo2 size={16} /></button><button className="icon-button" aria-label="重做" disabled={!canRedo} onClick={redo}><Redo2 size={16} /></button><button className="button ghost" onClick={() => openTools('page')}>编辑文字</button><button className="button ghost" ref={addButtonRef} aria-label="展开素材托盘" aria-expanded={trayOpen} aria-controls="paper-tools" onClick={() => trayOpen ? closeTools() : openTools('decorate')}><Plus size={14} />加内容</button></>}</div></div>
+          <div className="journal-intro">
+            <span className="journal-eyebrow">{book.title}</span>
+            <div className="editor-date-control">
+              <label className="date-anchor">
+                <span className="date-month">{formatDate(entry.date, { month: 'long' })}</span>
+                <h1 className="date-number">{entry.date.slice(-2)}</h1>
+                <span className="date-year-week">{entry.date.slice(0, 4)} · {formatDate(entry.date, { weekday: 'long' })}</span>
+                <input aria-label="页面日期" disabled={isFlipping} type="date" value={entry.date} onClick={event => { try { event.currentTarget.showPicker(); } catch { /* Native control remains keyboard-accessible. */ } }} onChange={event => { if (event.target.value && /^\d{4}-\d{2}-\d{2}$/.test(event.target.value)) chooseDate(event.target.value); }} />
+                <span className="date-change-hint"><CalendarDays size={14} />切换日期</span>
+              </label>
+              <button className="icon-button" aria-label="前一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() - 1); chooseDate(localDate(d)); }}><ChevronLeft size={16} /></button>
+              <button className="icon-button" aria-label="后一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() + 1); chooseDate(localDate(d)); }}><ChevronRight size={16} /></button>
+            </div>
+          </div>
+          {bookMode === 'write' && <div className="editor-toolbar"><div className="editor-actions">{sceneAvailable === true && <button className="button ghost" aria-label="看整册" onClick={() => changeBookMode('browse')}><Layers size={15} />空间预览</button>}<button className="icon-button" aria-label="撤销" disabled={!canUndo} onClick={undo}><Undo2 size={16} /></button><button className="icon-button" aria-label="重做" disabled={!canRedo} onClick={redo}><Redo2 size={16} /></button><button className="button ghost" onClick={() => openTools('page')}>编辑文字</button><button className="button primary" ref={addButtonRef} aria-label="展开素材托盘" aria-expanded={trayOpen} aria-controls="paper-tools" onClick={() => trayOpen ? closeTools() : openTools('decorate')}><Plus size={14} />加内容</button></div></div>}
           {bookMode === 'write' && selected && <div className="selection-toolbar" aria-label="素材操作"><span className="selection-label">{objectLabel(selected)}</span><button className="icon-button" aria-label="复制选中素材" onClick={duplicateSelected}><Copy size={16} /></button><button className="icon-button" aria-label="置于最前" onClick={raiseSelected}><Layers size={16} /></button><button className="icon-button" aria-label="调整素材" onClick={() => openTools('decorate')}><Settings2 size={16} /></button><button className="icon-button danger" aria-label="删除选中素材" onClick={removeSelected}><Trash2 size={16} /></button></div>}
           {sceneAvailable !== false && <BookViewport key={book.id} book={book} entry={entry} artReady={artReady} mode={bookMode} onModeChange={changeBookMode} onRectChange={setWritingRect} onAvailability={setSceneAvailable} onTurningChange={setIsFlipping} getArt={getArt}>
             {bookMode === 'write' && writingRect && <div className="live-writing-overlay" style={{ left: writingRect.left, top: writingRect.top, width: writingRect.width, height: writingRect.height }}>{nativePage}</div>}
@@ -395,7 +410,8 @@ export default function App() {
           <button className="tray-toggle" aria-expanded={trayOpen} aria-label="收起素材托盘" onClick={closeTools}><span>画布工具</span><X size={17} /></button>
           <div className="tools-tabs"><button className={`tool-tab ${tool === 'decorate' ? 'is-active' : ''}`} onClick={() => setTool('decorate')}>装点画布</button><button className={`tool-tab ${tool === 'page' ? 'is-active' : ''}`} onClick={() => setTool('page')}>今日内容</button></div>
           {tool === 'decorate' ? <>
-            <div className="tool-section"><div className="tool-heading"><h2>浮笺光片</h2><span>8 件</span></div><div className="sticker-grid print-sticker-grid">{floatStickerCells.map(item => <button className="sticker-button" key={item.id} aria-label={`添加贴纸：${item.label}`} disabled={!artReady} onClick={() => addSticker(item.id)}><img src={getArt(item.id)} alt="" /><span>{item.label}</span></button>)}</div></div>
+            <div className="tool-section"><div className="tool-heading"><h2>温玉构件</h2><span>8 件</span></div><div className="sticker-grid jade-sticker-grid">{jadeStickerCells.map(item => <button className="sticker-button" key={item.id} aria-label={`添加贴纸：${item.label}`} disabled={!artReady} onClick={() => addSticker(item.id)}><img src={getArt(item.id)} alt="" /><span>{item.label}</span></button>)}</div></div>
+            <details className="legacy-art tool-section"><summary>浮笺旧藏</summary><div className="sticker-grid print-sticker-grid">{floatStickerCells.map(item => <button className="sticker-button" key={item.id} aria-label={`添加贴纸：${item.label}`} disabled={!artReady} onClick={() => addSticker(item.id)}><img src={getArt(item.id)} alt="" /><span>{item.label}</span></button>)}</div></details>
             <details className="legacy-art tool-section"><summary>印刷旧藏</summary><div className="sticker-grid print-sticker-grid">{printStickerCells.map(item => <button className="sticker-button" key={item.id} aria-label={`添加贴纸：${item.label}`} disabled={!artReady} onClick={() => addSticker(item.id)}><img src={getArt(item.id)} alt="" /><span>{item.label}</span></button>)}</div></details>
             <div className="tool-section"><button className="upload-area" disabled={busy} onClick={() => photoInput.current?.click()}><ImagePlus size={18} /><span>加入照片</span><Plus size={16} /></button></div>
             {selected && <div className="tool-section object-controls"><div className="tool-heading"><h2>{objectLabel(selected)}</h2></div><label className="control-row">大小 <output>{Math.round(selected.width)} px</output><input type="range" aria-label="贴纸大小" onPointerDown={beginInteraction} onPointerUp={endInteraction} onPointerCancel={endInteraction} min="50" max="420" step="1" value={selected.width} onChange={event => { const width = Number(event.target.value); patchObject(selected.id, { width, height: width * selected.height / selected.width }); }} /></label><label className="control-row">角度 <output>{Math.round(selected.rotation)}°</output><input type="range" aria-label="旋转角度" onPointerDown={beginInteraction} onPointerUp={endInteraction} onPointerCancel={endInteraction} min="-45" max="45" value={selected.rotation} onChange={event => patchObject(selected.id, { rotation: Number(event.target.value) })} /></label><div className="object-action-row"><button className="button ghost" onClick={() => patchObject(selected.id, { rotation: 0 })}><RotateCcw size={13} />摆正</button><button className="button ghost danger" onClick={removeSelected}><Trash2 size={13} />移除素材</button></div></div>}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="640" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFBF6"/>
+      <stop offset="1" stop-color="#E8EBE4"/>
+    </linearGradient>
+    <radialGradient id="light" cx="384" cy="198" r="218" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8E0D3" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#D8E0D3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="jade" x1="289" y1="99" x2="462" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9BAA5"/>
+      <stop offset=".5" stop-color="#638572"/>
+      <stop offset="1" stop-color="#183B35"/>
+    </linearGradient>
+    <linearGradient id="cut" x1="145" y1="119" x2="248" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#35564A"/>
+      <stop offset="1" stop-color="#183B35"/>
+    </linearGradient>
+    <linearGradient id="clay" x1="286" y1="315" x2="319" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CF9780"/>
+      <stop offset="1" stop-color="#BC745E"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="160%" height="170%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <path id="arc" d="M439.42 360.47 A133 133 0 1 1 481.29 123.05 L473.26 134.52 A119 119 0 1 0 435.80 346.95 Z"/>
+    <path id="corner" d="M135 129H245L233 141H147V317H224L236 329H135Z"/>
+  </defs>
+  <path fill="url(#ground)" d="M0 0H640V460H0Z"/>
+  <path fill="url(#light)" d="M0 0H640V460H0Z"/>
+  <use href="#corner" fill="#183B35" opacity=".09" transform="translate(2 12)" filter="url(#shadow)"/>
+  <use href="#corner" fill="#102E28" transform="translate(0 2)"/>
+  <use href="#corner" fill="url(#cut)"/>
+  <path d="M147 141V317" fill="none" stroke="#C2CEB9" stroke-opacity=".3" stroke-width=".7"/>
+  <g transform="rotate(11 405 232)">
+    <use href="#arc" fill="#183B35" opacity=".11" transform="translate(1 13)" filter="url(#shadow)"/>
+    <use href="#arc" fill="#2C4C3D" transform="translate(0 3)"/>
+    <use href="#arc" fill="url(#jade)"/>
+    <path d="M481.29 123.05A133 133 0 0 0 272 232" fill="none" stroke="#FCFBF6" stroke-opacity=".4" stroke-width=".7"/>
+  </g>
+  <path d="M284 322H313L322 331V348H293L284 339Z" fill="#895F4F" opacity=".25" transform="translate(0 2)"/>
+  <path d="M284 322H313L322 331V348H293L284 339Z" fill="url(#clay)"/>
+  <path d="M104 93H165" fill="none" stroke="#536F63" stroke-opacity=".25" stroke-width="1"/>
+  <path d="M487 369H543V313" fill="none" stroke="#536F63" stroke-opacity=".35" stroke-width="1"/>
+</svg>

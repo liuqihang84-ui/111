@@ -1,10 +1,10 @@
 {
   "name": "yiri-journal",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "file": "yiri-journal-source.zip",
-  "sourceFiles": 81,
-  "bytes": 9022916,
-  "sha256": "d6d6281d3c71b47dde02df9902b6d5bcfe55c0174fb8fa92a06be7c1732e96fd",
+  "sourceFiles": 89,
+  "bytes": 9328503,
+  "sha256": "d3a893dc339c01808d1cd8407f8e32c94841fbba0ce1f39c578e0f7f554fad53",
   "archiveCrcValidation": "passed",
   "exactMemberValidation": "passed",
   "sourceByteEqualityValidation": "passed",
@@ -16,23 +16,23 @@
     },
     {
       "name": "journal/README.md",
-      "bytes": 6005,
-      "sha256": "299fdaf72feb881b5db4b17a40e7709d78278babf0b57069df4aaa760ee566d0"
+      "bytes": 6344,
+      "sha256": "4830afad9b2de2e73855d75458335843cff86f37142398f6585b9eb297705f74"
     },
     {
       "name": "journal/docs/3D-ENGINE.md",
-      "bytes": 4597,
-      "sha256": "8ac06f2c98856ed9f6879a1990ec7189d5f7a4544b79da14c2d0579a36315b50"
+      "bytes": 5371,
+      "sha256": "260091c0dd25fd7a12a7ad92b3f0a3535faeffd1895416cde6304c2db5b55bc1"
     },
     {
       "name": "journal/docs/ART-SOURCES.md",
-      "bytes": 8396,
-      "sha256": "f9e10ec6ebb5cb834796ce224f101a6bbe567582e21ab17982163be137b04a95"
+      "bytes": 8572,
+      "sha256": "65dc5652d212b4266b0e906f7852c7edd943cdbd7d862fbaf68a28e32e3d5f9c"
     },
     {
       "name": "journal/docs/DELIVERY.md",
-      "bytes": 2960,
-      "sha256": "22e14f11be890b68af32e2e4d3c6a009690241361fdd1fdf61cadea0bf0cfcc4"
+      "bytes": 3108,
+      "sha256": "ff792c706d3f6ce9dfb968dac4072251e034dcb9e1fb5b4e65c76934b527a067"
     },
     {
       "name": "journal/docs/FLOAT-ART.md",
@@ -40,9 +40,14 @@
       "sha256": "467e4e904a9db623a39c281284633ab6640e905abacf10f829f0549cd7fd90b0"
     },
     {
+      "name": "journal/docs/JADE-ART.md",
+      "bytes": 8840,
+      "sha256": "02f12b672adadb73afd3741b45bd9dae5934a5deeeddc75cd0821bb4beed3665"
+    },
+    {
       "name": "journal/docs/NOTICES.txt",
       "bytes": 13564,
-      "sha256": "9ce1e5c6befc44e012090ae942d63199163c8252e7f79969253819fcd2176d6c"
+      "sha256": "0e2254c5da3aa3a33bde90bc9ede96979e9a0dff98e5f7c02faab48c21391076"
     },
     {
       "name": "journal/docs/PNG-EXPORT.md",
@@ -56,13 +61,13 @@
     },
     {
       "name": "journal/docs/QA.md",
-      "bytes": 4240,
-      "sha256": "6e5774678fa69cec73ab7d2564e5b11e8679e4e37b2c403d89db096dc7d3007e"
+      "bytes": 4179,
+      "sha256": "1a2431fe5bbd4c190079216870c040ae6a739acc517eec863df94469c8af0eef"
     },
     {
       "name": "journal/docs/START.md",
-      "bytes": 6480,
-      "sha256": "43b8ac887d53827b376c6d386f4a914b9890e822bb1d815cfa720d0ab1bc7d38"
+      "bytes": 6593,
+      "sha256": "358577145cd301feb0c2d859c50ea730d0dae52f8dfdde7c6bae5d47e59bf28e"
     },
     {
       "name": "journal/docs/TACTILE-ART.md",
@@ -70,9 +75,14 @@
       "sha256": "2e6bbb7ccac0a82df7873968f81ed1d301fa893815739d0ce4167b6f118cd36d"
     },
     {
+      "name": "journal/docs/THIRD-PARTY-NOTICES.md",
+      "bytes": 854,
+      "sha256": "c3d17f1877c636d79e7365f6b206f87c6bbdd9eadaec62afb73c7ba6b4bf8668"
+    },
+    {
       "name": "journal/docs/VISUAL-IDENTITY.md",
-      "bytes": 7337,
-      "sha256": "b0faa10f9d276724c7ca32d7f736343c11e9ac444001344c4535689f1030d05f"
+      "bytes": 7163,
+      "sha256": "70e9d8be0d817cd54e731599c05e5147e1ccaf8b49c2440566ffcb21b7bbd0e4"
     },
     {
       "name": "journal/index.html",
@@ -82,22 +92,22 @@
     {
       "name": "journal/package-lock.json",
       "bytes": 83253,
-      "sha256": "ef665cd15d156e33cf796f59d30263942137afe34527f39a96caf6c28860585b"
+      "sha256": "51baf972ee86ad0b231d42c5138c65f6a2ac80cfd1c5ba2f3ada58c63fb743fd"
     },
     {
       "name": "journal/package.json",
       "bytes": 851,
-      "sha256": "b070ba3d7fee7fa1477e73240bd130ff4aaa11a4ce4afad96adfb3872d60db1a"
+      "sha256": "ed479a911efa90c2282a18b99533a97eb5e2f8b124d2d15657e53c9fbc2f5764"
     },
     {
       "name": "journal/playwright.config.ts",
       "bytes": 869,
-      "sha256": "040041a7613c025553b9f5fe9edf3df3f85e80a7c17ca02ee43e70c97c8f1901"
+      "sha256": "4f239610913e482ba6f8fbd09c618ff64eda0d2a18b5038b476dedf822a7d0db"
     },
     {
       "name": "journal/src/App.tsx",
-      "bytes": 39715,
-      "sha256": "1a36f59d8cb3dcf06bc6dad71cfeb30a0ec26ba21dfbd6cc9c2f6d8fc92d5e6c"
+      "bytes": 40657,
+      "sha256": "e1f62b9f6352452a60518b8fd044b6ce7e16faa6cddebe9ae22ec803b423b116"
     },
     {
       "name": "journal/src/assets/FONT-LICENSE.txt",
@@ -138,6 +148,21 @@
       "name": "journal/src/assets/cover-orchid.svg",
       "bytes": 48273,
       "sha256": "0eada769e4511959a210cc1688d24933c4e02a0e58c8ce0aaa69c7017d62f93d"
+    },
+    {
+      "name": "journal/src/assets/cover-premium-clay.svg",
+      "bytes": 2646,
+      "sha256": "44688829fb9d24d2be5943885f882300317921d53bf8d5866c6e3fa1adf9268a"
+    },
+    {
+      "name": "journal/src/assets/cover-premium-jade.svg",
+      "bytes": 2178,
+      "sha256": "55b85ba3fab652413f01bcc7fa0d6045f7b7dc07b47a1b6ffb0c32f5218d9913"
+    },
+    {
+      "name": "journal/src/assets/cover-premium-mist.svg",
+      "bytes": 2723,
+      "sha256": "ca342fe6f6042f12befd0b32fc4da3f6089e9a421327f7d40a4aa97d18a55f92"
     },
     {
       "name": "journal/src/assets/cover-print-ink.svg",
@@ -240,6 +265,11 @@
       "sha256": "c7803d2efc4a850f62080af43bf4fcf5f6072567b776743f5ae2e41fbb68b6ac"
     },
     {
+      "name": "journal/src/assets/jade-kit.png",
+      "bytes": 313219,
+      "sha256": "31206aabf58148a235a0a271ab1d98bbd12f3a62829b3adf93fdd3814c792f67"
+    },
+    {
       "name": "journal/src/assets/pattern-bluewhite-vine.svg",
       "bytes": 680,
       "sha256": "6a117857c87cd5c6f3adb591e80db734b2240574f479e32a3e25e9659f36c7d1"
@@ -301,8 +331,13 @@
     },
     {
       "name": "journal/src/data/identity.ts",
-      "bytes": 566,
-      "sha256": "48f9874392cdde9367af225d366b30b441c5b4dea01af483dc7ba77235da309d"
+      "bytes": 572,
+      "sha256": "c5f0673cc47edd01d829253788e53049ab74196ea673934852075897e37b549b"
+    },
+    {
+      "name": "journal/src/data/jade-art.ts",
+      "bytes": 1829,
+      "sha256": "91c562a86f0885f825f4775c90aebe7cb40113bb046973a75a70a425ebb08e7d"
     },
     {
       "name": "journal/src/data/print.ts",
@@ -316,13 +351,13 @@
     },
     {
       "name": "journal/src/lib/book-scene.ts",
-      "bytes": 35362,
-      "sha256": "9711173ce26e1937c43237b7b41c4703351b9ff6b923155fcb0b7954b82f6ebd"
+      "bytes": 36694,
+      "sha256": "85c297e321a89766039cac26203c006ea5970cbefdeba29fa4cab2e1d33516fb"
     },
     {
       "name": "journal/src/lib/export.ts",
-      "bytes": 15146,
-      "sha256": "e9bb44af7fe17d35b5187a90fbb97da34ec2368419cc974feec31422359e2d63"
+      "bytes": 14957,
+      "sha256": "74ffe763cfd12eae2bcf37a9719311b8351e9bf5dcdda3fbb692936a118cb018"
     },
     {
       "name": "journal/src/lib/float-render.ts",
@@ -340,6 +375,11 @@
       "sha256": "8961660b2f31ea94cff61005ab6a113808e30b384b2d22aeb14427b1eac3acf7"
     },
     {
+      "name": "journal/src/lib/jade-render.ts",
+      "bytes": 1261,
+      "sha256": "7fa8780bdc1386fdb999775d904a9417f355ec3c797d709420e512788109bc72"
+    },
+    {
       "name": "journal/src/lib/model.test.ts",
       "bytes": 7725,
       "sha256": "a36e05567eb017eeb58dad53a23c7848cb1ee12f2f9f39647891066313fb606a"
@@ -351,8 +391,8 @@
     },
     {
       "name": "journal/src/lib/page-texture.ts",
-      "bytes": 2734,
-      "sha256": "03a571ba846d827d4b1a5282b2895777754facf66927ee4cb307efd6148229b6"
+      "bytes": 3978,
+      "sha256": "6e201e81d962adb9bc5346f44feab483dd298e92a377e065b67e989ce83673b5"
     },
     {
       "name": "journal/src/lib/print-render.ts",
@@ -371,13 +411,13 @@
     },
     {
       "name": "journal/src/styles.css",
-      "bytes": 41259,
-      "sha256": "c0fa45fae41cb573e37764ff510ac44b88966d218c280374b8366365f8540e68"
+      "bytes": 39414,
+      "sha256": "6fbc7f897de7f4ee10235fa2237eef9ef4ce9db61aa3aa869060868164cc0f2b"
     },
     {
       "name": "journal/tests/journal.spec.ts",
-      "bytes": 60261,
-      "sha256": "c2704c0cab622e451a712e31f570dd3e452b7e77cb3ce1c363d83fa4fbf8e20b"
+      "bytes": 61159,
+      "sha256": "1a545f744f06321c42229bb94dd49acef0db37e20d9fb24d19bbd9c5fc090e2a"
     },
     {
       "name": "journal/tests/portable-capture.ts",
@@ -386,8 +426,8 @@
     },
     {
       "name": "journal/tools/build-portable.mjs",
-      "bytes": 12135,
-      "sha256": "875c13abf65473b763a439baf0cc69928d3d552fc36021ae41690f378fb62ba9"
+      "bytes": 12387,
+      "sha256": "e91e21915f8b71daaa54e215574036e2bcaac46de95716d5e119471caae8a353"
     },
     {
       "name": "journal/tools/install.sh",

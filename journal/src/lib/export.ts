@@ -153,8 +153,10 @@ function trustedStickerSource(src: string): boolean {
 export interface PagePngOptions {
   paperTexture?: string;
   bookTitle?: string;
-  /** Flat, restrained paper and ink layout used by the printed journal UI. */
+  /** Digital journal layout; the stable name preserves the export API. */
   appearance?: 'print';
+  /** Transparent rounded corners for the actual 3D plane; shared PNGs remain opaque. */
+  roundCorners?: boolean;
 }
 
 /** Render the paper without editor controls, at 2× resolution for a clear download. */
@@ -184,7 +186,10 @@ export async function exportPagePng(
   const context = canvas.getContext('2d');
   if (!context) throw new Error('浏览器暂不支持图片导出');
   context.scale(2, 2);
-  context.fillStyle = print ? '#FFFDF8' : '#fbf8ef';
+  if (options.roundCorners) {
+    context.beginPath(); context.roundRect(0, 0, PAGE_WIDTH, PAGE_HEIGHT, 22); context.clip();
+  }
+  context.fillStyle = print ? '#FCFBF6' : '#fbf8ef';
   context.fillRect(0, 0, PAGE_WIDTH, PAGE_HEIGHT);
   if (paper) {
     context.drawImage(paper, 0, 0, PAGE_WIDTH, PAGE_HEIGHT);
@@ -197,8 +202,8 @@ export async function exportPagePng(
   const date = new Date(`${entry.date}T12:00:00`);
   const dateText = `${date.getMonth() + 1}月${date.getDate()}日 · 星期${'日一二三四五六'[date.getDay()]}`;
   context.font = `13px ${sans}`;
-  context.fillStyle = print ? '#283F3C' : '#737369';
-  context.fillText(print ? `${options.bookTitle ?? ''}  一页私记` : `${entry.date.slice(0, 4)}年 ${dateText}`, 48, 48);
+  context.fillStyle = print ? '#183B35' : '#737369';
+  if (!print) context.fillText(`${entry.date.slice(0, 4)}年 ${dateText}`, 48, 48);
   const mood = entry.mood || '平静';
   if (!print || mood !== '平静') {
     const moodWidth = context.measureText(mood).width + 28;
@@ -208,30 +213,20 @@ export async function exportPagePng(
       context.roundRect(PAGE_WIDTH - 48 - moodWidth, 41, moodWidth, 30, 15);
       context.fill();
     }
-    context.fillStyle = print ? '#617369' : '#65735c';
+    context.fillStyle = print ? '#61716A' : '#65735c';
     context.fillText(mood, PAGE_WIDTH - 34 - moodWidth, 48);
   }
-  context.strokeStyle = print ? '#DCE8E0' : '#e4e3d6';
-  context.lineWidth = 1;
-  context.beginPath();
-  context.moveTo(48, 86);
-  context.lineTo(592, 86);
-  context.stroke();
-  if (print) {
-    context.strokeStyle = '#608678';
-    context.lineWidth = 2;
-    context.beginPath();
-    context.moveTo(48, 86);
-    context.lineTo(70, 86);
-    context.stroke();
+  if (!print) {
+    context.strokeStyle = '#e4e3d6'; context.lineWidth = 1;
+    context.beginPath(); context.moveTo(48, 86); context.lineTo(592, 86); context.stroke();
   }
-  context.fillStyle = print ? '#283F3C' : '#343d34';
+  context.fillStyle = print ? '#183B35' : '#343d34';
   const title = entry.title || (print ? '' : '此刻，值得记下');
   for (let size = print ? 32 : 30; size >= 18; size -= 1) {
     context.font = `${size}px ${serif}`;
     if (context.measureText(title).width <= 544) break;
   }
-  context.fillText(context.measureText(title).width > 544 ? ellipsis(context, title, 544) : title, 48, 104);
+  context.fillText(context.measureText(title).width > 544 ? ellipsis(context, title, 544) : title, 48, print ? 72 : 104);
   let bodyLineHeight = 30;
   let bodyMaxLines = 6;
   for (const [size, lineHeight] of [[16, 30], [15, 27], [14, 24], [13, 22], [12, 20]]) {
@@ -240,14 +235,14 @@ export async function exportPagePng(
     bodyMaxLines = Math.floor(180 / lineHeight);
     if (wrapLines(context, entry.body, 544).length <= bodyMaxLines) break;
   }
-  context.fillStyle = print ? '#283F3C' : '#55584c';
-  drawTextBlock(context, entry.body, 48, print ? 172 : 166, 544, bodyLineHeight, bodyMaxLines);
+  context.fillStyle = print ? '#183B35' : '#55584c';
+  drawTextBlock(context, entry.body, 48, print ? 148 : 166, 544, bodyLineHeight, bodyMaxLines);
 
   context.strokeStyle = print ? '#9EAEA3' : '#b3b7a2';
   context.lineWidth = 1;
   context.font = `12px ${serif}`;
   if (!print || entry.tasks.length) {
-    context.fillStyle = print ? '#617369' : '#8e947b';
+    context.fillStyle = print ? '#61716A' : '#8e947b';
     context.fillText(print ? '小事' : '今日小事', 48, 380);
     if (!print) {
       context.beginPath();
@@ -268,7 +263,7 @@ export async function exportPagePng(
       context.lineTo(60, y + 5);
       context.stroke();
     }
-    context.fillStyle = print ? (task.done ? '#9EAEA3' : '#283F3C') : (task.done ? '#96998b' : '#55584c');
+    context.fillStyle = print ? (task.done ? '#9EAEA3' : '#183B35') : (task.done ? '#96998b' : '#55584c');
     const text = context.measureText(task.text).width > 520 ? ellipsis(context, task.text, 520) : task.text;
     context.fillText(text, 74, y);
     if (task.done) {
@@ -291,8 +286,8 @@ export async function exportPagePng(
         const sw = object.width / scale, sh = object.height / scale;
         context.drawImage(image, (image.naturalWidth - sw) / 2, (image.naturalHeight - sh) / 2, sw, sh, -object.width / 2, -object.height / 2, object.width, object.height);
       } else {
-      context.fillStyle = '#FFFDF8';
-      context.shadowColor = print ? '#283F3C18' : '#31382a20';
+      context.fillStyle = '#FCFBF6';
+      context.shadowColor = print ? '#183B3518' : '#31382a20';
       context.shadowBlur = print ? 3 : 7;
       context.shadowOffsetY = print ? 1 : 3;
       context.fillRect(-object.width / 2, -object.height / 2, object.width, object.height);
@@ -305,32 +300,28 @@ export async function exportPagePng(
       const sourceHeight = innerHeight / coverScale;
       context.drawImage(image, (image.naturalWidth - sourceWidth) / 2, (image.naturalHeight - sourceHeight) / 2, sourceWidth, sourceHeight, -innerWidth / 2, -object.height / 2 + frame, innerWidth, innerHeight);
       context.font = `${print ? 10 : 11}px ${print ? sans : serif}`;
-      context.fillStyle = print ? '#617369' : '#85806a';
+      context.fillStyle = print ? '#61716A' : '#85806a';
       context.textAlign = 'center';
       const caption = print ? entry.date.replace(/-/g, '.') : '拾一片风景，留给今天。';
       context.fillText(print && context.measureText(caption).width > innerWidth ? ellipsis(context, caption, innerWidth) : caption, 0, object.height / 2 - (print ? 15 : 20));
       }
     } else {
       if (print) {
-        context.shadowColor = '#283F3C20';
+        context.shadowColor = '#183B3520';
         context.shadowBlur = 3;
         context.shadowOffsetY = 1;
       }
-      context.drawImage(image, -object.width / 2, -object.height / 2, object.width, object.height);
+      const factor = Math.min(object.width / image.naturalWidth, object.height / image.naturalHeight);
+      const width = image.naturalWidth * factor, height = image.naturalHeight * factor;
+      context.drawImage(image, -width / 2, -height / 2, width, height);
     }
     context.restore();
   }
-  context.font = `10px ${sans}`;
-  context.fillStyle = print ? '#617369' : '#a4a594';
-  if (print || options.bookTitle) {
-    context.textAlign = 'left';
-    const bookTitle = print ? '一日一笺' : options.bookTitle ?? '';
-    context.fillText(context.measureText(bookTitle).width > 400 ? ellipsis(context, bookTitle, 400) : bookTitle, 48, PAGE_HEIGHT - 28);
-    context.textAlign = 'right';
-    context.fillText(print ? `${Array.from(entry.body).length} 字` : '一日一笺 · 记', PAGE_WIDTH - 48, PAGE_HEIGHT - 28);
-  } else {
-    context.textAlign = 'center';
-    context.fillText('一 日  ·  把 日 子 过 成 诗', PAGE_WIDTH / 2, PAGE_HEIGHT - 28);
+  if (!print) {
+    context.font = `10px ${sans}`;
+    context.fillStyle = '#a4a594';
+    context.textAlign = options.bookTitle ? 'left' : 'center';
+    context.fillText(options.bookTitle ?? '一 日  ·  把 日 子 过 成 诗', options.bookTitle ? 48 : PAGE_WIDTH / 2, PAGE_HEIGHT - 28);
   }
   return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('图片导出失败，请重试')), 'image/png');
