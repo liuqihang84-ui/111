@@ -153,6 +153,8 @@ function trustedStickerSource(src: string): boolean {
 export interface PagePngOptions {
   paperTexture?: string;
   bookTitle?: string;
+  /** Flat, restrained paper and ink layout used by the printed journal UI. */
+  appearance?: 'print';
 }
 
 /** Render the paper without editor controls, at 2× resolution for a clear download. */
@@ -161,6 +163,7 @@ export async function exportPagePng(
   getStickerSrc: (assetId: string) => string | undefined,
   options: PagePngOptions = {},
 ): Promise<Blob> {
+  const print = options.appearance === 'print';
   if (document.fonts) await document.fonts.ready;
   if (options.paperTexture && !trustedStickerSource(options.paperTexture)) {
     throw new Error('纸张纹理无法读取，请使用当前页面的本地素材');
@@ -173,7 +176,7 @@ export async function exportPagePng(
       }
       return { object, image: await decodeImage(src) };
     })),
-    options.paperTexture ? decodeImage(options.paperTexture) : Promise.resolve(undefined),
+    !print && options.paperTexture ? decodeImage(options.paperTexture) : Promise.resolve(undefined),
   ]);
   const canvas = document.createElement('canvas');
   canvas.width = PAGE_WIDTH * 2;
@@ -181,7 +184,7 @@ export async function exportPagePng(
   const context = canvas.getContext('2d');
   if (!context) throw new Error('浏览器暂不支持图片导出');
   context.scale(2, 2);
-  context.fillStyle = '#fbf8ef';
+  context.fillStyle = print ? '#fffef9' : '#fbf8ef';
   context.fillRect(0, 0, PAGE_WIDTH, PAGE_HEIGHT);
   if (paper) {
     context.drawImage(paper, 0, 0, PAGE_WIDTH, PAGE_HEIGHT);
@@ -194,25 +197,37 @@ export async function exportPagePng(
   const date = new Date(`${entry.date}T12:00:00`);
   const dateText = `${date.getMonth() + 1}月${date.getDate()}日 · 星期${'日一二三四五六'[date.getDay()]}`;
   context.font = `13px ${sans}`;
-  context.fillStyle = '#737369';
-  context.fillText(`${entry.date.slice(0, 4)}年 ${dateText}`, 48, 48);
+  context.fillStyle = print ? '#242624' : '#737369';
+  context.fillText(print ? `${entry.date.replace(/-/g, '.')}  星期${'日一二三四五六'[date.getDay()]}` : `${entry.date.slice(0, 4)}年 ${dateText}`, 48, 48);
   const mood = entry.mood || '平静';
-  const moodWidth = context.measureText(mood).width + 28;
-  context.fillStyle = '#eeecdf';
-  context.beginPath();
-  context.roundRect(PAGE_WIDTH - 48 - moodWidth, 41, moodWidth, 30, 15);
-  context.fill();
-  context.fillStyle = '#65735c';
-  context.fillText(mood, PAGE_WIDTH - 34 - moodWidth, 48);
-  context.strokeStyle = '#e4e3d6';
+  if (!print || mood !== '平静') {
+    const moodWidth = context.measureText(mood).width + 28;
+    if (!print) {
+      context.fillStyle = '#eeecdf';
+      context.beginPath();
+      context.roundRect(PAGE_WIDTH - 48 - moodWidth, 41, moodWidth, 30, 15);
+      context.fill();
+    }
+    context.fillStyle = print ? '#85877f' : '#65735c';
+    context.fillText(mood, PAGE_WIDTH - 34 - moodWidth, 48);
+  }
+  context.strokeStyle = print ? '#dcddd5' : '#e4e3d6';
   context.lineWidth = 1;
   context.beginPath();
   context.moveTo(48, 86);
   context.lineTo(592, 86);
   context.stroke();
-  context.fillStyle = '#343d34';
-  const title = entry.title || '此刻，值得记下';
-  for (let size = 30; size >= 18; size -= 1) {
+  if (print) {
+    context.strokeStyle = '#bd3e32';
+    context.lineWidth = 2;
+    context.beginPath();
+    context.moveTo(48, 86);
+    context.lineTo(70, 86);
+    context.stroke();
+  }
+  context.fillStyle = print ? '#242624' : '#343d34';
+  const title = entry.title || (print ? '' : '此刻，值得记下');
+  for (let size = print ? 32 : 30; size >= 18; size -= 1) {
     context.font = `${size}px ${serif}`;
     if (context.measureText(title).width <= 544) break;
   }
@@ -220,25 +235,29 @@ export async function exportPagePng(
   let bodyLineHeight = 30;
   let bodyMaxLines = 6;
   for (const [size, lineHeight] of [[16, 30], [15, 27], [14, 24], [13, 22], [12, 20]]) {
-    context.font = `${size}px ${serif}`;
+    context.font = `${size}px ${print ? sans : serif}`;
     bodyLineHeight = lineHeight;
     bodyMaxLines = Math.floor(180 / lineHeight);
     if (wrapLines(context, entry.body, 544).length <= bodyMaxLines) break;
   }
-  context.fillStyle = '#55584c';
-  drawTextBlock(context, entry.body, 48, 166, 544, bodyLineHeight, bodyMaxLines);
+  context.fillStyle = print ? '#242624' : '#55584c';
+  drawTextBlock(context, entry.body, 48, print ? 172 : 166, 544, bodyLineHeight, bodyMaxLines);
 
-  context.strokeStyle = '#b3b7a2';
+  context.strokeStyle = print ? '#a4a5a0' : '#b3b7a2';
   context.lineWidth = 1;
   context.font = `12px ${serif}`;
-  context.fillStyle = '#8e947b';
-  context.fillText('今日小事', 48, 380);
-  context.beginPath();
-  context.moveTo(112, 388);
-  context.lineTo(172, 388);
-  context.strokeStyle = '#e2e3d3';
-  context.stroke();
-  context.strokeStyle = '#b3b7a2';
+  if (!print || entry.tasks.length) {
+    context.fillStyle = print ? '#85877f' : '#8e947b';
+    context.fillText(print ? '小事' : '今日小事', 48, 380);
+    if (!print) {
+      context.beginPath();
+      context.moveTo(112, 388);
+      context.lineTo(172, 388);
+      context.strokeStyle = '#e2e3d3';
+      context.stroke();
+    }
+  }
+  context.strokeStyle = print ? '#a4a5a0' : '#b3b7a2';
   entry.tasks.forEach((task, index) => {
     const y = 414 + index * 28;
     context.strokeRect(48, y + 2, 14, 14);
@@ -249,7 +268,7 @@ export async function exportPagePng(
       context.lineTo(60, y + 5);
       context.stroke();
     }
-    context.fillStyle = task.done ? '#96998b' : '#55584c';
+    context.fillStyle = print ? (task.done ? '#a4a5a0' : '#242624') : (task.done ? '#96998b' : '#55584c');
     const text = context.measureText(task.text).width > 520 ? ellipsis(context, task.text, 520) : task.text;
     context.fillText(text, 74, y);
     if (task.done) {
@@ -265,35 +284,41 @@ export async function exportPagePng(
     context.rotate(object.rotation * Math.PI / 180);
     if (object.kind === 'photo' || object.assetId === 'demo-landscape') {
       context.fillStyle = '#fffef9';
-      context.shadowColor = '#31382a20';
-      context.shadowBlur = 7;
-      context.shadowOffsetY = 3;
+      context.shadowColor = print ? '#24262418' : '#31382a20';
+      context.shadowBlur = print ? 3 : 7;
+      context.shadowOffsetY = print ? 1 : 3;
       context.fillRect(-object.width / 2, -object.height / 2, object.width, object.height);
       context.shadowColor = 'transparent';
-      const frame = 9;
+      const frame = print ? 8 : 9;
       const innerWidth = Math.max(1, object.width - frame * 2);
-      const innerHeight = Math.max(1, object.height - 38);
+      const innerHeight = Math.max(1, object.height - (print ? 28 : 38));
       const coverScale = Math.max(innerWidth / image.naturalWidth, innerHeight / image.naturalHeight);
       const sourceWidth = innerWidth / coverScale;
       const sourceHeight = innerHeight / coverScale;
       context.drawImage(image, (image.naturalWidth - sourceWidth) / 2, (image.naturalHeight - sourceHeight) / 2, sourceWidth, sourceHeight, -innerWidth / 2, -object.height / 2 + frame, innerWidth, innerHeight);
-      context.font = `11px ${serif}`;
-      context.fillStyle = '#85806a';
+      context.font = `${print ? 10 : 11}px ${print ? sans : serif}`;
+      context.fillStyle = print ? '#85877f' : '#85806a';
       context.textAlign = 'center';
-      context.fillText('拾一片风景，留给今天。', 0, object.height / 2 - 20);
+      const caption = print ? entry.date.replace(/-/g, '.') : '拾一片风景，留给今天。';
+      context.fillText(print && context.measureText(caption).width > innerWidth ? ellipsis(context, caption, innerWidth) : caption, 0, object.height / 2 - (print ? 15 : 20));
     } else {
+      if (print) {
+        context.shadowColor = '#24262420';
+        context.shadowBlur = 3;
+        context.shadowOffsetY = 1;
+      }
       context.drawImage(image, -object.width / 2, -object.height / 2, object.width, object.height);
     }
     context.restore();
   }
   context.font = `10px ${sans}`;
-  context.fillStyle = '#a4a594';
-  if (options.bookTitle) {
+  context.fillStyle = print ? '#85877f' : '#a4a594';
+  if (print || options.bookTitle) {
     context.textAlign = 'left';
-    const bookTitle = context.measureText(options.bookTitle).width > 400 ? ellipsis(context, options.bookTitle, 400) : options.bookTitle;
-    context.fillText(bookTitle, 48, PAGE_HEIGHT - 28);
+    const bookTitle = options.bookTitle ?? '';
+    context.fillText(context.measureText(bookTitle).width > 400 ? ellipsis(context, bookTitle, 400) : bookTitle, 48, PAGE_HEIGHT - 28);
     context.textAlign = 'right';
-    context.fillText('一日一笺 · 记', PAGE_WIDTH - 48, PAGE_HEIGHT - 28);
+    context.fillText(print ? entry.date.slice(5).replace('-', '.') : '一日一笺 · 记', PAGE_WIDTH - 48, PAGE_HEIGHT - 28);
   } else {
     context.textAlign = 'center';
     context.fillText('一 日  ·  把 日 子 过 成 诗', PAGE_WIDTH / 2, PAGE_HEIGHT - 28);

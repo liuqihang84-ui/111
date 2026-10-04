@@ -1,7 +1,7 @@
 {
   "name": "yiri-journal",
-  "version": "0.2.0",
-  "builtAt": "2026-10-04T05:41:03.216Z",
+  "version": "0.3.0",
+  "builtAt": "2026-10-04T07:16:03.483Z",
   "offlineResourceValidation": "passed",
   "archiveCrcValidation": "passed",
   "exactArchiveMemberValidation": "passed",
@@ -9,23 +9,23 @@
   "files": [
     {
       "name": "yiri-journal.html",
-      "bytes": 11023865,
-      "sha256": "44066821ccf049c00404a80336ebafc9906dd4b0218f1fdfc4970e4619b62b32"
+      "bytes": 7944213,
+      "sha256": "f8f6f60191e46409e60fe15b36d4bdbdf851e5eb4ba68fe4503ac11b3c66796f"
     },
     {
       "name": "yiri-journal.zip",
-      "bytes": 7950508,
-      "sha256": "eeb6fd16f1dcc2eb71bcaa0988dce9eec09cee07fd5072296aca6431d0a959f1"
+      "bytes": 5739215,
+      "sha256": "afbd6dd46bd9e15d0a19e3f045edbee29735fcaa4cc41ad5220443543180d22f"
     },
     {
       "name": "README.txt",
-      "bytes": 1971,
-      "sha256": "b54741c8f9a2e8386e3c9ffbfe871ef8ec7ad7b0635409a65dc9550a6b0abf60"
+      "bytes": 2106,
+      "sha256": "4d792df78b625f566efc61210fcdb3287d45df66925cf02c1dfd2251678860ad"
     },
     {
       "name": "NOTICES.txt",
-      "bytes": 13895,
-      "sha256": "b29296adccb5f5e318aacb3858b0ea49a15bc4c402cd973ed9f71d41849215fc"
+      "bytes": 16012,
+      "sha256": "13ce94753dc41c07359f8d22173e5ce3fb8022ecab96af354a924b0a6d04288a"
     }
   ]
 }

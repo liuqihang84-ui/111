@@ -1,45 +1,47 @@
-# 一日一笺 · 电子手账
+# 一日一笺 · 印刷私记
 
-**0.2.0**：桌上的布面册子、手工纸与十二件有材质的小物。点击封面打开，切换日期翻页，纸面保持正面，方便写字和摆放。
+**0.3.0**：纸白、墨黑、朱红的一套册页设计。新用户直接打开一本「日常」的空白页，点击标题与随笔开始写；素材、心情、待办和备份按需打开。已有数据及旧版 JSON 备份保留兼容。
 
 ## 下载与试用
 
-| 下载 | 使用方式 |
+| 文件 | 用法 |
 | --- | --- |
-| [电子手账网页 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal.zip?v=0.2.0) | 约 8.0 MB。完整解压后打开 `yiri-journal.html` |
-| [独立源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal-source.zip?v=0.2.0) | React/TypeScript 源码、本地美术、锁文件、测试与启动脚本 |
+| [电子手账网页 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal.zip?v=0.3.0) | 约 5.7 MB。完整解压后打开 `yiri-journal.html` |
+| [独立源码 ZIP](https://github.com/liuqihang84-ui/111/raw/refs/heads/journal-playtest/downloads/yiri-journal-source.zip?v=0.3.0) | React / TypeScript、原创美术、锁文件、文档与测试 |
 
-初次打开已有两本示例手账；可直接修改，或创建新册子。核心功能包括书架、三种封面、月历、每日随笔、待办和心情、照片上传、12 件透明 PNG 小物的拖动/角手柄缩放/旋转/复制/前置、撤销重做、自动保存、PNG 导出和 JSON 备份恢复。手机有大字号文字编辑区，并支持触摸拖动。
+「写 / 册 / 历」切换纸页、收藏和月历。「加内容」打开八件印刷纸品与照片，「编辑文字」打开大字号输入、心情与小事。「更多操作」导出 PNG、下载或恢复 JSON，并设置封面。
 
-## 实际截图
+## 视觉规范与实际截图
 
-白花枝有叶脉和花瓣，团扇有丝面与扇骨，茶盏有釉面反光，线装书有装订线与纸边；布面和纸张也换了纹理。三种封皮配色使用同一张新布面山水图。
+字标、窄书脊、题签、细线和编号组成统一视觉体系；朱红标记身份和当前状态，墨黑用于主要操作。册页保留薄纸边和轻投影，封面使用克制的 CSS 3D 厚度。八件新纸品同系列；旧十二件材质小物收进「旧藏」。
 
-![实际纸页上的小物细节](preview/journal-material-details.png)
+![视觉规范与同系列素材](preview/journal-identity-board.png)
 
-![桌上的实体册子](preview/journal-desktop-desk.png)
+![初次打开的空白册页](preview/journal-desktop-desk.png)
 
-![每日编辑器](preview/journal-desktop-editor.png)
+![通过编辑器书写和摆放的示例](preview/journal-composed-page.png)
 
-![手账书架](preview/journal-desktop-books.png)
+![按需打开印刷纸品](preview/journal-paper-tools.png)
 
-![月历回顾](preview/journal-desktop-calendar.png)
+![真实文字编辑](preview/journal-desktop-editor.png)
 
-![手机编辑器](preview/journal-mobile-editor.png)
+![印刷题签封面](preview/journal-desktop-books.png)
 
-![手机大字号文字编辑区](preview/journal-mobile-text-editor.png)
+![月历](preview/journal-desktop-calendar.png)
+
+![手机纸页](preview/journal-mobile-editor.png)
+
+![手机大字号编辑](preview/journal-mobile-text-editor.png)
 
 ## 保存与导出
 
-内容保存到当前浏览器；照片在设备内处理。PNG 为 1280 × 1680 的纸页图片，JSON 可恢复全部文字、照片、贴纸位置与书册。更换设备、浏览器、网页地址或文件路径前，先下载 JSON 备份。导入前会下载当前内容的备份。超出纸页空间的长随笔会缩小排版，过多换行可能在 PNG 中截短，完整文字保存在 JSON 内。
+内容自动保存在当前浏览器，照片在浏览器内处理。PNG 为 1280 × 1680 展示图；JSON 恢复全部册子、文字、照片和素材位置。切换设备、浏览器、地址或文件路径前请导出 JSON。恢复前自动下载当前备份，格式不合要求的备份保留原记录。
 
-桌面册子的厚度、封面和翻页使用 CSS 3D，小物使用带材质的二维透明图像。旧版 JSON 备份仍可导入。
-
-这是可下载的网页原型，尚未公开托管；没有账号或云端同步。当前环境的浏览器禁止 `file://`，因此离线验收使用真实 HTTP 载入与下载包相同字节的 HTML 后断网，未绕过管理策略。用户本地打开方式见包内说明。
+本版为可下载网页，尚未公开托管，没有账号或云端同步。当前托管浏览器限制 `file://`；验收通过真实 HTTP 载入与发布文件相同的字节，再断网验证，保留了管理策略。本地文件打开方式未在该环境实测，使用说明见包内 README。
 
 ## 验证与开发
 
-31 项单元测试、13 项浏览器验收通过。检查了实际开册、真实手柄缩放与整次操作撤销、素材层级、图片导出、备份恢复、手机触摸、断网使用，浏览器无控制台错误或未捕获异常。详见 [验证记录](journal/docs/QA.md) 和 [交付说明](journal/docs/DELIVERY.md)。
+锁定依赖安装、31 项单元测试、TypeScript、生产与离线构建通过。13 项实际浏览器验收通过，失败、跳过及不稳定均为零；包括空白初始页、三种封皮、透明纸品、实际拖动/手柄缩放/撤销重做、照片与 PNG 像素、JSON 恢复、手机真实触摸和断网使用。结果见 [QA.md](journal/docs/QA.md) 与 [DELIVERY.md](journal/docs/DELIVERY.md)。自动测试验证行为与资源，不替代视觉体验评价。
 
 ```sh
 cd journal
@@ -47,6 +49,6 @@ bash tools/install.sh
 PORT=4180 bash tools/serve.sh preview
 ```
 
-开发模式：`PORT=4180 bash tools/serve.sh dev`。启动说明见 [START.md](journal/docs/START.md)，美术来源与完整许可证随源码和网页包保留。
+开发使用 `PORT=4180 bash tools/serve.sh dev`。[视觉规范](journal/docs/VISUAL-IDENTITY.md)、[启动说明](journal/docs/START.md)、[美术来源](journal/docs/ART-SOURCES.md) 和完整许可证随源码保留。
 
-原 [中国美学工作台](https://github.com/liuqihang84-ui/111/tree/art-workbench) 和旧游戏分支保持可用。
+原 [中国美学工作台](https://github.com/liuqihang84-ui/111/tree/art-workbench) 及旧游戏成果保留。

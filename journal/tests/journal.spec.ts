@@ -10,7 +10,7 @@ const bodyField = (page: Page) => page.getByRole('textbox', { name: '今日随�
 const nav = (page: Page, name: string) => page.getByRole('button', {
   name: name === '今日一页' ? /^今日一页/ : name, exact: true,
 });
-const deskTest = '书桌先展示有厚度的册子，真实开册后进入纸页编辑';
+const deskTest = '首屏直接呈现空白纸页，纸品与册子按需打开并使用统一视觉';
 
 async function expectArtReady(page: Page) {
   await expect(page.locator('.app-shell')).toHaveAttribute('data-art-ready', 'true', { timeout: 90_000 });
@@ -22,14 +22,37 @@ async function expectNotebookReady(page: Page) {
   await expect(page.locator('.notebook-scene')).not.toHaveClass(/is-flipping|is-opening/);
 }
 
-async function openBook(page: Page, title = '山水有清音') {
+async function openBook(page: Page, title?: string) {
+  if (!title && await titleField(page).isVisible()) {
+    await expectNotebookReady(page);
+    return;
+  }
+  await nav(page, '我的手账').click();
+  title ??= '日常';
   await nav(page, `打开手账：${title}`).click();
   await expectNotebookReady(page);
 }
 
 async function ensureTrayExpanded(page: Page) {
-  const expand = nav(page, '展开素材托盘');
-  if (await expand.isVisible()) await expand.click();
+  if (!await nav(page, '收起素材托盘').isVisible()) await nav(page, '展开素材托盘').click();
+}
+
+async function closeTray(page: Page) {
+  const close = nav(page, '收起素材托盘');
+  if (await close.isVisible()) await close.click();
+  await expect(page.locator('#paper-tools')).toHaveAttribute('aria-hidden', 'true');
+}
+
+async function openObjectControls(page: Page) {
+  await closeTray(page);
+  await nav(page, '调整素材').click();
+  await expect(page.getByRole('slider', { name: '旋转角度', exact: true })).toBeVisible();
+}
+
+async function openMore(page: Page) {
+  await closeTray(page);
+  await nav(page, '更多操作').click();
+  await expect(page.locator('.more-modal')).toBeVisible();
 }
 
 async function readObject(object: Locator) {
@@ -90,7 +113,7 @@ async function expectSaved(page: Page, text: string) {
 }
 
 async function expectSaveComplete(page: Page) {
-  await expect(page.getByRole('status').filter({ hasText: /^已自动保存$/ })).toBeVisible();
+  if (await titleField(page).isVisible()) await expect(page.getByRole('status').filter({ hasText: /^已自动保存$/ })).toBeVisible();
 }
 
 async function downloadBytes(download: Download) {
@@ -101,6 +124,7 @@ async function downloadBytes(download: Download) {
 }
 
 async function downloadBackup(page: Page) {
+  await openMore(page);
   const pending = page.waitForEvent('download');
   await nav(page, '导出备份').click();
   const download = await pending;
@@ -138,11 +162,13 @@ async function addPhoto(page: Page) {
   return page.locator(`[data-object-id="${id}"]`);
 }
 
-async function addSticker(page: Page) {
+async function addSticker(page: Page, label = '日印') {
   await expectArtReady(page);
   await ensureTrayExpanded(page);
+  await nav(page, '装点纸页').click();
+  if (label === '白花枝') await page.locator('.legacy-art > summary').click();
   const before = await page.getByTestId('paper-object').count();
-  await nav(page, '添加贴纸：白花枝').click();
+  await nav(page, `添加贴纸：${label}`).click();
   await expect(page.getByTestId('paper-object')).toHaveCount(before + 1);
   const id = await page.getByTestId('paper-object').last().getAttribute('data-object-id');
   expect(id).toBeTruthy();
@@ -150,6 +176,7 @@ async function addSticker(page: Page) {
 }
 
 async function dragObject(page: Page, object: Locator, dx: number, dy: number, touch = false) {
+  await closeTray(page);
   await expect.poll(() => object.evaluate(element => {
     const scale = getComputedStyle(element).scale;
     return scale === 'none' ? 1 : Number.parseFloat(scale);
@@ -179,7 +206,7 @@ async function dragObject(page: Page, object: Locator, dx: number, dy: number, t
   const { x, y } = start!;
   if (touch) {
     await page.evaluate(() => {
-      const probe = window as Window & { journalDragStart: { objectId: string | null; resize: boolean } | null };
+      const probe = window as unknown as Window & { journalDragStart: { objectId: string | null; resize: boolean } | null };
       probe.journalDragStart = null;
       document.addEventListener('pointerdown', event => {
         const target = event.target instanceof Element ? event.target : null;
@@ -195,7 +222,7 @@ async function dragObject(page: Page, object: Locator, dx: number, dy: number, t
     const endY = Math.min(viewport.height - 5, Math.max(5, y + dy));
     try {
       await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y, id: 7 }] });
-      const actualTarget = await page.evaluate(() => (window as Window & {
+      const actualTarget = await page.evaluate(() => (window as unknown as Window & {
         journalDragStart: { objectId: string | null; resize: boolean } | null;
       }).journalDragStart);
       expect(actualTarget, 'The native touch pointerdown must target the object body rather than the resize button.').toEqual({ objectId: id, resize: false });
@@ -250,6 +277,7 @@ async function inspectPNG(page: Page, bytes: Buffer) {
 async function downloadPNG(page: Page) {
   await expectArtReady(page);
   await expectNotebookReady(page);
+  await openMore(page);
   const pending = page.waitForEvent('download');
   await page.getByRole('button', { name: /导出.*PNG/i }).click();
   const download = await pending;
@@ -301,12 +329,11 @@ async function screenshot(page: Page, name: string) {
   await page.screenshot({ path: resolve(`test-results/preview/${name}.png`), fullPage: true });
 }
 
-test.beforeEach(async ({ page }, testInfo) => {
+test.beforeEach(async ({ page }) => {
   test.setTimeout(120_000);
   watchErrors(page);
   await page.goto('/');
-  await expect(nav(page, '打开手账：山水有清音')).toBeVisible();
-  if (testInfo.title !== deskTest) await openBook(page);
+  await expectNotebookReady(page);
 });
 
 test.afterEach(async ({ page }) => {
@@ -314,9 +341,21 @@ test.afterEach(async ({ page }) => {
 });
 
 test(deskTest, async ({ page }) => {
-  await expect(page.getByTestId('journal-paper')).toHaveCount(0);
+  await expect(titleField(page)).toHaveValue('');
+  await expect(bodyField(page)).toHaveValue('');
+  await expect(page.getByTestId('paper-object')).toHaveCount(0);
+  await expect(page.locator('.paper-tasks')).toHaveCount(0);
+  await expect(page.locator('.selection-toolbar')).toHaveCount(0);
+  await expect(page.locator('#paper-tools')).toHaveAttribute('aria-hidden', 'true');
+  await expect(page.locator('.page-heading, .inside-note, .editor-footnote')).toHaveCount(0);
+  await expect(nav(page, '添加贴纸：日印')).toBeHidden();
+  await expect(nav(page, '导出备份')).toBeHidden();
   for (const label of ['今日一页', '我的手账', '月历回顾']) await expect(nav(page, label)).toBeVisible();
-  const book = page.getByTestId('book-card').filter({ has: nav(page, '打开手账：山水有清音') });
+  await screenshot(page, 'desktop-desk');
+  await nav(page, '我的手账').click();
+  await expect(page.getByTestId('book-card')).toHaveCount(1);
+  const book = page.getByTestId('book-card').filter({ has: nav(page, '打开手账：日常') });
+  await expect(book.locator('.book-front img')).toHaveAttribute('src', /^data:image\/svg\+xml/);
   const geometry = book.locator('.book-geometry');
   await expect(geometry).toBeVisible();
   const dimensions = await geometry.evaluate(element => {
@@ -333,13 +372,12 @@ test(deskTest, async ({ page }) => {
     expect(part.height).toBeGreaterThan(3);
     expect(part.transform).not.toBe('none');
   }
-  await screenshot(page, 'desktop-desk');
   const front = book.locator('.book-front');
   const before = await front.evaluate(element => getComputedStyle(element).transform);
-  await nav(page, '打开手账：山水有清音').click();
+  await nav(page, '打开手账：日常').click();
   await expect.poll(async () => {
     const transform = await page.evaluate(() => {
-      const front = document.querySelector('[data-book-title="山水有清音"] .book-front');
+      const front = document.querySelector('[data-book-title="日常"] .book-front');
       return front ? getComputedStyle(front).transform : null;
     });
     return transform !== null && transform !== before;
@@ -347,6 +385,11 @@ test(deskTest, async ({ page }) => {
   await expectNotebookReady(page);
   await titleField(page).fill('从案头打开的一页');
   await expectSaved(page, '从案头打开的一页');
+  await ensureTrayExpanded(page);
+  for (const label of ['日印', '远山', '枝影', '纸条', '朱印', '题签', '双线框', '索引签']) {
+    await expect(nav(page, `添加贴纸：${label}`)).toBeVisible();
+  }
+  await expect(nav(page, '添加贴纸：白花枝')).toBeHidden();
   const sticker = await addSticker(page);
   const source = await sticker.locator('img').getAttribute('src');
   expect(source).toMatch(/^data:image\/png;base64,/);
@@ -356,6 +399,8 @@ test(deskTest, async ({ page }) => {
   expect(artwork.transparentPixels, 'The PNG artwork must retain its cutout alpha channel.').toBeGreaterThan(100);
   expect(artwork.visiblePixels).toBeGreaterThan(100);
   expect(artwork.colors, 'The PNG artwork must contain varied rendered pixels.').toBeGreaterThan(32);
+  const legacy = await addSticker(page, '白花枝');
+  await expect(legacy.locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
 });
 
 test('标题和随笔自动保存，刷新后仍可编辑', async ({ page }) => {
@@ -372,12 +417,14 @@ test('标题和随笔自动保存，刷新后仍可编辑', async ({ page }) => 
 });
 
 test('心情和待办完成状态保存到当天', async ({ page }) => {
+  const sunny = page.locator('#paper-tools').getByRole('button', { name: '晴朗', exact: true });
   await ensureTrayExpanded(page);
   await nav(page, '今日内容').click();
-  await nav(page, '晴朗').click();
-  await expect(nav(page, '晴朗')).toHaveAttribute('aria-pressed', 'true');
+  await sunny.click();
+  await expect(sunny).toHaveAttribute('aria-pressed', 'true');
   await page.getByRole('textbox', { name: '新待办', exact: true }).fill('给兰草浇水');
   await nav(page, '添加待办').click();
+  await closeTray(page);
   const task = page.getByRole('checkbox', { name: '给兰草浇水', exact: true });
   await task.check();
   await expectSaved(page, '给兰草浇水');
@@ -386,7 +433,8 @@ test('心情和待办完成状态保存到当天', async ({ page }) => {
   await openBook(page);
   await ensureTrayExpanded(page);
   await nav(page, '今日内容').click();
-  await expect(nav(page, '晴朗')).toHaveAttribute('aria-pressed', 'true');
+  await expect(sunny).toHaveAttribute('aria-pressed', 'true');
+  await closeTray(page);
   await expect(task).toBeChecked();
 });
 
@@ -460,9 +508,23 @@ test('贴纸可真实拖动、缩放、旋转、保存和删除', async ({ page 
   const object = await addSticker(page);
   const id = await object.getAttribute('data-object-id');
   expect(id).toBeTruthy();
+  await closeTray(page);
+  const paper = page.getByTestId('journal-paper');
+  const pageTop = (await paper.boundingBox())!.y;
+  await paper.click({ position: { x: 20, y: 400 } });
+  await expect(page.locator('.selection-toolbar')).toHaveCount(0);
+  await expect.poll(async () => Math.abs((await paper.boundingBox())!.y - pageTop), {
+    message: 'Deselecting an object must preserve the paper position.',
+  }).toBeLessThan(.5);
+  await object.click();
+  await expect(page.locator('.selection-toolbar')).toBeVisible();
+  await expect.poll(async () => Math.abs((await paper.boundingBox())!.y - pageTop), {
+    message: 'The first object selection must reveal floating controls without moving the page.',
+  }).toBeLessThan(.5);
   const movement = await dragObject(page, object, 70, 45);
   expect(movement.after.x - movement.before.x).toBeGreaterThan(30);
   expect(movement.after.y - movement.before.y).toBeGreaterThan(15);
+  await openObjectControls(page);
   const size = page.getByRole('slider', { name: '贴纸大小', exact: true });
   await size.press('End');
   const enlarged = await object.boundingBox();
@@ -481,7 +543,9 @@ test('贴纸可真实拖动、缩放、旋转、保存和删除', async ({ page 
   await expect(restored).toBeVisible();
   await expect(restored).toHaveAttribute('style', savedStyle!);
   await restored.click();
+  await openObjectControls(page);
   await expect(rotation).toHaveValue(savedRotation);
+  await closeTray(page);
   const count = await page.getByTestId('paper-object').count();
   await nav(page, '删除选中素材').click();
   await expect(page.getByTestId('paper-object')).toHaveCount(count - 1);
@@ -493,6 +557,7 @@ test('贴纸可真实拖动、缩放、旋转、保存和删除', async ({ page 
 
 test('拖动与真实缩放手柄各自只占一次撤销，重做恢复完整变换', async ({ page }) => {
   const object = await addSticker(page);
+  await openObjectControls(page);
   const rotation = page.getByRole('slider', { name: '旋转角度', exact: true });
   for (let step = 0; step < 7; step++) await rotation.press('ArrowRight');
   const original = await readObject(object);
@@ -622,9 +687,9 @@ test('JSON 备份下载的实际字节可以完整恢复修改前的页面', asy
   expect(backup).toBeTruthy();
   expect(bytes.toString('utf8')).toContain('备份里的山与水');
   expect(bytes.toString('utf8')).toContain('data:image/png;base64,');
+  await nav(page, '删除选中素材').click();
   await titleField(page).fill('即将被恢复的修改');
   await bodyField(page).fill('临时内容');
-  await nav(page, '删除选中素材').click();
   await importBackup(page, bytes);
   await expect(page.getByRole('status').filter({ hasText: '备份已恢复。' })).toBeVisible();
   await expect(titleField(page)).toHaveValue('备份里的山与水');
@@ -681,6 +746,7 @@ test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true
 test('390px 手机页面没有横向溢出，贴纸拖动仍落在纸面内', async ({ page }) => {
   await expect(page.getByTestId('journal-paper')).toBeVisible();
   await expect(nav(page, '展开素材托盘')).toBeVisible();
+  await expect(nav(page, '添加贴纸：日印')).toBeHidden();
   await expect(nav(page, '添加贴纸：白花枝')).toBeHidden();
   const overflow = () => page.evaluate(() => ({
     viewport: document.documentElement.clientWidth,
@@ -710,9 +776,11 @@ test('390px 手机页面没有横向溢出，贴纸拖动仍落在纸面内', as
   expect(clamped.after.x + clamped.after.width).toBeLessThanOrEqual(paper!.x + paper!.width + 1);
   expect(clamped.after.y + clamped.after.height).toBeLessThanOrEqual(paper!.y + paper!.height + 1);
   await expectEdgeHandleAvailable(object);
+  await openObjectControls(page);
   const rotation = page.getByRole('slider', { name: '旋转角度', exact: true });
   for (let step = 0; step < 10; step++) await rotation.press('ArrowRight');
   await expect(rotation).toHaveValue('10');
+  await closeTray(page);
   await expectEdgeHandleAvailable(object);
   await nav(page, '今日一页').click();
   const collapse = nav(page, '收起素材托盘');
@@ -731,6 +799,7 @@ test('390px 手机页面没有横向溢出，贴纸拖动仍落在纸面内', as
   await expect(bodyField(page)).toHaveValue('坐在窗边，写下这一天。\n标题和随笔也同步到纸页。');
   await expectSaved(page, '标题和随笔也同步到纸页');
   await screenshot(page, 'mobile-text-editor');
+  await closeTray(page);
   await nav(page, '我的手账').click();
   const books = await overflow();
   expect(books.document).toBeLessThanOrEqual(books.viewport + 1);
