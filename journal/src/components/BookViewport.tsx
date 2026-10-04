@@ -8,7 +8,7 @@ import type { JournalBook, JournalEntry } from '../lib/model';
 export type BookMode = 'browse' | 'write';
 export interface WritingRect { left: number; top: number; width: number; height: number }
 interface Props {
-  book: JournalBook; entry: JournalEntry; artReady: boolean; startClosed: boolean;
+  book: JournalBook; entry: JournalEntry; artReady: boolean;
   mode: BookMode; onModeChange: (mode: BookMode) => void;
   onRectChange: (rect: WritingRect | null) => void;
   onAvailability: (available: boolean) => void;
@@ -17,14 +17,13 @@ interface Props {
   children: ReactNode;
 }
 
-const coverColors = { mountain: '#BD3E32', orchid: '#242624', indigo: '#FFFEF9' };
+const coverColors = { mountain: '#608678', orchid: '#C87560', indigo: '#DCE8E0' };
 
-export function BookViewport({ book, entry, artReady, startClosed, mode, onModeChange, onRectChange, onAvailability, onTurningChange, getArt, children }: Props) {
+export function BookViewport({ book, entry, artReady, mode, onModeChange, onRectChange, onAvailability, onTurningChange, getArt, children }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<BookScene | null>(null);
   const handlers = useRef({ onModeChange, onRectChange, onAvailability, onTurningChange });
   handlers.current = { onModeChange, onRectChange, onAvailability, onTurningChange };
-  const [pose, setPose] = useState<BookScene['state'] | null>(null);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const generation = useRef(0);
@@ -35,7 +34,6 @@ export function BookViewport({ book, entry, artReady, startClosed, mode, onModeC
     let active = true;
     try {
       const scene = new BookScene(host.current, {
-        startClosed,
         coverColor: coverColors[book.cover], coverTitle: book.title,
         onPageClick: () => handlers.current.onModeChange('write'),
         onError: message => {
@@ -45,8 +43,7 @@ export function BookViewport({ book, entry, artReady, startClosed, mode, onModeC
         },
         onStateChange: next => {
           if (!active) return;
-          setPose(next);
-          handlers.current.onRectChange(next.mode === 'write' && next.settled ? scene.getWritingRect() : null);
+          handlers.current.onRectChange(next.writingRect);
         },
       });
       engine.current = scene; setReady(true); handlers.current.onAvailability(true);
@@ -62,8 +59,11 @@ export function BookViewport({ book, entry, artReady, startClosed, mode, onModeC
   useEffect(() => {
     const scene = engine.current;
     if (!scene) return;
+    if (scene.state.mode === mode && scene.state.settled) {
+      handlers.current.onRectChange(scene.state.writingRect);
+      return;
+    }
     handlers.current.onRectChange(null);
-    if (mode === 'write') void scene.open(true);
     scene.setMode(mode);
   }, [mode, ready]);
 
@@ -105,15 +105,14 @@ export function BookViewport({ book, entry, artReady, startClosed, mode, onModeC
 
   return <>
     <div className={`live-book-stage ${mode === 'write' ? 'is-writing' : ''}`} data-mode={mode}>
-      <div className="book-canvas-host" ref={host} aria-label="可开合和翻页的立体手账" />
+      <div className="book-canvas-host" ref={host} aria-label="有空间层次的手账画布" />
       {children}
     </div>
     {error && <p className="book-render-notice" role="status">{error}</p>}
     {!error && mode === 'browse' && <div className="book-view-controls" aria-label="册子视角">
-        <button className="button primary" aria-label={pose?.open ? '合上手账' : '打开手账'} onClick={() => pose?.open ? engine.current?.close(true) : engine.current?.open(true)}>{pose?.open ? '合上手账' : '打开手账'}</button>
-        <button className="button" aria-label="写一笔" onClick={() => handlers.current.onModeChange('write')}>写一笔</button>
+        <button className="button primary" aria-label="写一笔" onClick={() => handlers.current.onModeChange('write')}>继续书写</button>
         <button className="icon-button" aria-label="复位视角" onClick={() => engine.current?.resetView()}><RotateCcw size={15} /></button>
     </div>}
-    {mode === 'browse' && !error && <p className="book-3d-hint">{pose?.open ? '拖动看看角度 · 点右页写字' : '点封面，打开这一册'}</p>}
+    {mode === 'browse' && !error && <p className="book-3d-hint">拖动查看层次 · 点画布继续写</p>}
   </>;
 }

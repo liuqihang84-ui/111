@@ -18,8 +18,8 @@ function readBlob(blob: Blob): Promise<string> {
   });
 }
 
-function framedPhoto(object: JournalObject, src: string, date: string): Promise<string> {
-  const key = `${src}|${object.width}|${object.height}|${date}`;
+function roundedPhoto(object: JournalObject, src: string): Promise<string> {
+  const key = `${src}|${object.width}|${object.height}`;
   const cached = frameCache.get(key);
   if (cached) return cached;
   const job = (async () => {
@@ -28,15 +28,11 @@ function framedPhoto(object: JournalObject, src: string, date: string): Promise<
     canvas.width = Math.round(object.width * 2); canvas.height = Math.round(object.height * 2);
     const context = canvas.getContext('2d');
     if (!context) throw new Error('照片纸片无法读取');
-    context.scale(2, 2); context.fillStyle = '#FFFEF9';
-    context.fillRect(0, 0, object.width, object.height);
-    const width = Math.max(1, object.width - 16), height = Math.max(1, object.height - 28);
-    const factor = Math.max(width / image.naturalWidth, height / image.naturalHeight);
-    const cropWidth = width / factor, cropHeight = height / factor;
-    context.drawImage(image, (image.naturalWidth - cropWidth) / 2, (image.naturalHeight - cropHeight) / 2, cropWidth, cropHeight, 8, 8, width, height);
-    context.fillStyle = '#85877F'; context.textAlign = 'center'; context.textBaseline = 'top';
-    context.font = '10px "PingFang SC", "Microsoft YaHei", sans-serif';
-    context.fillText(date.replace(/-/g, '.'), object.width / 2, object.height - 15);
+    context.scale(2, 2);
+    context.beginPath(); context.roundRect(0, 0, object.width, object.height, 14); context.clip();
+    const factor = Math.max(object.width / image.naturalWidth, object.height / image.naturalHeight);
+    const cropWidth = object.width / factor, cropHeight = object.height / factor;
+    context.drawImage(image, (image.naturalWidth - cropWidth) / 2, (image.naturalHeight - cropHeight) / 2, cropWidth, cropHeight, 0, 0, object.width, object.height);
     return canvas.toDataURL('image/png');
   })();
   frameCache.set(key, job);
@@ -45,7 +41,7 @@ function framedPhoto(object: JournalObject, src: string, date: string): Promise<
   return job;
 }
 
-/** Text is printed onto the curved sheet; paper pieces are independent 3D meshes. */
+/** Digital page content becomes a shallow curved canvas; artwork remains independent 3D meshes. */
 export async function renderBookPage(entry: JournalEntry, title: string, getArt: (id: string) => string | undefined) {
   const [pageSrc, objects] = await Promise.all([
     exportPagePng({ ...entry, objects: [] }, getArt, { appearance: 'print', bookTitle: title }).then(readBlob),
@@ -53,7 +49,7 @@ export async function renderBookPage(entry: JournalEntry, title: string, getArt:
       let src = object.kind === 'photo' ? object.src : getArt(object.assetId ?? '');
       if (!src) throw new Error('这页含有无法读取的纸品');
       const photo = object.kind === 'photo' || object.assetId === 'demo-landscape';
-      if (photo) src = await framedPhoto(object, src, entry.date);
+      if (photo) src = await roundedPhoto(object, src);
       return { ...object, kind: photo ? 'photo' : 'sticker', src } as BookPaperObject;
     })),
   ]);

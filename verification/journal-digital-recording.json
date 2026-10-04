@@ -1,0 +1,163 @@
+{
+  "source": "Actual Chromium browser recording of production build; all entries and objects created with native UI, no DOM content or image injection.",
+  "releaseHtmlSha256": "14c944bd3803a267da81a10cdbdca9f4192ad82e81268beaf4e45fb25ca9e0ce",
+  "today": "2026-10-04",
+  "videoPath": "/tmp/yiri-v05-demo/052e3bf41e738c3ed85911a0d765966d.webm",
+  "seconds": 20.269,
+  "actions": [
+    {
+      "name": "默认单页书写",
+      "seconds": 2.346
+    },
+    {
+      "name": "可选空间预览",
+      "seconds": 3.723
+    },
+    {
+      "name": "实际三维浅层与视角",
+      "seconds": 6.81
+    },
+    {
+      "name": "直接回到原生书写",
+      "seconds": 9.611
+    },
+    {
+      "name": "同一风格的八件光片",
+      "seconds": 11.914
+    },
+    {
+      "name": "加入光片",
+      "seconds": 12.761
+    },
+    {
+      "name": "数字画布流转到昨日",
+      "seconds": 17.993
+    },
+    {
+      "name": "返回今天并保留书写状态",
+      "seconds": 19.113
+    }
+  ],
+  "writingLayouts": [
+    {
+      "phase": "prep-write",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    },
+    {
+      "phase": "prep-write",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    },
+    {
+      "phase": "default-write",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    },
+    {
+      "phase": "preview-return",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    },
+    {
+      "phase": "tools-close",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    },
+    {
+      "phase": "date-return",
+      "paper": {
+        "width": 524.190673828125,
+        "height": 688.000244140625
+      },
+      "overlay": {
+        "width": 524.1875,
+        "height": 688
+      }
+    }
+  ],
+  "errors": [],
+  "derivedMedia": {
+    "trimmedStartupSeconds": 1.8960000000000001,
+    "playbackSpeed": 1,
+    "source": "Actual Playwright Chromium WebM; startup trimmed, no synthetic scene or transition",
+    "sampledFrameCount": 76,
+    "uniqueSampledFrames": 75,
+    "files": [
+      {
+        "file": "journal-digital-demo.mp4",
+        "bytes": 315404,
+        "sha256": "55e532e7d17ce9e971de8df25d6a9daf68bf4a46137c1a30e5153b78d0210bd2",
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 1280,
+              "height": 1000,
+              "avg_frame_rate": "25/1",
+              "nb_frames": "473"
+            }
+          ],
+          "format": {
+            "duration": "18.920000",
+            "size": "315404"
+          }
+        }
+      },
+      {
+        "file": "journal-digital-demo.gif",
+        "bytes": 924908,
+        "sha256": "159f5f3002f056bc615398d69abfc1d3ef761bbd99b20e6004920ee62d777d35",
+        "probe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "gif",
+              "width": 960,
+              "height": 750,
+              "avg_frame_rate": "25/2",
+              "nb_frames": "227"
+            }
+          ],
+          "format": {
+            "duration": "18.910000",
+            "size": "924908"
+          }
+        }
+      }
+    ]
+  }
+}
