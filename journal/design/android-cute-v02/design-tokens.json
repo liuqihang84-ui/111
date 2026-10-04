@@ -1,0 +1,185 @@
+{
+  "name": "一日一笺 · 可爱电子手账 · Android UI/VI",
+  "version": "cute-v02-proposal",
+  "status": "proposed design direction; not user-approved; not implemented",
+  "userApproved": false,
+  "implemented": false,
+  "deviceVerified": false,
+  "platform": {
+    "target": "Android",
+    "nativeFramework": "not selected",
+    "delivery": "UI/VI design only; not an APK or running component"
+  },
+  "units": {
+    "layout": "dp",
+    "type": "sp",
+    "artboard": "proposed 412 dp reference; not a device measurement"
+  },
+  "colors": {
+    "background": "#FFF9F1",
+    "ink": "#473B36",
+    "apricotAccent": "#F5B79D",
+    "powderBlueAccent": "#A8C5D8",
+    "sageAccent": "#C9D7B6"
+  },
+  "colorSemantics": {
+    "bodyText": "ink; opaque and stable while reading or editing",
+    "primaryAction": {
+      "background": "apricotAccent",
+      "label": "ink"
+    },
+    "secondaryAction": {
+      "background": "background",
+      "label": "ink",
+      "boundary": "ink when necessary"
+    },
+    "selectedNavigation": {
+      "label": "ink",
+      "iconAccent": "apricotAccent",
+      "alsoUse": "shape and explicit selected semantics"
+    },
+    "unselectedNavigation": "ink; do not use faint accent text",
+    "photoAndCloudMaterial": "powderBlueAccent; illustration or decorative material only; not a cloud-backup claim",
+    "plantMaterial": "sageAccent; illustration and sticker material only",
+    "error": "ink wording plus visible icon; do not communicate failure by accent color alone",
+    "boundaries": "ink with restrained opacity for decorative lines; necessary input/focus boundaries remain visible"
+  },
+  "type": {
+    "family": "Android CJK sans; final native font asset not selected",
+    "brand": "proposed rounded Chinese sans wordmark; no font binary included",
+    "body": {
+      "size": 16,
+      "lineHeight": 26,
+      "weight": 400,
+      "color": "ink"
+    },
+    "inputBody": {
+      "size": 16,
+      "lineHeight": 26,
+      "color": "ink"
+    },
+    "support": {
+      "size": 14,
+      "lineHeight": 22,
+      "color": "ink"
+    },
+    "pageTitle": {
+      "size": 28,
+      "lineHeight": 36,
+      "weight": 500,
+      "color": "ink"
+    },
+    "controlLabel": {
+      "size": 16,
+      "lineHeight": 24,
+      "weight": 500,
+      "color": "ink"
+    },
+    "fontScale": "respect system fontScale; future review at 2.0; not yet verified"
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "pageMargin": 24,
+  "radii": {
+    "control": 16,
+    "media": 16,
+    "sheet": 24
+  },
+  "touch": {
+    "minimum": 48,
+    "iconGlyph": 24,
+    "minimumMeaning": "actual non-overlapping proposed target; glyph size is not target size"
+  },
+  "systemInsets": {
+    "statusBar": "read real WindowInsets at implementation",
+    "gestureArea": "read real WindowInsets at implementation",
+    "ime": "real system keyboard; never draw keyboard as an app-owned input"
+  },
+  "navigation": [
+    "手账",
+    "素材",
+    "我的"
+  ],
+  "editorTools": [
+    "文字",
+    "照片",
+    "贴纸",
+    "布局"
+  ],
+  "editor": {
+    "structure": "proposed native full-screen journal editing; no desktop side panel",
+    "keyboard": "real Android system IME; toolbar sits above IME when open and above gesture inset when closed",
+    "inputStates": [
+      "empty",
+      "focused",
+      "composing text",
+      "text selection",
+      "keyboard visible",
+      "keyboard hidden",
+      "saving",
+      "saved",
+      "save failed with content retained"
+    ],
+    "contentInitialState": "empty; no fabricated default records, photos, tasks or applied stickers",
+    "photos": "actual user-selected media; design examples and placeholders are not inserted content",
+    "stickers": "insert only after an explicit user selection; supporting decorative materials are not presumed page data"
+  },
+  "brand": {
+    "name": "小笺",
+    "canonicalSource": "brand-mark.svg",
+    "viewBox": [
+      0,
+      0,
+      128,
+      128
+    ],
+    "bodyPath": "M40 18 H82 L106 42 V93 Q106 111 88 111 H40 Q22 111 22 93 V36 Q22 18 40 18 Z",
+    "foldPath": "M82 18 V31 Q82 42 93 42 H106 Z",
+    "features": [
+      "rounded cream note",
+      "upper-right apricot folded corner",
+      "two cocoa dot eyes",
+      "restrained cocoa smile"
+    ],
+    "smallSizeRule": "keep silhouette, fold and face; no tiny added accessories",
+    "status": "original proposed mascot design; not approved by user; not a rendered app icon package"
+  },
+  "depth": {
+    "scope": "3D texture is restricted to materials, stickers and small empty-state illustration",
+    "uses": [
+      "小笺 material illustration",
+      "flower, cup, leaf and cloud sticker materials",
+      "small empty-state illustration"
+    ],
+    "excluded": [
+      "body text",
+      "native inputs",
+      "keyboard",
+      "navigation",
+      "ordinary control labels",
+      "calendar numerals"
+    ],
+    "emptyStateRule": "illustration communicates an empty page; it is not an inserted journal item and is not saved as user content",
+    "materialDirection": "soft stylized volume; no photoreal notebook or tabletop scene; consistent gentle light",
+    "performance": "implementation and device performance not evaluated"
+  },
+  "motion": {
+    "pressDurationMs": 120,
+    "transitionDurationMs": 220,
+    "reducedMotion": "static material imagery; keep input and navigation semantics intact",
+    "status": "proposed; not implemented"
+  },
+  "designEvidence": {
+    "referenceBoard": "/workspace/generated_images/exec-ade8f0b7-61b7-4b7c-bd4a-815150e7b013.png",
+    "referenceStatus": "AI-generated concept board; not a runtime screenshot or user content",
+    "svgStatus": "deterministic editable flat source; no embedded raster, font binaries or JavaScript",
+    "runtimeChecks": "none; no Android device, emulator, accessibility or performance claim"
+  }
+}

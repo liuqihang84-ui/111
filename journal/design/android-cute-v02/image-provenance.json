@@ -1,0 +1,33 @@
+{
+  "version": "android-cute-v02",
+  "status": "proposed direction for visual review, not user-approved implementation",
+  "images": [
+    {
+      "file": "ui-vi-cute-v02.png",
+      "kind": "AI-generated UI/VI design concept, not a running app screenshot",
+      "generator": "image_gen.imagegen",
+      "originalPath": "/workspace/generated_images/exec-ade8f0b7-61b7-4b7c-bd4a-815150e7b013.png",
+      "referencePath": "/workspace/generated_images/exec-81545580-c97e-42b0-b9a8-b83aadcb1f73.png",
+      "sha256": "de5b0e2bc4215abad2963aaa6408f9a1c767d77ea355efef68e7b874165e5c89",
+      "content": "Fictional example pages; blank state illustration is not an inserted user record",
+      "rasterEditedOutsideImageGenerator": false
+    },
+    {
+      "file": "ui-editing-states-v02.png",
+      "kind": "AI-generated UI/VI design concept, not a running app screenshot",
+      "generator": "image_gen.imagegen",
+      "originalPath": "/workspace/generated_images/exec-4309eb2b-ea3c-461a-8c13-6796c627a2c0.png",
+      "referencePath": "/workspace/generated_images/exec-81545580-c97e-42b0-b9a8-b83aadcb1f73.png",
+      "sha256": "ecbd4f2aa47b96032d459481600c16369eda78022413d9416908a069ef45020d",
+      "content": "Fictional example pages; blank state illustration is not an inserted user record",
+      "rasterEditedOutsideImageGenerator": false
+    }
+  ],
+  "thirdPartyResearchImagesIncluded": false,
+  "notes": [
+    "Material highlights and text in generated concept images are illustrative, not production asset exports.",
+    "Some sample handwritten text remains; planned default input and task typography is readable Android sans.",
+    "The image keyboard is illustrative and is not an implemented system IME.",
+    "Example pages dated 2026-10-04, Sunday; sample week 2026-09-28 through 2026-10-04."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "一日一笺 · 可爱手账 UI / VI",
+  "version": "android-cute-v02",
+  "status": "proposed UI/VI design direction; no Android app implementation",
+  "createdAt": "2026-10-05T00:18:40.208789+08:00",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3844,
+      "sha256": "ab6c78a4bf87ab6f31deef738cd2956f138f1f94638121b4db5cf78777a4a9e6"
+    },
+    {
+      "file": "SOURCES.md",
+      "bytes": 2669,
+      "sha256": "627264967bd219834dc5836c2f1dd11a5fff21a521f6dca59087614425c2778c"
+    },
+    {
+      "file": "brand-mark.svg",
+      "bytes": 1220,
+      "sha256": "d0f809e9fe97f0d9f3a384eb196f80b7e920b233fe18895045760bf4f3a514b1"
+    },
+    {
+      "file": "design-tokens.json",
+      "bytes": 5868,
+      "sha256": "be0984e0d0e2e3cc1941d9ee228d5620d7b01d761790d99aac7e30815aa9a2bd"
+    },
+    {
+      "file": "image-provenance.json",
+      "bytes": 1812,
+      "sha256": "8755d66f4fa072c58ea008b41d19a86ac163e4ea529875da43ca9ba2133a2758"
+    },
+    {
+      "file": "ui-vi-cute-v02.png",
+      "bytes": 1592073,
+      "sha256": "de5b0e2bc4215abad2963aaa6408f9a1c767d77ea355efef68e7b874165e5c89"
+    },
+    {
+      "file": "ui-editing-states-v02.png",
+      "bytes": 1466050,
+      "sha256": "ecbd4f2aa47b96032d459481600c16369eda78022413d9416908a069ef45020d"
+    }
+  ]
+}
