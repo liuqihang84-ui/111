@@ -104,21 +104,24 @@ mkdirSync(releaseDirectory, { recursive: true });
 const htmlPath = join(releaseDirectory, htmlName);
 writeFileSync(htmlPath, html, 'utf8');
 
-const readme = `一日一笺 · 印刷私记 0.3.0
+const readme = `一日一笺 · 立体册页 0.4.0
 
 打开方法
 1. 完整解压 ZIP。
 2. 用现代 Chrome、Edge 或 Firefox 打开 ${htmlName}。
-3. 脚本、样式、纸品美术与字体已嵌入 HTML；记录和导出无需网络。
+3. 脚本、Three.js、样式、纸品美术与字体已嵌入 HTML；记录、3D 浏览和导出无需网络。
 
 开始记录
-新用户直接打开一本「日常」的空白册页，点击标题和随笔书写。
-「写 / 册 / 历」切换纸页、手账收藏和月历。可新建手账、改名，选择朱页、墨页和素页封面。
-「加内容」打开纸品与照片；「编辑文字」打开文字、心情和小事工具。用完可收起。
-8 件同风格印刷纸品可拖动、缩放、旋转、复制、前置或删除。旧版 12 件素材保留在「旧藏」，旧手账与 JSON 备份兼容。
-撤销与重做支持整次拖动；选册和切换日期保留轻量开册与翻页。
+新用户先看到一本「日常」的合拢手账。点封面或「打开手账」展开册子。
+拖动查看角度；点击右页或「写一笔」进入当页的原生文字编辑；「看整册」回到立体浏览。
+封皮、书脊、页芯与曲面纸页由代码实时绘制，切换相邻日期会翻动实际纸面。
+「写 / 册 / 历」切换工作区、手账收藏和月历。可新建手账、改名，选择朱页、墨页和素页封面。
+进入书写后，「加内容」打开纸品与照片；「编辑文字」打开文字、心情和小事工具。用完可收起。
+8 件同系列印刷纸品可拖动、缩放、旋转、复制、前置或删除。旧版 12 件素材保留在「旧藏」，旧手账与 JSON 备份兼容。
+撤销与重做支持整次拖动。立体浏览中，纸品和照片是各自有位置与高度的独立薄片。
 照片支持 PNG、JPEG、WebP，单张最大 15 MB，在当前浏览器缩小后保存。
-「更多操作」导出 1280 × 1680 PNG、下载或恢复全部手账 JSON，也可编辑封面。
+「更多操作」导出 1280 × 1680 平面册页 PNG、下载或恢复全部手账 JSON，也可编辑封面。
+3D 浏览需要 WebGL 2；不可用时显示状态并继续普通书写。减少动态效果偏好保留功能、减少过渡运动。
 
 保存与备份
 内容自动保存在当前浏览器 localStorage；存储不可用或空间不足时显示提示。
@@ -128,12 +131,13 @@ JSON 恢复全部手账；PNG 用于分享。导入 JSON 先验证文件，覆�
 本版没有账号或云端同步，照片不上传服务器。
 
 验证方式
-当前托管环境的浏览器策略限制 file://，此环境未实测本地文件打开。
-浏览器验收使用允许的真实 HTTP 载入与此 HTML 相同的字节，然后断网检查；结果见源码 docs/QA.md。
+托管环境若限制 file://，保留浏览器策略，以允许的真实 HTTP 载入与此 HTML 相同的字节，再断网检查。
+本轮实际通过结果、设备和限制见源码 docs/QA.md；旧版本结果不代替新版本验证。
 
 美术与许可证
-纸白、墨黑、朱红构成独立 UI / VI。三款封面与品牌标志为原创 SVG，8 件透明印刷纸品为新生成 PNG。
-旧 PNG 和 SVG 仅用于「旧藏」及历史备份兼容。来源、提示词与完整许可证随源码保留。
+纸白、墨黑、朱红贯穿独立 UI / VI。实时书物为程序建模，页面印刷内容来自当前记录，无外部模型或在线材质依赖。
+平面封面与品牌标志为原创 SVG，8 件透明印刷纸品为生成 PNG。旧 PNG 和 SVG 用于「旧藏」及历史备份兼容。
+来源、提示词与完整许可证随源码保留；本包附带软件与字体许可证全文，包含 Three.js MIT 许可证。
 
 本包为离线交付；静态站可使用另行构建的 dist 目录。构建不会自动部署网站。
 `;
@@ -144,7 +148,7 @@ if (!existsSync(noticesPath)) fail('docs/NOTICES.txt is required for distributio
 const noticesText = readFileSync(noticesPath, 'utf8');
 const normalizeLicense = (text) => text.replace(/\r\n/g, '\n').trim();
 const notices = [noticesText, ''];
-for (const packageName of ['react', 'react-dom', 'scheduler', 'lucide-react']) {
+for (const packageName of ['react', 'react-dom', 'scheduler', 'lucide-react', 'three']) {
   const packageDirectory = join(projectRoot, 'node_modules', packageName);
   const licenseName = ['LICENSE', 'LICENSE.md', 'LICENSE.txt', 'LICENSE-MIT'].find((name) => existsSync(join(packageDirectory, name)));
   if (!licenseName) fail(`Cannot locate the bundled dependency license for ${packageName}.`);

@@ -70,7 +70,7 @@ a { color: inherit; }
 .editor-column { width: min(100%, 671px); margin: 0 auto; }
 .editor-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; margin-bottom: 20px; padding-left: 18px; }
 .editor-toolbar > div { display: flex; align-items: center; gap: 0; min-width: 0; }
-.editor-toolbar button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; min-height: 44px; padding: 8px; font-size: 13px; }
+.editor-toolbar button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; min-height: 44px; padding: 8px; font-size: 13px; white-space: nowrap; }
 .editor-toolbar button:hover { color: var(--cinnabar); }
 .editor-toolbar svg { width: 16px; height: 16px; stroke-width: 1.6; }
 .editor-toolbar input[type='date'] { width: 142px; min-height: 44px; padding: 6px 4px; border: 0; border-radius: 2px; background: transparent; color: var(--ink); font-size: 14px; font-variant-numeric: tabular-nums; }
@@ -136,6 +136,45 @@ a { color: inherit; }
 .page-flip-leaf { position: absolute; z-index: 9; inset: 0; transform-origin: left center; backface-visibility: hidden; background: var(--paper); box-shadow: 2px 2px 7px #24262412; pointer-events: none; opacity: 0; }
 .is-flipping .page-flip-leaf { animation: page-turn .55s ease both; }
 @keyframes page-turn { 0% { opacity: .95; transform: perspective(1200px) rotateY(0deg); } 70% { opacity: .8; transform: perspective(1200px) rotateY(-96deg); } 100% { opacity: 0; transform: perspective(1200px) rotateY(-145deg); } }
+
+/* The notebook is a live three-dimensional object. DOM ink sits on its writing plane. */
+.editor-layout.has-live-book { margin-top: 20px; }
+.has-live-book .editor-column { width: min(100%, 1040px); }
+.has-live-book .editor-toolbar { width: min(100%, 920px); margin: 0 auto 6px; padding-left: 0; }
+.live-book-stage { position: relative; width: 100%; height: clamp(520px, 70dvh, 760px); isolation: isolate; }
+.live-book-stage.is-writing { height: clamp(760px, 86dvh, 920px); }
+.book-canvas-host { position: absolute; inset: 0; z-index: 0; min-width: 0; min-height: 0; }
+.book-canvas-host canvas { display: block; width: 100%; height: 100%; outline-offset: -5px; touch-action: none; user-select: none; }
+.book-canvas-host canvas:focus-visible { outline: 1px solid var(--cinnabar); }
+.live-book-stage:not(.is-writing) .book-canvas-host canvas { cursor: grab; }
+.live-book-stage:not(.is-writing) .book-canvas-host canvas:active { cursor: grabbing; }
+.live-writing-overlay { position: absolute; z-index: 2; isolation: isolate; pointer-events: auto; }
+.live-writing-overlay .notebook-scene { display: block; width: 100%; height: 100%; padding: 0; }
+.live-writing-overlay .open-book-left,
+.live-writing-overlay .open-book-spine,
+.live-writing-overlay .book-board,
+.live-writing-overlay .paper-stack,
+.live-writing-overlay .page-flip-leaf { display: none; }
+.live-writing-overlay .canvas-viewport { display: block; width: 100%; height: 100%; padding: 0; }
+.live-writing-overlay .page-scale-wrapper::after { display: none; }
+.live-writing-overlay .journal-paper { background: transparent; box-shadow: none; }
+.live-writing-overlay .paper-object.is-dragging { outline-color: #bd3e3270; }
+.live-writing-overlay .photo-object.is-dragging { box-shadow: 0 8px 16px #24262424, 0 1px 2px #24262413; }
+.live-writing-overlay .sticker-object.is-dragging { filter: drop-shadow(0 7px 5px #24262425); }
+.book-view-controls { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; width: fit-content; max-width: 100%; min-height: 48px; margin: 0 auto; padding: 2px; }
+.book-view-controls button { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 44px; min-height: 44px; padding: 10px 14px; border: 1px solid transparent; border-radius: 2px; color: var(--muted); font-size: 13px; line-height: 20px; }
+.book-view-controls button svg { width: 16px; height: 16px; stroke-width: 1.5; }
+.book-view-controls button:hover { color: var(--ink); background: #24262405; }
+.book-view-controls button.is-active { color: var(--ink); }
+.book-view-controls button.is-active::after { position: absolute; right: 14px; bottom: 5px; left: 14px; height: 2px; background: var(--cinnabar); content: ''; }
+.book-view-controls button.primary { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.book-view-controls button.primary:hover { background: #393b38; }
+.book-view-controls button.primary::after { display: none; }
+.book-view-controls .book-control-divider { width: 1px; height: 18px; margin: 0 8px; background: var(--line); }
+.book-3d-hint { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 24px; margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 20px; letter-spacing: .35px; text-align: center; }
+.book-3d-hint svg { width: 13px; height: 13px; stroke-width: 1.5; }
+.has-live-book .editor-column > .save-status { display: flex; justify-content: center; width: fit-content; margin: 13px auto 0; }
+.book-render-notice { width: min(400px, calc(100% - 40px)); margin: 18px auto; color: var(--muted); font-size: 13px; line-height: 1.9; text-align: center; }
 
 /* Optional tools use the page's printed rules and paper. */
 .tools-panel { position: fixed; z-index: 30; top: 102px; right: max(24px, calc((100vw - 1200px) / 2 + 20px)); width: 320px; max-height: calc(100dvh - 126px); overflow-y: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); box-shadow: 0 12px 40px #24262415; overscroll-behavior: contain; }
@@ -345,6 +384,21 @@ a { color: inherit; }
   .modal-head h2, .modal-header h2 { font-size: 22px; }
   .toast { bottom: 88px; padding: 11px 15px; font-size: 12px; }
 }
+@media (max-width: 760px) {
+  .has-live-book .editor-toolbar { margin-bottom: 0; }
+  .live-book-stage { height: clamp(500px, 67dvh, 680px); }
+  .live-book-stage.is-writing { height: clamp(650px, 80dvh, 840px); }
+}
+@media (max-width: 560px) {
+  .editor-layout.has-live-book { margin-top: 12px; }
+  .has-live-book .editor-toolbar { gap: 0; margin-bottom: 0; }
+  .live-book-stage, .live-book-stage.is-writing { height: clamp(460px, 68dvh, 620px); }
+  .book-view-controls { gap: 0; padding: 0; }
+  .book-view-controls button { gap: 5px; padding: 10px 12px; font-size: 12px; }
+  .book-view-controls .book-control-divider { margin: 0 4px; }
+  .book-3d-hint { margin-top: 5px; font-size: 10px; }
+  .has-live-book .editor-column > .save-status { margin-top: 10px; font-size: 10px; }
+}
 @media (max-width: 360px) {
   .app-shell { padding-right: 12px; padding-left: 12px; }
   .sidebar { flex-wrap: wrap; gap: 0 9px; }
@@ -352,6 +406,8 @@ a { color: inherit; }
   .sidebar nav { order: 3; justify-content: space-between; width: 100%; }
   .nav-item { min-height: 44px; font-size: 12px; }
   .editor-toolbar > div:last-child { width: 100%; justify-content: flex-end; }
+  .has-live-book .editor-toolbar .editor-actions { justify-content: space-between; }
+  .has-live-book .editor-actions .button.ghost { padding-right: 6px; padding-left: 6px; }
   .books-grid { gap: 24px 18px; }
   .book-cover-title { font-size: 15px; }
   .book-title-text { font-size: min(var(--cover-title-size, 28px), 9cqw); }

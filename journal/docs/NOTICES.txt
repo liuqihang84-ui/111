@@ -1,4 +1,4 @@
-一日一笺 · 印刷私记 0.3.0
+一日一笺 · 立体册页 0.4.0
 第三方软件、美术与字体来源说明
 
 本文件保留实际随应用分发的软件与字体许可证。用户照片和手账内容由用户提供，保存在当前浏览器；本项目没有为这些内容另行授予许可。
@@ -213,3 +213,33 @@ tactile-stickers.png、tactile-cover.png、tactile-paper.png 为本项目使用�
 
 印刷私记美术（0.3.0）
 print-stickers.png 为本项目使用图像生成工具制作的透明印刷纸品；提示词、裁取矩形与 SHA-256 见 docs/PRINT-ART.md。cover-print-red.svg、cover-print-ink.svg、cover-print-paper.svg、brand-mark.svg 与 identity-board.svg 为本项目制作的原创矢量图形与视觉规范板，可随本项目修改与分发。旧版材质继续保留用于旧藏与历史手账兼容。它们不是馆藏文物复制或古代印谱摹本。第三方软件与字体许可证全文保持不变。
+
+实时三维引擎（0.4.0）
+
+three 0.180.0
+许可证全文直接保留自本项目安装的 node_modules/three/LICENSE。
+
+The MIT License
+
+Copyright © 2010-2025 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+立体册页美术（0.4.0）
+封皮、页芯、书脊与曲面纸页为本项目代码创建的程序几何，材质与灯光在当前浏览器实时计算。册页印刷纹理来自当前用户记录，独立纸片继续使用已注明来源的本地纸品与用户照片。没有外部模型或在线材质。旧版美术和字体来源、版权声明及许可证继续保留。

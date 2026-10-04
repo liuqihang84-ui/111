@@ -1,12 +1,12 @@
-# 当前工作流：一日一笺 · 印刷私记
+# 当前工作流：一日一笺 · 立体册页
 
-当前应用位于 `/workspace/111/journal`，版本 `0.3.0`，默认端口 `4180`。新用户直接进入一本「日常」的空白编辑页；既有浏览器数据继续保留。素材与页面工具按需展开，月历用于回看，PNG 导出和 JSON 备份恢复从「更多操作」进入。
+当前应用位于 `/workspace/111/journal`，版本 `0.4.0`，默认端口 `4180`。新用户先看到「日常」的合拢册子：点封面展开，拖动查看角度，点右页或「写一笔」直接编辑；「看整册」返回立体浏览。既有浏览器数据继续保留。素材与页面工具按需展开，月历用于回看，PNG 导出和 JSON 备份恢复从「更多操作」进入。
 
 保留 `/workspace/111` 中的美术工作台、旧 Godot 游戏及用户更改。使用现有检出，不额外创建 Git worktree。
 
 ## 安装、检查与构建
 
-需要 Node.js 20.19+、22.12+ 或更新的受支持版本、npm 和 Python 3。使用锁定依赖与随源码保留的美术、字体；常规启动无需生成图片、重新制作字体或安装 Python 第三方库。
+需要 Node.js 20.19+、22.12+ 或更新的受支持版本、npm 和 Python 3。使用锁定依赖与随源码保留的美术、字体；常规启动无需生成图片、重新制作字体、下载外部模型或安装 Python 第三方库。
 
 ```sh
 cd /workspace/111/journal
@@ -15,9 +15,9 @@ npm test
 npm run build:portable
 ```
 
-`bash tools/install.sh` 是同一流程的辅助脚本：检查 Node/Python，使用工作区 npm 缓存，安装锁定依赖，运行单元测试与生产、单文件构建。
+`bash tools/install.sh` 是同一流程的辅助脚本：检查 Node/Python，使用工作区 npm 缓存，安装锁定依赖，运行单元测试与生产、单文件构建。运行时使用 `three@0.180.0`，开发类型使用 `@types/three@0.180.0`；Three.js 的实际 MIT 许可证随离线包和源码保留。
 
-`build:portable` 输出 `dist/`、`release/yiri-journal.html`、`release/yiri-journal.zip` 与 `release/release-manifest.json`。构建验证内嵌资源、压缩包成员、CRC 和文件字节，并记录 SHA-256。`python3 tools/package-source.py` 另行打包可独立安装的 `release/yiri-journal-source.zip`，排除依赖和生成输出。
+`build:portable` 输出 `dist/`、`release/yiri-journal.html`、`release/yiri-journal.zip` 与 `release/release-manifest.json`。构建验证内嵌资源、第三方与字体许可证、压缩包成员、CRC 和文件字节，并记录 SHA-256。`python3 tools/package-source.py` 另行打包可独立安装的 `release/yiri-journal-source.zip`，排除依赖和生成输出。
 
 ## 启动与验证
 
@@ -44,15 +44,17 @@ curl --fail --silent http://127.0.0.1:4180/ -o /tmp/yiri-journal-start.html
 rg '一日一笺' /tmp/yiri-journal-start.html
 ```
 
-随后运行 `BASE_URL=http://127.0.0.1:4180 npm run test:browser`。Playwright 使用环境现有 `/usr/bin/chromium`；尊重浏览器管理策略。按本轮实际报告核对通过、失败和跳过数量，旧版本的结果不自动适用于新版。检查范围与重现说明见 [QA.md](QA.md)。
+随后运行 `BASE_URL=http://127.0.0.1:4180 npm run test:browser`。Playwright 使用环境现有 `/usr/bin/chromium`；尊重浏览器管理策略。按本轮实际报告核对通过、失败和跳过数量，旧版本的结果不自动适用于新版。检查开合、相机拖动、真实曲面翻页、编辑区与三维页对齐，以及本地保存、恢复与离线导出。检查范围与重现说明见 [QA.md](QA.md)，几何与渲染说明见 [3D-ENGINE.md](3D-ENGINE.md)。
+
+3D 浏览需要 WebGL 2。不可用或绘制中断时应显示状态并继续普通册页书写，保留保存与导出。软件 WebGL 的检查结果不能推定所有设备帧率，正常设备性能按实际报告记录。
 
 云环境端口是内部地址，向用户提供平台实际提供并验证的预览入口。若浏览器限制 `file://`，保留管理策略，通过允许的 HTTP 载入与发布 HTML 完全一致的字节，再断网验证，并注明本地文件打开方式未在当前环境实测。
 
 ## 数据与视觉
 
-内容自动保存在当前浏览器的 `localStorage`；照片只在浏览器内缩小与使用。存储失败会提示。JSON 导入导出可恢复全部手账，导入覆盖前先下载当前备份；PNG 导出规格为 `1280 × 1680`。应用无需账号、AI API 或 API 密钥，没有云端同步。
+内容自动保存在当前浏览器的 `localStorage`；照片只在浏览器内缩小与使用。存储失败会提示。JSON 导入导出可恢复全部手账，导入覆盖前先下载当前备份；PNG 导出规格为 `1280 × 1680` 的平面册页图。应用无需账号、AI API 或 API 密钥，没有云端同步。
 
-本版采用纸白 `#FFFEF9`、墨黑 `#242624` 与朱红 `#BD3E32` 的印刷视觉体系。主视觉为原创 SVG 品牌标记、封面与视觉规范板；素材层提供 8 件同系列印刷纸品。默认空白页保留书写空间，工具打开后再加入装饰。
+本版延续纸白 `#FFFEF9`、墨黑 `#242624` 与朱红 `#BD3E32` 的印刷视觉体系。实时三维书物由代码创建，封皮、书脊、页芯与弯曲纸页有独立几何，印刷内容来自当前记录，照片与纸品是独立薄片网格。编辑模式使用对齐到实际右页的原生输入区。
 
 `print-stickers.png` 为 4 列 × 2 行透明 atlas，生产渲染使用 `src/data/print.ts` 中的源矩形。旧 12 件小物、旧 SVG、布面封皮和纤维纸纹保留为旧藏与已保存内容的兼容资源；原封面 ID 继续兼容既有 JSON。来源见 [ART-SOURCES.md](ART-SOURCES.md)、[PRINT-ART.md](PRINT-ART.md) 和 [TACTILE-ART.md](TACTILE-ART.md)。
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react';
 import { ArrowDownToLine, BookOpen, CalendarDays, Check, ChevronLeft, ChevronRight, Copy, Download, Feather, ImagePlus, Layers, MoreHorizontal, Plus, Redo2, RotateCcw, Settings2, Trash2, Undo2, Upload, X } from 'lucide-react';
 import { demoPhoto, stickers } from './data/art';
@@ -10,6 +10,8 @@ import type { JournalBook, JournalEntry, JournalObject, JournalState } from './l
 import { downloadBackup, downloadBlob, exportPagePng, normalizePhoto, parseBackup } from './lib/export';
 import { useJournalHistory } from './lib/history';
 import { prepareTactileArt, tactileArt } from './lib/tactile-render';
+import { BookViewport } from './components/BookViewport';
+import type { BookMode, WritingRect } from './components/BookViewport';
 
 type View = 'editor' | 'books' | 'calendar';
 type Tool = 'decorate' | 'page';
@@ -64,6 +66,10 @@ function moveMonth(month: string, amount: number) {
 export default function App() {
   const { state, setState, undo, redo, canUndo, canRedo, beginInteraction, endInteraction } = useJournalHistory(initialize);
   const [view, setView] = useState<View>('editor');
+  const [bookMode, setBookMode] = useState<BookMode>('browse');
+  const [sceneAvailable, setSceneAvailable] = useState<boolean | null>(null);
+  const [writingRect, setWritingRect] = useState<WritingRect | null>(null);
+  const [startClosed, setStartClosed] = useState(true);
   const [artReady, setArtReady] = useState(false);
   const [artError, setArtError] = useState('');
   const [openingBookId, setOpeningBookId] = useState<string | null>(null);
@@ -98,9 +104,13 @@ export default function App() {
   const drag = useRef<{ id: string; kind: 'move' | 'resize'; startX: number; startY: number; object: JournalObject } | null>(null);
   const transitionTimers = useRef<number[]>([]);
   const book = state.books.find(item => item.id === state.activeBookId) ?? state.books[0];
-  const entry = book.entries[state.activeDate] ?? createEntry(state.activeDate);
+  const entry = useMemo(() => book.entries[state.activeDate] ?? createEntry(state.activeDate), [book.entries, state.activeDate]);
   const selected = entry.objects.find(item => item.id === selectedId);
   const today = localDate();
+
+  useEffect(() => {
+    if (sceneAvailable === false && bookMode !== 'write') setBookMode('write');
+  }, [sceneAvailable, bookMode]);
 
   useEffect(() => {
     let cancelled = false;
@@ -159,7 +169,7 @@ export default function App() {
     const observer = new ResizeObserver(resize);
     observer.observe(node);
     return () => observer.disconnect();
-  }, [view]);
+  }, [view, bookMode, writingRect, sceneAvailable]);
 
   useEffect(() => {
     setSelectedId(null);
@@ -184,12 +194,10 @@ export default function App() {
   }
 
   function chooseDate(date: string) {
-    if (isFlipping) return;
-    setView('editor'); setMonth(date.slice(0, 7)); setSelectedId(null);
-    if (view !== 'editor' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setState(current => ({ ...current, activeDate: date })); return; }
-    setIsFlipping(true);
-    transitionTimers.current.push(window.setTimeout(() => setState(current => ({ ...current, activeDate: date })), 260));
-    transitionTimers.current.push(window.setTimeout(() => setIsFlipping(false), 620));
+    if (isFlipping || date === state.activeDate) return;
+    finishGesture(); setView('editor'); setMonth(date.slice(0, 7));
+    setSelectedId(null); setTrayOpen(false); setBookMode('browse');
+    setState(current => ({ ...current, activeDate: date }));
   }
 
   function openBook(id: string) {
@@ -199,7 +207,7 @@ export default function App() {
     setOpeningBookId(id);
     const date = id === state.activeBookId ? state.activeDate : Object.keys(item.entries).sort().reverse()[0] ?? today;
     const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 640;
-    transitionTimers.current.push(window.setTimeout(() => { setState(current => ({ ...current, activeBookId: id, activeDate: date })); setView('editor'); setOpeningBookId(null); }, duration));
+    transitionTimers.current.push(window.setTimeout(() => { setState(current => ({ ...current, activeBookId: id, activeDate: date })); setStartClosed(false); setBookMode('browse'); setView('editor'); setOpeningBookId(null); }, duration));
   }
 
   function finishGesture() {
@@ -292,7 +300,7 @@ export default function App() {
       await Promise.all([prepareTactileArt(), preparePrintArt()]);
       for (const item of restored.books) for (const page of Object.values(item.entries)) for (const object of page.objects) { if (object.kind === 'sticker' && (!object.assetId || !getArt(object.assetId))) throw new Error('备份含有无法识别的贴纸，当前内容已保留。'); }
       downloadBackup(state);
-      setState(restored); setMonth(restored.activeDate.slice(0, 7)); setView('editor'); setRecoveryRaw(null);
+      setState(restored); setMonth(restored.activeDate.slice(0, 7)); setView('editor'); setBookMode('browse'); setRecoveryRaw(null);
       setToast('备份已恢复。恢复前的内容也已下载为备份。');
     } catch (error) { setToast(error instanceof Error ? error.message : '备份格式不正确，当前内容已保留。'); }
     finally { if (backupInput.current) backupInput.current.value = ''; }
@@ -311,7 +319,7 @@ export default function App() {
       const next: JournalBook = { id: uid(), title, subtitle: '', cover: bookCover, entries: {} };
       setState(current => ({ ...current, books: [...current.books, next], activeBookId: next.id, activeDate: today }));
     } else setState(current => ({ ...current, books: current.books.map(item => item.id === bookDialog ? { ...item, title, cover: bookCover } : item) }));
-    setBookDialog(null); setView('editor'); setToast('手账已保存。');
+    setBookDialog(null); setStartClosed(true); setBookMode('browse'); setView('editor'); setToast('手账已保存。');
   }
 
   function addTask() {
@@ -322,29 +330,12 @@ export default function App() {
   }
 
   const objectLabel = (object: JournalObject) => object.kind === 'photo' || object.assetId === 'demo-landscape' ? '今日留影' : printStickerCells.find(item => item.id === object.assetId)?.label ?? stickers.find(item => item.id === object.assetId)?.name ?? '纸品';
-  const openTools = (next: Tool) => { setTool(next); setTrayOpen(true); };
+  const openTools = (next: Tool) => { setBookMode('write'); setTool(next); setTrayOpen(true); };
+  const changeBookMode = (next: BookMode) => { finishGesture(); setTrayOpen(false); setSelectedId(null); setBookMode(next); };
   const closeTools = () => { setTrayOpen(false); addButtonRef.current?.focus(); };
   const showMoreAction = (action: () => void) => { setMoreOpen(false); action(); };
 
-  return <div className="app-shell desk-shell" data-art-ready={artReady ? 'true' : 'false'}>
-    <header className="sidebar">
-      <button className="brand" onClick={() => { setView('editor'); setTrayOpen(false); }} aria-label="一日一笺首页"><span className="brand-mark" aria-hidden="true" /><span className="brand-name">一日一笺</span></button>
-      <nav aria-label="主导航">
-        <button aria-label="今日一页" className={`nav-item ${view === 'editor' ? 'is-active' : ''}`} onClick={() => { setView('editor'); setTrayOpen(false); }}>写</button>
-        <button aria-label="我的手账" className={`nav-item ${view === 'books' ? 'is-active' : ''}`} onClick={() => { setView('books'); setTrayOpen(false); }}>册</button>
-        <button aria-label="月历回顾" className={`nav-item ${view === 'calendar' ? 'is-active' : ''}`} onClick={() => { setMonth(state.activeDate.slice(0, 7)); setView('calendar'); setTrayOpen(false); }}>历</button>
-      </nav>
-      <div className="sidebar-actions"><button className="icon-button" aria-label="更多操作" onClick={() => setMoreOpen(true)}><MoreHorizontal size={20} /></button></div>
-    </header>
-    <main className="main-content">
-      {artError && <div className="notice" role="alert">{artError}</div>}
-      {saveError && <div className="notice" role="alert">{saveError}<button onClick={() => downloadBackup(state)}>导出备份</button></div>}
-      {recoveryRaw !== null && <div className="notice" role="alert">原有记录暂时无法读取，已保留原文件。<button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); }}>下载原记录</button><button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); setRecoveryRaw(null); }}>备份后使用新册页</button></div>}
-      {view === 'editor' && <section className="editor-layout" aria-label="每日编辑器">
-        <div className="editor-column">
-          <div className="editor-toolbar"><div><button className="icon-button" aria-label="前一天" onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() - 1); chooseDate(localDate(d)); }}><ChevronLeft size={16} /></button><input aria-label="页面日期" type="date" value={entry.date} onChange={event => { if (event.target.value && /^\d{4}-\d{2}-\d{2}$/.test(event.target.value)) chooseDate(event.target.value); }} /><button className="icon-button" aria-label="后一天" onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() + 1); chooseDate(localDate(d)); }}><ChevronRight size={16} /></button></div><div className="editor-actions"><button className="icon-button" aria-label="撤销" disabled={!canUndo} onClick={undo}><Undo2 size={16} /></button><button className="icon-button" aria-label="重做" disabled={!canRedo} onClick={redo}><Redo2 size={16} /></button><button className="button ghost" onClick={() => openTools('page')}>编辑文字</button><button className="button ghost" ref={addButtonRef} aria-label="展开素材托盘" aria-expanded={trayOpen} aria-controls="paper-tools" onClick={() => trayOpen ? closeTools() : openTools('decorate')}><Plus size={14} />加内容</button></div></div>
-          {selected && <div className="selection-toolbar" aria-label="素材操作"><span className="selection-label">{objectLabel(selected)}</span><button className="icon-button" aria-label="复制选中素材" onClick={duplicateSelected}><Copy size={16} /></button><button className="icon-button" aria-label="置于最前" onClick={raiseSelected}><Layers size={16} /></button><button className="icon-button" aria-label="调整素材" onClick={() => openTools('decorate')}><Settings2 size={16} /></button><button className="icon-button danger" aria-label="删除选中素材" onClick={removeSelected}><Trash2 size={16} /></button></div>}
-          <div className={`notebook-scene ${isFlipping ? 'is-flipping' : ''}`}><div className={`open-book-left cover-${book.cover}`} aria-hidden="true" /><div className="open-book-spine" aria-hidden="true" /><div className="canvas-viewport" ref={viewportRef}><div className="page-scale-wrapper" style={{ width: PAGE_WIDTH * scale, height: PAGE_HEIGHT * scale, '--paper-scale': scale } as CSSProperties}><div className="book-board" aria-hidden="true" /><div className="paper-stack" aria-hidden="true" /><div className="page-flip-leaf" aria-hidden="true" /><div className="journal-paper" ref={paperRef} data-testid="journal-paper" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `scale(${scale})` }} onPointerDown={() => setSelectedId(null)}>
+  const nativePage = <div className={`notebook-scene ${isFlipping && sceneAvailable === false ? 'is-flipping' : ''}`}><div className={`open-book-left cover-${book.cover}`} aria-hidden="true" /><div className="open-book-spine" aria-hidden="true" /><div className="canvas-viewport" ref={viewportRef}><div className="page-scale-wrapper" style={{ width: PAGE_WIDTH * scale, height: PAGE_HEIGHT * scale, '--paper-scale': scale } as CSSProperties}><div className="book-board" aria-hidden="true" /><div className="paper-stack" aria-hidden="true" /><div className="page-flip-leaf" aria-hidden="true" /><div className="journal-paper" ref={paperRef} data-testid="journal-paper" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `scale(${scale})` }} onPointerDown={() => setSelectedId(null)}>
             <div className="paper-topline"><div className="paper-date"><span>{entry.date.replace(/-/g, '.')}</span><span>{formatDate(entry.date, { weekday: 'long' })}</span></div>{entry.mood !== '平静' && <button className="paper-mood" onClick={() => openTools('page')}>{entry.mood}</button>}</div><div className="paper-rule" />
             <div className="paper-title"><textarea aria-label="页面标题" data-testid="entry-title" style={{ fontSize: Math.max(18, Math.min(32, 544 / Math.max(1, Array.from(entry.title).length))), letterSpacing: 0 }} value={entry.title} maxLength={24} placeholder="今日标题" rows={1} onChange={event => patchEntry({ title: event.target.value.replace(/\n/g, '') })} /></div>
             <div className="paper-body"><textarea aria-label="今日随笔" data-testid="entry-body" value={entry.body} maxLength={260} placeholder="今天，想记下什么？" onChange={event => patchEntry({ body: event.target.value })} /></div>
@@ -357,7 +348,31 @@ export default function App() {
               </div>;
             })}
             <div className="paper-colophon"><span>{book.title}</span><span>{entry.date.slice(5).replace('-', '.')}</span></div>
-          </div></div></div></div>
+          </div></div></div></div>;
+
+  return <div className="app-shell desk-shell" data-art-ready={artReady ? 'true' : 'false'}>
+    <header className="sidebar">
+      <button className="brand" onClick={() => { changeBookMode('browse'); setView('editor'); setWritingRect(null); }} aria-label="一日一笺首页"><span className="brand-mark" aria-hidden="true" /><span className="brand-name">一日一笺</span></button>
+      <nav aria-label="主导航">
+        <button aria-label="今日一页" className={`nav-item ${view === 'editor' ? 'is-active' : ''}`} onClick={() => { changeBookMode('browse'); setView('editor'); setWritingRect(null); }}>写</button>
+        <button aria-label="我的手账" className={`nav-item ${view === 'books' ? 'is-active' : ''}`} onClick={() => { changeBookMode('browse'); setView('books'); setWritingRect(null); }}>册</button>
+        <button aria-label="月历回顾" className={`nav-item ${view === 'calendar' ? 'is-active' : ''}`} onClick={() => { setMonth(state.activeDate.slice(0, 7)); changeBookMode('browse'); setView('calendar'); setWritingRect(null); }}>历</button>
+      </nav>
+      <div className="sidebar-actions"><button className="icon-button" aria-label="更多操作" onClick={() => setMoreOpen(true)}><MoreHorizontal size={20} /></button></div>
+    </header>
+    <main className="main-content">
+      {artError && <div className="notice" role="alert">{artError}</div>}
+      {sceneAvailable === false && <div className="notice" role="status">当前设备暂不支持立体册子，已切换为可编辑的纸页。</div>}
+      {saveError && <div className="notice" role="alert">{saveError}<button onClick={() => downloadBackup(state)}>导出备份</button></div>}
+      {recoveryRaw !== null && <div className="notice" role="alert">原有记录暂时无法读取，已保留原文件。<button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); }}>下载原记录</button><button onClick={() => { downloadBlob(new Blob([recoveryRaw], { type: 'application/json' }), '一日一笺-原记录.json'); setRecoveryRaw(null); }}>备份后使用新册页</button></div>}
+      {view === 'editor' && <section className={`editor-layout ${sceneAvailable !== false ? 'has-live-book' : ''}`} aria-label="每日编辑器">
+        <div className="editor-column">
+          <div className="editor-toolbar"><div><button className="icon-button" aria-label="前一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() - 1); chooseDate(localDate(d)); }}><ChevronLeft size={16} /></button><input aria-label="页面日期" disabled={isFlipping} type="date" value={entry.date} onChange={event => { if (event.target.value && /^\d{4}-\d{2}-\d{2}$/.test(event.target.value)) chooseDate(event.target.value); }} /><button className="icon-button" aria-label="后一天" disabled={isFlipping} onClick={() => { const d = new Date(`${entry.date}T12:00:00`); d.setDate(d.getDate() + 1); chooseDate(localDate(d)); }}><ChevronRight size={16} /></button></div><div className="editor-actions">{bookMode === 'write' && <>{sceneAvailable === true && <button className="button ghost" aria-label="看整册" onClick={() => changeBookMode('browse')}><BookOpen size={15} />看整册</button>}<button className="icon-button" aria-label="撤销" disabled={!canUndo} onClick={undo}><Undo2 size={16} /></button><button className="icon-button" aria-label="重做" disabled={!canRedo} onClick={redo}><Redo2 size={16} /></button><button className="button ghost" onClick={() => openTools('page')}>编辑文字</button><button className="button ghost" ref={addButtonRef} aria-label="展开素材托盘" aria-expanded={trayOpen} aria-controls="paper-tools" onClick={() => trayOpen ? closeTools() : openTools('decorate')}><Plus size={14} />加内容</button></>}</div></div>
+          {bookMode === 'write' && selected && <div className="selection-toolbar" aria-label="素材操作"><span className="selection-label">{objectLabel(selected)}</span><button className="icon-button" aria-label="复制选中素材" onClick={duplicateSelected}><Copy size={16} /></button><button className="icon-button" aria-label="置于最前" onClick={raiseSelected}><Layers size={16} /></button><button className="icon-button" aria-label="调整素材" onClick={() => openTools('decorate')}><Settings2 size={16} /></button><button className="icon-button danger" aria-label="删除选中素材" onClick={removeSelected}><Trash2 size={16} /></button></div>}
+          {sceneAvailable !== false && <BookViewport key={book.id} book={book} entry={entry} artReady={artReady} startClosed={startClosed} mode={bookMode} onModeChange={changeBookMode} onRectChange={setWritingRect} onAvailability={setSceneAvailable} onTurningChange={setIsFlipping} getArt={getArt}>
+            {bookMode === 'write' && writingRect && <div className="live-writing-overlay" style={{ left: writingRect.left, top: writingRect.top, width: writingRect.width, height: writingRect.height }}>{nativePage}</div>}
+          </BookViewport>}
+          {sceneAvailable === false && nativePage}
           <span className={`save-status ${saveError ? 'has-error' : ''}`} role="status"><i />{saveStatus}</span>
         </div>
         {trayOpen && <button className="tray-backdrop" aria-label="关闭工具" onClick={closeTools} />}

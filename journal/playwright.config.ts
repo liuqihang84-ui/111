@@ -5,7 +5,8 @@ export default defineConfig({
   timeout: 45_000,
   expect: { timeout: 7_000 },
   fullyParallel: true,
-  workers: 2,
+  // The managed Chromium uses software WebGL; isolate GPU-intensive notebook tests.
+  workers: 1,
   retries: 0,
   reporter: [['list'], ['json', { outputFile: 'test-results/browser-report.json' }]],
   use: {

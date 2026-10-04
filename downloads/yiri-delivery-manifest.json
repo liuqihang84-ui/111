@@ -1,32 +1,112 @@
 {
-  "version": "0.3.0",
-  "unitTests": {
-    "passed": 31,
-    "failed": 0
-  },
+  "name": "yiri-journal",
+  "version": "0.4.0",
   "browser": {
-    "startTime": "2026-10-04T07:16:33.436Z",
-    "duration": 32669.56,
-    "expected": 13,
+    "startTime": "2026-10-04T10:41:59.441Z",
+    "duration": 355800.032,
+    "expected": 14,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   },
+  "browserReport": {
+    "name": "verification/journal-browser-report.json",
+    "bytes": 16727,
+    "sha256": "c4313fc22d2e897bc56e2afc2854d4b76cb8634833905078a8968e59c04b539c"
+  },
+  "recordingMetadata": {
+    "name": "verification/journal-3d-recording.json",
+    "bytes": 1195,
+    "sha256": "845d624dd103f80dce4285a59fc838c4c7a4e78fd59a4cb55bef68af7246a578"
+  },
+  "sourceArchive": {
+    "sourceFiles": 74,
+    "archiveCrcVerified": true,
+    "exactCurrentInventoryVerified": true,
+    "sourceByteEqualityVerified": true
+  },
   "files": [
     {
       "name": "yiri-journal.html",
-      "bytes": 7944213,
-      "sha256": "f8f6f60191e46409e60fe15b36d4bdbdf851e5eb4ba68fe4503ac11b3c66796f"
+      "bytes": 8463233,
+      "sha256": "e433cda0d15bf7bca6cc4405d8a2ae823efd56918cc929171c80ea30c64a6a89"
     },
     {
       "name": "yiri-journal.zip",
-      "bytes": 5739215,
-      "sha256": "afbd6dd46bd9e15d0a19e3f045edbee29735fcaa4cc41ad5220443543180d22f"
+      "bytes": 5871586,
+      "sha256": "35e76a937be4ef762daaf215f61a731e8fea5048b923639da7b8f0afba3976ed"
     },
     {
       "name": "yiri-journal-source.zip",
-      "bytes": 8705620,
-      "sha256": "24824ad0f0b9b6f814185352e1185b74b73566f7a61b4a836a5e67801d25cb44"
+      "bytes": 8733443,
+      "sha256": "e3d04a2174254e6d68978be2882592724cff4cee0eac747925f86295736f069a"
+    }
+  ],
+  "previews": [
+    {
+      "name": "preview/journal-desktop-desk.png",
+      "bytes": 114603,
+      "sha256": "eb91150693228c99115092b3f9e301bfec2bc8b2996b089c9434e1b368a205d5"
+    },
+    {
+      "name": "preview/journal-desktop-editor.png",
+      "bytes": 93652,
+      "sha256": "9beb0d3a64489a6a8bc278f709756291b76697aae43f7e1eca20a6ba1a621784"
+    },
+    {
+      "name": "preview/journal-desktop-books.png",
+      "bytes": 36316,
+      "sha256": "05a2934e842cda661cef9e0ff8d69d0e7d69bfd9cbe1baa58ff17c384c253748"
+    },
+    {
+      "name": "preview/journal-desktop-calendar.png",
+      "bytes": 32301,
+      "sha256": "dd90a5f651e34fa3a9aa24c9c1017c728209b601c91533c75b7c5cb2b3587fe0"
+    },
+    {
+      "name": "preview/journal-mobile-editor.png",
+      "bytes": 36871,
+      "sha256": "e19b04981c9e13e4d911b5746237906c8db8971c2843686b4b9d1870f09f0144"
+    },
+    {
+      "name": "preview/journal-mobile-text-editor.png",
+      "bytes": 30158,
+      "sha256": "7d8bf7fad785638f6ec7201ce8267d62e3996e4ce97688ca6b25b967ae11bcff"
+    },
+    {
+      "name": "preview/journal-3d-closed.png",
+      "bytes": 112351,
+      "sha256": "15429ded4f4da083a056c47191683880a0ca88a3ad6f26b357eafff79da28359"
+    },
+    {
+      "name": "preview/journal-3d-open.png",
+      "bytes": 91912,
+      "sha256": "f4dfe444bbc08ff1e69d6cb5962463c2b49fea86dd1d538a510a2a2c8e2daf4a"
+    },
+    {
+      "name": "preview/journal-3d-orbit.png",
+      "bytes": 107373,
+      "sha256": "3c08ab42779e94227efb134742861e940a6e4ab88432ba1981b2048e88696239"
+    },
+    {
+      "name": "preview/journal-3d-write.png",
+      "bytes": 126494,
+      "sha256": "a68187e2992fbde2cf5df5fb5d8256368da9377b490dbb8e913768957c3d4aeb"
+    },
+    {
+      "name": "preview/journal-3d-composed.png",
+      "bytes": 93364,
+      "sha256": "ec81f4d194e26e5cfc32ea0830ee843983711f56c4f01b3617578cf7b8c0e0da"
+    },
+    {
+      "name": "preview/journal-3d-demo.gif",
+      "bytes": 4419718,
+      "sha256": "ae518f7ffed9e1ce983ef9fa5e4bbb173a0e3acefb06cd7789e574810075561c"
+    },
+    {
+      "name": "preview/journal-3d-demo.mp4",
+      "bytes": 825638,
+      "sha256": "5f44d0dd2567711e4df054638bd48c1cd209d2f54cd706497b95c997b74b9a4c"
     }
   ]
 }

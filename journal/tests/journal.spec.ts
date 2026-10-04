@@ -2,6 +2,7 @@ import { test, expect, type Download, type Locator, type Page } from '@playwrigh
 import { mkdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import type { JournalState } from '../src/lib/model';
+import type { BookSceneInspection } from '../src/lib/book-scene';
 import { capturePortableDocument } from './portable-capture';
 
 const browserErrors = new WeakMap<Page, string[]>();
@@ -10,14 +11,87 @@ const bodyField = (page: Page) => page.getByRole('textbox', { name: '今日随�
 const nav = (page: Page, name: string) => page.getByRole('button', {
   name: name === '今日一页' ? /^今日一页/ : name, exact: true,
 });
-const deskTest = '首屏直接呈现空白纸页，纸品与册子按需打开并使用统一视觉';
+const deskTest = '首屏呈现可打开的实时三维手账，写作保持空白纸页与统一视觉';
+const live3dTest = '实时三维册子响应原生拖动、封面打开和曲面翻页，写作回看同步内容';
 
 async function expectArtReady(page: Page) {
   await expect(page.locator('.app-shell')).toHaveAttribute('data-art-ready', 'true', { timeout: 90_000 });
 }
 
+async function expectSceneReady(page: Page) {
+  await expectArtReady(page);
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toBeVisible({ timeout: 90_000 });
+  await expect(page.locator('canvas[data-renderer="three-webgl"]')).toHaveAttribute('data-settled', 'true', { timeout: 15_000 });
+}
+
+type SceneInspection = BookSceneInspection;
+
+async function inspectScene(page: Page): Promise<SceneInspection> {
+  return page.locator('canvas[data-renderer="three-webgl"]').evaluate(element => {
+    const probe = (element as HTMLCanvasElement & { __journal3D?: { inspect: () => SceneInspection } }).__journal3D;
+    if (!probe) throw new Error('The live renderer inspection API is missing.');
+    return probe.inspect();
+  });
+}
+
+async function scenePNG(page: Page): Promise<Buffer> {
+  const data = await page.locator('canvas[data-renderer="three-webgl"]').evaluate(element => (element as HTMLCanvasElement).toDataURL('image/png'));
+  return Buffer.from(data.split(',')[1], 'base64');
+}
+
+async function changedCanvasPixels(page: Page, first: Buffer, second: Buffer) {
+  return page.evaluate(async ({ first, second }) => {
+    const decode = async (base64: string) => {
+      const image = new Image();
+      image.src = `data:image/png;base64,${base64}`;
+      await image.decode();
+      const canvas = document.createElement('canvas');
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      const context = canvas.getContext('2d')!;
+      context.drawImage(image, 0, 0);
+      return { width: canvas.width, height: canvas.height, pixels: context.getImageData(0, 0, canvas.width, canvas.height).data };
+    };
+    const before = await decode(first), after = await decode(second);
+    if (before.width !== after.width || before.height !== after.height) throw new Error('Live canvas comparisons require matching dimensions.');
+    let changed = 0;
+    for (let index = 0; index < before.pixels.length; index += 4) {
+      const difference = Math.abs(before.pixels[index] - after.pixels[index]) + Math.abs(before.pixels[index + 1] - after.pixels[index + 1]) + Math.abs(before.pixels[index + 2] - after.pixels[index + 2]) + Math.abs(before.pixels[index + 3] - after.pixels[index + 3]);
+      if (difference > 24) changed++;
+    }
+    return changed;
+  }, { first: first.toString('base64'), second: second.toString('base64') });
+}
+
+async function observeSceneMotion(page: Page, action: () => Promise<unknown>, phase: 'opening' | 'turning') {
+  // Arm on the actual native click. Playwright may need to scroll and wait
+  // before dispatching it; those waits must not consume the observation window.
+  await page.evaluate(expectedPhase => {
+    const probe = window as unknown as Window & { journalSceneMotion: { readings: SceneInspection[]; done: boolean } };
+    probe.journalSceneMotion = { readings: [], done: false };
+    document.addEventListener('click', () => {
+      const canvas = document.querySelector('canvas[data-renderer="three-webgl"]') as HTMLCanvasElement & { __journal3D: { inspect: () => SceneInspection } };
+      const began = performance.now();
+      let seen = false;
+      const sample = () => {
+        const reading = canvas.__journal3D.inspect();
+        probe.journalSceneMotion.readings.push(reading);
+        if (reading.phase === expectedPhase) seen = true;
+        if ((seen && reading.phase !== expectedPhase) || performance.now() - began > 20_000) probe.journalSceneMotion.done = true;
+        else requestAnimationFrame(sample);
+      };
+      requestAnimationFrame(sample);
+    }, { capture: true, once: true });
+  }, phase);
+  await action();
+  await expect.poll(() => page.evaluate(() => (window as unknown as Window & { journalSceneMotion: { done: boolean } }).journalSceneMotion.done), { timeout: 25_000 }).toBe(true);
+  return page.evaluate(() => (window as unknown as Window & { journalSceneMotion: { readings: SceneInspection[] } }).journalSceneMotion.readings);
+}
+
 async function expectNotebookReady(page: Page) {
-  await expect(titleField(page)).toBeVisible();
+  if (!await titleField(page).isVisible()) await nav(page, '写一笔').click();
+  await expect(titleField(page)).toBeVisible({ timeout: 30_000 });
+  await expect(page.locator('.live-writing-overlay')).toBeVisible();
   await expect(page.locator('.notebook-scene')).toBeVisible();
   await expect(page.locator('.notebook-scene')).not.toHaveClass(/is-flipping|is-opening/);
 }
@@ -329,11 +403,12 @@ async function screenshot(page: Page, name: string) {
   await page.screenshot({ path: resolve(`test-results/preview/${name}.png`), fullPage: true });
 }
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page }, testInfo) => {
   test.setTimeout(120_000);
   watchErrors(page);
   await page.goto('/');
-  await expectNotebookReady(page);
+  await expectSceneReady(page);
+  if (testInfo.title !== deskTest && testInfo.title !== live3dTest) await expectNotebookReady(page);
 });
 
 test.afterEach(async ({ page }) => {
@@ -341,6 +416,11 @@ test.afterEach(async ({ page }) => {
 });
 
 test(deskTest, async ({ page }) => {
+  await expect(titleField(page)).toBeHidden();
+  await expect(nav(page, '写一笔')).toBeVisible();
+  await expect(nav(page, '打开手账')).toBeVisible();
+  await screenshot(page, 'desktop-desk');
+  await expectNotebookReady(page);
   await expect(titleField(page)).toHaveValue('');
   await expect(bodyField(page)).toHaveValue('');
   await expect(page.getByTestId('paper-object')).toHaveCount(0);
@@ -351,7 +431,6 @@ test(deskTest, async ({ page }) => {
   await expect(nav(page, '添加贴纸：日印')).toBeHidden();
   await expect(nav(page, '导出备份')).toBeHidden();
   for (const label of ['今日一页', '我的手账', '月历回顾']) await expect(nav(page, label)).toBeVisible();
-  await screenshot(page, 'desktop-desk');
   await nav(page, '我的手账').click();
   await expect(page.getByTestId('book-card')).toHaveCount(1);
   const book = page.getByTestId('book-card').filter({ has: nav(page, '打开手账：日常') });
@@ -403,6 +482,147 @@ test(deskTest, async ({ page }) => {
   await expect(legacy.locator('img')).toHaveAttribute('src', /^data:image\/png;base64,/);
 });
 
+test(live3dTest, async ({ page }) => {
+  test.setTimeout(180_000);
+  const canvas = page.locator('canvas[data-renderer="three-webgl"]');
+  await expect(canvas).toHaveAttribute('data-ready', 'true');
+  await expect(canvas).toHaveAttribute('data-state', 'closed');
+  const gl = await canvas.evaluate(element => {
+    const context = (element as HTMLCanvasElement).getContext('webgl2');
+    return context ? { version: context.getParameter(context.VERSION), lost: context.isContextLost() } : null;
+  });
+  expect(gl).not.toBeNull();
+  expect(gl!.version).toMatch(/^WebGL 2/);
+  expect(gl!.lost).toBe(false);
+  const closed = await inspectScene(page);
+  expect(closed.triangles, 'The renderer must draw actual 3D triangles.').toBeGreaterThan(1000);
+  expect(closed.pageYRange.max - closed.pageYRange.min, 'The notebook page must be curved geometry, rather than a flat photograph.').toBeGreaterThan(.05);
+  const firstPixels = await scenePNG(page);
+  const artwork = await inspectPNG(page, firstPixels);
+  expect(artwork.visiblePixels).toBeGreaterThan(10_000);
+  expect(artwork.colors).toBeGreaterThan(100);
+
+  const box = await canvas.boundingBox();
+  expect(box).not.toBeNull();
+  const start = { x: box!.x + box!.width * .5, y: box!.y + box!.height * .45 };
+  await page.mouse.move(start.x, start.y);
+  await page.mouse.down();
+  await page.mouse.move(start.x + 110, start.y - 55, { steps: 4 });
+  await expect.poll(async () => (await inspectScene(page)).cameraMatrix).not.toEqual(closed.cameraMatrix);
+  const draggedPixels = await scenePNG(page);
+  expect(await changedCanvasPixels(page, firstPixels, draggedPixels), 'A native pointer drag must change pixels from the real WebGL render.').toBeGreaterThan(1000);
+  await page.mouse.up();
+  await expect(titleField(page)).toBeHidden();
+  await nav(page, '复位视角').click();
+
+  const opening = await observeSceneMotion(page, () => nav(page, '打开手账').click(), 'opening');
+  const openingFrames = opening.filter(frame => frame.phase === 'opening');
+  expect(openingFrames.length, 'The opening must produce observable frames from the actual cover animation.').toBeGreaterThan(1);
+  expect(new Set(openingFrames.map(frame => JSON.stringify(frame.coverMatrix))).size).toBeGreaterThan(1);
+  await expect(canvas).toHaveAttribute('data-state', 'open');
+  await expect(canvas).toHaveAttribute('data-settled', 'true');
+  const blankOpen = await inspectScene(page);
+  const blankPixels = await scenePNG(page);
+  expect(await changedCanvasPixels(page, firstPixels, blankPixels)).toBeGreaterThan(1000);
+  await screenshot(page, 'desktop-open-notebook');
+
+  // This uses a real raycast hit on the projected page, not the toolbar shortcut.
+  await page.mouse.click(blankOpen.projectedPageCenter.x, blankOpen.projectedPageCenter.y);
+  await expect(titleField(page), 'Clicking the actual 3D right page must enter native writing.').toBeVisible({ timeout: 30_000 });
+  await expect(page.locator('.live-writing-overlay')).toBeVisible();
+  await titleField(page).fill('会翻动的电子手账');
+  await bodyField(page).fill('册子有厚度，写下的内容也在这一本里。');
+  const sticker = await addSticker(page);
+  const stickerId = await sticker.getAttribute('data-object-id');
+  await closeTray(page);
+  await expectSaved(page, '会翻动的电子手账');
+  await nav(page, '看整册').click();
+  await expectSceneReady(page);
+  await expect(titleField(page)).toBeHidden();
+  await expect.poll(async () => (await inspectScene(page)).objectMeshes.some(mesh => mesh.id === stickerId)).toBe(true);
+  const composed = await inspectScene(page);
+  expect(composed.objectCount).toBe(1);
+  expect(composed.objectMeshes[0].vertices, 'Added paper artwork must become its own curved 3D surface.').toBeGreaterThan(100);
+  expect(composed.textureVersion).toBeGreaterThan(blankOpen.textureVersion);
+  expect(composed.textureHash, 'The actual rendered page texture must change after writing.').not.toBe(blankOpen.textureHash);
+  expect(composed.textureHash).toBeDefined();
+  expect(await changedCanvasPixels(page, blankPixels, await scenePNG(page))).toBeGreaterThan(1000);
+  await screenshot(page, 'desktop-composed-3d');
+
+  await expectNotebookReady(page);
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await expect(bodyField(page)).toHaveValue('册子有厚度，写下的内容也在这一本里。');
+  await nav(page, '撤销').click();
+  await expect(page.getByTestId('paper-object'), 'Mode changes must not insert history entries before the sticker addition.').toHaveCount(0);
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await nav(page, '重做').click();
+  await expect(page.getByTestId('paper-object')).toHaveCount(1);
+
+  const originalDate = await page.getByLabel('页面日期', { exact: true }).inputValue();
+  const flip = await observeSceneMotion(page, () => nav(page, '前一天').click(), 'turning');
+  const turning = Array.from(new Map(flip.filter(frame => frame.phase === 'turning').map(frame => [frame.frames, frame])).values());
+  expect(turning.length, 'Changing dates must deform a live page through several distinct actual render frames.').toBeGreaterThan(1);
+  expect(new Set(turning.map(frame => JSON.stringify(frame.turnVertices))).size).toBeGreaterThan(1);
+  const bends = turning.filter(frame => frame.turnProgress > 0 && frame.turnProgress < 1).map(frame => {
+    const [ax, ay, az, mx, my, mz, , , , bx, by, bz] = frame.turnVertices;
+    const edge = [bx - ax, by - ay, bz - az], middle = [mx - ax, my - ay, mz - az];
+    const cross = [edge[1] * middle[2] - edge[2] * middle[1], edge[2] * middle[0] - edge[0] * middle[2], edge[0] * middle[1] - edge[1] * middle[0]];
+    return Math.hypot(...cross) / Math.hypot(...edge);
+  });
+  expect(Math.max(...bends), 'A turning page edge must bend; rigidly rotating a flat page would leave its edge vertices collinear.').toBeGreaterThan(.02);
+  await expectSceneReady(page);
+  await expectNotebookReady(page);
+  await expect(page.getByLabel('页面日期', { exact: true })).not.toHaveValue(originalDate);
+  await expect(titleField(page)).toHaveValue('');
+  await nav(page, '后一天').click();
+  await expectNotebookReady(page);
+  await expect(page.getByLabel('页面日期', { exact: true })).toHaveValue(originalDate);
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await expect(page.getByTestId('paper-object')).toHaveCount(1);
+
+  // Lose the real GPU context rather than dispatching a synthetic DOM event.
+  const lost = await canvas.evaluate(element => {
+    const context = (element as HTMLCanvasElement).getContext('webgl2')!;
+    const extension = context.getExtension('WEBGL_lose_context');
+    if (!extension) throw new Error('The real WebGL context-loss extension is unavailable.');
+    const probe = window as unknown as Window & { journalContextLoss: { trusted: boolean; lost: boolean } | null };
+    probe.journalContextLoss = null;
+    element.addEventListener('webglcontextlost', event => {
+      probe.journalContextLoss = { trusted: event.isTrusted, lost: context.isContextLost() };
+    }, { once: true });
+    extension.loseContext();
+    return context.isContextLost();
+  });
+  expect(lost).toBe(true);
+  await expect.poll(() => page.evaluate(() => (window as unknown as Window & { journalContextLoss: { trusted: boolean; lost: boolean } | null }).journalContextLoss)).toEqual({ trusted: true, lost: true });
+  await expect(canvas).toHaveCount(0);
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await expect(bodyField(page)).toHaveValue('册子有厚度，写下的内容也在这一本里。');
+  await expect(page.getByTestId('paper-object')).toHaveCount(1);
+  await expect(nav(page, '看整册')).toHaveCount(0);
+  await bodyField(page).fill('显卡上下文中断后，仍然可以继续写作。');
+  await expectSaved(page, '显卡上下文中断后，仍然可以继续写作。');
+  await nav(page, '前一天').click();
+  await expect(nav(page, '展开素材托盘'), 'Changing dates in the fallback editor must retain writing tools.').toBeVisible();
+  await nav(page, '后一天').click();
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await expect(bodyField(page)).toHaveValue('显卡上下文中断后，仍然可以继续写作。');
+  await nav(page, '今日一页').click();
+  await expect(nav(page, '展开素材托盘'), 'Main navigation must not leave fallback writing in an inaccessible browse mode.').toBeVisible();
+  await nav(page, '我的手账').click();
+  await nav(page, '打开手账：日常').click();
+  await expect(titleField(page)).toHaveValue('会翻动的电子手账');
+  await expect(nav(page, '展开素材托盘')).toBeVisible();
+  await ensureTrayExpanded(page);
+  await nav(page, '添加贴纸：日印').click();
+  await expect(page.getByTestId('paper-object')).toHaveCount(2);
+  await closeTray(page);
+  await nav(page, '撤销').click();
+  await expect(page.getByTestId('paper-object')).toHaveCount(1);
+  await nav(page, '重做').click();
+  await expect(page.getByTestId('paper-object')).toHaveCount(2);
+});
+
 test('标题和随笔自动保存，刷新后仍可编辑', async ({ page }) => {
   await titleField(page).fill('风吹过书页');
   await bodyField(page).fill('今天绕过河边，记下桂花香。\n明天再来看一眼。');
@@ -451,15 +671,17 @@ test('新建手账并切换时，书册内容彼此独立', async ({ page }) => 
   await expect(modal).toBeVisible();
   await modal.getByRole('textbox', { name: '手账名称', exact: true }).fill('山窗日记');
   await modal.getByRole('button', { name: '开始记录', exact: true }).click();
-  await expect(titleField(page)).toBeVisible();
+  await expectNotebookReady(page);
   await titleField(page).fill('山窗里的第一片叶子');
   await expectSaved(page, '山窗里的第一片叶子');
   await nav(page, '我的手账').click();
   await expect(page.getByTestId('book-card')).toHaveCount(initialBookCount + 1);
   await nav(page, `打开手账：${firstName!}`).click();
+  await expectNotebookReady(page);
   await expect(titleField(page)).toHaveValue('第一册里的秋日');
   await nav(page, '我的手账').click();
   await nav(page, '打开手账：山窗日记').click();
+  await expectNotebookReady(page);
   await expect(titleField(page)).toHaveValue('山窗里的第一片叶子');
   await expectSaveComplete(page);
   await page.reload();
@@ -657,6 +879,8 @@ test('复制素材独立保存，置前改变实际遮挡，删除后备份仍�
   await expect(original).toHaveCount(0);
   await expect.poll(() => readObject(copyById)).toEqual(copyTransform);
   await importBackup(page, bothBytes);
+  await expect(page.getByRole('status').filter({ hasText: '备份已恢复。' })).toBeVisible();
+  await expectNotebookReady(page);
   await expect(original).toBeVisible();
   await expect(copyById).toBeVisible();
   await expect.poll(() => readObject(copyById)).toEqual(copyTransform);
@@ -692,6 +916,7 @@ test('JSON 备份下载的实际字节可以完整恢复修改前的页面', asy
   await bodyField(page).fill('临时内容');
   await importBackup(page, bytes);
   await expect(page.getByRole('status').filter({ hasText: '备份已恢复。' })).toBeVisible();
+  await expectNotebookReady(page);
   await expect(titleField(page)).toHaveValue('备份里的山与水');
   await expect(bodyField(page)).toHaveValue('这段随笔与兰草一起备份。');
   await expect(page.getByTestId('paper-object')).toHaveCount(objectCount);
@@ -783,6 +1008,7 @@ test('390px 手机页面没有横向溢出，贴纸拖动仍落在纸面内', as
   await closeTray(page);
   await expectEdgeHandleAvailable(object);
   await nav(page, '今日一页').click();
+  await expectNotebookReady(page);
   const collapse = nav(page, '收起素材托盘');
   if (await collapse.isVisible()) await collapse.click();
   await screenshot(page, 'mobile-editor');
@@ -831,6 +1057,11 @@ test('实际单文件 HTML 断网后使用贴纸并导出 PNG', async ({ browser
     const response = await portable.goto(htmlURL);
     expect(response?.status()).toBe(200);
     expect((await readPortableResponse(htmlURL)).equals(htmlBytes), 'The browser must execute the exact bytes in the release HTML.').toBe(true);
+    await expectSceneReady(portable);
+    expect(await portable.locator('canvas[data-renderer="three-webgl"]').evaluate(element => {
+      const context = (element as HTMLCanvasElement).getContext('webgl2');
+      return context ? context.getParameter(context.VERSION) : null;
+    }), 'The exact portable HTML must create a working live WebGL renderer.').toMatch(/^WebGL 2/);
     await openBook(portable);
     await expectArtReady(portable);
     await titleField(portable).fill('同一 HTML 地址的记录');
@@ -851,6 +1082,10 @@ test('实际单文件 HTML 断网后使用贴纸并导出 PNG', async ({ browser
     await context.setOffline(true);
     await context.route('**/*', route => route.abort('internetdisconnected'));
     expect(await portable.evaluate(() => navigator.onLine)).toBe(false);
+    await nav(portable, '看整册').click();
+    await expectSceneReady(portable);
+    await expect(titleField(portable)).toBeHidden();
+    await expectNotebookReady(portable);
     await titleField(portable).fill('离线的一页');
     await bodyField(portable).fill('没有网络，也能保存和制作手账。');
     const undecorated = await downloadPNG(portable);
@@ -872,6 +1107,9 @@ test('实际单文件 HTML 断网后使用贴纸并导出 PNG', async ({ browser
     await expectSaved(portable, '离线的一页');
     await expectSaveComplete(portable);
     await expect(titleField(portable)).toHaveValue('离线的一页');
+    const offlineBackup = JSON.parse((await downloadBackup(portable)).toString('utf8')) as JournalState;
+    expect(offlineBackup.books.find(book => book.id === offlineBackup.activeBookId)!.entries[offlineBackup.activeDate].title).toBe('离线的一页');
+    expect(offlineBackup.books.find(book => book.id === offlineBackup.activeBookId)!.entries[offlineBackup.activeDate].objects).toHaveLength(2);
     expect(offlineRequests, 'Offline editing and export must not request any HTTP resource.').toEqual([]);
     expect(errors, 'Offline rendering and export must not produce browser errors.').toEqual([]);
   } finally {

@@ -1,0 +1,52 @@
+{
+  "source": "Actual Chromium browser recording of production build; all entries and objects created with native UI, no DOM content or image injection.",
+  "releaseHtmlSha256": "e433cda0d15bf7bca6cc4405d8a2ae823efd56918cc929171c80ea30c64a6a89",
+  "today": "2026-10-04",
+  "videoPath": "/tmp/yiri-v04-demo/57829d18b87ae585a713bcb10d0140cd.webm",
+  "seconds": 44.14,
+  "actions": [
+    {
+      "name": "合上的实时三维册子",
+      "seconds": 4.997
+    },
+    {
+      "name": "打开封皮",
+      "seconds": 7.124
+    },
+    {
+      "name": "拖动改变实际相机视角",
+      "seconds": 19.857
+    },
+    {
+      "name": "真实曲面翻到前一天",
+      "seconds": 31.461
+    },
+    {
+      "name": "点击真实右页进入书写",
+      "seconds": 36.94
+    },
+    {
+      "name": "回看同一册中的更新内容",
+      "seconds": 41.578
+    },
+    {
+      "name": "合上",
+      "seconds": 43.861
+    }
+  ],
+  "errors": [],
+  "exports": {
+    "gif": {
+      "trimStartSeconds": 4.1,
+      "width": 960,
+      "fps": 12,
+      "playbackSpeed": 1
+    },
+    "mp4": {
+      "trimStartSeconds": 4.1,
+      "width": 1280,
+      "fps": 25,
+      "playbackSpeed": 1
+    }
+  }
+}

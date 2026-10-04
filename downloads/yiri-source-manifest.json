@@ -1,10 +1,10 @@
 {
   "name": "yiri-journal",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "file": "yiri-journal-source.zip",
-  "sourceFiles": 70,
-  "bytes": 8705620,
-  "sha256": "24824ad0f0b9b6f814185352e1185b74b73566f7a61b4a836a5e67801d25cb44",
+  "sourceFiles": 74,
+  "bytes": 8733443,
+  "sha256": "e3d04a2174254e6d68978be2882592724cff4cee0eac747925f86295736f069a",
   "archiveCrcValidation": "passed",
   "exactMemberValidation": "passed",
   "sourceByteEqualityValidation": "passed",
@@ -16,23 +16,28 @@
     },
     {
       "name": "journal/README.md",
-      "bytes": 4734,
-      "sha256": "468f821b4e95807ad2b63655892922cf592d45c8560036570bbfed9456356037"
+      "bytes": 5844,
+      "sha256": "44d79dc0446bda6ea14e2248d58ac21d81c842e62173e001eb7c49c14d68e656"
+    },
+    {
+      "name": "journal/docs/3D-ENGINE.md",
+      "bytes": 3514,
+      "sha256": "fc289d9e744f575176268255d594741909b0dd9cce113741960297f0e3c6afbe"
     },
     {
       "name": "journal/docs/ART-SOURCES.md",
-      "bytes": 4729,
-      "sha256": "d99c7ee9ae0f1ad777aad663707f6bd084f42d6cdfd2724ca2607b63b0a62e55"
+      "bytes": 5994,
+      "sha256": "9e5c6134f901b5ef11a63ccdf3b1f30d818fac55cac4e68b4ed5758c064475c2"
     },
     {
       "name": "journal/docs/DELIVERY.md",
-      "bytes": 3318,
-      "sha256": "faad1421584d894f3a95ceabc62011ff79a07cb4a7d7754277e183ecae170b8b"
+      "bytes": 3252,
+      "sha256": "6be97e2d3778593ed9e01d02f3e3c09cfab0ce5ca5e48557c0e2e6e013303013"
     },
     {
       "name": "journal/docs/NOTICES.txt",
-      "bytes": 11246,
-      "sha256": "3173e0dc4cd7569671a7231743cd28d0fa04f35989d4eb36ddd706e20080eb97"
+      "bytes": 12836,
+      "sha256": "cdbfa0587601b6000953f93670aae3d8a4d4442b9f1eae23dd7195eb66920a73"
     },
     {
       "name": "journal/docs/PNG-EXPORT.md",
@@ -46,13 +51,13 @@
     },
     {
       "name": "journal/docs/QA.md",
-      "bytes": 4720,
-      "sha256": "72ce4ee3e4d26e2be8f97b8c8c13796c21100597ef21c7e262d7929b5f04b488"
+      "bytes": 4996,
+      "sha256": "693d43e51b7e1994a15a1783e8f4aa0df560dfec0f67f6bce85991f5795028ec"
     },
     {
       "name": "journal/docs/START.md",
-      "bytes": 5285,
-      "sha256": "cab53375d170255c717bd90834b884e2129ff50c491b802a1bba1434898009c3"
+      "bytes": 6055,
+      "sha256": "d2eec26205bcfc589cc73a8d6c9b1bc2824d5849687f0bc3ff93db5f72bf0751"
     },
     {
       "name": "journal/docs/TACTILE-ART.md",
@@ -61,8 +66,8 @@
     },
     {
       "name": "journal/docs/VISUAL-IDENTITY.md",
-      "bytes": 4309,
-      "sha256": "1aeab4d619009ad5b55d96d23dc602e54a6996e2f0cc99b6ed5779974656fb93"
+      "bytes": 6902,
+      "sha256": "029d2871fda85ed03419ede34dcc00b4db7ec13645f3a98af89f21a97d2fa74f"
     },
     {
       "name": "journal/index.html",
@@ -71,23 +76,23 @@
     },
     {
       "name": "journal/package-lock.json",
-      "bytes": 80090,
-      "sha256": "13f629d6f66b46189c1f93e9a3db67ede6e8c35ca682caecd0771874c478f4dd"
+      "bytes": 83253,
+      "sha256": "7d2fdfd3ac754795f78e981b467c080022a9cfb9c057aadf4cec8eb8df7fa3a2"
     },
     {
       "name": "journal/package.json",
-      "bytes": 796,
-      "sha256": "0c1182e5c38d4d48e7563d7fa6e94facbe2a0808ec0814fb2ae0c3a0186f45f3"
+      "bytes": 851,
+      "sha256": "c7981946564a921de7082f179a3ef9619d6da845039e6af4d74a1c0ba9f8fbeb"
     },
     {
       "name": "journal/playwright.config.ts",
-      "bytes": 655,
-      "sha256": "d34b246b650103a65abd64fa0d9bd52ff8a5b11fcbeffb46b9e96fd1c2bc7dc6"
+      "bytes": 740,
+      "sha256": "d0b5c66430f5e5acee5ab0e6ca763ec50f017bee14b6d619f78957c9d86adfcf"
     },
     {
       "name": "journal/src/App.tsx",
-      "bytes": 36824,
-      "sha256": "ca4df563af0b8d82bd91ed3c94167b6026cef9435002a7e3a611a5b08c56ea81"
+      "bytes": 38726,
+      "sha256": "a5f99bc0e578ae81dd52756a3719a19873158f1c0f18adf4460c5ace8bcbbd25"
     },
     {
       "name": "journal/src/assets/FONT-LICENSE.txt",
@@ -255,6 +260,11 @@
       "sha256": "fc632325a7d753ef1d5a3e2133fafe409a4b7090c107f255dd26274bc6e34a13"
     },
     {
+      "name": "journal/src/components/BookViewport.tsx",
+      "bytes": 5933,
+      "sha256": "14f20eab9cda799b65e2954d8cf3f190fbbce9db64e89d482f1acb9ae125dae2"
+    },
+    {
       "name": "journal/src/data/art.ts",
       "bytes": 3237,
       "sha256": "b0511ab995426059058f3e298449018fdd6f6623ae9774bc8f26fd83753a0fc4"
@@ -273,6 +283,11 @@
       "name": "journal/src/data/tactile.ts",
       "bytes": 1104,
       "sha256": "5ddfc61a66867661cf86eeb0ea3e050a3857d701a9236167c3980f3c0504540e"
+    },
+    {
+      "name": "journal/src/lib/book-scene.ts",
+      "bytes": 49671,
+      "sha256": "b7b4296666746a19bca8e3d81d3c80293e8b42f433362cb53beff6956be3b6aa"
     },
     {
       "name": "journal/src/lib/export.ts",
@@ -300,6 +315,11 @@
       "sha256": "f7ebfa24e8195d3f91f0692ab0b0260f160d65d3c62447ebcf1c4d463686749a"
     },
     {
+      "name": "journal/src/lib/page-texture.ts",
+      "bytes": 3043,
+      "sha256": "24c6c2df8f4aa00ab34a2ea2afa3e8af8b8c6cf31558492ed200b6687b3e5784"
+    },
+    {
       "name": "journal/src/lib/print-render.ts",
       "bytes": 1241,
       "sha256": "bc0a274b360f7fe74662bc1389a670c24dd3ef66ccc5fce2e7db3fbfe52583c3"
@@ -316,13 +336,13 @@
     },
     {
       "name": "journal/src/styles.css",
-      "bytes": 35019,
-      "sha256": "748c57dad8e8819fd2954a3682ca3f90015bd32221428722de036a78df6ed2b9"
+      "bytes": 39692,
+      "sha256": "8a75db760b5952d2a185613e5a6048de2de3ee3b6730a851eb42e12013e5264f"
     },
     {
       "name": "journal/tests/journal.spec.ts",
-      "bytes": 43445,
-      "sha256": "81b07e22134d1615a21591d548d3187b9c7076aa660005d83d113f549b37d8e5"
+      "bytes": 58405,
+      "sha256": "b5ac09ebc43f02f351bcc8a75d9a4f143854bee0abe8ea459937960d11c348f6"
     },
     {
       "name": "journal/tests/portable-capture.ts",
@@ -331,8 +351,8 @@
     },
     {
       "name": "journal/tools/build-portable.mjs",
-      "bytes": 11502,
-      "sha256": "eabb49ce15f69822b44b0b661bbf2160c5a574ccea5900a14e0abdaa708a7e88"
+      "bytes": 12173,
+      "sha256": "5faa1b9e81f90aaf657c971684f2b54e38df3dd91c06c940e6db44efd53e6f28"
     },
     {
       "name": "journal/tools/install.sh",
