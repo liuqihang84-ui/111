@@ -1,6 +1,6 @@
 # 当前工作流：一日一笺 · 电子手账
 
-当前应用是 `/workspace/111/journal` 内的电子手账首个原型 `0.1.0`，默认端口 `4180`。保留 `/workspace/111` 中既有美术工作台、旧 Godot 游戏和用户更改。每个任务已有隔离云环境，使用现有检出，不额外创建 Git worktree。
+当前应用是 `/workspace/111/journal` 内的电子手账 `0.2.0`，默认端口 `4180`。本版使用实体桌面、CSS 3D 布面书册和透明 PNG 材质小物。保留 `/workspace/111` 中既有美术工作台、旧 Godot 游戏和用户更改。每个任务已有隔离云环境，使用现有检出，不额外创建 Git worktree。
 
 ## 安装、检查与构建
 
@@ -41,7 +41,9 @@ rg '一日一笺' /tmp/yiri-journal-start.html
 
 全部手账在当前浏览器 `localStorage` 中自动保存，图片只在浏览器内缩小与使用；存储失败会显示提示。提供可恢复全部手账的 JSON 导入导出，导入覆盖前先下载当前备份；PNG 导出规格为 `1280 × 1680`。本版没有账号、AI API 或云端同步，不需要任何 API 密钥。
 
-三张封面、12 枚贴纸和纸纹等均从本地原创素材衍生，随源码与 HTML 交付。完整来源和软件/字体许可证见 [ART-SOURCES.md](ART-SOURCES.md) 与 [NOTICES.txt](NOTICES.txt)。更换字体或分发衍生字体时继续保留 OFL 声明和来源。
+主视觉包含同一张新布面山水 PNG 的三种封面配色、12 枚透明 PNG 材质小物和纤维纸纹 PNG，随源码与 HTML 内嵌交付。小物由 4 × 3 透明精灵图按格读取；`icon-orchid` 保留旧 ID，显示名称为白花枝。旧 SVG 仅保留兼容。完整来源和生成记录见 [ART-SOURCES.md](ART-SOURCES.md)、[TACTILE-ART.md](TACTILE-ART.md)，软件/字体许可证见 [NOTICES.txt](NOTICES.txt)。更换字体或分发衍生字体时继续保留 OFL 声明和来源。
+
+书册的掀封面、翻页和可见厚度使用 CSS 3D 与阴影，可编辑纸面只缩放，不采用 WebGL 自由视角。拖动、圆角手柄缩放、撤销重做、复制与置于最前均使用同一纸页坐标；手机托盘可折叠，文字输入区保持 16px。
 
 源码与离线文件交付不代表网站已上线。保存环境配置草稿不执行命令、不发布快照，也不证明未来任务恢复已验证；不推送、重置或修改远端发布设置。
 
@@ -59,3 +61,24 @@ PORT=4173 bash tools/serve.sh preview
 ## 保留的旧 Godot 项目
 
 旧游戏仍位于 `/workspace/111`，仅在用户重新明确要求该游戏时使用。它不是当前默认安装、启动或验证目标；保留其场景、脚本、美术、导出配置和已有更改。
+
+原项目固定 Godot 4.6.3 / GDScript / GL Compatibility。以下为保留的原命令，不属于手账安装步骤：
+
+```sh
+cd /workspace/111
+bash tools/setup.sh
+bash tools/dev.sh import
+bash tools/dev.sh test
+bash tools/dev.sh build
+bash tools/dev.sh release
+python3 tools/package_release.py
+bash tools/dev.sh smoke
+bash tools/dev.sh pack-smoke
+bash tools/dev.sh release-smoke
+bash tools/dev.sh release-acceptance
+bash tools/dev.sh capture
+bash tools/dev.sh run
+bash tools/dev.sh editor
+```
+
+使用详情见旧项目 [README.md](../../README.md)。其运行目录为 `/workspace/.godot-environment`，可通过 `LUMENFALL_RUNTIME_DIR` 与 `GODOT_BIN` 调整；新云任务仍需重新启动游戏、编辑器和虚拟显示。不要用手账安装或打包覆盖旧项目成果。

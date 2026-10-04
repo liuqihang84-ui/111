@@ -31,7 +31,7 @@ export interface StickerArt {
 }
 
 export const stickers: StickerArt[] = [
-  { id: 'icon-orchid', name: '兰草', group: '草木', src: svgUrl(orchidSvg), width: 144, height: 144 },
+  { id: 'icon-orchid', name: '白花枝', group: '草木', src: svgUrl(orchidSvg), width: 144, height: 144 },
   { id: 'icon-plum', name: '梅枝', group: '草木', src: svgUrl(plumSvg), width: 144, height: 144 },
   { id: 'icon-bamboo', name: '竹叶', group: '草木', src: svgUrl(bambooSvg), width: 144, height: 144 },
   { id: 'icon-lotus', name: '莲瓣', group: '草木', src: svgUrl(lotusSvg), width: 144, height: 144 },

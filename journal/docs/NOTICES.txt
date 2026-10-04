@@ -1,4 +1,4 @@
-一日一笺 · 电子手账 0.1.0
+一日一笺 · 电子手账 0.2.0
 第三方软件、美术与字体来源说明
 
 本文件保留实际随应用分发的软件与字体许可证。用户照片和手账内容由用户提供，保存在当前浏览器；本项目没有为这些内容另行授予许可。
@@ -205,3 +205,7 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+
+新增材质美术（0.2.0）
+======================
+tactile-stickers.png、tactile-cover.png、tactile-paper.png 为本项目使用图像生成工具新制作的原创素材，包含透明小物图集、布面封皮及手工纸纹。生成提示、过程、文件校验记录见源码 docs/TACTILE-ART.md。它们不是历史文物照片或馆藏复制图；项目美术随网页与源码交付，可用于本项目的修改与分发。字体与第三方软件继续遵循上文各自许可证。

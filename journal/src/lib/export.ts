@@ -35,6 +35,9 @@ function decodeImage(src: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.decoding = 'async';
+    // Local assets may redirect; an off-origin image must pass CORS rather than
+    // decode successfully and make the eventual canvas download unreadable.
+    if (!/^(?:data|blob):/i.test(src)) img.crossOrigin = 'anonymous';
     const timer = window.setTimeout(() => {
       img.onload = null;
       img.onerror = null;
@@ -147,16 +150,31 @@ function trustedStickerSource(src: string): boolean {
   }
 }
 
+export interface PagePngOptions {
+  paperTexture?: string;
+  bookTitle?: string;
+}
+
 /** Render the paper without editor controls, at 2× resolution for a clear download. */
-export async function exportPagePng(entry: JournalEntry, getStickerSrc: (assetId: string) => string | undefined): Promise<Blob> {
+export async function exportPagePng(
+  entry: JournalEntry,
+  getStickerSrc: (assetId: string) => string | undefined,
+  options: PagePngOptions = {},
+): Promise<Blob> {
   if (document.fonts) await document.fonts.ready;
-  const decoded = await Promise.all(entry.objects.map(async (object) => {
-    const src = object.kind === 'photo' ? object.src : (object.assetId ? getStickerSrc(object.assetId) : object.src);
-    if (!src || (object.kind === 'photo' ? !isSafePhotoSource(src) : !trustedStickerSource(src))) {
-      throw new Error('有素材无法读取，请移除该素材后重试');
-    }
-    return { object, image: await decodeImage(src) };
-  }));
+  if (options.paperTexture && !trustedStickerSource(options.paperTexture)) {
+    throw new Error('纸张纹理无法读取，请使用当前页面的本地素材');
+  }
+  const [decoded, paper] = await Promise.all([
+    Promise.all(entry.objects.map(async (object) => {
+      const src = object.kind === 'photo' ? object.src : (object.assetId ? getStickerSrc(object.assetId) : object.src);
+      if (!src || (object.kind === 'photo' ? !isSafePhotoSource(src) : !trustedStickerSource(src))) {
+        throw new Error('有素材无法读取，请移除该素材后重试');
+      }
+      return { object, image: await decodeImage(src) };
+    })),
+    options.paperTexture ? decodeImage(options.paperTexture) : Promise.resolve(undefined),
+  ]);
   const canvas = document.createElement('canvas');
   canvas.width = PAGE_WIDTH * 2;
   canvas.height = PAGE_HEIGHT * 2;
@@ -165,6 +183,11 @@ export async function exportPagePng(entry: JournalEntry, getStickerSrc: (assetId
   context.scale(2, 2);
   context.fillStyle = '#fbf8ef';
   context.fillRect(0, 0, PAGE_WIDTH, PAGE_HEIGHT);
+  if (paper) {
+    context.drawImage(paper, 0, 0, PAGE_WIDTH, PAGE_HEIGHT);
+    context.fillStyle = 'rgba(251, 248, 239, 0.28)';
+    context.fillRect(0, 0, PAGE_WIDTH, PAGE_HEIGHT);
+  }
   context.textBaseline = 'top';
   const serif = '"Guanwu Serif", "Noto Serif SC", "Songti SC", "SimSun", serif';
   const sans = '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif';
@@ -187,9 +210,12 @@ export async function exportPagePng(entry: JournalEntry, getStickerSrc: (assetId
   context.moveTo(48, 86);
   context.lineTo(592, 86);
   context.stroke();
-  context.font = `30px ${serif}`;
   context.fillStyle = '#343d34';
   const title = entry.title || '此刻，值得记下';
+  for (let size = 30; size >= 18; size -= 1) {
+    context.font = `${size}px ${serif}`;
+    if (context.measureText(title).width <= 544) break;
+  }
   context.fillText(context.measureText(title).width > 544 ? ellipsis(context, title, 544) : title, 48, 104);
   let bodyLineHeight = 30;
   let bodyMaxLines = 6;
@@ -262,8 +288,16 @@ export async function exportPagePng(entry: JournalEntry, getStickerSrc: (assetId
   }
   context.font = `10px ${sans}`;
   context.fillStyle = '#a4a594';
-  context.textAlign = 'center';
-  context.fillText('一 日  ·  把 日 子 过 成 诗', PAGE_WIDTH / 2, PAGE_HEIGHT - 28);
+  if (options.bookTitle) {
+    context.textAlign = 'left';
+    const bookTitle = context.measureText(options.bookTitle).width > 400 ? ellipsis(context, options.bookTitle, 400) : options.bookTitle;
+    context.fillText(bookTitle, 48, PAGE_HEIGHT - 28);
+    context.textAlign = 'right';
+    context.fillText('一日一笺 · 记', PAGE_WIDTH - 48, PAGE_HEIGHT - 28);
+  } else {
+    context.textAlign = 'center';
+    context.fillText('一 日  ·  把 日 子 过 成 诗', PAGE_WIDTH / 2, PAGE_HEIGHT - 28);
+  }
   return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('图片导出失败，请重试')), 'image/png');
   });
