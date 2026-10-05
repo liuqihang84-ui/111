@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc" data-status="proposed design direction; not user-approved; not implemented">
+  <title id="title">一日一笺 · 小笺 · 拟议平面母形</title>
+  <desc id="desc">原创便笺角色：圆角奶油便笺、右上灰莓折角、两个深梅褐色点眼与克制笑脸。可编辑矢量设计源稿，非运行组件，未经过 Android 设备验证。</desc>
+  <metadata>{"status":"proposed design direction","userApproved":false,"implemented":false,"deviceVerified":false,"units":"vector design coordinates","canonicalViewBox":[0,0,128,128]}</metadata>
+  <path id="note-body" d="M40 18 H82 L106 42 V93 Q106 111 88 111 H40 Q22 111 22 93 V36 Q22 18 40 18 Z" fill="#FCFAF7" stroke="#3E343B" stroke-width="2.4" stroke-linejoin="round"/>
+  <path id="fold" d="M82 18 V31 Q82 42 93 42 H106 Z" fill="#927383" stroke="#3E343B" stroke-width="2.4" stroke-linejoin="round"/>
+  <circle id="eye-left" cx="47" cy="68" r="4.2" fill="#3E343B"/>
+  <circle id="eye-right" cx="82" cy="68" r="4.2" fill="#3E343B"/>
+  <path id="smile" d="M59 79 Q64.5 84 70 79" fill="none" stroke="#3E343B" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,176 @@
+{
+  "name": "一日一笺 · 配色提案 v04",
+  "version": "color-v04-proposal",
+  "status": "proposed design direction; not user-approved; not implemented",
+  "userApproved": false,
+  "implemented": false,
+  "deviceVerified": false,
+  "platform": {
+    "target": "Android",
+    "nativeFramework": "not selected",
+    "delivery": "UI/VI design only; not an APK or running component"
+  },
+  "units": {
+    "layout": "dp",
+    "type": "sp",
+    "artboard": "proposed 412 dp reference; not a device measurement"
+  },
+  "type": {
+    "family": "Android CJK sans; final native font asset not selected",
+    "brand": "proposed rounded Chinese sans wordmark; no font binary included",
+    "body": {
+      "size": 16,
+      "lineHeight": 26,
+      "weight": 400,
+      "color": "ink"
+    },
+    "inputBody": {
+      "size": 16,
+      "lineHeight": 26,
+      "color": "ink"
+    },
+    "support": {
+      "size": 14,
+      "lineHeight": 22,
+      "color": "secondary on neutral surfaces; ink on accentSoft"
+    },
+    "pageTitle": {
+      "size": 28,
+      "lineHeight": 36,
+      "weight": 500,
+      "color": "ink"
+    },
+    "controlLabel": {
+      "size": 16,
+      "lineHeight": 24,
+      "weight": 500,
+      "color": "ink"
+    },
+    "fontScale": "respect system fontScale; future review at 2.0; not yet verified"
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "pageMargin": 24,
+  "radii": {
+    "control": 16,
+    "media": 16,
+    "sheet": 24
+  },
+  "touch": {
+    "minimum": 48,
+    "iconGlyph": 24,
+    "minimumMeaning": "actual non-overlapping proposed target; glyph size is not target size"
+  },
+  "systemInsets": {
+    "statusBar": "read real WindowInsets at implementation",
+    "gestureArea": "read real WindowInsets at implementation",
+    "ime": "real system keyboard; never draw keyboard as an app-owned input"
+  },
+  "navigation": [
+    "手账",
+    "素材",
+    "我的"
+  ],
+  "editorTools": [
+    "文字",
+    "照片",
+    "贴纸",
+    "布局"
+  ],
+  "editor": {
+    "structure": "proposed native full-screen journal editing; no desktop side panel",
+    "keyboard": "real Android system IME; toolbar sits above IME when open and above gesture inset when closed",
+    "inputStates": [
+      "empty",
+      "focused",
+      "composing text",
+      "text selection",
+      "keyboard visible",
+      "keyboard hidden",
+      "saving",
+      "saved",
+      "save failed with content retained"
+    ],
+    "contentInitialState": "empty; no fabricated default records, photos, tasks or applied stickers",
+    "photos": "actual user-selected media; design examples and placeholders are not inserted content",
+    "stickers": "insert only after an explicit user selection; supporting decorative materials are not presumed page data"
+  },
+  "brand": {
+    "name": "小笺",
+    "canonicalSource": "brand-mark.svg",
+    "viewBox": [
+      0,
+      0,
+      128,
+      128
+    ],
+    "bodyPath": "M40 18 H82 L106 42 V93 Q106 111 88 111 H40 Q22 111 22 93 V36 Q22 18 40 18 Z",
+    "foldPath": "M82 18 V31 Q82 42 93 42 H106 Z",
+    "features": [
+      "rounded cream note",
+      "upper-right gray-berry folded corner",
+      "two plum-charcoal dot eyes",
+      "restrained plum-charcoal smile"
+    ],
+    "smallSizeRule": "keep silhouette, fold and face; no tiny added accessories",
+    "status": "same original v02 silhouette with proposed A palette; not approved final icon package"
+  },
+  "motion": {
+    "pressDurationMs": 120,
+    "transitionDurationMs": 220,
+    "reducedMotion": "static material imagery; keep input and navigation semantics intact",
+    "status": "proposed; not implemented"
+  },
+  "designEvidence": {
+    "referenceBoard": "ui-vi-color-v04.png",
+    "comparisonBoard": "color-comparison-v04.png",
+    "exactColorSource": "palettes.json and palette-swatches.svg; generated pixels are illustrative",
+    "runtimeChecks": "none; no native font, touch, device or screenshot accessibility validation"
+  },
+  "defaultDirection": "A",
+  "selectedDirection": null,
+  "colors": {
+    "background": "#F4F0EC",
+    "surface": "#FCFAF7",
+    "ink": "#3E343B",
+    "secondary": "#6E646A",
+    "accent": "#927383",
+    "accentSoft": "#E9DDE1",
+    "stickerLeaf": "#7E8878",
+    "stickerFlower": "#C4A7B1"
+  },
+  "colorSemantics": {
+    "bodyText": "ink",
+    "secondaryText": "secondary on background/surface only; use ink on accentSoft",
+    "primaryAction": {
+      "background": "ink",
+      "label": "surface"
+    },
+    "selectedCheckbox": {
+      "background": "accentSoft",
+      "glyph": "ink",
+      "boundary": "ink"
+    },
+    "selectedNavigation": "ink label/icon with accentSoft mark; shape and explicit selected semantics",
+    "requiredFocusAndSelection": "ink boundary/glyph plus non-color semantics; accent alone is decorative",
+    "decorativeAccent": "accent; not ordinary small text",
+    "photoAndCloudMaterial": "muted blue-gray illustrative asset hue; not cloud-sync status",
+    "firstUse": "empty; all generated page content is fictional design data"
+  },
+  "materials": {
+    "status": "v03 material differentiation retained; design-only, no mesh/render measured",
+    "character": "cream satin vinyl with gray-berry fold",
+    "flowerAndCloud": "thin muted satin resin, no neon rim",
+    "cup": "subdued blue-gray glazed ceramic, no forced recoloring of actual user photos",
+    "lighting": "neutral upper-left soft light and short contact shadows",
+    "ui": "flat readable controls and surfaces",
+    "visualReferences": "material look from v03, colors from palettes.json"
+  }
+}

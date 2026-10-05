@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1488 848" width="1488" height="848" role="img" aria-labelledby="title desc" data-status="proposed palette research; not user-approved; not implemented">
+  <title id="title">一日一笺配色研究 v04</title>
+  <desc id="desc">三套拟议配色，每行八个可编辑矢量色块及语义十六进制标签：雾莓奶灰、瓷白雾蓝、燕麦苔绿。不透明 sRGB，非运行组件，未经用户批准。</desc>
+  <rect x="0" y="0" width="1488" height="848" fill="#FFFFFF" />
+  <text x="48" y="63" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="28" fill="#3E343B" font-weight="500">一日一笺配色研究 v04</text>
+  <text x="48" y="98" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#6E646A" font-weight="400">三套色彩方向 · 相同语义顺序 · 可编辑矢量源稿</text>
+  <line x1="48" y1="122" x2="1440" y2="122" stroke="#E9DDE1" stroke-width="1" />
+  <text x="48" y="165" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="20" fill="#3E343B" font-weight="500">A · 雾莓奶灰</text>
+  <g data-palette="A · 雾莓奶灰" data-color-space="opaque sRGB">
+    <rect x="48" y="187" width="148" height="76" rx="12" fill="#F4F0EC" data-semantic="bg" data-hex="#F4F0EC" />
+    <text x="48" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">页面底色</text>
+    <text x="48" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">bg</text>
+    <text x="48" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#F4F0EC</text>
+    <rect x="222" y="187" width="148" height="76" rx="12" fill="#FCFAF7" data-semantic="surface" data-hex="#FCFAF7" />
+    <text x="222" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">内容表面</text>
+    <text x="222" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">surface</text>
+    <text x="222" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#FCFAF7</text>
+    <rect x="396" y="187" width="148" height="76" rx="12" fill="#3E343B" data-semantic="ink" data-hex="#3E343B" />
+    <text x="396" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">主要文字</text>
+    <text x="396" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">ink</text>
+    <text x="396" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#3E343B</text>
+    <rect x="570" y="187" width="148" height="76" rx="12" fill="#6E646A" data-semantic="secondary" data-hex="#6E646A" />
+    <text x="570" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">次级文字</text>
+    <text x="570" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">secondary</text>
+    <text x="570" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#6E646A</text>
+    <rect x="744" y="187" width="148" height="76" rx="12" fill="#927383" data-semantic="accent" data-hex="#927383" />
+    <text x="744" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">强调色</text>
+    <text x="744" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">accent</text>
+    <text x="744" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#927383</text>
+    <rect x="918" y="187" width="148" height="76" rx="12" fill="#E9DDE1" data-semantic="soft" data-hex="#E9DDE1" />
+    <text x="918" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">柔和选中底</text>
+    <text x="918" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">soft</text>
+    <text x="918" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#E9DDE1</text>
+    <rect x="1092" y="187" width="148" height="76" rx="12" fill="#7E8878" data-semantic="leaf" data-hex="#7E8878" />
+    <text x="1092" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">叶片素材</text>
+    <text x="1092" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">leaf</text>
+    <text x="1092" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#7E8878</text>
+    <rect x="1266" y="187" width="148" height="76" rx="12" fill="#C4A7B1" data-semantic="flower" data-hex="#C4A7B1" />
+    <text x="1266" y="290" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">花朵素材</text>
+    <text x="1266" y="316" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6E646A">flower</text>
+    <text x="1266" y="341" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#3E343B">#C4A7B1</text>
+  </g>
+  <text x="48" y="363" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="20" fill="#293B45" font-weight="500">B · 瓷白雾蓝</text>
+  <g data-palette="B · 瓷白雾蓝" data-color-space="opaque sRGB">
+    <rect x="48" y="385" width="148" height="76" rx="12" fill="#EEF1F2" data-semantic="bg" data-hex="#EEF1F2" />
+    <text x="48" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">页面底色</text>
+    <text x="48" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">bg</text>
+    <text x="48" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#EEF1F2</text>
+    <rect x="222" y="385" width="148" height="76" rx="12" fill="#F9FAF8" data-semantic="surface" data-hex="#F9FAF8" />
+    <text x="222" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">内容表面</text>
+    <text x="222" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">surface</text>
+    <text x="222" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#F9FAF8</text>
+    <rect x="396" y="385" width="148" height="76" rx="12" fill="#293B45" data-semantic="ink" data-hex="#293B45" />
+    <text x="396" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">主要文字</text>
+    <text x="396" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">ink</text>
+    <text x="396" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#293B45</text>
+    <rect x="570" y="385" width="148" height="76" rx="12" fill="#5E6E75" data-semantic="secondary" data-hex="#5E6E75" />
+    <text x="570" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">次级文字</text>
+    <text x="570" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">secondary</text>
+    <text x="570" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#5E6E75</text>
+    <rect x="744" y="385" width="148" height="76" rx="12" fill="#718C9C" data-semantic="accent" data-hex="#718C9C" />
+    <text x="744" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">强调色</text>
+    <text x="744" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">accent</text>
+    <text x="744" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#718C9C</text>
+    <rect x="918" y="385" width="148" height="76" rx="12" fill="#DCE4E8" data-semantic="soft" data-hex="#DCE4E8" />
+    <text x="918" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">柔和选中底</text>
+    <text x="918" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">soft</text>
+    <text x="918" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#DCE4E8</text>
+    <rect x="1092" y="385" width="148" height="76" rx="12" fill="#7C8C84" data-semantic="leaf" data-hex="#7C8C84" />
+    <text x="1092" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">叶片素材</text>
+    <text x="1092" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">leaf</text>
+    <text x="1092" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#7C8C84</text>
+    <rect x="1266" y="385" width="148" height="76" rx="12" fill="#C6ADAA" data-semantic="flower" data-hex="#C6ADAA" />
+    <text x="1266" y="488" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">花朵素材</text>
+    <text x="1266" y="514" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#5E6E75">flower</text>
+    <text x="1266" y="539" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#293B45">#C6ADAA</text>
+  </g>
+  <text x="48" y="561" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="20" fill="#423B30" font-weight="500">C · 燕麦苔绿</text>
+  <g data-palette="C · 燕麦苔绿" data-color-space="opaque sRGB">
+    <rect x="48" y="583" width="148" height="76" rx="12" fill="#F3F0E7" data-semantic="bg" data-hex="#F3F0E7" />
+    <text x="48" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">页面底色</text>
+    <text x="48" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">bg</text>
+    <text x="48" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#F3F0E7</text>
+    <rect x="222" y="583" width="148" height="76" rx="12" fill="#FBF9F2" data-semantic="surface" data-hex="#FBF9F2" />
+    <text x="222" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">内容表面</text>
+    <text x="222" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">surface</text>
+    <text x="222" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#FBF9F2</text>
+    <rect x="396" y="583" width="148" height="76" rx="12" fill="#423B30" data-semantic="ink" data-hex="#423B30" />
+    <text x="396" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">主要文字</text>
+    <text x="396" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">ink</text>
+    <text x="396" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#423B30</text>
+    <rect x="570" y="583" width="148" height="76" rx="12" fill="#6C665B" data-semantic="secondary" data-hex="#6C665B" />
+    <text x="570" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">次级文字</text>
+    <text x="570" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">secondary</text>
+    <text x="570" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#6C665B</text>
+    <rect x="744" y="583" width="148" height="76" rx="12" fill="#929476" data-semantic="accent" data-hex="#929476" />
+    <text x="744" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">强调色</text>
+    <text x="744" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">accent</text>
+    <text x="744" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#929476</text>
+    <rect x="918" y="583" width="148" height="76" rx="12" fill="#E5E5D7" data-semantic="soft" data-hex="#E5E5D7" />
+    <text x="918" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">柔和选中底</text>
+    <text x="918" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">soft</text>
+    <text x="918" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#E5E5D7</text>
+    <rect x="1092" y="583" width="148" height="76" rx="12" fill="#848A6E" data-semantic="leaf" data-hex="#848A6E" />
+    <text x="1092" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">叶片素材</text>
+    <text x="1092" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">leaf</text>
+    <text x="1092" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#848A6E</text>
+    <rect x="1266" y="583" width="148" height="76" rx="12" fill="#D0BE91" data-semantic="flower" data-hex="#D0BE91" />
+    <text x="1266" y="686" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">花朵素材</text>
+    <text x="1266" y="712" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="14" fill="#6C665B">flower</text>
+    <text x="1266" y="737" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#423B30">#D0BE91</text>
+  </g>
+  <line x1="48" y1="768" x2="1440" y2="768" stroke="#E9DDE1" stroke-width="1" />
+  <text x="48" y="808" font-family="Noto Sans SC, Noto Sans CJK SC, sans-serif" font-size="16" fill="#6E646A" font-weight="400">拟议语义色 · 不透明 sRGB · 非运行组件 · 未用户批准</text>
+</svg>

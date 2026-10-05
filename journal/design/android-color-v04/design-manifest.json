@@ -1,0 +1,48 @@
+{
+  "name": "一日一笺 · 可爱手账配色 UI / VI",
+  "version": "android-color-v04",
+  "status": "proposed UI/VI design direction; no Android app implementation",
+  "createdAt": "2026-10-05T11:19:21.767678+08:00",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 2929,
+      "sha256": "a291ad6828a88f77856e6b96e960eb82d076fde817e2dc8d842c26941dc31625"
+    },
+    {
+      "file": "palettes.json",
+      "bytes": 9713,
+      "sha256": "b836bd9a71034bc1c59afb531076be6ba72c29bcf3880cf18a10a55c430df4ea"
+    },
+    {
+      "file": "palette-swatches.svg",
+      "bytes": 14120,
+      "sha256": "870f2098fb62a3ef07867ae4a741b761b5f6e39e7257bc4188672d3af88cdf64"
+    },
+    {
+      "file": "brand-mark.svg",
+      "bytes": 1223,
+      "sha256": "dc30c3c54058dd3cad6b11574641bb40956a94fcdaecd5633189f2d9c9d2cf3a"
+    },
+    {
+      "file": "design-tokens.json",
+      "bytes": 5557,
+      "sha256": "0a3e8592b1780e19f576cbcfd8b83ed34c2cd981ef9f4ad88d665f7a98e3cd64"
+    },
+    {
+      "file": "image-provenance.json",
+      "bytes": 1813,
+      "sha256": "79d2b97c18bbd56e2e5df2fe5d72979eed2f740459d8215bfe865243b38b7708"
+    },
+    {
+      "file": "ui-vi-color-v04.png",
+      "bytes": 1747441,
+      "sha256": "eb246fa54f0134fe32fb8f0a6f878446ad0cfd418b8ce0e14cd02b171dfa5b28"
+    },
+    {
+      "file": "color-comparison-v04.png",
+      "bytes": 1815720,
+      "sha256": "1a86811ef51d05d3b3df33630e32dba9f888740fc5787202763afb2a80367ca3"
+    }
+  ]
+}

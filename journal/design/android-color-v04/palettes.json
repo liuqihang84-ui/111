@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "name": "一日一笺 · 配色提案 v04",
+  "date": "2026-10-05",
+  "timezone": "Asia/Shanghai",
+  "status": "proposal",
+  "defaultDirection": "A",
+  "defaultDirectionMeaning": "Working direction for a complete concept board; not a user selection or approval.",
+  "selectedDirection": null,
+  "userApproved": false,
+  "scope": "design-only",
+  "appImplemented": false,
+  "apkAvailable": false,
+  "screenshotValidated": false,
+  "deviceValidated": false,
+  "preserve": [
+    "cute character silhouettes from v02",
+    "material differentiation from v03",
+    "book entry",
+    "free daily page",
+    "weekly planner"
+  ],
+  "contrastMethod": {
+    "standard": "WCAG relative luminance and contrast ratio",
+    "colorSpace": "sRGB",
+    "opacity": 1,
+    "linearChannel": "c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ^ 2.4",
+    "relativeLuminance": "0.2126 * R + 0.7152 * G + 0.0722 * B",
+    "ratio": "(lighterLuminance + 0.05) / (darkerLuminance + 0.05)",
+    "reportedDecimalPlaces": 2,
+    "thresholdsComparedBeforeRounding": true,
+    "normalTextMinimum": 4.5,
+    "nonTextMinimum": 3,
+    "interpretation": "Calculated canonical opaque color pairs only. These flags do not validate generated pixels, real components, screenshots, accessibility, or devices."
+  },
+  "proportionGuidance": {
+    "neutral": 75,
+    "primaryAndSoft": 20,
+    "decorative": 5,
+    "unit": "percent",
+    "measured": false,
+    "interpretation": "Approximate composition guidance; not a measured pixel-area result."
+  },
+  "usageRules": [
+    "Main actions use ink background with surface-colored labels.",
+    "Text on accentSoft uses ink; secondary on accentSoft is below normal-text AA in all three schemes.",
+    "accent, stickerLeaf and stickerFlower are decorative colors, not ordinary small-text colors.",
+    "Required focus, selection and checkbox states use a clear ink boundary or glyph plus non-color semantics; decorative accent outlines alone are insufficient.",
+    "For A, ink on accent is 2.84:1: use ink checks on accentSoft or surface instead of on accent fill.",
+    "Maintain coordinated lightness and lighting across designed stickers without tinting every object the same hue.",
+    "User photographs retain their own colors; do not force palette grading.",
+    "First use is blank. Generated records, photos, tasks and dates are examples, not default user data."
+  ],
+  "plannedBoards": {
+    "comparison": "color-comparison-v04.png",
+    "completeWorkingDirection": "ui-vi-color-v04.png"
+  },
+  "schemes": {
+    "A": {
+      "name": "雾莓奶灰",
+      "colors": {
+        "background": "#F4F0EC",
+        "surface": "#FCFAF7",
+        "ink": "#3E343B",
+        "secondary": "#6E646A",
+        "accent": "#927383",
+        "accentSoft": "#E9DDE1",
+        "stickerLeaf": "#7E8878",
+        "stickerFlower": "#C4A7B1"
+      },
+      "calculatedOpaquePairs": [
+        {
+          "foreground": "ink",
+          "background": "background",
+          "ratio": 10.53,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "surface",
+          "ratio": 11.46,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "background",
+          "ratio": 5.01,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "surface",
+          "ratio": 5.46,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "surface",
+          "background": "ink",
+          "ratio": 11.46,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "accentSoft",
+          "ratio": 9.04,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "accentSoft",
+          "ratio": 4.3,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "accent",
+          "background": "background",
+          "ratio": 3.7,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "accent",
+          "ratio": 2.84,
+          "normalTextAA": false,
+          "nonTextContrast3": false
+        },
+        {
+          "foreground": "accent",
+          "background": "accentSoft",
+          "ratio": 3.18,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "surface",
+          "background": "accent",
+          "ratio": 4.03,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        }
+      ]
+    },
+    "B": {
+      "name": "瓷白雾蓝",
+      "colors": {
+        "background": "#EEF1F2",
+        "surface": "#F9FAF8",
+        "ink": "#293B45",
+        "secondary": "#5E6E75",
+        "accent": "#718C9C",
+        "accentSoft": "#DCE4E8",
+        "stickerLeaf": "#7C8C84",
+        "stickerFlower": "#C6ADAA"
+      },
+      "calculatedOpaquePairs": [
+        {
+          "foreground": "ink",
+          "background": "background",
+          "ratio": 10.24,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "surface",
+          "ratio": 11.11,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "background",
+          "ratio": 4.67,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "surface",
+          "ratio": 5.06,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "surface",
+          "background": "ink",
+          "ratio": 11.11,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "accentSoft",
+          "ratio": 9.03,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "accentSoft",
+          "ratio": 4.11,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "accent",
+          "background": "background",
+          "ratio": 3.12,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "accent",
+          "ratio": 3.29,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "accent",
+          "background": "accentSoft",
+          "ratio": 2.75,
+          "normalTextAA": false,
+          "nonTextContrast3": false
+        },
+        {
+          "foreground": "surface",
+          "background": "accent",
+          "ratio": 3.38,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        }
+      ]
+    },
+    "C": {
+      "name": "燕麦苔绿",
+      "colors": {
+        "background": "#F3F0E7",
+        "surface": "#FBF9F2",
+        "ink": "#423B30",
+        "secondary": "#6C665B",
+        "accent": "#929476",
+        "accentSoft": "#E5E5D7",
+        "stickerLeaf": "#848A6E",
+        "stickerFlower": "#D0BE91"
+      },
+      "calculatedOpaquePairs": [
+        {
+          "foreground": "ink",
+          "background": "background",
+          "ratio": 9.7,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "surface",
+          "ratio": 10.49,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "background",
+          "ratio": 5,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "surface",
+          "ratio": 5.4,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "surface",
+          "background": "ink",
+          "ratio": 10.49,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "ink",
+          "background": "accentSoft",
+          "ratio": 8.7,
+          "normalTextAA": true,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "secondary",
+          "background": "accentSoft",
+          "ratio": 4.48,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "accent",
+          "background": "background",
+          "ratio": 2.74,
+          "normalTextAA": false,
+          "nonTextContrast3": false
+        },
+        {
+          "foreground": "ink",
+          "background": "accent",
+          "ratio": 3.54,
+          "normalTextAA": false,
+          "nonTextContrast3": true
+        },
+        {
+          "foreground": "accent",
+          "background": "accentSoft",
+          "ratio": 2.46,
+          "normalTextAA": false,
+          "nonTextContrast3": false
+        },
+        {
+          "foreground": "surface",
+          "background": "accent",
+          "ratio": 2.97,
+          "normalTextAA": false,
+          "nonTextContrast3": false
+        }
+      ]
+    }
+  }
+}

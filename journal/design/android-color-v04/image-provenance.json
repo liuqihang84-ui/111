@@ -1,0 +1,39 @@
+{
+  "version": "android-color-v04",
+  "createdAt": "2026-10-05T11:18:49.047997+08:00",
+  "status": "proposed palette alternatives; A is the working direction, user selection remains pending",
+  "images": [
+    {
+      "file": "color-comparison-v04.png",
+      "generator": "image_gen.imagegen",
+      "kind": "AI-generated color study; not a running Android screenshot",
+      "originalPath": "/workspace/generated_images/exec-8b5a055c-263c-4b71-a19f-866d2d445ca3.png",
+      "references": [
+        "../android-cute-v03/ui-vi-cute-v03.png"
+      ],
+      "sha256": "1a86811ef51d05d3b3df33630e32dba9f888740fc5787202763afb2a80367ca3",
+      "rasterEditedOutsideImageGenerator": false
+    },
+    {
+      "file": "ui-vi-color-v04.png",
+      "generator": "image_gen.imagegen",
+      "kind": "AI-generated color study; not a running Android screenshot",
+      "originalPath": "/workspace/generated_images/exec-8c51c2f9-e44e-4a91-8d7e-1e02cb242fbc.png",
+      "references": [
+        "../android-cute-v03/ui-vi-cute-v03.png",
+        "color-comparison-v04.png"
+      ],
+      "sha256": "eb246fa54f0134fe32fb8f0a6f878446ad0cfd418b8ce0e14cd02b171dfa5b28",
+      "rasterEditedOutsideImageGenerator": false
+    }
+  ],
+  "canonicalPairCalculationChecked": 33,
+  "generatedImagePixelContrastChecked": false,
+  "deviceVerified": false,
+  "notes": [
+    "Nominal palette values and opaque contrast calculations do not establish exact generated pixels.",
+    "Some generated action/selection tints differ from canonical tokens; required controls need redrawing and native validation.",
+    "All photographs, text, tasks and 10.04 dates are fictional example content; real user photos retain their color.",
+    "Brand shape and material family are preserved from earlier concepts; A is not a user-approved final palette."
+  ]
+}
