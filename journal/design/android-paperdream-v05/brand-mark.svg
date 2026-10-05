@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc" data-status="proposed design direction; not user-approved; not implemented">
+  <title id="title">一日一笺 · 梦游纸片 · 拟议母形</title>
+  <desc id="desc">原创折面精灵：两枚不对称钴蓝翼折片、一小片黄色反面、暖白三角前面，以及两个墨色点眼与克制微笑。四个简单矢量折面，保留四周安全留白；非运行组件，未获用户批准。</desc>
+  <metadata>{"name":"梦游纸片","status":"proposed","originalProposedDesign":true,"userApproved":false,"implemented":false,"deviceVerified":false,"canonicalViewBox":[0,0,160,160],"palette":["#304CFF","#F7F5EF","#1C2440","#F4DC58"],"planeCount":4,"sourceType":"editable flat vector; not a reconstruction of rendered perspective"}</metadata>
+  <path id="wing-left" d="M15 76 L62 39 L76 110 Z" fill="#304CFF" stroke="#1C2440" stroke-width="2" stroke-linejoin="round"/>
+  <path id="wing-right" d="M109 18 L137 74 L91 66 Z" fill="#304CFF" stroke="#1C2440" stroke-width="2" stroke-linejoin="round"/>
+  <path id="yellow-reverse" d="M59 98 L50 135 L103 116 Z" fill="#F4DC58" stroke="#1C2440" stroke-width="2" stroke-linejoin="round"/>
+  <path id="front-face" d="M61 49 L137 74 L91 139 Z" fill="#F7F5EF" stroke="#1C2440" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle id="eye-left" cx="85" cy="86" r="3.2" fill="#1C2440"/>
+  <circle id="eye-right" cx="109" cy="89" r="3.2" fill="#1C2440"/>
+  <path id="smile" d="M93 99 Q98 104 104 99" fill="none" stroke="#1C2440" stroke-width="3" stroke-linecap="round"/>
+</svg>

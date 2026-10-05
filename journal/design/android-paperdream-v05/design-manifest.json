@@ -1,0 +1,38 @@
+{
+  "name": "一日一笺 · 梦游纸片 UI / VI",
+  "version": "android-paperdream-v05",
+  "status": "proposed UI/VI design direction; no Android app implementation",
+  "createdAt": "2026-10-05T11:48:05.228748+08:00",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3215,
+      "sha256": "e05c3c9ec6a89c1214724e501358835c226bc04998692f6d74c7322273c41618"
+    },
+    {
+      "file": "brand-mark.svg",
+      "bytes": 1627,
+      "sha256": "f9e8eef3f32a28b955158ad84d7dc9df9fd3502fd5165d7169553c2317cdbae9"
+    },
+    {
+      "file": "design-tokens.json",
+      "bytes": 4788,
+      "sha256": "0febe425d438cbef8df3b9bb2d09de9b8d3ea177df64acaff8112c1999966ea6"
+    },
+    {
+      "file": "image-provenance.json",
+      "bytes": 1738,
+      "sha256": "3f767bd259d6a936cf18d73d6fbafe5e733d00457bd5b2cab8e494105f40ef11"
+    },
+    {
+      "file": "ui-vi-paperdream-v05.png",
+      "bytes": 1676616,
+      "sha256": "1ff9e8821aa3eb4a7832cc35abe74c89eb8250773bf93d06f08a4c60c85d34b8"
+    },
+    {
+      "file": "page-states-paperdream-v05.png",
+      "bytes": 1622013,
+      "sha256": "f57fabd7a94d30f86e955d5cdbe392e301c587af8f4b3cf88096a2b54bb150d9"
+    }
+  ]
+}

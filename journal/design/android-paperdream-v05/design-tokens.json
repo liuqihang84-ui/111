@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "name": "一日一笺 · 梦游纸片 v05",
+  "date": "2026-10-05",
+  "timezone": "Asia/Shanghai",
+  "status": "proposal",
+  "userApproved": false,
+  "scope": "design-only",
+  "appImplemented": false,
+  "apkAvailable": false,
+  "imageValidated": false,
+  "deviceValidated": false,
+  "colors": {
+    "blue": "#304CFF",
+    "background": "#F7F5EF",
+    "ink": "#1C2440",
+    "yellow": "#F4DC58"
+  },
+  "type": {
+    "body": {
+      "family": "Android Chinese sans / Noto Sans SC",
+      "sizeSp": 16,
+      "lineHeightSp": 26
+    },
+    "contentDisplay": {
+      "purpose": "Large asymmetric titles within user content only; not fixed promotional banners."
+    },
+    "scaling": "Respect system fontScale; actual large-font layouts remain to be validated."
+  },
+  "layout": {
+    "proposedMarginDp": 24,
+    "proposedMinimumTouchDp": 48,
+    "iconGlyphDp": 24,
+    "status": "Proposed specifications, not measured from generated images or devices.",
+    "materialGrid": {
+      "conceptColumns": 3,
+      "responsive": true,
+      "forcedTwoColumns": false
+    }
+  },
+  "navigation": [
+    "手账",
+    "素材",
+    "我的"
+  ],
+  "editor": {
+    "proposedTools": [
+      "文字",
+      "照片",
+      "贴纸",
+      "布局"
+    ],
+    "proposedSelectionActions": [
+      "旋转",
+      "图层",
+      "删除"
+    ],
+    "textEditing": "Native full-screen editing with the system IME and real keyboard insets."
+  },
+  "primaryAction": {
+    "background": "blue",
+    "label": "background",
+    "meaning": "Cobalt blue fill with light warm-white label."
+  },
+  "yellowLabel": {
+    "background": "yellow",
+    "label": "ink",
+    "decorativeOnlyAsSoleColor": true
+  },
+  "requiredStates": "Use ink or blue boundary/glyph plus non-color semantics. Yellow against warm white cannot be the sole required focus, selection or warning signal.",
+  "brand": {
+    "direction": "梦游纸片",
+    "proposedCharacter": "Geometric folded-paper sprite with clear folded planes and a restrained face.",
+    "status": "proposed",
+    "canonicalApproved": false,
+    "assetConsistency": "Reuse the proposed fold logic and silhouette within this concept, without claiming an approved canonical asset.",
+    "flatSource": "brand-mark.svg",
+    "flatSourceMeaning": "proposed editable emblem, not a reconstruction of generated perspective"
+  },
+  "materials": {
+    "uses": [
+      "satin folded sheets on designed stickers",
+      "thin translucent PET or resin ticket tags"
+    ],
+    "exclusions": [
+      "body text",
+      "navigation",
+      "buttons",
+      "ordinary list containers"
+    ],
+    "lighting": "Consistent soft upper-left light; restrained highlights and short contact shadows.",
+    "status": "Visual concepts; no implemented PBR material or measured physical parameters."
+  },
+  "composition": {
+    "bookEntry": "Digital editorial booklet and real page previews; no thick padded cover.",
+    "freeDailyPage": "Content-led asymmetric title, photographs, notes, small tasks and user-controlled geometric stickers.",
+    "materialPicker": "Clean native-aligned tools with an adaptable grid and selected-asset preview.",
+    "retiredMotifs": [
+      "flowers",
+      "mugs",
+      "creamy puffy objects",
+      "seven-card weekly layout"
+    ],
+    "interface": "Flat controls and aligned actions; display asymmetry belongs to content."
+  },
+  "examples": {
+    "firstUse": "blank",
+    "dates": [
+      {
+        "date": "2026-10-05",
+        "weekday": "Monday"
+      },
+      {
+        "date": "2026-10-03",
+        "weekday": "Saturday"
+      }
+    ],
+    "recordsAreExamples": true,
+    "forcedPhotoGrading": false
+  },
+  "boards": {
+    "overview": "ui-vi-paperdream-v05.png",
+    "pageStates": "page-states-paperdream-v05.png"
+  },
+  "contrast": {
+    "method": "WCAG opaque sRGB relative luminance; (L lighter + 0.05)/(L darker + 0.05).",
+    "normalTextMinimum": 4.5,
+    "nonTextMinimum": 3,
+    "computedPairs": [
+      {
+        "foreground": "ink",
+        "background": "background",
+        "ratio": 14,
+        "normalTextAA": true,
+        "nonTextContrast3": true
+      },
+      {
+        "foreground": "background",
+        "background": "blue",
+        "ratio": 5.35,
+        "normalTextAA": true,
+        "nonTextContrast3": true
+      },
+      {
+        "foreground": "ink",
+        "background": "yellow",
+        "ratio": 11.07,
+        "normalTextAA": true,
+        "nonTextContrast3": true
+      },
+      {
+        "foreground": "yellow",
+        "background": "background",
+        "ratio": 1.27,
+        "normalTextAA": false,
+        "nonTextContrast3": false
+      }
+    ],
+    "interpretation": "Canonical colors only. These calculations do not prove image pixels, screenshots, components or device accessibility."
+  }
+}

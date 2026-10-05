@@ -1,0 +1,37 @@
+{
+  "version": "android-paperdream-v05",
+  "createdAt": "2026-10-05T11:48:05.185053+08:00",
+  "status": "new style proposed for review; user has not approved this direction",
+  "images": [
+    {
+      "file": "ui-vi-paperdream-v05.png",
+      "generator": "image_gen.imagegen",
+      "kind": "AI-generated new-style UI/VI concept; not a running Android screenshot",
+      "originalPath": "/workspace/generated_images/exec-59fc5c68-1455-4098-b3b6-e56e636f5ad6.png",
+      "references": [],
+      "sha256": "1ff9e8821aa3eb4a7832cc35abe74c89eb8250773bf93d06f08a4c60c85d34b8",
+      "rasterEditedOutsideImageGenerator": false
+    },
+    {
+      "file": "page-states-paperdream-v05.png",
+      "generator": "image_gen.imagegen",
+      "kind": "AI-generated new-style UI/VI concept; not a running Android screenshot",
+      "originalPath": "/workspace/generated_images/exec-fa29fa4c-61d0-40f5-aca0-d572cff83f30.png",
+      "references": [
+        "ui-vi-paperdream-v05.png"
+      ],
+      "sha256": "f57fabd7a94d30f86e955d5cdbe392e301c587af8f4b3cf88096a2b54bb150d9",
+      "rasterEditedOutsideImageGenerator": false
+    }
+  ],
+  "canonicalOpaquePairsChecked": 4,
+  "generatedPixelContrastChecked": false,
+  "androidDeviceVerified": false,
+  "notes": [
+    "New original folded-plane mascot and geometric sticker family are conceptual, not exported 3D meshes.",
+    "All records, tasks, city photos and 10.05 / 10.03 dates are fictional examples.",
+    "Left blank-state illustration is a UI hint, not inserted user page data.",
+    "Some generated material thickness, small text and selection affordances need refinement in native UI.",
+    "Reference artwork is generated; no third-party research photographs are copied into this pack."
+  ]
+}
