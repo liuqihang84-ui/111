@@ -1,0 +1,38 @@
+{
+  "version": "android-cute-v03",
+  "createdAt": "2026-10-05T10:41:20.923665+08:00",
+  "status": "proposed material refinement of the user-preferred cute direction; not an implemented app",
+  "images": [
+    {
+      "file": "material-study-v03.png",
+      "kind": "AI-generated material concept, not an Android runtime screenshot",
+      "generator": "image_gen.imagegen",
+      "originalPath": "/workspace/generated_images/exec-d7aaaac8-900f-4ed6-90c3-11f35674defd.png",
+      "references": [
+        "../android-cute-v02/ui-vi-cute-v02.png"
+      ],
+      "sha256": "904bb9752b15e9d73f4ec724607faffff88b431ea10e4d2bbdf03a92b1f248cc",
+      "rasterEditedOutsideImageGenerator": false
+    },
+    {
+      "file": "ui-vi-cute-v03.png",
+      "kind": "AI-generated material concept, not an Android runtime screenshot",
+      "generator": "image_gen.imagegen",
+      "originalPath": "/workspace/generated_images/exec-1c986bcb-1a52-485e-a9a4-8939159a7950.png",
+      "references": [
+        "../android-cute-v02/ui-vi-cute-v02.png",
+        "material-study-v03.png"
+      ],
+      "sha256": "0820f9f2a2da71ce49b0aa46e78f3d99ba8b4fdc50ded997516208745b97876f",
+      "rasterEditedOutsideImageGenerator": false
+    }
+  ],
+  "sourceBrandMark": "reused byte-for-byte from android-cute-v02/brand-mark.svg",
+  "notes": [
+    "Generated images are material/style concepts; no mesh, measured PBR render, working IME or APK is supplied.",
+    "All diary contents, tasks, photos and 10.04 dates are fictional design examples.",
+    "The material board wording actual App refers to an intended UI-scale inset, not a running Android screen.",
+    "The large close-up completed button is a generated study; ordinary final controls are specified as flat."
+  ],
+  "thirdPartyResearchImagesIncluded": false
+}
