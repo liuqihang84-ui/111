@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111514"><meta name="description" content="打开 iPhone Duo 的另一面。一个完全由代码生成的 Three.js 交互拆解实验室。">
+  <title>Duo / Inside — iPhone Duo 交互拆解实验室</title>
+  <link rel="stylesheet" href="./studio.css?v=2">
+  <link rel="stylesheet" href="./minimal.css?v=3">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/"}}</script>
+</head>
+<body>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+ <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></symbol>
+ <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+ <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></symbol>
+ <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v1"/></symbol>
+ <symbol id="i-screenshot" viewBox="0 0 24 24"><path d="M8 5 9 3h6l1 2h4v15H4V5h4Z"/><circle cx="12" cy="12" r="4"/></symbol>
+ <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 0 8m0-13v5h-5"/></symbol>
+ <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18m6-18v18"/></symbol>
+ <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></symbol>
+</defs></svg>
+<header class="topbar">
+ <a class="brand" href="./" aria-label="Duo Inside 首页"><span class="brand-mark"><i></i><i></i></span>duo<span class="slash">/</span><strong>inside</strong><span class="brand-tag">INTERACTIVE LAB</span></a>
+ <nav aria-label="主导航"><button class="nav-link active" id="exploreNav"><span>01</span> 探索工作台</button><button class="nav-link" data-dialog="structureDialog"><span>02</span> 结构说明</button><button class="nav-link" data-dialog="sourcesDialog"><span>03</span> 资料与参数</button></nav>
+ <button class="text-button top-help" data-dialog="helpDialog"><svg><use href="#i-help"/></svg>操作指南</button>
+</header>
+<main>
+ <section class="intro">
+  <div><p class="eyebrow"><span class="live-dot"></span> A CLOSER LOOK AT WHAT'S INSIDE</p><h1>iPhone Duo<span class="title-dot">.</span></h1><p class="intro-sub">不止于表面。拆开每一层，探索精密之内。</p></div>
+  <div class="hero-specs"><div><strong>7.6<span>″</span></strong><small>折叠 OLED 内屏</small></div><div><strong>5.2<span>mm</span></strong><small>展开机身厚度</small></div><div><strong>254<span>g</span></strong><small>整机重量</small></div></div>
+ </section>
+ <section class="workbench" aria-label="三维拆解工作台">
+  <aside class="parts-panel">
+   <div class="panel-heading"><div><span class="eyebrow">ASSEMBLY INDEX</span><h2>部件清单 <span id="partCount">—</span></h2></div><svg><use href="#i-layers"/></svg></div>
+   <label class="search-box"><svg><use href="#i-search"/></svg><input id="partSearch" placeholder="搜索部件或参数" aria-label="搜索部件"><kbd>/</kbd></label>
+   <div class="filters" role="group" aria-label="部件分类"><button class="active" data-filter="all">全部</button><button data-filter="structure">结构</button><button data-filter="core">核心</button><button data-filter="detail">精密</button></div>
+   <div id="partsList" class="parts-list" aria-label="可探索部件"></div>
+   <div class="panel-note"><span class="live-dot"></span><span>所有三维部件均由代码生成</span></div>
+  </aside>
+  <div class="stage" id="stage">
+   <div class="stage-top"><div class="view-tabs" role="group" aria-label="模型视图"><button id="explodedView" class="active">拆解视图</button><button id="assembledView">整机外观</button></div><span class="render-status"><i></i><span id="renderStatus">WEBGL · 准备中</span></span></div>
+   <div id="viewport" role="img" aria-label="可旋转、缩放和点击的 iPhone Duo 三维模型" tabindex="0"></div><div id="labels" class="labels"></div>
+   <div id="loading" class="loading"><span class="loader"></span><p>正在构建精密结构</p><small>GENERATING GEOMETRY</small></div>
+   <div class="stage-corner"><span class="crosshair">+</span><span>DUO — PROCEDURAL ASSEMBLY<br><span id="stageSub">EXPLODED / FRONT</span></span></div>
+   <div class="stage-tools"><button id="resetView" title="重置视角 R" aria-label="重置视角"><svg><use href="#i-reset"/></svg></button><button id="autoRotate" title="自动旋转" aria-label="自动旋转" aria-pressed="false"><svg><use href="#i-rotate"/></svg></button><button id="toggleLabels" class="active" title="部件标注 L" aria-label="切换部件标注" aria-pressed="true"><svg><use href="#i-eye"/></svg></button><button id="wireframe" title="线框模式 W" aria-label="切换线框模式" aria-pressed="false"><svg><use href="#i-grid"/></svg></button><span></span><button id="screenshot" title="保存三维视图" aria-label="保存三维视图"><svg><use href="#i-screenshot"/></svg></button><button id="fullscreen" title="全屏工作台" aria-label="全屏工作台"><svg><use href="#i-expand"/></svg></button></div>
+   <div class="orbit-hint"><span class="mouse-icon"></span>拖动旋转 <b>·</b> 滚轮缩放 <b>·</b> 点击部件拆解</div>
+   <div class="camera-card" id="cameraCard" hidden><div class="camera-head"><span><i class="live-dot"></i>手势控制</span><button id="stopCamera" aria-label="关闭摄像头"><svg><use href="#i-close"/></svg></button></div><div class="camera-preview"><video id="cameraVideo" autoplay playsinline muted></video><canvas id="cameraOverlay"></canvas><span class="camera-cross">+</span></div><p id="cameraStatus" role="status">正在连接摄像头…</p><div class="camera-actions"><button id="calibrateCamera">重新校准</button><span>双手距离 → 缩放</span></div></div>
+   <div class="zoom-readout" id="zoomReadout">100%</div>
+  </div>
+  <aside class="detail-panel" aria-live="polite">
+   <div class="detail-top"><span class="eyebrow">COMPONENT DETAIL</span><span id="detailIndex">01 / 18</span></div>
+   <div class="part-symbol" id="partSymbol"><svg><use href="#i-layers"/></svg><span id="partEnglish">FOLDABLE DISPLAY</span><span class="symbol-cross">+</span></div>
+   <div class="detail-title"><span id="detailCategory" class="category-tag">显示系统</span><h2 id="detailTitle">内屏显示总成</h2><p id="detailSubtitle">Super Retina XDR</p></div>
+   <p class="detail-description" id="detailDescription"></p><dl id="detailSpecs" class="detail-specs"></dl>
+   <div class="detail-source" id="detailSource"></div>
+   <button class="primary-button" id="detachPart"><svg><use href="#i-layers"/></svg><span>拆解此部件</span><svg class="end-icon"><use href="#i-arrow"/></svg></button>
+   <button class="secondary-button" id="isolatePart"><svg><use href="#i-eye"/></svg><span>单独查看</span></button>
+   <div class="detail-bottom"><span>选择部件，发现它的精密之处。</span><div><button id="prevPart" aria-label="上一部件">←</button><button id="nextPart" aria-label="下一部件">→</button></div></div>
+  </aside>
+  <div class="control-dock">
+   <div class="dock-label"><svg><use href="#i-layers"/></svg><div><strong>拆解进度</strong><small>EXPLODE ASSEMBLY</small></div></div>
+   <button id="playSequence" class="play-button" aria-label="播放拆解动画">▶</button>
+   <div class="explode-control"><div class="range-labels"><span>完整组装</span><output id="explodeValue">55%</output><span>完全拆解</span></div><input id="explodeRange" type="range" min="0" max="100" value="55" aria-label="拆解进度"></div>
+   <div class="fold-control"><label for="foldRange">折叠角度 <output id="foldValue">180°</output></label><input id="foldRange" type="range" min="0" max="180" value="180" aria-label="机身展开角度"><div><span>合拢</span><span>展开</span></div></div>
+   <button id="cameraButton" class="camera-button" aria-label="手势控制"><svg><use href="#i-camera"/></svg><span>手势控制</span><span class="new-tag">CAM</span></button>
+  </div>
+ </section>
+ <footer class="page-footer"><span><i class="live-dot"></i>探索精密结构，从每一颗螺丝开始。</span><button data-dialog="sourcesDialog">官方参数 · 示意建模 <svg><use href="#i-arrow"/></svg></button><span>THREE.JS <b>/</b> NO EXTERNAL 3D ASSETS</span></footer>
+</main>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="helpDialog"><form method="dialog"><div class="dialog-head"><span class="eyebrow">QUICK START</span><button aria-label="关闭操作指南">✕</button></div><h2>从这里，打开另一面。</h2><div class="guide-grid"><article><b>01</b><h3>拿起你的视角</h3><p>鼠标左键拖动旋转，滚轮缩放；右键拖动平移。触屏可单指旋转、双指缩放。</p></article><article><b>02</b><h3>拆开每一层</h3><p>点击三维部件即可高亮并移出。清单也能选择部件，拖动进度条可连续拆解整机。</p></article><article><b>03</b><h3>发现折叠结构</h3><p>将折叠角度从180°拉到0°，观察合拢过程。折叠会自动收起拆解部件。</p></article><article><b>04</b><h3>用双手改变尺寸</h3><p>开启摄像头，移开双手完成背景校准，再将双手放在画面左右两侧。拉开双手放大、靠拢缩小。</p></article></div><p class="dialog-note">快捷键：<kbd>R</kbd> 重置视角　<kbd>L</kbd> 标注　<kbd>W</kbd> 线框　<kbd>空格</kbd> 拆解/组装　<kbd>/</kbd> 搜索　<kbd>Esc</kbd> 退出单独查看</p><button class="primary-button">开始探索 <svg><use href="#i-arrow"/></svg></button></form></dialog>
+<dialog id="structureDialog"><form method="dialog"><div class="dialog-head"><span class="eyebrow">STRUCTURAL NOTES</span><button aria-label="关闭结构说明">✕</button></div><h2>一台设备，两种形态。</h2><p>模型采用展开宽164.6 mm、高117.8 mm的比例，以中央铰链连接左右机身。折叠演示保留屏幕朝内的书本式运动。</p><div class="structure-diagram"><span>背部玻璃 / 摄像头</span><i></i><span>钛金属框架</span><i></i><span>电池 · 主板 · 排线 · 扬声器</span><i></i><span>柔性内屏总成</span></div><p>逐件拆解沿各部件预设方向展开；可用“单独查看”旋转检查镜头镀膜、PCB元件、螺丝螺纹和刀口。</p><p class="dialog-note">这是用于结构学习的程序化可视化。部件位置、厚度、连接关系和拆解距离经过可视化简化；不作为实际维修步骤或精密工程图纸。</p></form></dialog>
+<dialog id="sourcesDialog"><form method="dialog"><div class="dialog-head"><span class="eyebrow">REFERENCE & SPECIFICATION</span><button aria-label="关闭资料与参数">✕</button></div><h2>以资料为依据，以代码重构。</h2><p>外部尺寸、屏幕、芯片和相机参数参照 Apple 官方技术规格。内部结构参考维修手册与拆机资料，所有可见几何体、丝印、屏幕纹理均由 JavaScript 生成。</p><div class="source-links"><a href="https://www.apple.com/iphone-duo/specs/" target="_blank" rel="noopener"><span>01</span><div><b>Apple · iPhone Duo 技术规格</b><small>尺寸、重量、显示与影像参数</small></div>↗</a><a href="https://support.apple.com/en-us/127682" target="_blank" rel="noopener"><span>02</span><div><b>Apple · iPhone Duo 维修手册</b><small>内部视图、部件流程与紧固件</small></div>↗</a><a href="https://support.apple.com/en-us/127678" target="_blank" rel="noopener"><span>03</span><div><b>Apple · 螺丝类型说明</b><small>Pentalobe / Crosshead / Super screw</small></div>↗</a><a id="teardownLink" href="https://www.ifixit.com/" target="_blank" rel="noopener"><span>04</span><div><b>iFixit · 拆机资料</b><small>来源链接见项目说明文件</small></div>↗</a></div><p class="dialog-note">标为“官方参数”的信息可追溯到技术规格；标为“结构示意”的尺寸、螺丝数量及内部元件细节是本模型的建模选择。电池容量等未经核实的参数未编造。非 Apple 官方产品。</p></form></dialog>
+<script type="module" src="./app-v2.js?v=3"></script>
+<script>document.getElementById('teardownLink').href='https://www.ifixit.com/News/119895/iphone-duo-teardown';document.querySelector('#teardownLink small').textContent='双电池、相机、主板与铰链拆解';</script>
+</body></html>
