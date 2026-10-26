@@ -19,7 +19,7 @@ Publish directory: iphone-duo-lab/dist
 The build script retrieves the pinned official @mediapipe/tasks-vision 1.1.1 package and official Hand Landmarker float16 v1 data, and verifies their SHA-512/SHA-256 digests before extraction. The package and data do not need to be stored in Git. For local development, run node prepare-vision.mjs, then serve this directory over localhost.
 
 Validation:
-- node verify-gestures.mjs: 85 assertions covering pinch latch/release, fist/palm, rotation direction, dwell, tracking loss, scale and handedness.
+- node verify-gestures.mjs: 89 assertions covering pinch latch/release, fist/palm, rotation direction, dwell, short occlusion/long tracking loss, scale and handedness.
 - node verify-motion.mjs: 7577 assertions for the original disassembly/folding paths.
 - Browser: Worker startup and blank-frame inference passed. Layout bounds checked at 390x844, 360x740 and 844x390; camera controls and canvas do not overlap.
 - Real-hand operation still needs verification with the user's physical camera.

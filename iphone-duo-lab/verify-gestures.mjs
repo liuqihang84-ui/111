@@ -29,5 +29,7 @@ const pinch=structuredClone(fist);for(const i of [5,6,7,8])pinch[i]=open[i];pinc
 const feature=handFeatures(pinch);assert(feature.pinch<.2);assert(feature.pinchReady);checks+=2;
 for(const points of [open,fist,pinch])for(const factor of [.65,.9,1.1]){const transformed=points.map(p=>({x:.5+(p.x-.5)*factor,y:.5+(p.y-.5)*factor,z:p.z*factor}));assert.equal(handFeatures(points).pose,handFeatures(transformed).pose);assert(Math.abs(handFeatures(points).pinch-handFeatures(transformed).pinch)<1e-6);const mirrored=points.map(p=>({...p,x:1-p.x}));assert.equal(handFeatures(points).pose,handFeatures(mirrored).pose);checks+=3;}
 assert.equal(handFeatures(null),null);checks++;
+g=createGestureInterpreter();frames(g,{...base,pinch:.15,pinchReady:true},35);frames(g,null,2);r=frames(g,{...base,pose:'open'},40,{...state,fold:0});assert(r.result.folding);assert(!r.actions.some(a=>a.kind==='grip'&&a.open));checks+=2;
+frames(g,null,12);r=frames(g,{...base,pose:'open'},14);assert(!r.result.folding);assert(r.actions.some(a=>a.kind==='grip'&&a.open));checks+=2;
 console.log('Single-hand gesture checks passed: '+checks+'. Pinch priority/release, fist/palm, motion directions, dwell, loss, scale and handedness.');
 

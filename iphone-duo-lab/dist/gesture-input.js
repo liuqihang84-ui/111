@@ -1,11 +1,12 @@
 // One hand. Pinch is latched until a fist or hand loss, so releasing a pinch cannot dismantle.
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 export function createGestureInterpreter({holdMs=300,poseHoldMs=450,pinchHoldMs=160}={}){
- let lastTime=0,since=0,reference=null,filtered=null,theta=0,fold=180,candidate=null,candidateSince=0,committed=null,pinchSince=null,folding=false,previous=null;
- function reset(){lastTime=0;since=0;reference=null;filtered=null;candidate=null;candidateSince=0;committed=null;pinchSince=null;folding=false;previous=null;}
+ let lastTime=0,since=0,reference=null,filtered=null,theta=0,fold=180,candidate=null,candidateSince=0,committed=null,pinchSince=null,folding=false,previous=null,missingSince=null;
+ function reset(){lastTime=0;since=0;reference=null;filtered=null;candidate=null;candidateSince=0;committed=null;pinchSince=null;folding=false;previous=null;missingSince=null;}
  function update(frame,snapshot){
   const hand=frame.hands?.length===1?frame.hands[0]:null,now=frame.time;
-  if(!hand||!Number.isFinite(hand.x)){reset();return {active:false,status:'伸出一只手',actions:[],folding:false};}
+  if(!hand||!Number.isFinite(hand.x)){if(missingSince===null)missingSince=now;if(now-missingSince>800)reset();return {active:false,status:'伸出一只手',actions:[],folding};}
+  if(missingSince!==null){const preserveFold=folding&&now-missingSince<=800;reset();folding=preserveFold;since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;lastTime=now;}
   const dt=lastTime?clamp((now-lastTime)/1000,.001,.12):.09;
   const jump=previous&&(Math.abs(hand.x-previous.x)>.24||hand.area/previous.area>3||hand.area/previous.area<.3);
   if(!lastTime||now-lastTime>450||jump){reset();since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;}
