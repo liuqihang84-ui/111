@@ -1,34 +1,33 @@
-// Pure gesture interpretation: no DOM, camera, network, or model side effects.
+// One hand. Pinch is latched until a fist or hand loss, so releasing a pinch cannot dismantle.
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
-const step=(a,b,limit)=>a+clamp(b-a,-limit,limit);
-const hints={explode:'双手靠近后拉开，控制拆解',fold:'单手左右移动，控制折叠',view:'单手转动视角 · 双手缩放'};
-export function createGestureInterpreter({holdMs=550}={}){
- let signature='',since=0,lastTime=0,reference=null,filtered=null,output=null;
- function reset(){signature='';since=0;lastTime=0;reference=null;filtered=null;output=null;}
- function update(frame,mode,snapshot){
-  const now=frame.time,hands=(frame.hands||[]).slice(0,2).sort((a,b)=>a.x-b.x);
-  const valid=mode==='explode'?hands.length===2:mode==='fold'?hands.length===1:hands.length>0;
-  if(!valid){reset();return {active:false,status:!hands.length?'将手掌放入画面下半区':mode==='fold'?'折叠模式只需一只手':'请将两只手分开放入画面'};}
-  const key=mode+'/'+hands.length,dt=lastTime?clamp((now-lastTime)/1000,.001,.1):.065;
-  const raw={x:hands[0].x,y:hands[0].y,d:hands.length===2?Math.hypot(hands[1].x-hands[0].x,hands[1].y-hands[0].y):0};
-  if(key!==signature||now-lastTime>350){signature=key;since=now;reference=null;output=null;filtered={...raw};}
-  lastTime=now;const alpha=1-Math.exp(-dt/.14);for(const k of ['x','y','d'])filtered[k]+=(raw[k]-filtered[k])*alpha;
-  if(now-since<holdMs)return {active:false,status:'保持手掌稳定…'};
-  if(!reference){reference={...filtered,...snapshot};output={fold:snapshot.fold,explode:snapshot.explode,ratio:1,theta:snapshot.theta,phi:snapshot.phi};return {active:true,status:hints[mode]};}
-  if(mode==='fold'){
-   const dx=Math.abs(filtered.x-reference.x)<.012?0:filtered.x-reference.x;
-   const desired=clamp(reference.fold+dx*360,0,180),value=step(output.fold,desired,85*dt);
-   if(Math.abs(value-output.fold)<.02)return {active:true,status:hints[mode]};output.fold=value;return {active:true,status:hints[mode],action:{kind:'fold',value}};
+export function createGestureInterpreter({holdMs=300,poseHoldMs=450,pinchHoldMs=160}={}){
+ let lastTime=0,since=0,reference=null,filtered=null,theta=0,fold=180,candidate=null,candidateSince=0,committed=null,pinchSince=null,folding=false,previous=null;
+ function reset(){lastTime=0;since=0;reference=null;filtered=null;candidate=null;candidateSince=0;committed=null;pinchSince=null;folding=false;previous=null;}
+ function update(frame,snapshot){
+  const hand=frame.hands?.length===1?frame.hands[0]:null,now=frame.time;
+  if(!hand||!Number.isFinite(hand.x)){reset();return {active:false,status:'伸出一只手',actions:[],folding:false};}
+  const dt=lastTime?clamp((now-lastTime)/1000,.001,.12):.09;
+  const jump=previous&&(Math.abs(hand.x-previous.x)>.24||hand.area/previous.area>3||hand.area/previous.area<.3);
+  if(!lastTime||now-lastTime>450||jump){reset();since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;}
+  lastTime=now;previous={x:hand.x,area:Math.max(hand.area||.05,.001)};
+  const alpha=1-Math.exp(-dt/.12);filtered.x+=(hand.x-filtered.x)*alpha;filtered.pinch+=(hand.pinch-filtered.pinch)*alpha;
+  if(now-since<holdMs)return {active:false,status:'保持手掌片刻…',actions:[],folding:false};
+  if(!reference)reference={x:filtered.x,theta:snapshot.theta,phi:snapshot.phi};
+  const actions=[],dx=Math.abs(filtered.x-reference.x)<.014?0:filtered.x-reference.x;
+  const next=theta+clamp(reference.theta-dx*3.6-theta,-1.8*dt,1.8*dt);
+  if(Math.abs(next-theta)>.0008){theta=next;actions.push({kind:'rotate',theta,phi:reference.phi});}
+  if(hand.pinchReady&&filtered.pinch<.32){if(pinchSince===null)pinchSince=now;if(now-pinchSince>=pinchHoldMs&&!folding){folding=true;committed=null;candidate=null;fold=snapshot.fold;}}
+  else pinchSince=null;
+  const pose=hand.pose==='closed'?'closed':!folding&&hand.pose==='open'?'open':null;
+  if(candidate!==pose){candidate=pose;candidateSince=now;}
+  if(pose&&committed!==pose&&now-candidateSince>=poseHoldMs){committed=pose;actions.push({kind:'grip',open:pose==='open'});if(pose==='closed')folding=false;}
+  if(folding&&hand.pose!=='closed'){
+   const desired=clamp((filtered.pinch-.23)/.9,0,1)*180,nextFold=fold+clamp(desired-fold,-120*dt,120*dt);
+   if(Math.abs(nextFold-fold)>.05){fold=nextFold;actions.push({kind:'fold',value:fold});}
   }
-  if(mode==='explode'){
-   const dd=Math.abs(filtered.d-reference.d)<.010?0:filtered.d-reference.d;
-   const desired=clamp(reference.explode+dd*2.8,0,1),value=step(output.explode,desired,.28*dt);
-   if(Math.abs(value-output.explode)<.0002)return {active:true,status:hints[mode]};output.explode=value;return {active:true,status:hints[mode],action:{kind:'explode',value}};
-  }
-  if(hands.length===2){const desired=clamp(filtered.d/Math.max(reference.d,.12),.4,2.8),ratio=step(output.ratio,desired,1.8*dt);output.ratio=ratio;return {active:true,status:hints.view,action:{kind:'zoom',distance:reference.distance/ratio}};}
-  const dx=Math.abs(filtered.x-reference.x)<.012?0:filtered.x-reference.x,dy=Math.abs(filtered.y-reference.y)<.012?0:filtered.y-reference.y;
-  output.theta=step(output.theta,reference.theta-dx*2.8,1.3*dt);output.phi=step(output.phi,clamp(reference.phi+dy*1.4,.15,Math.PI-.15),.9*dt);
-  return {active:true,status:hints.view,action:{kind:'rotate',theta:output.theta,phi:output.phi}};
+  const status=folding?'捏合折叠 · 分开展开':committed==='closed'?'握拳 · 组装':committed==='open'?'张手 · 拆解':'左右移动旋转';
+  return {active:true,status,actions,folding};
  }
  return {update,reset};
 }
+
