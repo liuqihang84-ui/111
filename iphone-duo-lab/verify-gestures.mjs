@@ -31,5 +31,10 @@ for(const points of [open,fist,pinch])for(const factor of [.65,.9,1.1]){const tr
 assert.equal(handFeatures(null),null);checks++;
 g=createGestureInterpreter();frames(g,{...base,pinch:.15,pinchReady:true},35);frames(g,null,2);r=frames(g,{...base,pose:'open'},40,{...state,fold:0});assert(r.result.folding);assert(!r.actions.some(a=>a.kind==='grip'&&a.open));checks+=2;
 frames(g,null,12);r=frames(g,{...base,pose:'open'},14);assert(!r.result.folding);assert(r.actions.some(a=>a.kind==='grip'&&a.open));checks+=2;
-console.log('Single-hand gesture checks passed: '+checks+'. Pinch priority/release, fist/palm, motion directions, dwell, loss, scale and handedness.');
+g=createGestureInterpreter();let slowActions=[];
+for(let i=0;i<7;i++){time+=600;slowActions.push(...g.update({time,hands:[{...base,pose:'open'}]},state).actions);}
+assert(slowActions.some(a=>a.kind==='grip'&&a.open));checks++;
+for(let i=0;i<5;i++){time+=600;slowActions.push(...g.update({time,hands:[{...base,pose:'neutral',x:.37}]},state).actions);}
+assert(slowActions.some(a=>a.kind==='rotate'&&a.theta>state.theta));checks++;
+console.log('Single-hand gesture checks passed: '+checks+'. Pinch priority/release, fist/palm, rotation, low frame rate, loss, scale and handedness.');
 

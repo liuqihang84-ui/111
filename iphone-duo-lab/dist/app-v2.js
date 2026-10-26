@@ -4,8 +4,8 @@ import {createDuo} from './model-v2.js';
 import {createStudio} from './rendering.js';
 import {PARTS} from './parts.js';
 import {STAGES,smooth} from './motion.js';
-import {createGestureControl} from './hand-tracker.js?v=4';
-import {createGestureInterpreter} from './gesture-input.js?v=4';
+import {createGestureControl} from './hand-tracker.js?v=5';
+import {createGestureInterpreter} from './gesture-input.js?v=5';
 const $=id=>document.getElementById(id),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const state={selected:'glass',hover:null,explode:0,target:0,fold:180,foldTarget:180,view:'rear',filter:'all',labels:false,isolate:false,wireframe:false,playing:false,direction:1,framing:true,userCamera:false,white:true};
 let renderer,scene,camera,controls,duo,studio,toastTimer,baseDistance=35,sequenceStart=0,sequenceFrom=0,sequenceTo=1,sequenceDuration=13500;
@@ -70,7 +70,7 @@ function init(){
  }
  requestAnimationFrame(tick);
  // Diagnostics are mirrored into the DOM for development-only inspection.
- $('viewport').dataset.version='4.0';$('viewport').dataset.components=String(duo.registry.size);$('viewport').dataset.fasteners=String(duo.screwCount);
+ $('viewport').dataset.version='5.0';$('viewport').dataset.components=String(duo.registry.size);$('viewport').dataset.fasteners=String(duo.screwCount);
  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();toast('图形上下文中断，请刷新以重新构建。');});
 }
 function resize(){if(!renderer)return;const view=$('viewport'),w=view.clientWidth,h=view.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();const b=renderer.getDrawingBufferSize(new THREE.Vector2());studio?.resize(b.x,b.y);if(!state.isolate){state.framing=true;state.userCamera=false;}}
@@ -152,7 +152,7 @@ function cameraControls(){
   if(result.folding&&state.explode>.02)result.status='先组装，再折叠';
   if(state.target>.5&&state.fold<179)result.status='先展开，再拆解';
   return result;
- },onState:s=>{gestureActive=s==='active';document.body.classList.toggle('gesture-on',s!=='stopped');$('cameraButton').classList.toggle('active',gestureActive);$('cameraButton').setAttribute('aria-pressed',String(gestureActive));$('cameraButton').disabled=s==='requesting';if(s==='stopped'){$('cameraCard').hidden=true;gestureOrbit=null;}hud();}});
+ },onState:s=>{gestureActive=s==='active';if(gestureActive){pointerInteraction=false;gestureResumeAt=0;}document.body.classList.toggle('gesture-on',s!=='stopped');$('cameraButton').classList.toggle('active',gestureActive);$('cameraButton').setAttribute('aria-pressed',String(gestureActive));$('cameraButton').disabled=s==='requesting';if(s==='stopped'){$('cameraCard').hidden=true;gestureOrbit=null;}hud();}});
  $('cameraButton').onclick=()=>{if(gesture.active){gesture.stop();return;}$('cameraCard').hidden=false;gesture.start();};$('stopCamera').onclick=()=>gesture.stop();$('calibrateCamera').onclick=()=>gesture.active?gesture.calibrate():gesture.start();
 }
 try{init();}catch(e){console.error(e);$('loading').hidden=false;$('loading').querySelector('p').textContent='渲染未能启动';$('loading').querySelector('small').textContent='请使用开启硬件加速的 WebGL 2 浏览器。';}

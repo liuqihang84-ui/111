@@ -9,7 +9,7 @@ export function createGestureInterpreter({holdMs=300,poseHoldMs=450,pinchHoldMs=
   if(missingSince!==null){const preserveFold=folding&&now-missingSince<=800;reset();folding=preserveFold;since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;lastTime=now;}
   const dt=lastTime?clamp((now-lastTime)/1000,.001,.12):.09;
   const jump=previous&&(Math.abs(hand.x-previous.x)>.24||hand.area/previous.area>3||hand.area/previous.area<.3);
-  if(!lastTime||now-lastTime>450||jump){reset();since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;}
+  if(!lastTime||now-lastTime>2500||jump){reset();since=now;filtered={x:hand.x,pinch:hand.pinch};theta=snapshot.theta;fold=snapshot.fold;}
   lastTime=now;previous={x:hand.x,area:Math.max(hand.area||.05,.001)};
   const alpha=1-Math.exp(-dt/.12);filtered.x+=(hand.x-filtered.x)*alpha;filtered.pinch+=(hand.pinch-filtered.pinch)*alpha;
   if(now-since<holdMs)return {active:false,status:'保持手掌片刻…',actions:[],folding:false};

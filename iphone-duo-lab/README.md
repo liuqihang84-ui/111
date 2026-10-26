@@ -19,7 +19,7 @@ Publish directory: iphone-duo-lab/dist
 The build script retrieves the pinned official @mediapipe/tasks-vision 1.1.1 package and official Hand Landmarker float16 v1 data, and verifies their SHA-512/SHA-256 digests before extraction. The package and data do not need to be stored in Git. For local development, run node prepare-vision.mjs, then serve this directory over localhost.
 
 Validation:
-- node verify-gestures.mjs: 89 assertions covering pinch latch/release, fist/palm, rotation direction, dwell, short occlusion/long tracking loss, scale and handedness.
+- node verify-gestures.mjs: 91 assertions covering pinch latch/release, fist/palm, rotation direction, dwell, short occlusion/long tracking loss, low frame rate, scale and handedness.
 - node verify-motion.mjs: 7577 assertions for the original disassembly/folding paths.
 - Browser: Worker startup and blank-frame inference passed. Layout bounds checked at 390x844, 360x740 and 844x390; camera controls and canvas do not overlap.
 - Real-hand operation still needs verification with the user's physical camera.
@@ -27,3 +27,9 @@ Validation:
 Official implementation reference: https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/web_js
 Third-party program license: dist/vendor/MEDIAPIPE-LICENSE.txt
 
+
+V5 camera compatibility repair:
+- Read aspect-preserving RGBA frames through Canvas 2D instead of ImageBitmap(video). No bitmap or advancing video clock is required.
+- Low-rate inference no longer resets gesture dwell every 450 ms; fresh results can arrive up to 2.5 seconds apart.
+- Camera read errors, resource loading timeout, and a stalled inference worker now have visible feedback and one automatic recovery attempt.
+- QA uses the official MediaPipe right_hands.jpg through a real canvas video stream. It runs the real landmark model and gesture interpreter, including injected ImageBitmap failure and a frozen video clock.
